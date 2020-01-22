@@ -1,0 +1,44 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule SubPackageToPGPackage
+#with ModiscoTGG
+
+#source {
+	++mPackage:Package {
+		++  -package -> mParentPackage
+	}
+
+	mParentPackage:Package
+}
+
+#target {
+	typeGraph:TypeGraph
+
+	++tSub:TPackage {
+		++  -typeGraph -> typeGraph
+	}
+
+	tParent:TPackage {
+		++  -subpackage -> tSub
+		-typeGraph -> typeGraph
+	}
+}
+
+#correspondence {
+	mParentPackageToTParent :PackageToTPackage {
+		#src->mParentPackage
+		#trg->tParent
+	}
+
+	++ mPackageToTSub :PackageToTPackage {
+		#src->mPackage
+		#trg->tSub
+	}
+}
+
+#attributeConditions {
+	eq_string(mPackage.name, tSub.tName)
+}
+
+

@@ -1,0 +1,21 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule SuperConstructorInvocation
+#extends AbstractMethodInvocation
+#with ModiscoTGG
+
+#source {
+	++invocation:SuperConstructorInvocation 
+}
+
+#target {
+}
+
+#correspondence {
+}
+
+#attributeConditions {
+}
+
+

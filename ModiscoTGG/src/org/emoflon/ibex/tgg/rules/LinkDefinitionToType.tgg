@@ -1,0 +1,49 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule LinkDefinitionToType
+#with ModiscoTGG
+
+#source {
+	mSignature:MSignature {
+		-mDefinitions -> mDefinition
+	}
+
+	mDefinition:MDefinition
+
+	mType:AbstractTypeDeclaration {
+		++  -bodyDeclarations -> mDefinition
+	}
+}
+
+#target {
+	tSignature:TSignature {
+		-definitions -> tDefinition
+	}
+
+	tDefinition:TMember
+
+	tType:TAbstractType {
+		++-defines -> tDefinition
+		++-signature -> tSignature
+	}
+}
+
+#correspondence {
+	mTypeToTType :TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+
+	mSignatureToTSignature :MSignatureToTSignature {
+		#src->mSignature
+		#trg->tSignature
+	}
+
+	mDefinitionToTMember :MDefinitionToTMember {
+		#src->mDefinition
+		#trg->tDefinition
+	}
+}
+
+

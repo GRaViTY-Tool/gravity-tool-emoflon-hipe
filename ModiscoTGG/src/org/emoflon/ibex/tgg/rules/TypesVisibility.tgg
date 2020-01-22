@@ -1,0 +1,40 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule TypesVisibility #with ModiscoTGG
+
+#source {
+	mType:AbstractTypeDeclaration {
+		++ -modifier -> mModifier
+	}
+
+	++mModifier:Modifier
+}
+
+#target {
+	tType:TAbstractType {
+		++ -tModifier -> tModifier
+	}
+
+	++tModifier:TModifier
+}
+
+#correspondence {
+	mTypeToTType :TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+
+	++ mModifierToTModifier:MModifierToTModifier{
+		#src->mModifier
+		#trg->tModifier
+	}
+}
+
+#attributeConditions {
+	defaultVisibility(mModifier.visibility, tModifier.tVisibility)
+
+	eq_boolean(mModifier.static, tModifier.isStatic)
+}
+
+

@@ -1,0 +1,25 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule AnnotationTypeInAnonymous
+#extends NestedTypesinAnonymous
+#with ModiscoTGG
+
+#source {
+++ mNestedType : AnnotationTypeDeclaration {
+}
+}
+
+#target {
+++ tNestedType : TAnnotationType {
+}
+pg : TypeGraph {
+	++  -ownedTypes -> tNestedType
+}
+}
+
+#correspondence {
+}
+
+#attributeConditions {
+}

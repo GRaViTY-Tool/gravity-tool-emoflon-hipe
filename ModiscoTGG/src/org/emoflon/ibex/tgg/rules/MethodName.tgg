@@ -1,0 +1,39 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule MethodName
+#with ModiscoTGG
+
+#source {
+	mModel:MGravityModel {
+		++  -mMethodNames -> mName
+	}
+
+	++mName:MMethodName
+}
+
+#target {
+	pg:TypeGraph {
+		++  -methods -> tName
+	}
+
+	++tName:TMethod
+}
+
+#correspondence {
+	modelToPg :ModelToTypeGraph {
+		#src->mModel
+		#trg->pg
+	}
+
+	++ mNameToTName :MMethodNameToTMethod {
+		#src->mName
+		#trg->tName
+	}
+}
+
+#attributeConditions {
+	eq_string(mName.mName, tName.tName)
+}
+
+

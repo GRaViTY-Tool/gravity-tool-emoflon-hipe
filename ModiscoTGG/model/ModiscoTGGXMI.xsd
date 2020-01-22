@@ -1,0 +1,2630 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:ModiscoTGG="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore" xmlns:annotations="http://www.gravity-tool.org/typegraph/basic#//annotations" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" xmlns:org.emoflon.ibex.tgg.core.runtime="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore" xmlns:org.gravity.modisco="http://www.gravity-tool.org/modisco" xmlns:org.gravity.typegraph.basic="http://www.gravity-tool.org/typegraph/basic" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore">
+  <xsd:import namespace="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore" schemaLocation="runtime.xsd"/>
+  <xsd:import namespace="http://www.gravity-tool.org/modisco" schemaLocation="modisco.xsd"/>
+  <xsd:import namespace="http://www.gravity-tool.org/typegraph/basic" schemaLocation="basic.xsd"/>
+  <xsd:import namespace="http://www.omg.org/XMI" schemaLocation="platform:/plugin/org.eclipse.emf.ecore/model/XMI.xsd"/>
+  <xsd:import namespace="http://www.gravity-tool.org/typegraph/basic#//annotations" schemaLocation="annotations.xsd"/>
+  <xsd:import namespace="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" schemaLocation="java.xsd"/>
+  <xsd:complexType name="BooleanLiteralToTBoolNode">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:BooleanLiteral"/>
+      <xsd:element name="target" type="annotations:TBoolNode"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="BooleanLiteralToTBoolNode" type="ModiscoTGG:BooleanLiteralToTBoolNode"/>
+  <xsd:complexType name="NumberLiteralToTNumberNode">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:NumberLiteral"/>
+      <xsd:element name="target" type="annotations:TNumberNode"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="NumberLiteralToTNumberNode" type="ModiscoTGG:NumberLiteralToTNumberNode"/>
+  <xsd:complexType name="StringLiteralToTTextNode">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:StringLiteral"/>
+      <xsd:element name="target" type="annotations:TTextNode"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="StringLiteralToTTextNode" type="ModiscoTGG:StringLiteralToTTextNode"/>
+  <xsd:complexType name="ClassLiteralToClassNode">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:TypeLiteral"/>
+      <xsd:element name="target" type="annotations:TClassNode"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="ClassLiteralToClassNode" type="ModiscoTGG:ClassLiteralToClassNode"/>
+  <xsd:complexType name="ClassDeclarationToTClass">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:ClassDeclaration"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TClass"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="ClassDeclarationToTClass" type="ModiscoTGG:ClassDeclarationToTClass"/>
+  <xsd:complexType name="PackageToTPackage">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:Package"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TPackage"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="PackageToTPackage" type="ModiscoTGG:PackageToTPackage"/>
+  <xsd:complexType name="ModelToTypeGraph">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:Model"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TypeGraph"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="ModelToTypeGraph" type="ModiscoTGG:ModelToTypeGraph"/>
+  <xsd:complexType name="InterfaceDeclarationToTInterface">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:InterfaceDeclaration"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TInterface"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="InterfaceDeclarationToTInterface" type="ModiscoTGG:InterfaceDeclarationToTInterface"/>
+  <xsd:complexType name="MDefinitionToTMember">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="org.gravity.modisco:MDefinition"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TMember"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="MDefinitionToTMember" type="ModiscoTGG:MDefinitionToTMember"/>
+  <xsd:complexType name="FieldAccessToTAccess">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:FieldAccess"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TAccess"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="FieldAccessToTAccess" type="ModiscoTGG:FieldAccessToTAccess"/>
+  <xsd:complexType name="PrimitiveTypeToTClass">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:PrimitiveType"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TClass"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="PrimitiveTypeToTClass" type="ModiscoTGG:PrimitiveTypeToTClass"/>
+  <xsd:complexType name="AnonymousClassDeclarationToTClass">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:AnonymousClassDeclaration"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TClass"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="AnonymousClassDeclarationToTClass" type="ModiscoTGG:AnonymousClassDeclarationToTClass"/>
+  <xsd:complexType name="MMethodNameToTMethod">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="org.gravity.modisco:MMethodName"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TMethod"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="MMethodNameToTMethod" type="ModiscoTGG:MMethodNameToTMethod"/>
+  <xsd:complexType name="MEntryToTParameter">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="org.gravity.modisco:MEntry"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TParameter"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="MEntryToTParameter" type="ModiscoTGG:MEntryToTParameter"/>
+  <xsd:complexType name="MSignatureToTSignature">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="org.gravity.modisco:MSignature"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TSignature"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="MSignatureToTSignature" type="ModiscoTGG:MSignatureToTSignature"/>
+  <xsd:complexType name="ASTNodeToTAnnotatable">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:ASTNode"/>
+      <xsd:element name="target" type="annotations:TAnnotatable"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="ASTNodeToTAnnotatable" type="ModiscoTGG:ASTNodeToTAnnotatable"/>
+  <xsd:complexType name="TypeToTAbstractType">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:Type"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TAbstractType"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="TypeToTAbstractType" type="ModiscoTGG:TypeToTAbstractType"/>
+  <xsd:complexType name="MFieldNameToTField">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="org.gravity.modisco:MFieldName"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TField"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="MFieldNameToTField" type="ModiscoTGG:MFieldNameToTField"/>
+  <xsd:complexType name="LineCommentToTTextAnnotation">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:LineComment"/>
+      <xsd:element name="target" type="annotations:TTextAnnotation"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="LineCommentToTTextAnnotation" type="ModiscoTGG:LineCommentToTTextAnnotation"/>
+  <xsd:complexType name="MSingleVariableAccessToTAccess">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="org.gravity.modisco:MSingleVariableAccess"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TAccess"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="MSingleVariableAccessToTAccess" type="ModiscoTGG:MSingleVariableAccessToTAccess"/>
+  <xsd:complexType name="AnnotationToTAnnotation">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:Annotation"/>
+      <xsd:element name="target" type="annotations:TAnnotation"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="AnnotationToTAnnotation" type="ModiscoTGG:AnnotationToTAnnotation"/>
+  <xsd:complexType name="TypeParameterToTClass">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:TypeParameter"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TClass"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="TypeParameterToTClass" type="ModiscoTGG:TypeParameterToTClass"/>
+  <xsd:complexType name="UnresolvedTypeDeclarationToTClass">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:UnresolvedTypeDeclaration"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TClass"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="UnresolvedTypeDeclarationToTClass" type="ModiscoTGG:UnresolvedTypeDeclarationToTClass"/>
+  <xsd:complexType name="ModifierToTClassEntity">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:Modifier"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TClass"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="ModifierToTClassEntity" type="ModiscoTGG:ModifierToTClassEntity"/>
+  <xsd:complexType name="ModifierToTFieldEntity">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:Modifier"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TFieldDefinition"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="ModifierToTFieldEntity" type="ModiscoTGG:ModifierToTFieldEntity"/>
+  <xsd:complexType name="ModifierToTMethodEntity">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:Modifier"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TMethodDefinition"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="ModifierToTMethodEntity" type="ModiscoTGG:ModifierToTMethodEntity"/>
+  <xsd:complexType name="ModifierToAbstractType">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:Modifier"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TAbstractType"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="ModifierToAbstractType" type="ModiscoTGG:ModifierToAbstractType"/>
+  <xsd:complexType name="MModifierToTModifier">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:Modifier"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TModifier"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="MModifierToTModifier" type="ModiscoTGG:MModifierToTModifier"/>
+  <xsd:complexType name="MSyntethicMethodToTSyntethicMethod">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="org.gravity.modisco:MSyntheticMethodDefinition"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TSyntethicMethod"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="MSyntethicMethodToTSyntethicMethod" type="ModiscoTGG:MSyntethicMethodToTSyntethicMethod"/>
+  <xsd:complexType name="AnnotationMemberValuePairToTAnnotationValue">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:AnnotationMemberValuePair"/>
+      <xsd:element name="target" type="annotations:TAnnotationValue"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="AnnotationMemberValuePairToTAnnotationValue" type="ModiscoTGG:AnnotationMemberValuePairToTAnnotationValue"/>
+  <xsd:complexType name="StaticTypeToAccessStaticType">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:Type"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TCall"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="StaticTypeToAccessStaticType" type="ModiscoTGG:StaticTypeToAccessStaticType"/>
+  <xsd:complexType name="MFlowToTFlow">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="org.gravity.modisco:MFlow"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TFlow"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="MFlowToTFlow" type="ModiscoTGG:MFlowToTFlow"/>
+  <xsd:complexType name="MAbstractFlowElementToTAbstractFlowElement">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="org.gravity.modisco:MAbstractFlowElement"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TAbstractFlowElement"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="MAbstractFlowElementToTAbstractFlowElement" type="ModiscoTGG:MAbstractFlowElementToTAbstractFlowElement"/>
+  <xsd:complexType name="AbstractMethodInvocationToTAccess">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:AbstractMethodInvocation"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TAccess"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="AbstractMethodInvocationToTAccess" type="ModiscoTGG:AbstractMethodInvocationToTAccess"/>
+  <xsd:complexType name="VariableDeclarationFragmentToTFieldDefinition">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="java:VariableDeclarationFragment"/>
+      <xsd:element name="target" type="org.gravity.typegraph.basic:TFieldDefinition"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="VariableDeclarationFragmentToTFieldDefinition" type="ModiscoTGG:VariableDeclarationFragmentToTFieldDefinition"/>
+  <xsd:complexType name="AnnotationMemberKey__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__Annotation" type="java:Annotation"/>
+          <xsd:element name="CREATE__SRC__mValue" type="java:AnnotationMemberValuePair"/>
+          <xsd:element name="CONTEXT__TRG__tAnnotation" type="annotations:TAnnotation"/>
+          <xsd:element name="CREATE__TRG__tAnnotationValue" type="annotations:TAnnotationValue"/>
+          <xsd:element name="CREATE__CORR__AnnotationMemberValuePairToTAnnotationValue" type="ModiscoTGG:AnnotationMemberValuePairToTAnnotationValue"/>
+          <xsd:element name="CONTEXT__CORR__AnnotationToTAnnotation" type="ModiscoTGG:AnnotationToTAnnotation"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__Annotation" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tAnnotation" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__AnnotationMemberValuePairToTAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__AnnotationToTAnnotation" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AnnotationMemberKey__Marker" type="ModiscoTGG:AnnotationMemberKey__Marker"/>
+  <xsd:complexType name="AnnotationMemberValueAnnotation__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__AnnotationValue" type="java:AnnotationMemberValuePair"/>
+          <xsd:element name="CREATE__SRC__mValue" type="java:Annotation"/>
+          <xsd:element name="CONTEXT__TRG__tAnnotationValue" type="annotations:TAnnotationValue"/>
+          <xsd:element name="CREATE__TRG__tValue" type="annotations:TAnnotation"/>
+          <xsd:element name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue" type="ModiscoTGG:AnnotationMemberValuePairToTAnnotationValue"/>
+          <xsd:element name="CREATE__CORR__mTypeToTType" type="ModiscoTGG:AnnotationToTAnnotation"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__AnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AnnotationMemberValueAnnotation__Marker" type="ModiscoTGG:AnnotationMemberValueAnnotation__Marker"/>
+  <xsd:complexType name="AnnotationMemberValueAnnotationArray__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__AnnotationValue" type="java:AnnotationMemberValuePair"/>
+          <xsd:element name="CREATE__SRC__mArray" type="java:ArrayInitializer"/>
+          <xsd:element name="CREATE__SRC__mValue" type="java:Annotation"/>
+          <xsd:element name="CONTEXT__TRG__tAnnotationValue" type="annotations:TAnnotationValue"/>
+          <xsd:element name="CREATE__TRG__tValue" type="annotations:TAnnotation"/>
+          <xsd:element name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue" type="ModiscoTGG:AnnotationMemberValuePairToTAnnotationValue"/>
+          <xsd:element name="CREATE__CORR__mTypeToTType" type="ModiscoTGG:AnnotationToTAnnotation"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__AnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mArray" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AnnotationMemberValueAnnotationArray__Marker" type="ModiscoTGG:AnnotationMemberValueAnnotationArray__Marker"/>
+  <xsd:complexType name="AnnotationMemberValueBoolean__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__AnnotationValue" type="java:AnnotationMemberValuePair"/>
+          <xsd:element name="CREATE__SRC__mValue" type="java:BooleanLiteral"/>
+          <xsd:element name="CONTEXT__TRG__tAnnotationValue" type="annotations:TAnnotationValue"/>
+          <xsd:element name="CREATE__TRG__tValue" type="annotations:TBoolNode"/>
+          <xsd:element name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue" type="ModiscoTGG:AnnotationMemberValuePairToTAnnotationValue"/>
+          <xsd:element name="CREATE__CORR__mValueToTValue" type="ModiscoTGG:BooleanLiteralToTBoolNode"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__AnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mValueToTValue" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AnnotationMemberValueBoolean__Marker" type="ModiscoTGG:AnnotationMemberValueBoolean__Marker"/>
+  <xsd:complexType name="AnnotationMemberValueBooleanArray__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__AnnotationValue" type="java:AnnotationMemberValuePair"/>
+          <xsd:element name="CREATE__SRC__mArray" type="java:ArrayInitializer"/>
+          <xsd:element name="CREATE__SRC__mValue" type="java:BooleanLiteral"/>
+          <xsd:element name="CONTEXT__TRG__tAnnotationValue" type="annotations:TAnnotationValue"/>
+          <xsd:element name="CREATE__TRG__tValue" type="annotations:TBoolNode"/>
+          <xsd:element name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue" type="ModiscoTGG:AnnotationMemberValuePairToTAnnotationValue"/>
+          <xsd:element name="CREATE__CORR__mValueToTValue" type="ModiscoTGG:BooleanLiteralToTBoolNode"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__AnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mArray" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mValueToTValue" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AnnotationMemberValueBooleanArray__Marker" type="ModiscoTGG:AnnotationMemberValueBooleanArray__Marker"/>
+  <xsd:complexType name="AnnotationMemberValueClass__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__AnnotationValue" type="java:AnnotationMemberValuePair"/>
+          <xsd:element name="CREATE__SRC__mAccess" type="java:TypeAccess"/>
+          <xsd:element name="CONTEXT__SRC__mType" type="java:Type"/>
+          <xsd:element name="CREATE__SRC__mValue" type="java:TypeLiteral"/>
+          <xsd:element name="CONTEXT__TRG__tAnnotationValue" type="annotations:TAnnotationValue"/>
+          <xsd:element name="CONTEXT__TRG__tType" type="org.gravity.typegraph.basic:TAbstractType"/>
+          <xsd:element name="CREATE__TRG__tValue" type="annotations:TClassNode"/>
+          <xsd:element name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue" type="ModiscoTGG:AnnotationMemberValuePairToTAnnotationValue"/>
+          <xsd:element name="CONTEXT__CORR__mTypeToTType" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CREATE__CORR__mValueToTValue" type="ModiscoTGG:ClassLiteralToClassNode"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__AnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mTypeToTType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mValueToTValue" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AnnotationMemberValueClass__Marker" type="ModiscoTGG:AnnotationMemberValueClass__Marker"/>
+  <xsd:complexType name="AnnotationMemberValueClassArray__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__AnnotationValue" type="java:AnnotationMemberValuePair"/>
+          <xsd:element name="CREATE__SRC__mAccess" type="java:TypeAccess"/>
+          <xsd:element name="CREATE__SRC__mArray" type="java:ArrayInitializer"/>
+          <xsd:element name="CONTEXT__SRC__mType" type="java:Type"/>
+          <xsd:element name="CREATE__SRC__mValue" type="java:TypeLiteral"/>
+          <xsd:element name="CONTEXT__TRG__tAnnotationValue" type="annotations:TAnnotationValue"/>
+          <xsd:element name="CONTEXT__TRG__tType" type="org.gravity.typegraph.basic:TAbstractType"/>
+          <xsd:element name="CREATE__TRG__tValue" type="annotations:TClassNode"/>
+          <xsd:element name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue" type="ModiscoTGG:AnnotationMemberValuePairToTAnnotationValue"/>
+          <xsd:element name="CONTEXT__CORR__mTypeToTType" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CREATE__CORR__mValueToTValue" type="ModiscoTGG:ClassLiteralToClassNode"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__AnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mAccess" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mArray" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mTypeToTType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mValueToTValue" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AnnotationMemberValueClassArray__Marker" type="ModiscoTGG:AnnotationMemberValueClassArray__Marker"/>
+  <xsd:complexType name="AnnotationMemberValueNumber__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__AnnotationValue" type="java:AnnotationMemberValuePair"/>
+          <xsd:element name="CREATE__SRC__mValue" type="java:NumberLiteral"/>
+          <xsd:element name="CONTEXT__TRG__tAnnotationValue" type="annotations:TAnnotationValue"/>
+          <xsd:element name="CREATE__TRG__tValue" type="annotations:TNumberNode"/>
+          <xsd:element name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue" type="ModiscoTGG:AnnotationMemberValuePairToTAnnotationValue"/>
+          <xsd:element name="CREATE__CORR__mTypeToTType" type="ModiscoTGG:NumberLiteralToTNumberNode"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__AnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AnnotationMemberValueNumber__Marker" type="ModiscoTGG:AnnotationMemberValueNumber__Marker"/>
+  <xsd:complexType name="AnnotationMemberValueNumberArray__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__AnnotationValue" type="java:AnnotationMemberValuePair"/>
+          <xsd:element name="CREATE__SRC__mArray" type="java:ArrayInitializer"/>
+          <xsd:element name="CREATE__SRC__mValue" type="java:NumberLiteral"/>
+          <xsd:element name="CONTEXT__TRG__tAnnotationValue" type="annotations:TAnnotationValue"/>
+          <xsd:element name="CREATE__TRG__tValue" type="annotations:TNumberNode"/>
+          <xsd:element name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue" type="ModiscoTGG:AnnotationMemberValuePairToTAnnotationValue"/>
+          <xsd:element name="CREATE__CORR__mTypeToTType" type="ModiscoTGG:NumberLiteralToTNumberNode"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__AnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mArray" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AnnotationMemberValueNumberArray__Marker" type="ModiscoTGG:AnnotationMemberValueNumberArray__Marker"/>
+  <xsd:complexType name="AnnotationMemberValueString__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__AnnotationValue" type="java:AnnotationMemberValuePair"/>
+          <xsd:element name="CREATE__SRC__mValue" type="java:StringLiteral"/>
+          <xsd:element name="CONTEXT__TRG__tAnnotationValue" type="annotations:TAnnotationValue"/>
+          <xsd:element name="CREATE__TRG__tValue" type="annotations:TTextNode"/>
+          <xsd:element name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue" type="ModiscoTGG:AnnotationMemberValuePairToTAnnotationValue"/>
+          <xsd:element name="CREATE__CORR__mTypeToTType" type="ModiscoTGG:StringLiteralToTTextNode"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__AnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AnnotationMemberValueString__Marker" type="ModiscoTGG:AnnotationMemberValueString__Marker"/>
+  <xsd:complexType name="AnnotationMemberValueStringArray__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__AnnotationValue" type="java:AnnotationMemberValuePair"/>
+          <xsd:element name="CREATE__SRC__mArray" type="java:ArrayInitializer"/>
+          <xsd:element name="CREATE__SRC__mValue" type="java:StringLiteral"/>
+          <xsd:element name="CONTEXT__TRG__tAnnotationValue" type="annotations:TAnnotationValue"/>
+          <xsd:element name="CREATE__TRG__tValue" type="annotations:TTextNode"/>
+          <xsd:element name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue" type="ModiscoTGG:AnnotationMemberValuePairToTAnnotationValue"/>
+          <xsd:element name="CREATE__CORR__mTypeToTType" type="ModiscoTGG:StringLiteralToTTextNode"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__AnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mArray" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tValue" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AnnotationMemberValueStringArray__Marker" type="ModiscoTGG:AnnotationMemberValueStringArray__Marker"/>
+  <xsd:complexType name="AnnotationOnBodyDeclaration__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__Annotation" type="java:Annotation"/>
+          <xsd:element name="CONTEXT__SRC__astNode" type="java:BodyDeclaration"/>
+          <xsd:element name="CONTEXT__TRG__tAnnotable" type="annotations:TAnnotatable"/>
+          <xsd:element name="CREATE__TRG__tAnnotation" type="annotations:TAnnotation"/>
+          <xsd:element name="CREATE__CORR__AnnotationToTAnnotation" type="ModiscoTGG:AnnotationToTAnnotation"/>
+          <xsd:element name="CONTEXT__CORR__aSTNodeToTAnnotable" type="ModiscoTGG:ASTNodeToTAnnotatable"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__Annotation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__astNode" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tAnnotable" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tAnnotation" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__AnnotationToTAnnotation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__aSTNodeToTAnnotable" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AnnotationOnBodyDeclaration__Marker" type="ModiscoTGG:AnnotationOnBodyDeclaration__Marker"/>
+  <xsd:complexType name="AnnotationType__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mPackage" type="java:Package"/>
+          <xsd:element name="CREATE__SRC__mType" type="java:AnnotationTypeDeclaration"/>
+          <xsd:element name="CONTEXT__TRG__pg" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CONTEXT__TRG__tPackage" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CREATE__TRG__tType" type="annotations:TAnnotationType"/>
+          <xsd:element name="CREATE__CORR__mBodyToTAnnotation" type="ModiscoTGG:ASTNodeToTAnnotatable"/>
+          <xsd:element name="CONTEXT__CORR__mPackageToTPackage" type="ModiscoTGG:PackageToTPackage"/>
+          <xsd:element name="CREATE__CORR__mTypeToTType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mPackage" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__pg" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tPackage" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mBodyToTAnnotation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mPackageToTPackage" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AnnotationType__Marker" type="ModiscoTGG:AnnotationType__Marker"/>
+  <xsd:complexType name="AnnotationTypeAccess__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__Annotation" type="java:Annotation"/>
+          <xsd:element name="CONTEXT__SRC__AnnotationType" type="java:AnnotationTypeDeclaration"/>
+          <xsd:element name="CREATE__SRC__mAccess" type="java:TypeAccess"/>
+          <xsd:element name="CONTEXT__TRG__tAnnotation" type="annotations:TAnnotation"/>
+          <xsd:element name="CONTEXT__TRG__tAnnotationType" type="annotations:TAnnotationType"/>
+          <xsd:element name="CONTEXT__CORR__AnnotationToTAnnotation" type="ModiscoTGG:AnnotationToTAnnotation"/>
+          <xsd:element name="CONTEXT__CORR__AnnotationTypeToTAnnotationType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__Annotation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__AnnotationType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tAnnotation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tAnnotationType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__AnnotationToTAnnotation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__AnnotationTypeToTAnnotationType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AnnotationTypeAccess__Marker" type="ModiscoTGG:AnnotationTypeAccess__Marker"/>
+  <xsd:complexType name="AnnotationTypeInAnonymous__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eAnonymousClassDeclaration" type="java:AnonymousClassDeclaration"/>
+          <xsd:element name="CREATE__SRC__mNestedType" type="java:AnnotationTypeDeclaration"/>
+          <xsd:element name="CONTEXT__TRG__pg" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CONTEXT__TRG__tClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CREATE__TRG__tNestedType" type="annotations:TAnnotationType"/>
+          <xsd:element name="CONTEXT__CORR__eAnonymousClassDeclarationToTClass" type="ModiscoTGG:AnonymousClassDeclarationToTClass"/>
+          <xsd:element name="CREATE__CORR__mNestedTypeToTNestedType" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CREATE__CORR__mbodyToTAnnotatable" type="ModiscoTGG:ASTNodeToTAnnotatable"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eAnonymousClassDeclaration" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mNestedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__pg" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tNestedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eAnonymousClassDeclarationToTClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mNestedTypeToTNestedType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mbodyToTAnnotatable" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AnnotationTypeInAnonymous__Marker" type="ModiscoTGG:AnnotationTypeInAnonymous__Marker"/>
+  <xsd:complexType name="AnnotationTypeNested__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__eNestedType" type="java:AnnotationTypeDeclaration"/>
+          <xsd:element name="CONTEXT__SRC__eOuterType" type="java:AbstractTypeDeclaration"/>
+          <xsd:element name="CREATE__TRG__tNestedPackage" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CREATE__TRG__tNestedType" type="annotations:TAnnotationType"/>
+          <xsd:element name="CONTEXT__TRG__tOuterPackage" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CONTEXT__TRG__tOuterType" type="org.gravity.typegraph.basic:TAbstractType"/>
+          <xsd:element name="CONTEXT__TRG__typeGraph" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CREATE__CORR__eNestedTypeToTNestedType" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CONTEXT__CORR__eOuterTypeToTOuterInterface" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CREATE__CORR__mBodyToTAnnotation" type="ModiscoTGG:ASTNodeToTAnnotatable"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__eNestedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__eOuterType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tNestedPackage" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tNestedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tOuterPackage" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tOuterType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__typeGraph" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__eNestedTypeToTNestedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eOuterTypeToTOuterInterface" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mBodyToTAnnotation" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AnnotationTypeNested__Marker" type="ModiscoTGG:AnnotationTypeNested__Marker"/>
+  <xsd:complexType name="AnonymousClass__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__mAnonymous" type="org.gravity.modisco:MAnonymous"/>
+          <xsd:element name="CONTEXT__SRC__mType" type="java:AbstractTypeDeclaration"/>
+          <xsd:element name="CONTEXT__TRG__pg" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CREATE__TRG__tAnonymous" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CREATE__TRG__tNewPackage" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CONTEXT__TRG__tPackage" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CONTEXT__TRG__tType" type="org.gravity.typegraph.basic:TAbstractType"/>
+          <xsd:element name="CREATE__CORR__eAnonymousClassDeclarationToTClass" type="ModiscoTGG:AnonymousClassDeclarationToTClass"/>
+          <xsd:element name="CONTEXT__CORR__mTypeToTType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__mAnonymous" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__pg" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tAnonymous" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tNewPackage" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tPackage" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__eAnonymousClassDeclarationToTClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AnonymousClass__Marker" type="ModiscoTGG:AnonymousClass__Marker"/>
+  <xsd:complexType name="AnonymousClassTypeClass__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mAnonymous" type="org.gravity.modisco:MAnonymous"/>
+          <xsd:element name="CREATE__SRC__mCreation" type="java:ClassInstanceCreation"/>
+          <xsd:element name="CONTEXT__SRC__mParent" type="java:AbstractTypeDeclaration"/>
+          <xsd:element name="CREATE__SRC__mType" type="java:TypeAccess"/>
+          <xsd:element name="CONTEXT__TRG__tClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__TRG__tParent" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__CORR__eAnonymousClassDeclarationToTClass" type="ModiscoTGG:AnonymousClassDeclarationToTClass"/>
+          <xsd:element name="CONTEXT__CORR__parentToParent" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mAnonymous" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mCreation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mParent" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tParent" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eAnonymousClassDeclarationToTClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__parentToParent" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AnonymousClassTypeClass__Marker" type="ModiscoTGG:AnonymousClassTypeClass__Marker"/>
+  <xsd:complexType name="AnonymousClassTypeInterface__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mAnonymous" type="org.gravity.modisco:MAnonymous"/>
+          <xsd:element name="CREATE__SRC__mCreation" type="java:ClassInstanceCreation"/>
+          <xsd:element name="CONTEXT__SRC__mParent" type="java:AbstractTypeDeclaration"/>
+          <xsd:element name="CREATE__SRC__mType" type="java:TypeAccess"/>
+          <xsd:element name="CONTEXT__TRG__tClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__TRG__tParent" type="org.gravity.typegraph.basic:TInterface"/>
+          <xsd:element name="CONTEXT__CORR__eAnonymousClassDeclarationToTClass" type="ModiscoTGG:AnonymousClassDeclarationToTClass"/>
+          <xsd:element name="CONTEXT__CORR__parentToParent" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mAnonymous" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mCreation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mParent" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tParent" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eAnonymousClassDeclarationToTClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__parentToParent" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AnonymousClassTypeInterface__Marker" type="ModiscoTGG:AnonymousClassTypeInterface__Marker"/>
+  <xsd:complexType name="ArrayInitializerIgnoreExpressionsEdge__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__array" type="java:ArrayInitializer"/>
+          <xsd:element name="CONTEXT__SRC__invocation" type="java:MethodInvocation"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__array" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__invocation" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ArrayInitializerIgnoreExpressionsEdge__Marker" type="ModiscoTGG:ArrayInitializerIgnoreExpressionsEdge__Marker"/>
+  <xsd:complexType name="ArrayTypeToClass__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__eArrayType" type="java:ArrayType"/>
+          <xsd:element name="CONTEXT__SRC__eModel" type="java:Model"/>
+          <xsd:element name="CONTEXT__SRC__eType" type="java:Type"/>
+          <xsd:element name="CREATE__SRC__eTypeAccess" type="java:TypeAccess"/>
+          <xsd:element name="CONTEXT__TRG__tArrayClass" type="org.gravity.typegraph.basic:TAbstractType"/>
+          <xsd:element name="CONTEXT__TRG__typeGraph" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CREATE__CORR__eArrayTypeToTArrayClass" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CONTEXT__CORR__eModelToTypeGraph" type="ModiscoTGG:ModelToTypeGraph"/>
+          <xsd:element name="CONTEXT__CORR__eTypeToTArrayClass" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__eArrayType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__eModel" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__eType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__eTypeAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tArrayClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__typeGraph" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__eArrayTypeToTArrayClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eModelToTypeGraph" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eTypeToTArrayClass" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ArrayTypeToClass__Marker" type="ModiscoTGG:ArrayTypeToClass__Marker"/>
+  <xsd:complexType name="Class__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mPackage" type="java:Package"/>
+          <xsd:element name="CREATE__SRC__mType" type="org.gravity.modisco:MClass"/>
+          <xsd:element name="CONTEXT__TRG__pg" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CONTEXT__TRG__tPackage" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CREATE__TRG__tType" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CREATE__CORR__mBodyToTAnnotation" type="ModiscoTGG:ASTNodeToTAnnotatable"/>
+          <xsd:element name="CREATE__CORR__mClassDeclarationToTClass" type="ModiscoTGG:ClassDeclarationToTClass"/>
+          <xsd:element name="CONTEXT__CORR__mPackageToTPackage" type="ModiscoTGG:PackageToTPackage"/>
+          <xsd:element name="CREATE__CORR__mTypeToTType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mPackage" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__pg" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tPackage" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mBodyToTAnnotation" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mClassDeclarationToTClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mPackageToTPackage" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Class__Marker" type="ModiscoTGG:Class__Marker"/>
+  <xsd:complexType name="ClassExtendsClass__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eClassDeclaration" type="java:ClassDeclaration"/>
+          <xsd:element name="CONTEXT__SRC__eExtendedClass" type="java:ClassDeclaration"/>
+          <xsd:element name="CREATE__SRC__eTypeAccess" type="java:TypeAccess"/>
+          <xsd:element name="CONTEXT__TRG__tClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__TRG__tExtendedClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__CORR__eClassDeclarationToTClass" type="ModiscoTGG:ClassDeclarationToTClass"/>
+          <xsd:element name="CONTEXT__CORR__eExtendedClassToTExtendedClass" type="ModiscoTGG:ClassDeclarationToTClass"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eClassDeclaration" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__eExtendedClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__eTypeAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tExtendedClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eClassDeclarationToTClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eExtendedClassToTExtendedClass" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ClassExtendsClass__Marker" type="ModiscoTGG:ClassExtendsClass__Marker"/>
+  <xsd:complexType name="ClassImplementsInterface__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eClassDeclaration" type="java:ClassDeclaration"/>
+          <xsd:element name="CONTEXT__SRC__eSuperInterface" type="java:Type"/>
+          <xsd:element name="CREATE__SRC__eTypeAccess" type="java:TypeAccess"/>
+          <xsd:element name="CONTEXT__TRG__tClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__TRG__tSuperInterface" type="org.gravity.typegraph.basic:TInterface"/>
+          <xsd:element name="CONTEXT__CORR__eClassDeclarationToTClass" type="ModiscoTGG:ClassDeclarationToTClass"/>
+          <xsd:element name="CONTEXT__CORR__eSuperInterfaceToTSuperInterface" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eClassDeclaration" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__eSuperInterface" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__eTypeAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tSuperInterface" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eClassDeclarationToTClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eSuperInterfaceToTSuperInterface" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ClassImplementsInterface__Marker" type="ModiscoTGG:ClassImplementsInterface__Marker"/>
+  <xsd:complexType name="ClassInAnonymous__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eAnonymousClassDeclaration" type="java:AnonymousClassDeclaration"/>
+          <xsd:element name="CREATE__SRC__mNestedType" type="org.gravity.modisco:MClass"/>
+          <xsd:element name="CONTEXT__TRG__pg" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CONTEXT__TRG__tClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CREATE__TRG__tNestedType" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__CORR__eAnonymousClassDeclarationToTClass" type="ModiscoTGG:AnonymousClassDeclarationToTClass"/>
+          <xsd:element name="CREATE__CORR__mClassDeclarationToTClass" type="ModiscoTGG:ClassDeclarationToTClass"/>
+          <xsd:element name="CREATE__CORR__mNestedTypeToTNestedType" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CREATE__CORR__mbodyToTAnnotatable" type="ModiscoTGG:ASTNodeToTAnnotatable"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eAnonymousClassDeclaration" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mNestedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__pg" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tNestedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eAnonymousClassDeclarationToTClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mClassDeclarationToTClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mNestedTypeToTNestedType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mbodyToTAnnotatable" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ClassInAnonymous__Marker" type="ModiscoTGG:ClassInAnonymous__Marker"/>
+  <xsd:complexType name="ClassInnerAnonClassMember__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eOuterClass" type="java:AnonymousClassDeclaration"/>
+          <xsd:element name="CONTEXT__SRC__mDefinition" type="org.gravity.modisco:MAbstractMethodDefinition"/>
+          <xsd:element name="CREATE__SRC__mInnerClass" type="org.gravity.modisco:MClass"/>
+          <xsd:element name="CREATE__TRG__tInnerClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CREATE__TRG__tInnerPackage" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CONTEXT__TRG__tOuterClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__TRG__tOuterPackage" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CONTEXT__TRG__typeGraph" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CONTEXT__CORR__eOuterClassToTOuterClass" type="ModiscoTGG:AnonymousClassDeclarationToTClass"/>
+          <xsd:element name="CREATE__CORR__tInnerClassToTInnerClass" type="ModiscoTGG:ClassDeclarationToTClass"/>
+          <xsd:element name="CREATE__CORR__tInnerTypeToTInnerAbstractType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eOuterClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mDefinition" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mInnerClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tInnerClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tInnerPackage" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tOuterClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tOuterPackage" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__typeGraph" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eOuterClassToTOuterClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__tInnerClassToTInnerClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__tInnerTypeToTInnerAbstractType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ClassInnerAnonClassMember__Marker" type="ModiscoTGG:ClassInnerAnonClassMember__Marker"/>
+  <xsd:complexType name="ClassInnerClassMember__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eOuterClass" type="java:ClassDeclaration"/>
+          <xsd:element name="CONTEXT__SRC__mDefinition" type="org.gravity.modisco:MAbstractMethodDefinition"/>
+          <xsd:element name="CREATE__SRC__mInnerClass" type="org.gravity.modisco:MClass"/>
+          <xsd:element name="CREATE__TRG__tInnerClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CREATE__TRG__tInnerPackage" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CONTEXT__TRG__tOuterClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__TRG__tOuterPackage" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CONTEXT__TRG__typeGraph" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CONTEXT__CORR__eOuterClassToTOuterClass" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CREATE__CORR__tInnerClassToTInnerClass" type="ModiscoTGG:ClassDeclarationToTClass"/>
+          <xsd:element name="CREATE__CORR__tInnerTypeToTInnerAbstractType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eOuterClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mDefinition" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mInnerClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tInnerClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tInnerPackage" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tOuterClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tOuterPackage" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__typeGraph" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eOuterClassToTOuterClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__tInnerClassToTInnerClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__tInnerTypeToTInnerAbstractType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ClassInnerClassMember__Marker" type="ModiscoTGG:ClassInnerClassMember__Marker"/>
+  <xsd:complexType name="ClassInstanceCreation__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__invocation" type="org.gravity.modisco:MClassInstanceCreation"/>
+          <xsd:element name="CONTEXT__SRC__mMember" type="org.gravity.modisco:MDefinition"/>
+          <xsd:element name="CONTEXT__SRC__mMethod" type="org.gravity.modisco:MAbstractMethodDefinition"/>
+          <xsd:element name="CREATE__TRG__tAccess" type="org.gravity.typegraph.basic:TCall"/>
+          <xsd:element name="CONTEXT__TRG__tMember" type="org.gravity.typegraph.basic:TMember"/>
+          <xsd:element name="CONTEXT__TRG__tMethod" type="org.gravity.typegraph.basic:TMember"/>
+          <xsd:element name="CREATE__CORR__invocationToTAccess" type="ModiscoTGG:AbstractMethodInvocationToTAccess"/>
+          <xsd:element name="CREATE__CORR__mFlowElementToTFlowElement" type="ModiscoTGG:MAbstractFlowElementToTAbstractFlowElement"/>
+          <xsd:element name="CONTEXT__CORR__mMemberToTMember" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CONTEXT__CORR__mMethodToTMethod" type="ModiscoTGG:MDefinitionToTMember"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__invocation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mMethod" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMethod" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__invocationToTAccess" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mFlowElementToTFlowElement" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mMemberToTMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mMethodToTMethod" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ClassInstanceCreation__Marker" type="ModiscoTGG:ClassInstanceCreation__Marker"/>
+  <xsd:complexType name="ConstructorDefinition__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__mDefinition" type="org.gravity.modisco:MConstructorDefinition"/>
+          <xsd:element name="CONTEXT__SRC__mSignature" type="org.gravity.modisco:MMethodSignature"/>
+          <xsd:element name="CREATE__TRG__tAnnotation" type="org.gravity.typegraph.basic:TConstructor"/>
+          <xsd:element name="CREATE__TRG__tDefinition" type="org.gravity.typegraph.basic:TMethodDefinition"/>
+          <xsd:element name="CONTEXT__TRG__tMethodSignature" type="org.gravity.typegraph.basic:TMethodSignature"/>
+          <xsd:element name="CREATE__CORR__mBodyToTAnnotation" type="ModiscoTGG:ASTNodeToTAnnotatable"/>
+          <xsd:element name="CREATE__CORR__mDefinitionToTMember" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CREATE__CORR__mFlowElementToTFlowElement" type="ModiscoTGG:MAbstractFlowElementToTAbstractFlowElement"/>
+          <xsd:element name="CONTEXT__CORR__mSignatureToTMethodSignature" type="ModiscoTGG:MSignatureToTSignature"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__mDefinition" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mSignature" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tAnnotation" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tDefinition" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMethodSignature" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mBodyToTAnnotation" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mDefinitionToTMember" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mFlowElementToTFlowElement" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mSignatureToTMethodSignature" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ConstructorDefinition__Marker" type="ModiscoTGG:ConstructorDefinition__Marker"/>
+  <xsd:complexType name="ConstructorInvocation__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__invocation" type="org.gravity.modisco:MAbstractMethodInvocation"/>
+          <xsd:element name="CONTEXT__SRC__mMember" type="org.gravity.modisco:MDefinition"/>
+          <xsd:element name="CONTEXT__SRC__mMethod" type="org.gravity.modisco:MAbstractMethodDefinition"/>
+          <xsd:element name="CREATE__TRG__tAccess" type="org.gravity.typegraph.basic:TCall"/>
+          <xsd:element name="CONTEXT__TRG__tMember" type="org.gravity.typegraph.basic:TMember"/>
+          <xsd:element name="CONTEXT__TRG__tMethod" type="org.gravity.typegraph.basic:TMember"/>
+          <xsd:element name="CREATE__CORR__invocationToTAccess" type="ModiscoTGG:AbstractMethodInvocationToTAccess"/>
+          <xsd:element name="CREATE__CORR__mFlowElementToTFlowElement" type="ModiscoTGG:MAbstractFlowElementToTAbstractFlowElement"/>
+          <xsd:element name="CONTEXT__CORR__mMemberToTMember" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CONTEXT__CORR__mMethodToTMethod" type="ModiscoTGG:MDefinitionToTMember"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__invocation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mMethod" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMethod" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__invocationToTAccess" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mFlowElementToTFlowElement" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mMemberToTMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mMethodToTMethod" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ConstructorInvocation__Marker" type="ModiscoTGG:ConstructorInvocation__Marker"/>
+  <xsd:complexType name="Enum__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mPackage" type="java:Package"/>
+          <xsd:element name="CREATE__SRC__mType" type="java:EnumDeclaration"/>
+          <xsd:element name="CONTEXT__TRG__pg" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CREATE__TRG__tAnnotation" type="org.gravity.typegraph.basic:TEnum"/>
+          <xsd:element name="CONTEXT__TRG__tPackage" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CREATE__TRG__tType" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CREATE__CORR__mBodyToTAnnotation" type="ModiscoTGG:ASTNodeToTAnnotatable"/>
+          <xsd:element name="CONTEXT__CORR__mPackageToTPackage" type="ModiscoTGG:PackageToTPackage"/>
+          <xsd:element name="CREATE__CORR__mTypeToTType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mPackage" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__pg" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tAnnotation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tPackage" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mBodyToTAnnotation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mPackageToTPackage" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Enum__Marker" type="ModiscoTGG:Enum__Marker"/>
+  <xsd:complexType name="EnumInAnonymous__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eAnonymousClassDeclaration" type="java:AnonymousClassDeclaration"/>
+          <xsd:element name="CREATE__SRC__mNestedType" type="java:EnumDeclaration"/>
+          <xsd:element name="CONTEXT__TRG__pg" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CREATE__TRG__tAnnotation" type="org.gravity.typegraph.basic:TEnum"/>
+          <xsd:element name="CONTEXT__TRG__tClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CREATE__TRG__tNestedType" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__CORR__eAnonymousClassDeclarationToTClass" type="ModiscoTGG:AnonymousClassDeclarationToTClass"/>
+          <xsd:element name="CREATE__CORR__mNestedTypeToTNestedType" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CREATE__CORR__mbodyToTAnnotatable" type="ModiscoTGG:ASTNodeToTAnnotatable"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eAnonymousClassDeclaration" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mNestedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__pg" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tAnnotation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tNestedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eAnonymousClassDeclarationToTClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mNestedTypeToTNestedType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mbodyToTAnnotatable" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="EnumInAnonymous__Marker" type="ModiscoTGG:EnumInAnonymous__Marker"/>
+  <xsd:complexType name="FieldAccessRead__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__mAccess" type="org.gravity.modisco:MSingleVariableAccess"/>
+          <xsd:element name="CONTEXT__SRC__mField" type="org.gravity.modisco:MFieldDefinition"/>
+          <xsd:element name="CONTEXT__SRC__mMember" type="org.gravity.modisco:MDefinition"/>
+          <xsd:element name="CONTEXT__SRC__mType" type="java:AbstractTypeDeclaration"/>
+          <xsd:element name="CONTEXT__SRC__varDeclFrag" type="java:VariableDeclarationFragment"/>
+          <xsd:element name="CREATE__TRG__tAccess" type="org.gravity.typegraph.basic:TRead"/>
+          <xsd:element name="CONTEXT__TRG__tField" type="org.gravity.typegraph.basic:TFieldDefinition"/>
+          <xsd:element name="CONTEXT__TRG__tMember" type="org.gravity.typegraph.basic:TMember"/>
+          <xsd:element name="CONTEXT__TRG__tType" type="org.gravity.typegraph.basic:TAbstractType"/>
+          <xsd:element name="CREATE__CORR__mAccessToTAccess" type="ModiscoTGG:MSingleVariableAccessToTAccess"/>
+          <xsd:element name="CREATE__CORR__mFlowOwnerToTFlowOwner" type="ModiscoTGG:MAbstractFlowElementToTAbstractFlowElement"/>
+          <xsd:element name="CONTEXT__CORR__mMemberToTMember" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CONTEXT__CORR__mMethodToTMethod" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CONTEXT__CORR__mTypeToTType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__mAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mField" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__varDeclFrag" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tField" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mAccessToTAccess" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mFlowOwnerToTFlowOwner" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mMemberToTMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mMethodToTMethod" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="FieldAccessRead__Marker" type="ModiscoTGG:FieldAccessRead__Marker"/>
+  <xsd:complexType name="FieldAccessReadWrite__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__mAccess" type="org.gravity.modisco:MSingleVariableAccess"/>
+          <xsd:element name="CONTEXT__SRC__mField" type="org.gravity.modisco:MFieldDefinition"/>
+          <xsd:element name="CONTEXT__SRC__mMember" type="org.gravity.modisco:MDefinition"/>
+          <xsd:element name="CONTEXT__SRC__mType" type="java:AbstractTypeDeclaration"/>
+          <xsd:element name="CONTEXT__SRC__varDeclFrag" type="java:VariableDeclarationFragment"/>
+          <xsd:element name="CREATE__TRG__tAccess" type="org.gravity.typegraph.basic:TReadWrite"/>
+          <xsd:element name="CONTEXT__TRG__tField" type="org.gravity.typegraph.basic:TFieldDefinition"/>
+          <xsd:element name="CONTEXT__TRG__tMember" type="org.gravity.typegraph.basic:TMember"/>
+          <xsd:element name="CONTEXT__TRG__tType" type="org.gravity.typegraph.basic:TAbstractType"/>
+          <xsd:element name="CREATE__CORR__mAccessToTAccess" type="ModiscoTGG:MSingleVariableAccessToTAccess"/>
+          <xsd:element name="CREATE__CORR__mFlowOwnerToTFlowOwner" type="ModiscoTGG:MAbstractFlowElementToTAbstractFlowElement"/>
+          <xsd:element name="CONTEXT__CORR__mMemberToTMember" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CONTEXT__CORR__mMethodToTMethod" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CONTEXT__CORR__mTypeToTType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__mAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mField" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__varDeclFrag" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tField" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mAccessToTAccess" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mFlowOwnerToTFlowOwner" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mMemberToTMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mMethodToTMethod" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="FieldAccessReadWrite__Marker" type="ModiscoTGG:FieldAccessReadWrite__Marker"/>
+  <xsd:complexType name="FieldAccessWrite__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__mAccess" type="org.gravity.modisco:MSingleVariableAccess"/>
+          <xsd:element name="CONTEXT__SRC__mField" type="org.gravity.modisco:MFieldDefinition"/>
+          <xsd:element name="CONTEXT__SRC__mMember" type="org.gravity.modisco:MDefinition"/>
+          <xsd:element name="CONTEXT__SRC__mType" type="java:AbstractTypeDeclaration"/>
+          <xsd:element name="CONTEXT__SRC__varDeclFrag" type="java:VariableDeclarationFragment"/>
+          <xsd:element name="CREATE__TRG__tAccess" type="org.gravity.typegraph.basic:TWrite"/>
+          <xsd:element name="CONTEXT__TRG__tField" type="org.gravity.typegraph.basic:TFieldDefinition"/>
+          <xsd:element name="CONTEXT__TRG__tMember" type="org.gravity.typegraph.basic:TMember"/>
+          <xsd:element name="CONTEXT__TRG__tType" type="org.gravity.typegraph.basic:TAbstractType"/>
+          <xsd:element name="CREATE__CORR__mAccessToTAccess" type="ModiscoTGG:MSingleVariableAccessToTAccess"/>
+          <xsd:element name="CREATE__CORR__mFlowOwnerToTFlowOwner" type="ModiscoTGG:MAbstractFlowElementToTAbstractFlowElement"/>
+          <xsd:element name="CONTEXT__CORR__mMemberToTMember" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CONTEXT__CORR__mMethodToTMethod" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CONTEXT__CORR__mTypeToTType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__mAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mField" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__varDeclFrag" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tField" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mAccessToTAccess" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mFlowOwnerToTFlowOwner" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mMemberToTMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mMethodToTMethod" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="FieldAccessWrite__Marker" type="ModiscoTGG:FieldAccessWrite__Marker"/>
+  <xsd:complexType name="FieldDefinition__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__mDefinition" type="org.gravity.modisco:MFieldDefinition"/>
+          <xsd:element name="CONTEXT__SRC__mSignature" type="org.gravity.modisco:MFieldSignature"/>
+          <xsd:element name="CREATE__TRG__tDefinition" type="org.gravity.typegraph.basic:TFieldDefinition"/>
+          <xsd:element name="CONTEXT__TRG__tFieldSignature" type="org.gravity.typegraph.basic:TFieldSignature"/>
+          <xsd:element name="CREATE__CORR__mBodyToTAnnotation" type="ModiscoTGG:ASTNodeToTAnnotatable"/>
+          <xsd:element name="CREATE__CORR__mDefinitionToTDefinition" type="ModiscoTGG:MAbstractFlowElementToTAbstractFlowElement"/>
+          <xsd:element name="CREATE__CORR__mDefinitionToTMember" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CONTEXT__CORR__mSignatureToTFieldSignature" type="ModiscoTGG:MSignatureToTSignature"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__mDefinition" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mSignature" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tDefinition" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tFieldSignature" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mBodyToTAnnotation" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mDefinitionToTDefinition" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mDefinitionToTMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mSignatureToTFieldSignature" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="FieldDefinition__Marker" type="ModiscoTGG:FieldDefinition__Marker"/>
+  <xsd:complexType name="FieldName__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__mFieldName" type="org.gravity.modisco:MFieldName"/>
+          <xsd:element name="CONTEXT__SRC__model" type="org.gravity.modisco:MGravityModel"/>
+          <xsd:element name="CREATE__TRG__tField" type="org.gravity.typegraph.basic:TField"/>
+          <xsd:element name="CONTEXT__TRG__typeGraph" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CREATE__CORR__eFieldDeclarationToTField" type="ModiscoTGG:MFieldNameToTField"/>
+          <xsd:element name="CONTEXT__CORR__modelToTypeGraph" type="ModiscoTGG:ModelToTypeGraph"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__mFieldName" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__model" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tField" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__typeGraph" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__eFieldDeclarationToTField" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__modelToTypeGraph" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="FieldName__Marker" type="ModiscoTGG:FieldName__Marker"/>
+  <xsd:complexType name="FieldSignature__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mFieldName" type="org.gravity.modisco:MFieldName"/>
+          <xsd:element name="CREATE__SRC__mSignature" type="org.gravity.modisco:MFieldSignature"/>
+          <xsd:element name="CONTEXT__TRG__tField" type="org.gravity.typegraph.basic:TField"/>
+          <xsd:element name="CREATE__TRG__tSignature" type="org.gravity.typegraph.basic:TFieldSignature"/>
+          <xsd:element name="CONTEXT__CORR__eFieldDeclarationToTField" type="ModiscoTGG:MFieldNameToTField"/>
+          <xsd:element name="CREATE__CORR__mFlowElementToTFlowElement" type="ModiscoTGG:MAbstractFlowElementToTAbstractFlowElement"/>
+          <xsd:element name="CREATE__CORR__mSignatureToTSignature" type="ModiscoTGG:MSignatureToTSignature"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mFieldName" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mSignature" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tField" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tSignature" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eFieldDeclarationToTField" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mFlowElementToTFlowElement" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mSignatureToTSignature" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="FieldSignature__Marker" type="ModiscoTGG:FieldSignature__Marker"/>
+  <xsd:complexType name="FieldType__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__ePrimitiveType" type="java:Type"/>
+          <xsd:element name="CONTEXT__SRC__mSignature" type="org.gravity.modisco:MFieldSignature"/>
+          <xsd:element name="CONTEXT__TRG__tFieldSignature" type="org.gravity.typegraph.basic:TFieldSignature"/>
+          <xsd:element name="CONTEXT__TRG__tPrimitiv" type="org.gravity.typegraph.basic:TAbstractType"/>
+          <xsd:element name="CONTEXT__CORR__ePrimitiveTypeToTPrimitiv" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CONTEXT__CORR__mSignatureToTFieldSignature" type="ModiscoTGG:MSignatureToTSignature"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__ePrimitiveType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mSignature" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tFieldSignature" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tPrimitiv" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__ePrimitiveTypeToTPrimitiv" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mSignatureToTFieldSignature" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="FieldType__Marker" type="ModiscoTGG:FieldType__Marker"/>
+  <xsd:complexType name="Flow__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__mFlow" type="org.gravity.modisco:MFlow"/>
+          <xsd:element name="CONTEXT__SRC__mOwner" type="org.gravity.modisco:MAbstractFlowElement"/>
+          <xsd:element name="CREATE__TRG__tFlow" type="org.gravity.typegraph.basic:TFlow"/>
+          <xsd:element name="CONTEXT__TRG__tOwner" type="org.gravity.typegraph.basic:TAbstractFlowElement"/>
+          <xsd:element name="CREATE__CORR__mFlowToTFlow" type="ModiscoTGG:MFlowToTFlow"/>
+          <xsd:element name="CONTEXT__CORR__mOwnerToTOwner" type="ModiscoTGG:MAbstractFlowElementToTAbstractFlowElement"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__mFlow" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mOwner" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tFlow" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tOwner" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mFlowToTFlow" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mOwnerToTOwner" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Flow__Marker" type="ModiscoTGG:Flow__Marker"/>
+  <xsd:complexType name="IncomingFlow__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mFlow" type="org.gravity.modisco:MFlow"/>
+          <xsd:element name="CONTEXT__SRC__mSource" type="org.gravity.modisco:MAbstractFlowElement"/>
+          <xsd:element name="CONTEXT__TRG__tFlow" type="org.gravity.typegraph.basic:TFlow"/>
+          <xsd:element name="CONTEXT__TRG__tSource" type="org.gravity.typegraph.basic:TAbstractFlowElement"/>
+          <xsd:element name="CONTEXT__CORR__mFlowToTFlow" type="ModiscoTGG:MFlowToTFlow"/>
+          <xsd:element name="CONTEXT__CORR__mSourceToTSource" type="ModiscoTGG:MAbstractFlowElementToTAbstractFlowElement"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mFlow" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mSource" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tFlow" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tSource" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mFlowToTFlow" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mSourceToTSource" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="IncomingFlow__Marker" type="ModiscoTGG:IncomingFlow__Marker"/>
+  <xsd:complexType name="Interface__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mPackage" type="java:Package"/>
+          <xsd:element name="CREATE__SRC__mType" type="java:InterfaceDeclaration"/>
+          <xsd:element name="CONTEXT__TRG__pg" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CONTEXT__TRG__tPackage" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CREATE__TRG__tType" type="org.gravity.typegraph.basic:TInterface"/>
+          <xsd:element name="CREATE__CORR__mBodyToTAnnotation" type="ModiscoTGG:ASTNodeToTAnnotatable"/>
+          <xsd:element name="CREATE__CORR__mInterfaceDeclarationtoTInterface" type="ModiscoTGG:InterfaceDeclarationToTInterface"/>
+          <xsd:element name="CONTEXT__CORR__mPackageToTPackage" type="ModiscoTGG:PackageToTPackage"/>
+          <xsd:element name="CREATE__CORR__mTypeToTType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mPackage" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__pg" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tPackage" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mBodyToTAnnotation" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mInterfaceDeclarationtoTInterface" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mPackageToTPackage" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Interface__Marker" type="ModiscoTGG:Interface__Marker"/>
+  <xsd:complexType name="InterfaceExtendsInterface__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eInterfaceDeclaration" type="java:InterfaceDeclaration"/>
+          <xsd:element name="CONTEXT__SRC__eSuperInterface" type="java:InterfaceDeclaration"/>
+          <xsd:element name="CREATE__SRC__eTypeAccess" type="java:TypeAccess"/>
+          <xsd:element name="CONTEXT__TRG__tInterface" type="org.gravity.typegraph.basic:TInterface"/>
+          <xsd:element name="CONTEXT__TRG__tSuperInterface" type="org.gravity.typegraph.basic:TInterface"/>
+          <xsd:element name="CONTEXT__CORR__eInterfaceDeclarationToTInterface" type="ModiscoTGG:InterfaceDeclarationToTInterface"/>
+          <xsd:element name="CONTEXT__CORR__eSuperInterfaceToTSuperInterface" type="ModiscoTGG:InterfaceDeclarationToTInterface"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eInterfaceDeclaration" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__eSuperInterface" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__eTypeAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tInterface" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tSuperInterface" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eInterfaceDeclarationToTInterface" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eSuperInterfaceToTSuperInterface" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="InterfaceExtendsInterface__Marker" type="ModiscoTGG:InterfaceExtendsInterface__Marker"/>
+  <xsd:complexType name="InterfaceInAnonymous__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eAnonymousClassDeclaration" type="java:AnonymousClassDeclaration"/>
+          <xsd:element name="CREATE__SRC__mNestedType" type="java:InterfaceDeclaration"/>
+          <xsd:element name="CONTEXT__TRG__pg" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CONTEXT__TRG__tClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CREATE__TRG__tNestedType" type="org.gravity.typegraph.basic:TInterface"/>
+          <xsd:element name="CONTEXT__CORR__eAnonymousClassDeclarationToTClass" type="ModiscoTGG:AnonymousClassDeclarationToTClass"/>
+          <xsd:element name="CREATE__CORR__mInterfaceDeclarationtoTInterface" type="ModiscoTGG:InterfaceDeclarationToTInterface"/>
+          <xsd:element name="CREATE__CORR__mNestedTypeToTNestedType" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CREATE__CORR__mbodyToTAnnotatable" type="ModiscoTGG:ASTNodeToTAnnotatable"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eAnonymousClassDeclaration" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mNestedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__pg" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tNestedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eAnonymousClassDeclarationToTClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mInterfaceDeclarationtoTInterface" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mNestedTypeToTNestedType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mbodyToTAnnotatable" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="InterfaceInAnonymous__Marker" type="ModiscoTGG:InterfaceInAnonymous__Marker"/>
+  <xsd:complexType name="InterfaceMember__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mDefinition" type="org.gravity.modisco:MDefinition"/>
+          <xsd:element name="CONTEXT__SRC__mInterface" type="java:InterfaceDeclaration"/>
+          <xsd:element name="CREATE__SRC__mModifier" type="java:Modifier"/>
+          <xsd:element name="CONTEXT__TRG__tInterface" type="org.gravity.typegraph.basic:TInterface"/>
+          <xsd:element name="CONTEXT__TRG__tMember" type="org.gravity.typegraph.basic:TMember"/>
+          <xsd:element name="CREATE__TRG__tModifier" type="org.gravity.typegraph.basic:TModifier"/>
+          <xsd:element name="CONTEXT__CORR__defToMember" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CREATE__CORR__mModifierToTModifier" type="ModiscoTGG:MModifierToTModifier"/>
+          <xsd:element name="CONTEXT__CORR__mTypeToTType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mDefinition" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mInterface" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mModifier" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tInterface" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMember" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tModifier" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__defToMember" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mModifierToTModifier" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="InterfaceMember__Marker" type="ModiscoTGG:InterfaceMember__Marker"/>
+  <xsd:complexType name="LinkDefinitionToAnonymous__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mDefinition" type="org.gravity.modisco:MDefinition"/>
+          <xsd:element name="CONTEXT__SRC__mSignature" type="org.gravity.modisco:MSignature"/>
+          <xsd:element name="CONTEXT__SRC__mType" type="org.gravity.modisco:MAnonymous"/>
+          <xsd:element name="CONTEXT__TRG__tDefinition" type="org.gravity.typegraph.basic:TMember"/>
+          <xsd:element name="CONTEXT__TRG__tSignature" type="org.gravity.typegraph.basic:TSignature"/>
+          <xsd:element name="CONTEXT__TRG__tType" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__CORR__mDefinitionToTMember" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CONTEXT__CORR__mSignatureToTSignature" type="ModiscoTGG:MSignatureToTSignature"/>
+          <xsd:element name="CONTEXT__CORR__mTypeToTType" type="ModiscoTGG:AnonymousClassDeclarationToTClass"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mDefinition" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mSignature" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tDefinition" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tSignature" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mDefinitionToTMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mSignatureToTSignature" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="LinkDefinitionToAnonymous__Marker" type="ModiscoTGG:LinkDefinitionToAnonymous__Marker"/>
+  <xsd:complexType name="LinkDefinitionToType__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mDefinition" type="org.gravity.modisco:MDefinition"/>
+          <xsd:element name="CONTEXT__SRC__mSignature" type="org.gravity.modisco:MSignature"/>
+          <xsd:element name="CONTEXT__SRC__mType" type="java:AbstractTypeDeclaration"/>
+          <xsd:element name="CONTEXT__TRG__tDefinition" type="org.gravity.typegraph.basic:TMember"/>
+          <xsd:element name="CONTEXT__TRG__tSignature" type="org.gravity.typegraph.basic:TSignature"/>
+          <xsd:element name="CONTEXT__TRG__tType" type="org.gravity.typegraph.basic:TAbstractType"/>
+          <xsd:element name="CONTEXT__CORR__mDefinitionToTMember" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CONTEXT__CORR__mSignatureToTSignature" type="ModiscoTGG:MSignatureToTSignature"/>
+          <xsd:element name="CONTEXT__CORR__mTypeToTType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mDefinition" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mSignature" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tDefinition" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tSignature" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mDefinitionToTMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mSignatureToTSignature" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="LinkDefinitionToType__Marker" type="ModiscoTGG:LinkDefinitionToType__Marker"/>
+  <xsd:complexType name="MemberInAnnotationVisibility__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__Annotation" type="java:AnnotationTypeDeclaration"/>
+          <xsd:element name="CONTEXT__SRC__mDefinition" type="org.gravity.modisco:MDefinition"/>
+          <xsd:element name="CREATE__SRC__mModifier" type="java:Modifier"/>
+          <xsd:element name="CONTEXT__TRG__tAnnotation" type="annotations:TAnnotationType"/>
+          <xsd:element name="CONTEXT__TRG__tMember" type="org.gravity.typegraph.basic:TMember"/>
+          <xsd:element name="CREATE__TRG__tModifier" type="org.gravity.typegraph.basic:TModifier"/>
+          <xsd:element name="CONTEXT__CORR__defToMember" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CREATE__CORR__mModifierToTModifier" type="ModiscoTGG:MModifierToTModifier"/>
+          <xsd:element name="CONTEXT__CORR__mTypeToTType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__Annotation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mDefinition" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mModifier" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tAnnotation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMember" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tModifier" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__defToMember" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mModifierToTModifier" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="MemberInAnnotationVisibility__Marker" type="ModiscoTGG:MemberInAnnotationVisibility__Marker"/>
+  <xsd:complexType name="MemberInClassVisibility__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mClass" type="java:ClassDeclaration"/>
+          <xsd:element name="CONTEXT__SRC__mDefinition" type="org.gravity.modisco:MDefinition"/>
+          <xsd:element name="CREATE__SRC__mModifier" type="java:Modifier"/>
+          <xsd:element name="CONTEXT__TRG__tClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__TRG__tMember" type="org.gravity.typegraph.basic:TMember"/>
+          <xsd:element name="CREATE__TRG__tModifier" type="org.gravity.typegraph.basic:TModifier"/>
+          <xsd:element name="CONTEXT__CORR__defToMember" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CREATE__CORR__mModifierToTModifier" type="ModiscoTGG:MModifierToTModifier"/>
+          <xsd:element name="CONTEXT__CORR__mTypeToTType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mDefinition" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mModifier" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMember" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tModifier" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__defToMember" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mModifierToTModifier" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="MemberInClassVisibility__Marker" type="ModiscoTGG:MemberInClassVisibility__Marker"/>
+  <xsd:complexType name="MemberInEnumVisibility__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mClass" type="java:EnumDeclaration"/>
+          <xsd:element name="CONTEXT__SRC__mDefinition" type="org.gravity.modisco:MDefinition"/>
+          <xsd:element name="CREATE__SRC__mModifier" type="java:Modifier"/>
+          <xsd:element name="CONTEXT__TRG__tClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__TRG__tMember" type="org.gravity.typegraph.basic:TMember"/>
+          <xsd:element name="CREATE__TRG__tModifier" type="org.gravity.typegraph.basic:TModifier"/>
+          <xsd:element name="CONTEXT__CORR__defToMember" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CREATE__CORR__mModifierToTModifier" type="ModiscoTGG:MModifierToTModifier"/>
+          <xsd:element name="CONTEXT__CORR__mTypeToTType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mDefinition" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mModifier" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMember" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tModifier" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__defToMember" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mModifierToTModifier" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="MemberInEnumVisibility__Marker" type="ModiscoTGG:MemberInEnumVisibility__Marker"/>
+  <xsd:complexType name="MethodDefinition__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__mDefinition" type="org.gravity.modisco:MMethodDefinition"/>
+          <xsd:element name="CONTEXT__SRC__mSignature" type="org.gravity.modisco:MMethodSignature"/>
+          <xsd:element name="CREATE__TRG__tDefinition" type="org.gravity.typegraph.basic:TMethodDefinition"/>
+          <xsd:element name="CONTEXT__TRG__tMethodSignature" type="org.gravity.typegraph.basic:TMethodSignature"/>
+          <xsd:element name="CREATE__CORR__mBodyToTAnnotation" type="ModiscoTGG:ASTNodeToTAnnotatable"/>
+          <xsd:element name="CREATE__CORR__mDefinitionToTMember" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CREATE__CORR__mFlowElementToTFlowElement" type="ModiscoTGG:MAbstractFlowElementToTAbstractFlowElement"/>
+          <xsd:element name="CONTEXT__CORR__mSignatureToTMethodSignature" type="ModiscoTGG:MSignatureToTSignature"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__mDefinition" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mSignature" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tDefinition" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMethodSignature" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mBodyToTAnnotation" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mDefinitionToTMember" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mFlowElementToTFlowElement" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mSignatureToTMethodSignature" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="MethodDefinition__Marker" type="ModiscoTGG:MethodDefinition__Marker"/>
+  <xsd:complexType name="MethodInvocation__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__invocation" type="org.gravity.modisco:MMethodInvocation"/>
+          <xsd:element name="CONTEXT__SRC__mMember" type="org.gravity.modisco:MDefinition"/>
+          <xsd:element name="CONTEXT__SRC__mMethod" type="org.gravity.modisco:MAbstractMethodDefinition"/>
+          <xsd:element name="CREATE__TRG__tAccess" type="org.gravity.typegraph.basic:TCall"/>
+          <xsd:element name="CONTEXT__TRG__tMember" type="org.gravity.typegraph.basic:TMember"/>
+          <xsd:element name="CONTEXT__TRG__tMethod" type="org.gravity.typegraph.basic:TMember"/>
+          <xsd:element name="CREATE__CORR__invocationToTAccess" type="ModiscoTGG:AbstractMethodInvocationToTAccess"/>
+          <xsd:element name="CREATE__CORR__mFlowElementToTFlowElement" type="ModiscoTGG:MAbstractFlowElementToTAbstractFlowElement"/>
+          <xsd:element name="CONTEXT__CORR__mMemberToTMember" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CONTEXT__CORR__mMethodToTMethod" type="ModiscoTGG:MDefinitionToTMember"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__invocation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mMethod" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMethod" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__invocationToTAccess" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mFlowElementToTFlowElement" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mMemberToTMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mMethodToTMethod" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="MethodInvocation__Marker" type="ModiscoTGG:MethodInvocation__Marker"/>
+  <xsd:complexType name="MethodInvocationRecursive__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__invocation" type="org.gravity.modisco:MMethodInvocation"/>
+          <xsd:element name="CONTEXT__SRC__mMember" type="org.gravity.modisco:MMethodDefinition"/>
+          <xsd:element name="CREATE__TRG__tAccess" type="org.gravity.typegraph.basic:TCall"/>
+          <xsd:element name="CONTEXT__TRG__tMember" type="org.gravity.typegraph.basic:TMethodDefinition"/>
+          <xsd:element name="CREATE__CORR__invocationToTAccess" type="ModiscoTGG:AbstractMethodInvocationToTAccess"/>
+          <xsd:element name="CREATE__CORR__mFlowElementToTFlowElement" type="ModiscoTGG:MAbstractFlowElementToTAbstractFlowElement"/>
+          <xsd:element name="CONTEXT__CORR__mMemberToTMember" type="ModiscoTGG:MDefinitionToTMember"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__invocation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mMember" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMember" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__invocationToTAccess" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mFlowElementToTFlowElement" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mMemberToTMember" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="MethodInvocationRecursive__Marker" type="ModiscoTGG:MethodInvocationRecursive__Marker"/>
+  <xsd:complexType name="MethodInvocationStaticType__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__invocation" type="org.gravity.modisco:MMethodInvocation"/>
+          <xsd:element name="CONTEXT__SRC__mStaticType" type="java:Type"/>
+          <xsd:element name="CONTEXT__TRG__tAccess" type="org.gravity.typegraph.basic:TCall"/>
+          <xsd:element name="CONTEXT__TRG__tStaticType" type="org.gravity.typegraph.basic:TAbstractType"/>
+          <xsd:element name="CONTEXT__CORR__invocationToTAccess" type="ModiscoTGG:AbstractMethodInvocationToTAccess"/>
+          <xsd:element name="CONTEXT__CORR__mStaticTypeTotStaticType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__invocation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mStaticType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tStaticType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__invocationToTAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mStaticTypeTotStaticType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="MethodInvocationStaticType__Marker" type="ModiscoTGG:MethodInvocationStaticType__Marker"/>
+  <xsd:complexType name="MethodName__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mModel" type="org.gravity.modisco:MGravityModel"/>
+          <xsd:element name="CREATE__SRC__mName" type="org.gravity.modisco:MMethodName"/>
+          <xsd:element name="CONTEXT__TRG__pg" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CREATE__TRG__tName" type="org.gravity.typegraph.basic:TMethod"/>
+          <xsd:element name="CREATE__CORR__mNameToTName" type="ModiscoTGG:MMethodNameToTMethod"/>
+          <xsd:element name="CONTEXT__CORR__modelToPg" type="ModiscoTGG:ModelToTypeGraph"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mModel" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mName" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__pg" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tName" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mNameToTName" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__modelToPg" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="MethodName__Marker" type="ModiscoTGG:MethodName__Marker"/>
+  <xsd:complexType name="MethodOverriding__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mMethod" type="org.gravity.modisco:MMethodDefinition"/>
+          <xsd:element name="CONTEXT__SRC__mOverriding" type="org.gravity.modisco:MMethodDefinition"/>
+          <xsd:element name="CONTEXT__TRG__tMethod" type="org.gravity.typegraph.basic:TMethodDefinition"/>
+          <xsd:element name="CONTEXT__TRG__tOverriding" type="org.gravity.typegraph.basic:TMethodDefinition"/>
+          <xsd:element name="CONTEXT__CORR__mMethodToTMethod" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CONTEXT__CORR__mOverridingToTOverriding" type="ModiscoTGG:MDefinitionToTMember"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mMethod" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mOverriding" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMethod" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tOverriding" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mMethodToTMethod" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mOverridingToTOverriding" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="MethodOverriding__Marker" type="ModiscoTGG:MethodOverriding__Marker"/>
+  <xsd:complexType name="MethodParameter__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__mEntry" type="org.gravity.modisco:MEntry"/>
+          <xsd:element name="CONTEXT__SRC__mSignature" type="org.gravity.modisco:MMethodSignature"/>
+          <xsd:element name="CREATE__TRG__tParameter" type="org.gravity.typegraph.basic:TParameter"/>
+          <xsd:element name="CONTEXT__TRG__tSiganture" type="org.gravity.typegraph.basic:TMethodSignature"/>
+          <xsd:element name="CREATE__CORR__mEntryToTParameter" type="ModiscoTGG:MEntryToTParameter"/>
+          <xsd:element name="CREATE__CORR__mFlowElementToTFlowElement" type="ModiscoTGG:MAbstractFlowElementToTAbstractFlowElement"/>
+          <xsd:element name="CONTEXT__CORR__mSignatureToTSignature" type="ModiscoTGG:MSignatureToTSignature"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__mEntry" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mSignature" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tParameter" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tSiganture" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mEntryToTParameter" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mFlowElementToTFlowElement" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mSignatureToTSignature" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="MethodParameter__Marker" type="ModiscoTGG:MethodParameter__Marker"/>
+  <xsd:complexType name="MethodParameterLink__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mEntry" type="org.gravity.modisco:MEntry"/>
+          <xsd:element name="CONTEXT__SRC__mPrevEntry" type="org.gravity.modisco:MEntry"/>
+          <xsd:element name="CONTEXT__TRG__tParameter" type="org.gravity.typegraph.basic:TParameter"/>
+          <xsd:element name="CONTEXT__TRG__tPrevParameter" type="org.gravity.typegraph.basic:TParameter"/>
+          <xsd:element name="CONTEXT__CORR__eSingleVariableDeclarationToTParameter" type="ModiscoTGG:MEntryToTParameter"/>
+          <xsd:element name="CONTEXT__CORR__mmethodSignatureToTMethodSignature" type="ModiscoTGG:MEntryToTParameter"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mEntry" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mPrevEntry" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tParameter" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tPrevParameter" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eSingleVariableDeclarationToTParameter" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mmethodSignatureToTMethodSignature" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="MethodParameterLink__Marker" type="ModiscoTGG:MethodParameterLink__Marker"/>
+  <xsd:complexType name="MethodParameterLinkFirst__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mEntry" type="org.gravity.modisco:MEntry"/>
+          <xsd:element name="CONTEXT__SRC__mParameterList" type="org.gravity.modisco:MMethodSignature"/>
+          <xsd:element name="CONTEXT__TRG__tMethodSignature" type="org.gravity.typegraph.basic:TMethodSignature"/>
+          <xsd:element name="CONTEXT__TRG__tParameter" type="org.gravity.typegraph.basic:TParameter"/>
+          <xsd:element name="CONTEXT__CORR__eSingleVariableDeclarationToTParameter" type="ModiscoTGG:MEntryToTParameter"/>
+          <xsd:element name="CONTEXT__CORR__mmethodSignatureToTMethodSignature" type="ModiscoTGG:MSignatureToTSignature"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mEntry" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mParameterList" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMethodSignature" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tParameter" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eSingleVariableDeclarationToTParameter" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mmethodSignatureToTMethodSignature" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="MethodParameterLinkFirst__Marker" type="ModiscoTGG:MethodParameterLinkFirst__Marker"/>
+  <xsd:complexType name="MethodParameterType__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__mEntry" type="org.gravity.modisco:MEntry"/>
+          <xsd:element name="CONTEXT__SRC__mSignature" type="org.gravity.modisco:MMethodSignature"/>
+          <xsd:element name="CONTEXT__SRC__mType" type="java:Type"/>
+          <xsd:element name="CONTEXT__TRG__tAbstractType" type="org.gravity.typegraph.basic:TAbstractType"/>
+          <xsd:element name="CREATE__TRG__tParameter" type="org.gravity.typegraph.basic:TParameter"/>
+          <xsd:element name="CONTEXT__TRG__tSiganture" type="org.gravity.typegraph.basic:TMethodSignature"/>
+          <xsd:element name="CREATE__CORR__mEntryToTParameter" type="ModiscoTGG:MEntryToTParameter"/>
+          <xsd:element name="CREATE__CORR__mFlowElementToTFlowElement" type="ModiscoTGG:MAbstractFlowElementToTAbstractFlowElement"/>
+          <xsd:element name="CONTEXT__CORR__mSignatureToTSignature" type="ModiscoTGG:MSignatureToTSignature"/>
+          <xsd:element name="CONTEXT__CORR__mTypeToTAbstractType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__mEntry" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mSignature" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tAbstractType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tParameter" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tSiganture" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mEntryToTParameter" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mFlowElementToTFlowElement" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mSignatureToTSignature" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mTypeToTAbstractType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="MethodParameterType__Marker" type="ModiscoTGG:MethodParameterType__Marker"/>
+  <xsd:complexType name="MethodSignature__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mName" type="org.gravity.modisco:MMethodName"/>
+          <xsd:element name="CREATE__SRC__mSignature" type="org.gravity.modisco:MMethodSignature"/>
+          <xsd:element name="CONTEXT__TRG__tName" type="org.gravity.typegraph.basic:TMethod"/>
+          <xsd:element name="CREATE__TRG__tSignature" type="org.gravity.typegraph.basic:TMethodSignature"/>
+          <xsd:element name="CREATE__CORR__mFlowElementToTFlowElement" type="ModiscoTGG:MAbstractFlowElementToTAbstractFlowElement"/>
+          <xsd:element name="CONTEXT__CORR__mNameToTName" type="ModiscoTGG:MMethodNameToTMethod"/>
+          <xsd:element name="CREATE__CORR__mSignatureToTSignature" type="ModiscoTGG:MSignatureToTSignature"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mName" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mSignature" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tName" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tSignature" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mFlowElementToTFlowElement" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mNameToTName" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mSignatureToTSignature" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="MethodSignature__Marker" type="ModiscoTGG:MethodSignature__Marker"/>
+  <xsd:complexType name="ModelToPg__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__mModel" type="org.gravity.modisco:MGravityModel"/>
+          <xsd:element name="CREATE__TRG__tPG" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CREATE__CORR__mModelToTPG" type="ModiscoTGG:ModelToTypeGraph"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__mModel" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tPG" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mModelToTPG" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ModelToPg__Marker" type="ModiscoTGG:ModelToPg__Marker"/>
+  <xsd:complexType name="NestedClassInType__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__eNestedType" type="org.gravity.modisco:MClass"/>
+          <xsd:element name="CONTEXT__SRC__eOuterType" type="java:AbstractTypeDeclaration"/>
+          <xsd:element name="CREATE__TRG__tNestedPackage" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CREATE__TRG__tNestedType" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__TRG__tOuterPackage" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CONTEXT__TRG__tOuterType" type="org.gravity.typegraph.basic:TAbstractType"/>
+          <xsd:element name="CONTEXT__TRG__typeGraph" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CREATE__CORR__eNestedTypeToTNestedType" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CONTEXT__CORR__eOuterTypeToTOuterInterface" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CREATE__CORR__mBodyToTAnnotation" type="ModiscoTGG:ASTNodeToTAnnotatable"/>
+          <xsd:element name="CREATE__CORR__mNestedClassDeclarationToTNestedClass" type="ModiscoTGG:ClassDeclarationToTClass"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__eNestedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__eOuterType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tNestedPackage" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tNestedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tOuterPackage" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tOuterType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__typeGraph" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__eNestedTypeToTNestedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eOuterTypeToTOuterInterface" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mBodyToTAnnotation" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mNestedClassDeclarationToTNestedClass" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="NestedClassInType__Marker" type="ModiscoTGG:NestedClassInType__Marker"/>
+  <xsd:complexType name="NestedEnum__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__eNestedType" type="java:EnumDeclaration"/>
+          <xsd:element name="CONTEXT__SRC__eOuterType" type="java:AbstractTypeDeclaration"/>
+          <xsd:element name="CREATE__TRG__tAnnotation" type="org.gravity.typegraph.basic:TEnum"/>
+          <xsd:element name="CREATE__TRG__tNestedPackage" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CREATE__TRG__tNestedType" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__TRG__tOuterPackage" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CONTEXT__TRG__tOuterType" type="org.gravity.typegraph.basic:TAbstractType"/>
+          <xsd:element name="CONTEXT__TRG__typeGraph" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CREATE__CORR__eNestedTypeToTNestedType" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CONTEXT__CORR__eOuterTypeToTOuterInterface" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CREATE__CORR__mBodyToTAnnotation" type="ModiscoTGG:ASTNodeToTAnnotatable"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__eNestedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__eOuterType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tAnnotation" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tNestedPackage" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tNestedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tOuterPackage" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tOuterType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__typeGraph" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__eNestedTypeToTNestedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eOuterTypeToTOuterInterface" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mBodyToTAnnotation" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="NestedEnum__Marker" type="ModiscoTGG:NestedEnum__Marker"/>
+  <xsd:complexType name="NestedInterfaceInType__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__eNestedType" type="java:InterfaceDeclaration"/>
+          <xsd:element name="CONTEXT__SRC__eOuterType" type="java:AbstractTypeDeclaration"/>
+          <xsd:element name="CREATE__TRG__tNestedPackage" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CREATE__TRG__tNestedType" type="org.gravity.typegraph.basic:TInterface"/>
+          <xsd:element name="CONTEXT__TRG__tOuterPackage" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CONTEXT__TRG__tOuterType" type="org.gravity.typegraph.basic:TAbstractType"/>
+          <xsd:element name="CONTEXT__TRG__typeGraph" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CREATE__CORR__eNestedTypeToTNestedType" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CONTEXT__CORR__eOuterTypeToTOuterInterface" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CREATE__CORR__mBodyToTAnnotation" type="ModiscoTGG:ASTNodeToTAnnotatable"/>
+          <xsd:element name="CREATE__CORR__mInterfaceDeclarationtoTInterface" type="ModiscoTGG:InterfaceDeclarationToTInterface"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__eNestedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__eOuterType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tNestedPackage" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tNestedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tOuterPackage" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tOuterType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__typeGraph" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__eNestedTypeToTNestedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eOuterTypeToTOuterInterface" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mBodyToTAnnotation" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mInterfaceDeclarationtoTInterface" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="NestedInterfaceInType__Marker" type="ModiscoTGG:NestedInterfaceInType__Marker"/>
+  <xsd:complexType name="OutgoingFlow__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mFlow" type="org.gravity.modisco:MFlow"/>
+          <xsd:element name="CONTEXT__SRC__mTarget" type="org.gravity.modisco:MAbstractFlowElement"/>
+          <xsd:element name="CONTEXT__TRG__tFlow" type="org.gravity.typegraph.basic:TFlow"/>
+          <xsd:element name="CONTEXT__TRG__tTarget" type="org.gravity.typegraph.basic:TAbstractFlowElement"/>
+          <xsd:element name="CONTEXT__CORR__mFlowToTFlow" type="ModiscoTGG:MFlowToTFlow"/>
+          <xsd:element name="CONTEXT__CORR__mTargetToTTarget" type="ModiscoTGG:MAbstractFlowElementToTAbstractFlowElement"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mFlow" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mTarget" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tFlow" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tTarget" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mFlowToTFlow" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mTargetToTTarget" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="OutgoingFlow__Marker" type="ModiscoTGG:OutgoingFlow__Marker"/>
+  <xsd:complexType name="PackageToPGPackage__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mModel" type="java:Model"/>
+          <xsd:element name="CREATE__SRC__mPackage" type="java:Package"/>
+          <xsd:element name="CREATE__TRG__tPackage" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CONTEXT__TRG__typeGraph" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CONTEXT__CORR__mModelToTypeGraph" type="ModiscoTGG:ModelToTypeGraph"/>
+          <xsd:element name="CREATE__CORR__mPackageToTPackage" type="ModiscoTGG:PackageToTPackage"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mModel" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mPackage" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tPackage" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__typeGraph" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mModelToTypeGraph" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mPackageToTPackage" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="PackageToPGPackage__Marker" type="ModiscoTGG:PackageToPGPackage__Marker"/>
+  <xsd:complexType name="ParameterizedTypeToClass__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eModel" type="java:Model"/>
+          <xsd:element name="CREATE__SRC__eParameterizedType" type="java:ParameterizedType"/>
+          <xsd:element name="CONTEXT__SRC__eType" type="java:Type"/>
+          <xsd:element name="CREATE__SRC__eTypeAccess" type="java:TypeAccess"/>
+          <xsd:element name="CONTEXT__TRG__pg" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CONTEXT__TRG__tAbstractType" type="org.gravity.typegraph.basic:TAbstractType"/>
+          <xsd:element name="CONTEXT__CORR__eModelToPg" type="ModiscoTGG:ModelToTypeGraph"/>
+          <xsd:element name="CREATE__CORR__eParameterizedTypeToTAbstractType" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CONTEXT__CORR__eTypeToTAbstractType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eModel" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__eParameterizedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__eType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__eTypeAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__pg" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tAbstractType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eModelToPg" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__eParameterizedTypeToTAbstractType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eTypeToTAbstractType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ParameterizedTypeToClass__Marker" type="ModiscoTGG:ParameterizedTypeToClass__Marker"/>
+  <xsd:complexType name="PrimitiveTypeIsBoolean__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eModel" type="java:Model"/>
+          <xsd:element name="CREATE__SRC__ePrimitiveType" type="java:PrimitiveTypeBoolean"/>
+          <xsd:element name="CREATE__TRG__tPrimitiveClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__TRG__typeGraph" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CONTEXT__CORR__eModelToTypeGraph" type="ModiscoTGG:ModelToTypeGraph"/>
+          <xsd:element name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass" type="ModiscoTGG:PrimitiveTypeToTClass"/>
+          <xsd:element name="CREATE__CORR__typeToTAbstractType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eModel" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__ePrimitiveType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tPrimitiveClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__typeGraph" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eModelToTypeGraph" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__typeToTAbstractType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="PrimitiveTypeIsBoolean__Marker" type="ModiscoTGG:PrimitiveTypeIsBoolean__Marker"/>
+  <xsd:complexType name="PrimitiveTypeIsByte__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eModel" type="java:Model"/>
+          <xsd:element name="CREATE__SRC__ePrimitiveType" type="java:PrimitiveTypeByte"/>
+          <xsd:element name="CREATE__TRG__tPrimitiveClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__TRG__typeGraph" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CONTEXT__CORR__eModelToTypeGraph" type="ModiscoTGG:ModelToTypeGraph"/>
+          <xsd:element name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass" type="ModiscoTGG:PrimitiveTypeToTClass"/>
+          <xsd:element name="CREATE__CORR__typeToTAbstractType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eModel" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__ePrimitiveType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tPrimitiveClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__typeGraph" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eModelToTypeGraph" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__typeToTAbstractType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="PrimitiveTypeIsByte__Marker" type="ModiscoTGG:PrimitiveTypeIsByte__Marker"/>
+  <xsd:complexType name="PrimitiveTypeIsChar__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eModel" type="java:Model"/>
+          <xsd:element name="CREATE__SRC__ePrimitiveType" type="java:PrimitiveTypeChar"/>
+          <xsd:element name="CREATE__TRG__tPrimitiveClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__TRG__typeGraph" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CONTEXT__CORR__eModelToTypeGraph" type="ModiscoTGG:ModelToTypeGraph"/>
+          <xsd:element name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass" type="ModiscoTGG:PrimitiveTypeToTClass"/>
+          <xsd:element name="CREATE__CORR__typeToTAbstractType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eModel" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__ePrimitiveType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tPrimitiveClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__typeGraph" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eModelToTypeGraph" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__typeToTAbstractType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="PrimitiveTypeIsChar__Marker" type="ModiscoTGG:PrimitiveTypeIsChar__Marker"/>
+  <xsd:complexType name="PrimitiveTypeIsDouble__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eModel" type="java:Model"/>
+          <xsd:element name="CREATE__SRC__ePrimitiveType" type="java:PrimitiveTypeDouble"/>
+          <xsd:element name="CREATE__TRG__tPrimitiveClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__TRG__typeGraph" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CONTEXT__CORR__eModelToTypeGraph" type="ModiscoTGG:ModelToTypeGraph"/>
+          <xsd:element name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass" type="ModiscoTGG:PrimitiveTypeToTClass"/>
+          <xsd:element name="CREATE__CORR__typeToTAbstractType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eModel" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__ePrimitiveType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tPrimitiveClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__typeGraph" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eModelToTypeGraph" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__typeToTAbstractType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="PrimitiveTypeIsDouble__Marker" type="ModiscoTGG:PrimitiveTypeIsDouble__Marker"/>
+  <xsd:complexType name="PrimitiveTypeIsFloat__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eModel" type="java:Model"/>
+          <xsd:element name="CREATE__SRC__ePrimitiveType" type="java:PrimitiveTypeFloat"/>
+          <xsd:element name="CREATE__TRG__tPrimitiveClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__TRG__typeGraph" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CONTEXT__CORR__eModelToTypeGraph" type="ModiscoTGG:ModelToTypeGraph"/>
+          <xsd:element name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass" type="ModiscoTGG:PrimitiveTypeToTClass"/>
+          <xsd:element name="CREATE__CORR__typeToTAbstractType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eModel" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__ePrimitiveType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tPrimitiveClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__typeGraph" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eModelToTypeGraph" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__typeToTAbstractType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="PrimitiveTypeIsFloat__Marker" type="ModiscoTGG:PrimitiveTypeIsFloat__Marker"/>
+  <xsd:complexType name="PrimitiveTypeIsInt__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eModel" type="java:Model"/>
+          <xsd:element name="CREATE__SRC__ePrimitiveType" type="java:PrimitiveTypeInt"/>
+          <xsd:element name="CREATE__TRG__tPrimitiveClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__TRG__typeGraph" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CONTEXT__CORR__eModelToTypeGraph" type="ModiscoTGG:ModelToTypeGraph"/>
+          <xsd:element name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass" type="ModiscoTGG:PrimitiveTypeToTClass"/>
+          <xsd:element name="CREATE__CORR__typeToTAbstractType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eModel" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__ePrimitiveType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tPrimitiveClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__typeGraph" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eModelToTypeGraph" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__typeToTAbstractType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="PrimitiveTypeIsInt__Marker" type="ModiscoTGG:PrimitiveTypeIsInt__Marker"/>
+  <xsd:complexType name="PrimitiveTypeIsLong__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eModel" type="java:Model"/>
+          <xsd:element name="CREATE__SRC__ePrimitiveType" type="java:PrimitiveTypeLong"/>
+          <xsd:element name="CREATE__TRG__tPrimitiveClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__TRG__typeGraph" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CONTEXT__CORR__eModelToTypeGraph" type="ModiscoTGG:ModelToTypeGraph"/>
+          <xsd:element name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass" type="ModiscoTGG:PrimitiveTypeToTClass"/>
+          <xsd:element name="CREATE__CORR__typeToTAbstractType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eModel" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__ePrimitiveType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tPrimitiveClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__typeGraph" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eModelToTypeGraph" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__typeToTAbstractType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="PrimitiveTypeIsLong__Marker" type="ModiscoTGG:PrimitiveTypeIsLong__Marker"/>
+  <xsd:complexType name="PrimitiveTypeIsShort__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eModel" type="java:Model"/>
+          <xsd:element name="CREATE__SRC__ePrimitiveType" type="java:PrimitiveTypeShort"/>
+          <xsd:element name="CREATE__TRG__tPrimitiveClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__TRG__typeGraph" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CONTEXT__CORR__eModelToTypeGraph" type="ModiscoTGG:ModelToTypeGraph"/>
+          <xsd:element name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass" type="ModiscoTGG:PrimitiveTypeToTClass"/>
+          <xsd:element name="CREATE__CORR__typeToTAbstractType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eModel" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__ePrimitiveType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tPrimitiveClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__typeGraph" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eModelToTypeGraph" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__typeToTAbstractType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="PrimitiveTypeIsShort__Marker" type="ModiscoTGG:PrimitiveTypeIsShort__Marker"/>
+  <xsd:complexType name="PrimitiveTypesIsVoid__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eModel" type="java:Model"/>
+          <xsd:element name="CREATE__SRC__ePrimitiveType" type="java:PrimitiveTypeVoid"/>
+          <xsd:element name="CREATE__TRG__tPrimitiveClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__TRG__typeGraph" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CONTEXT__CORR__eModelToTypeGraph" type="ModiscoTGG:ModelToTypeGraph"/>
+          <xsd:element name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass" type="ModiscoTGG:PrimitiveTypeToTClass"/>
+          <xsd:element name="CREATE__CORR__typeToTAbstractType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eModel" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__ePrimitiveType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tPrimitiveClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__typeGraph" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eModelToTypeGraph" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__typeToTAbstractType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="PrimitiveTypesIsVoid__Marker" type="ModiscoTGG:PrimitiveTypesIsVoid__Marker"/>
+  <xsd:complexType name="ReturnType__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eReturnType" type="java:Type"/>
+          <xsd:element name="CREATE__SRC__eTypeAccess" type="java:TypeAccess"/>
+          <xsd:element name="CONTEXT__SRC__mDefinition" type="org.gravity.modisco:MMethodDefinition"/>
+          <xsd:element name="CONTEXT__TRG__tAbstractType" type="org.gravity.typegraph.basic:TAbstractType"/>
+          <xsd:element name="CONTEXT__TRG__tMethodDefinition" type="org.gravity.typegraph.basic:TMethodDefinition"/>
+          <xsd:element name="CONTEXT__CORR__eReturnTypeToTAbstractType" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CONTEXT__CORR__mMethodDefinitionToTMethodDefinition" type="ModiscoTGG:MDefinitionToTMember"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eReturnType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__eTypeAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mDefinition" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tAbstractType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMethodDefinition" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eReturnTypeToTAbstractType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mMethodDefinitionToTMethodDefinition" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ReturnType__Marker" type="ModiscoTGG:ReturnType__Marker"/>
+  <xsd:complexType name="SignatureReturnType__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mSignature" type="org.gravity.modisco:MMethodSignature"/>
+          <xsd:element name="CONTEXT__SRC__mType" type="java:Type"/>
+          <xsd:element name="CONTEXT__TRG__tSignature" type="org.gravity.typegraph.basic:TMethodSignature"/>
+          <xsd:element name="CONTEXT__TRG__tType" type="org.gravity.typegraph.basic:TAbstractType"/>
+          <xsd:element name="CONTEXT__CORR__mSignatureToTSignature" type="ModiscoTGG:MSignatureToTSignature"/>
+          <xsd:element name="CONTEXT__CORR__mTypeToTType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mSignature" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tSignature" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mSignatureToTSignature" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="SignatureReturnType__Marker" type="ModiscoTGG:SignatureReturnType__Marker"/>
+  <xsd:complexType name="SubPackageToPGPackage__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__mPackage" type="java:Package"/>
+          <xsd:element name="CONTEXT__SRC__mParentPackage" type="java:Package"/>
+          <xsd:element name="CONTEXT__TRG__tParent" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CREATE__TRG__tSub" type="org.gravity.typegraph.basic:TPackage"/>
+          <xsd:element name="CONTEXT__TRG__typeGraph" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CREATE__CORR__mPackageToTSub" type="ModiscoTGG:PackageToTPackage"/>
+          <xsd:element name="CONTEXT__CORR__mParentPackageToTParent" type="ModiscoTGG:PackageToTPackage"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__mPackage" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mParentPackage" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tParent" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tSub" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__typeGraph" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mPackageToTSub" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mParentPackageToTParent" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="SubPackageToPGPackage__Marker" type="ModiscoTGG:SubPackageToPGPackage__Marker"/>
+  <xsd:complexType name="SuperConstructorInvocation__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__invocation" type="org.gravity.modisco:MAbstractMethodInvocation"/>
+          <xsd:element name="CONTEXT__SRC__mMember" type="org.gravity.modisco:MDefinition"/>
+          <xsd:element name="CONTEXT__SRC__mMethod" type="org.gravity.modisco:MAbstractMethodDefinition"/>
+          <xsd:element name="CREATE__TRG__tAccess" type="org.gravity.typegraph.basic:TCall"/>
+          <xsd:element name="CONTEXT__TRG__tMember" type="org.gravity.typegraph.basic:TMember"/>
+          <xsd:element name="CONTEXT__TRG__tMethod" type="org.gravity.typegraph.basic:TMember"/>
+          <xsd:element name="CREATE__CORR__invocationToTAccess" type="ModiscoTGG:AbstractMethodInvocationToTAccess"/>
+          <xsd:element name="CREATE__CORR__mFlowElementToTFlowElement" type="ModiscoTGG:MAbstractFlowElementToTAbstractFlowElement"/>
+          <xsd:element name="CONTEXT__CORR__mMemberToTMember" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CONTEXT__CORR__mMethodToTMethod" type="ModiscoTGG:MDefinitionToTMember"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__invocation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mMethod" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMethod" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__invocationToTAccess" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mFlowElementToTFlowElement" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mMemberToTMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mMethodToTMethod" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="SuperConstructorInvocation__Marker" type="ModiscoTGG:SuperConstructorInvocation__Marker"/>
+  <xsd:complexType name="SuperMethodInvocation__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__invocation" type="org.gravity.modisco:MSuperMethodInvocation"/>
+          <xsd:element name="CONTEXT__SRC__mMember" type="org.gravity.modisco:MDefinition"/>
+          <xsd:element name="CONTEXT__SRC__mMethod" type="org.gravity.modisco:MAbstractMethodDefinition"/>
+          <xsd:element name="CREATE__TRG__tAccess" type="org.gravity.typegraph.basic:TCall"/>
+          <xsd:element name="CONTEXT__TRG__tMember" type="org.gravity.typegraph.basic:TMember"/>
+          <xsd:element name="CONTEXT__TRG__tMethod" type="org.gravity.typegraph.basic:TMember"/>
+          <xsd:element name="CREATE__CORR__invocationToTAccess" type="ModiscoTGG:AbstractMethodInvocationToTAccess"/>
+          <xsd:element name="CREATE__CORR__mFlowElementToTFlowElement" type="ModiscoTGG:MAbstractFlowElementToTAbstractFlowElement"/>
+          <xsd:element name="CONTEXT__CORR__mMemberToTMember" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CONTEXT__CORR__mMethodToTMethod" type="ModiscoTGG:MDefinitionToTMember"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__invocation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mMethod" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tAccess" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMethod" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__invocationToTAccess" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mFlowElementToTFlowElement" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mMemberToTMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mMethodToTMethod" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="SuperMethodInvocation__Marker" type="ModiscoTGG:SuperMethodInvocation__Marker"/>
+  <xsd:complexType name="SyntethicMethod__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mClass" type="java:ClassDeclaration"/>
+          <xsd:element name="CONTEXT__SRC__mDef" type="org.gravity.modisco:MMethodDefinition"/>
+          <xsd:element name="CREATE__SRC__mSyntethic" type="org.gravity.modisco:MSyntheticMethodDefinition"/>
+          <xsd:element name="CONTEXT__TRG__tClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CONTEXT__TRG__tDef" type="org.gravity.typegraph.basic:TMethodDefinition"/>
+          <xsd:element name="CONTEXT__TRG__tSig" type="org.gravity.typegraph.basic:TMethodSignature"/>
+          <xsd:element name="CREATE__TRG__tSyntethic" type="org.gravity.typegraph.basic:TSyntethicMethod"/>
+          <xsd:element name="CONTEXT__CORR__mClassDeclarationToTClass" type="ModiscoTGG:ClassDeclarationToTClass"/>
+          <xsd:element name="CONTEXT__CORR__mDefinitionToTMember" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CREATE__CORR__mSyntToTSynt" type="ModiscoTGG:MSyntethicMethodToTSyntethicMethod"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mDef" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mSyntethic" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tDef" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tSig" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tSyntethic" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mClassDeclarationToTClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mDefinitionToTMember" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mSyntToTSynt" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="SyntethicMethod__Marker" type="ModiscoTGG:SyntethicMethod__Marker"/>
+  <xsd:complexType name="TextAnnotations__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__mComment" type="java:LineComment"/>
+          <xsd:element name="CONTEXT__SRC__mMember" type="org.gravity.modisco:MDefinition"/>
+          <xsd:element name="CONTEXT__TRG__tMember" type="org.gravity.typegraph.basic:TMember"/>
+          <xsd:element name="CREATE__TRG__tText" type="annotations:TTextAnnotation"/>
+          <xsd:element name="CREATE__CORR__mCommentToTText" type="ModiscoTGG:LineCommentToTTextAnnotation"/>
+          <xsd:element name="CONTEXT__CORR__mMemberToTMember" type="ModiscoTGG:MDefinitionToTMember"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__mComment" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mMember" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tMember" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tText" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mCommentToTText" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mMemberToTMember" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="TextAnnotations__Marker" type="ModiscoTGG:TextAnnotations__Marker"/>
+  <xsd:complexType name="TypeParameter__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eModel" type="org.gravity.modisco:MGravityModel"/>
+          <xsd:element name="CREATE__SRC__typeParameter" type="java:TypeParameter"/>
+          <xsd:element name="CONTEXT__TRG__pg" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CREATE__TRG__tClass" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CREATE__CORR__eAnonymousClassDeclarationToTClass" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CONTEXT__CORR__eModelToPg" type="ModiscoTGG:ModelToTypeGraph"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eModel" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__typeParameter" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__pg" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__eAnonymousClassDeclarationToTClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eModelToPg" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="TypeParameter__Marker" type="ModiscoTGG:TypeParameter__Marker"/>
+  <xsd:complexType name="TypesOrphaned__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mModel" type="java:Model"/>
+          <xsd:element name="CREATE__SRC__mType" type="org.gravity.modisco:MClass"/>
+          <xsd:element name="CONTEXT__TRG__pg" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CREATE__TRG__tType" type="org.gravity.typegraph.basic:TClass"/>
+          <xsd:element name="CREATE__CORR__mBodyToTAnnotation" type="ModiscoTGG:ASTNodeToTAnnotatable"/>
+          <xsd:element name="CONTEXT__CORR__mModelToTypeGraph" type="ModiscoTGG:ModelToTypeGraph"/>
+          <xsd:element name="CREATE__CORR__mTypeToTType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mModel" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__mType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__pg" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mBodyToTAnnotation" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mModelToTypeGraph" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="TypesOrphaned__Marker" type="ModiscoTGG:TypesOrphaned__Marker"/>
+  <xsd:complexType name="TypesVisibility__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CREATE__SRC__mModifier" type="java:Modifier"/>
+          <xsd:element name="CONTEXT__SRC__mType" type="java:AbstractTypeDeclaration"/>
+          <xsd:element name="CREATE__TRG__tModifier" type="org.gravity.typegraph.basic:TModifier"/>
+          <xsd:element name="CONTEXT__TRG__tType" type="org.gravity.typegraph.basic:TAbstractType"/>
+          <xsd:element name="CREATE__CORR__mModifierToTModifier" type="ModiscoTGG:MModifierToTModifier"/>
+          <xsd:element name="CONTEXT__CORR__mTypeToTType" type="ModiscoTGG:TypeToTAbstractType"/>
+        </xsd:choice>
+        <xsd:attribute name="CREATE__SRC__mModifier" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__SRC__mType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tModifier" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tType" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__mModifierToTModifier" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__mTypeToTType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="TypesVisibility__Marker" type="ModiscoTGG:TypesVisibility__Marker"/>
+  <xsd:complexType name="UnresolvedTypeDeclaration__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__eModel" type="org.gravity.modisco:MGravityModel"/>
+          <xsd:element name="CREATE__SRC__unresolvedType" type="java:UnresolvedTypeDeclaration"/>
+          <xsd:element name="CONTEXT__TRG__pg" type="org.gravity.typegraph.basic:TypeGraph"/>
+          <xsd:element name="CREATE__TRG__tClass" type="org.gravity.typegraph.basic:TUnresolvedType"/>
+          <xsd:element name="CREATE__CORR__eAnonymousClassDeclarationToTClass" type="ModiscoTGG:TypeToTAbstractType"/>
+          <xsd:element name="CONTEXT__CORR__eModelToPg" type="ModiscoTGG:ModelToTypeGraph"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__eModel" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__unresolvedType" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__pg" type="xsd:string"/>
+        <xsd:attribute name="CREATE__TRG__tClass" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__eAnonymousClassDeclarationToTClass" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eModelToPg" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="UnresolvedTypeDeclaration__Marker" type="ModiscoTGG:UnresolvedTypeDeclaration__Marker"/>
+  <xsd:complexType name="VariableDeclarationFragment__Marker">
+    <xsd:complexContent>
+      <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="CONTEXT__SRC__mDefinition" type="org.gravity.modisco:MFieldDefinition"/>
+          <xsd:element name="CREATE__SRC__varDeclFragment" type="java:VariableDeclarationFragment"/>
+          <xsd:element name="CONTEXT__TRG__tDefinition" type="org.gravity.typegraph.basic:TFieldDefinition"/>
+          <xsd:element name="CONTEXT__CORR__eFieldDeclarationToTFieldDefinition" type="ModiscoTGG:MDefinitionToTMember"/>
+          <xsd:element name="CREATE__CORR__varDeclFragmentToTFieldDefinition" type="ModiscoTGG:VariableDeclarationFragmentToTFieldDefinition"/>
+        </xsd:choice>
+        <xsd:attribute name="CONTEXT__SRC__mDefinition" type="xsd:string"/>
+        <xsd:attribute name="CREATE__SRC__varDeclFragment" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__TRG__tDefinition" type="xsd:string"/>
+        <xsd:attribute name="CONTEXT__CORR__eFieldDeclarationToTFieldDefinition" type="xsd:string"/>
+        <xsd:attribute name="CREATE__CORR__varDeclFragmentToTFieldDefinition" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="VariableDeclarationFragment__Marker" type="ModiscoTGG:VariableDeclarationFragment__Marker"/>
+</xsd:schema>

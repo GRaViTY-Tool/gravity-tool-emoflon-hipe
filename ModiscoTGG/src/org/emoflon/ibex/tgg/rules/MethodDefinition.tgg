@@ -1,0 +1,66 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule AbstractMethodDefinition #with ModiscoTGG
+
+#source {
+	mSignature:MMethodSignature {
+		++  -mDefinitions -> mDefinition
+	}
+
+	++mDefinition:MAbstractMethodDefinition
+}
+
+#target {
+	tMethodSignature:TMethodSignature {
+		++  -definitions -> tDefinition
+	}
+	
+	++tDefinition:TMethodDefinition
+}
+
+#correspondence {
+	++ mDefinitionToTMember :MDefinitionToTMember {
+		#src->mDefinition
+		#trg->tDefinition
+	}
+
+	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mDefinition
+		#trg->tDefinition
+	}
+
+	mSignatureToTMethodSignature :MSignatureToTSignature {
+		#src->mSignature
+		#trg->tMethodSignature
+	}
+
+	++ mBodyToTAnnotation :ASTNodeToTAnnotatable {
+		#src->mDefinition
+		#trg->tDefinition
+	}
+}
+
+#rule MethodDefinition #extends AbstractMethodDefinition
+#with ModiscoTGG
+
+#source {
+	++mDefinition:MMethodDefinition
+}
+
+#rule ConstructorDefinition #extends AbstractMethodDefinition
+#with ModiscoTGG
+
+#source {
+	++mDefinition:MConstructorDefinition
+}
+
+#target {
+	++tDefinition:TMethodDefinition {
+		++-tAnnotation -> tAnnotation
+	}
+
+	++tAnnotation:TConstructor
+}
+
+

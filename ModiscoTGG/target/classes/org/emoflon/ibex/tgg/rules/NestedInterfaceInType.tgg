@@ -1,0 +1,35 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule NestedInterfaceInType
+#extends NestedTypes
+#with ModiscoTGG
+
+#source {
+	++eNestedType:InterfaceDeclaration
+}
+
+#target {
+	++tNestedType:TInterface
+
+	typeGraph:TypeGraph {
+		++  -interfaces -> tNestedType
+	}
+
+	++tNestedPackage:TPackage {
+		++  -interfaces -> tNestedType
+	}
+}
+
+#correspondence {
+	++ mInterfaceDeclarationtoTInterface :InterfaceDeclarationToTInterface {
+		#src->eNestedType
+		#trg->tNestedType
+	}
+}
+
+#attributeConditions {
+	eq_string(eNestedType.name, tNestedType.tName)
+}
+
+

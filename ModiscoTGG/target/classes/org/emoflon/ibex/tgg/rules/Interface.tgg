@@ -1,0 +1,35 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule Interface
+#extends Types
+#with ModiscoTGG
+
+#source {
+	++mType:InterfaceDeclaration
+}
+
+#target {
+	++tType:TInterface
+
+	pg:TypeGraph {
+		++  -interfaces -> tType
+	}
+
+	tPackage:TPackage {
+		++  -interfaces -> tType
+	}
+}
+
+#correspondence {
+	++ mInterfaceDeclarationtoTInterface :InterfaceDeclarationToTInterface {
+		#src->mType
+		#trg->tType
+	}
+}
+
+#attributeConditions {
+	eq_string(mType.name, tType.tName)
+}
+
+

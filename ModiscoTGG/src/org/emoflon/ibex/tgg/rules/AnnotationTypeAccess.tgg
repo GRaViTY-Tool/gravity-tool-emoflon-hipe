@@ -1,0 +1,37 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule AnnotationTypeAccess
+#with ModiscoTGG
+
+#source {
+	Annotation:Annotation {
+		++  -type -> mAccess
+	}
+
+	++mAccess:TypeAccess {
+		++ -type -> AnnotationType
+	}
+
+	AnnotationType:AnnotationTypeDeclaration
+}
+
+#target {
+	tAnnotationType:TAnnotationType {
+		++  -annotations -> tAnnotation
+	}
+
+	tAnnotation:TAnnotation
+}
+
+#correspondence {
+	AnnotationTypeToTAnnotationType :TypeToTAbstractType {
+		#src->AnnotationType
+		#trg->tAnnotationType
+	}
+
+	AnnotationToTAnnotation :AnnotationToTAnnotation {
+		#src->Annotation
+		#trg->tAnnotation
+	}
+}

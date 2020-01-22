@@ -1,0 +1,34 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule MethodInvocationStaticType #with ModiscoTGG
+
+#source {
+	invocation:MMethodInvocation {
+		++ -mStaticType -> mStaticType
+	}
+
+	mStaticType:Type
+}
+
+#target {
+	tAccess:TCall {
+		++-staticType -> tStaticType
+	}
+
+	tStaticType:TAbstractType
+}
+
+#correspondence {
+	invocationToTAccess :AbstractMethodInvocationToTAccess {
+		#src->invocation
+		#trg->tAccess
+	}
+
+	mStaticTypeTotStaticType :TypeToTAbstractType {
+		#src->mStaticType
+		#trg->tStaticType
+	}
+}
+
+

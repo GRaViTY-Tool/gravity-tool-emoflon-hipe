@@ -1,0 +1,119 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule AbstractMethodInvocation
+#with ModiscoTGG
+
+#source {
+	mMember:MDefinition {
+		++  -mMethodInvocations-> invocation
+	}
+
+	++invocation:MAbstractMethodInvocation {
+		++  -method -> mMethod
+	}
+
+	mMethod:MAbstractMethodDefinition
+}
+
+#target {
+	tMember:TMember {
+		++  -tAccessing -> tAccess
+	}
+
+	++tAccess:TCall {
+		++-tTarget -> tMethod
+	}
+
+	tMethod:TMember
+}
+
+#correspondence {
+	++ invocationToTAccess :AbstractMethodInvocationToTAccess {
+		#src->invocation
+		#trg->tAccess
+	}
+	
+	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->invocation
+		#trg->tAccess
+	}
+	
+	mMethodToTMethod :MDefinitionToTMember {
+		#src->mMethod
+		#trg->tMethod
+	}
+
+	mMemberToTMember :MDefinitionToTMember {
+		#src->mMember
+		#trg->tMember
+	}
+}
+
+#rule MethodInvocation
+#extends AbstractMethodInvocation
+#with ModiscoTGG
+
+#source {
+	++invocation:MMethodInvocation
+}
+
+#target {
+	++tAccess:TCall
+}
+
+#rule SuperMethodInvocation
+#extends AbstractMethodInvocation
+#with ModiscoTGG
+
+#source {
+	++invocation:MSuperMethodInvocation
+}
+
+#rule ClassInstanceCreation
+#extends AbstractMethodInvocation
+#with ModiscoTGG
+
+#source {
+	++invocation:MClassInstanceCreation
+}
+
+#rule MethodInvocationRecursive
+#with ModiscoTGG
+
+#source {
+	mMember:MMethodDefinition {
+		++  -mMethodInvocations-> invocation
+	}
+
+	++invocation:MMethodInvocation {
+		++  -method -> mMember
+	}
+}
+
+#target {
+	tMember:TMethodDefinition {
+		++  -tAccessing -> tAccess
+	}
+
+	++tAccess:TCall {
+		++-tTarget -> tMember
+	}
+}
+
+#correspondence {
+	++ invocationToTAccess :AbstractMethodInvocationToTAccess {
+		#src->invocation
+		#trg->tAccess
+	}
+	
+	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->invocation
+		#trg->tAccess
+	}
+
+	mMemberToTMember :MDefinitionToTMember {
+		#src->mMember
+		#trg->tMember
+	}
+}

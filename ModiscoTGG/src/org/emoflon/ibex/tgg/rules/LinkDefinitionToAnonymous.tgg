@@ -1,0 +1,49 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule LinkDefinitionToAnonymous
+#with ModiscoTGG
+
+#source {
+	mType:MAnonymous {
+		++  -bodyDeclarations -> mDefinition
+	}
+
+	mSignature:MSignature {
+		-mDefinitions -> mDefinition
+	}
+
+	mDefinition:MDefinition
+}
+
+#target {
+	tType:TClass {
+		++-defines -> tDefinition
+		++-signature -> tSignature
+	}
+	
+	tSignature:TSignature
+
+	tDefinition:TMember {
+		-signature -> tSignature
+	}
+}
+
+#correspondence {
+	mTypeToTType :AnonymousClassDeclarationToTClass {
+		#src->mType
+		#trg->tType
+	}
+
+	mDefinitionToTMember :MDefinitionToTMember {
+		#src->mDefinition
+		#trg->tDefinition
+	}
+
+	mSignatureToTSignature :MSignatureToTSignature {
+		#src->mSignature
+		#trg->tSignature
+	}
+}
+
+

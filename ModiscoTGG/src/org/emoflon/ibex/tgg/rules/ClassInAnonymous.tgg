@@ -1,0 +1,25 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule ClassInAnonymous
+#extends NestedTypesinAnonymous
+#with ModiscoTGG
+
+#source {
+	++mNestedType:MClass 
+}
+
+#target {
+	pg:TypeGraph {
+		++  -classes -> tNestedType
+	}
+
+	++tNestedType:TClass
+}
+
+#correspondence {
+	++ mClassDeclarationToTClass :ClassDeclarationToTClass {
+		#src->mNestedType
+		#trg->tNestedType
+	}
+}

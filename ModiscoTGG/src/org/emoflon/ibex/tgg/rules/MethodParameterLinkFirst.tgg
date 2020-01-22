@@ -1,0 +1,30 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule MethodParameterLinkFirst
+#with ModiscoTGG
+
+#source {
+	mParameterList : MMethodSignature {
+		++  -mFirstEntry -> mEntry
+	}
+	mEntry : MEntry
+}
+
+#target {
+	tMethodSignature : TMethodSignature {
+		++  -firstParameter -> tParameter
+	}
+	tParameter : TParameter
+}
+
+#correspondence {
+	eSingleVariableDeclarationToTParameter : MEntryToTParameter {
+		#src->mEntry
+		#trg->tParameter
+	}
+	mmethodSignatureToTMethodSignature : MSignatureToTSignature {
+		#src->mParameterList
+		#trg->tMethodSignature
+	}
+}

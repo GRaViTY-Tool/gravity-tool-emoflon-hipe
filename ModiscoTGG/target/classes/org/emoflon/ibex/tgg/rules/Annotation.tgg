@@ -1,0 +1,38 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule Annotation #with ModiscoTGG
+
+#source {
+	astNode : ASTNode
+	
+	++ Annotation : Annotation
+}
+
+#target {
+	++ tAnnotation : TAnnotation {
+		++  -tAnnotated -> tAnnotable
+	}
+	tAnnotable : TAnnotatable
+}
+
+#correspondence {
+	aSTNodeToTAnnotable : ASTNodeToTAnnotatable {
+		#src->astNode
+		#trg->tAnnotable
+	}
+	++ AnnotationToTAnnotation : AnnotationToTAnnotation {
+		#src->Annotation
+		#trg->tAnnotation
+	}
+}
+
+#rule AnnotationOnBodyDeclaration #extends Annotation #with ModiscoTGG
+
+#source {	
+	astNode : BodyDeclaration {
+		++ -annotations-> Annotation
+	}
+	
+	++ Annotation : Annotation 
+}

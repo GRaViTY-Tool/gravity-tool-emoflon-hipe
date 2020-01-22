@@ -1,0 +1,29 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule InterfaceInAnonymous
+#extends NestedTypesinAnonymous
+#with ModiscoTGG
+
+#source {
+++ mNestedType : InterfaceDeclaration {
+}
+}
+
+#target {
+++ tNestedType : TInterface {
+}
+pg : TypeGraph {
+	++  -interfaces -> tNestedType
+}
+}
+
+#correspondence {
+++ mInterfaceDeclarationtoTInterface : InterfaceDeclarationToTInterface {
+	#src->mNestedType
+	#trg->tNestedType
+}
+}
+
+#attributeConditions {
+}

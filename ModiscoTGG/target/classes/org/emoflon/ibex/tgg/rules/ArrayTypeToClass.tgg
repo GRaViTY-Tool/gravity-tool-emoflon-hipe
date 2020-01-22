@@ -1,0 +1,46 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule ArrayTypeToClass
+#with ModiscoTGG
+
+#source {
+	++eTypeAccess:TypeAccess {
+		++  -type -> eType
+	}
+
+	eModel:Model {
+		++  -orphanTypes -> eArrayType
+	}
+
+	eType:Type 
+
+	++eArrayType:ArrayType {
+		++  -elementType -> eTypeAccess
+	}
+}
+
+#target {
+	typeGraph:TypeGraph {
+		-ownedTypes -> tArrayClass
+	}
+
+	tArrayClass:TAbstractType
+}
+
+#correspondence {
+	eModelToTypeGraph :ModelToTypeGraph {
+		#src->eModel
+		#trg->typeGraph
+	}
+
+	++ eArrayTypeToTArrayClass :TypeToTAbstractType {
+		#src->eArrayType
+		#trg->tArrayClass
+	}
+
+	eTypeToTArrayClass :TypeToTAbstractType {
+		#src->eType
+		#trg->tArrayClass
+	}
+}

@@ -1,0 +1,14 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule ConstructorInvocation
+#extends AbstractMethodInvocation
+#with ModiscoTGG
+
+#source {
+	++invocation:ConstructorInvocation
+}
+
+#target {
+	++tAccess:TCall
+}

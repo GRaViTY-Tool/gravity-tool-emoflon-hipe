@@ -1,0 +1,45 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule FieldDefinition
+#with ModiscoTGG
+
+#source {
+	mSignature:MFieldSignature {
+		++  -mDefinitions -> mDefinition
+	}
+
+	++mDefinition:MFieldDefinition
+}
+
+#target {
+	tFieldSignature:TFieldSignature {
+		++  -definitions -> tDefinition
+	}
+
+	++tDefinition:TFieldDefinition
+}
+
+#correspondence {
+	mSignatureToTFieldSignature :MSignatureToTSignature {
+		#src->mSignature
+		#trg->tFieldSignature
+	}
+
+	++mDefinitionToTDefinition:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mDefinition
+		#trg->tDefinition
+	}
+
+	++ mDefinitionToTMember :MDefinitionToTMember {
+		#src->mDefinition
+		#trg->tDefinition
+	}
+
+	++ mBodyToTAnnotation :ASTNodeToTAnnotatable {
+		#src->mDefinition
+		#trg->tDefinition
+	}
+}
+
+

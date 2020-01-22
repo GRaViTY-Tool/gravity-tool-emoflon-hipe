@@ -1,0 +1,41 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule UnresolvedTypeDeclaration
+#with ModiscoTGG
+
+#source {
+	eModel:MGravityModel {
+		++  -unresolvedItems -> unresolvedType
+	}
+
+	++unresolvedType:UnresolvedTypeDeclaration
+}
+
+#target {
+	++tClass:TUnresolvedType
+
+	pg:TypeGraph {
+		++  -ownedTypes -> tClass
+	}
+}
+
+#correspondence {
+	eModelToPg :ModelToTypeGraph {
+		#src->eModel
+		#trg->pg
+	}
+
+	++ eAnonymousClassDeclarationToTClass :TypeToTAbstractType {
+		#src->unresolvedType
+		#trg->tClass
+	}
+}
+
+#attributeConditions {
+	eq_string(unresolvedType.name, tClass.tName)
+
+	eq_boolean(unresolvedType.proxy, tClass.tLib)
+}
+
+

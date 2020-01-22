@@ -1,0 +1,37 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule ReturnType
+#with ModiscoTGG
+
+#source {
+	mDefinition:MMethodDefinition {
+		++  -returnType -> eTypeAccess
+	}
+
+	++eTypeAccess:TypeAccess {
+		++  -type -> eReturnType
+	}
+
+	eReturnType:Type 
+}
+
+#target {
+	tMethodDefinition:TMethodDefinition {
+		++  -returnType -> tAbstractType
+	}
+	
+	tAbstractType:TAbstractType 
+}
+
+#correspondence {
+	eReturnTypeToTAbstractType :TypeToTAbstractType {
+		#src->eReturnType
+		#trg->tAbstractType
+	}
+
+	mMethodDefinitionToTMethodDefinition :MDefinitionToTMember {
+		#src->mDefinition
+		#trg->tMethodDefinition
+	}
+}

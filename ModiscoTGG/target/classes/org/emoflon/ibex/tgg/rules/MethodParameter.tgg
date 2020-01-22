@@ -1,0 +1,36 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule MethodParameter
+#with ModiscoTGG
+
+#source {
+	mSignature : MMethodSignature {
+		++  -mEntrys -> mEntry
+	}
+	++ mEntry : MEntry
+}
+
+#target {
+	tSiganture : TMethodSignature {
+		++  -parameters -> tParameter
+	}
+	++ tParameter : TParameter
+}
+
+#correspondence {
+	++ mEntryToTParameter : MEntryToTParameter {
+		#src->mEntry
+		#trg->tParameter
+	}
+	
+	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mEntry
+		#trg->tParameter
+	}
+	
+	mSignatureToTSignature : MSignatureToTSignature {
+		#src->mSignature
+		#trg->tSiganture
+	}
+}

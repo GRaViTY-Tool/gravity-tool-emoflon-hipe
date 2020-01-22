@@ -1,0 +1,44 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule TypesOrphaned
+#with ModiscoTGG
+
+#source {
+	mModel:Model {
+		++  -orphanTypes -> mType
+	}
+
+	++mType: MClass
+}
+
+#target {
+	pg:TypeGraph {
+		++  -ownedTypes -> tType
+	}
+
+	++tType:TClass
+}
+
+#correspondence {
+	mModelToTypeGraph :ModelToTypeGraph {
+		#src->mModel
+		#trg->pg
+	}
+
+	++ mBodyToTAnnotation :ASTNodeToTAnnotatable {
+		#src->mType
+		#trg->tType
+	}
+
+	++ mTypeToTType :TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+}
+
+#attributeConditions {
+	eq_boolean(mType.proxy, tType.tLib)
+}
+
+

@@ -1,0 +1,40 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule MethodParameterType
+#extends MethodParameter
+#with ModiscoTGG
+
+#source {
+++ mEntry : MEntry {
+	++  -type -> mType
+}
+mType : Type {
+}
+}
+
+#target {
+++ tParameter : TParameter {
+	++  -type -> tAbstractType
+}
+tAbstractType : TAbstractType {
+}
+}
+
+#correspondence {
+mTypeToTAbstractType : TypeToTAbstractType {
+	#src->mType
+	#trg->tAbstractType
+}
+++ mEntryToTParameter : MEntryToTParameter {
+	#src->mEntry
+	#trg->tParameter
+}
+++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mEntry
+		#trg->tParameter
+	}
+}
+
+#attributeConditions {
+}

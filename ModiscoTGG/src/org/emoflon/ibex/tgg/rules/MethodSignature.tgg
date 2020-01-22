@@ -1,0 +1,40 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule MethodSignature
+#with ModiscoTGG
+
+#source {
+	mName:MMethodName {
+		++  -mSignatures -> mSignature
+	}
+
+	++mSignature:MMethodSignature
+}
+
+#target {
+	++tSignature:TMethodSignature {
+		++  -method -> tName
+	}
+
+	tName:TMethod
+}
+
+#correspondence {
+	mNameToTName :MMethodNameToTMethod {
+		#src->mName
+		#trg->tName
+	}
+
+	++ mSignatureToTSignature :MSignatureToTSignature {
+		#src->mSignature
+		#trg->tSignature
+	}
+
+	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mSignature
+		#trg->tSignature
+	}
+}
+
+

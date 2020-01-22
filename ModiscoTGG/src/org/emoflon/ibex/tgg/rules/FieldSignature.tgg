@@ -1,0 +1,40 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule FieldSignature
+#with ModiscoTGG
+
+#source {
+	mFieldName:MFieldName {
+		++-mSignatures -> mSignature
+	}
+
+	++mSignature:MFieldSignature
+}
+
+#target {
+	tField:TField {
+		++-signatures->tSignature
+	}
+
+	++tSignature:TFieldSignature
+}
+
+#correspondence {
+	eFieldDeclarationToTField :MFieldNameToTField {
+		#src->mFieldName
+		#trg->tField
+	}
+
+	++ mSignatureToTSignature :MSignatureToTSignature {
+		#src->mSignature
+		#trg->tSignature
+	}
+
+	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mSignature
+		#trg->tSignature
+	}
+}
+
+

@@ -1,0 +1,39 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule FieldName
+#with ModiscoTGG
+
+#source {
+	model:MGravityModel {
+		++  -mFieldNames -> mFieldName
+	}
+
+	++mFieldName:MFieldName
+}
+
+#target {
+	++tField:TField
+
+	typeGraph:TypeGraph {
+		++  -fields -> tField
+	}
+}
+
+#correspondence {
+	modelToTypeGraph :ModelToTypeGraph {
+		#src->model
+		#trg->typeGraph
+	}
+
+	++ eFieldDeclarationToTField :MFieldNameToTField {
+		#src->mFieldName
+		#trg->tField
+	}
+}
+
+#attributeConditions {
+	eq_string(mFieldName.mName, tField.tName)
+}
+
+

@@ -1,0 +1,33 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule SignatureReturnType
+#with ModiscoTGG
+
+#source {
+	mSignature:MMethodSignature {
+		++  -returnType -> mType
+	}
+
+	mType:Type
+}
+
+#target {
+	tSignature:TMethodSignature {
+		++  -returnType -> tType
+	}
+
+	tType:TAbstractType
+}
+
+#correspondence {
+	mSignatureToTSignature : MSignatureToTSignature {
+		#src->mSignature
+		#trg->tSignature
+	}
+
+	mTypeToTType :TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+}

@@ -1,0 +1,95 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule Flow
+#with ModiscoTGG
+
+#source {
+	++mFlow:MFlow
+	
+	mOwner:MAbstractFlowElement {
+		++	-ownedFlows -> mFlow  
+	}
+}
+
+#target {
+	++tFlow:TFlow
+	
+	tOwner:TAbstractFlowElement {
+		++	-ownedFlows -> tFlow 
+	}
+}
+
+#correspondence {
+	++mFlowToTFlow:MFlowToTFlow {
+		#src->mFlow
+		#trg->tFlow
+	}
+	
+	mOwnerToTOwner:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mOwner
+		#trg->tOwner
+	}
+}
+
+#rule IncomingFlow
+#with ModiscoTGG
+
+#source {
+	mFlow:MFlow {
+		++	-flowSource -> mSource
+	}
+	
+	mSource:MAbstractFlowElement
+}
+
+#target {
+	tFlow:TFlow {
+		++	-incomingFlows-> tSource
+	}
+	
+	tSource:TAbstractFlowElement
+}
+
+#correspondence {
+	mFlowToTFlow:MFlowToTFlow {
+		#src->mFlow
+		#trg->tFlow
+	}
+	
+	mSourceToTSource:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mSource
+		#trg->tSource
+	}
+}
+
+#rule OutgoingFlow
+#with ModiscoTGG
+
+#source {
+	mFlow:MFlow {
+		++	-flowTarget -> mTarget
+	}
+	
+	mTarget:MAbstractFlowElement
+}
+
+#target {
+	tFlow:TFlow {
+		++	-outgoingFlows-> tTarget
+	}
+	
+	tTarget:TAbstractFlowElement
+}
+
+#correspondence {
+	mFlowToTFlow:MFlowToTFlow {
+		#src->mFlow
+		#trg->tFlow
+	}
+	
+	mTargetToTTarget:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mTarget
+		#trg->tTarget
+	}
+}

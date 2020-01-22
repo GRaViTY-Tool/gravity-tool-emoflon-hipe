@@ -1,0 +1,11 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule ArrayInitializerIgnoreExpressionsEdge #with ModiscoTGG
+
+#source { 
+	array : ArrayInitializer {
+		++ -expressions->	invocation
+	}
+	invocation : MethodInvocation
+}

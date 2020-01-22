@@ -1,0 +1,33 @@
+#using ModiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule MethodOverriding
+#with ModiscoTGG
+
+#source {
+	mMethod:MMethodDefinition {
+		++  -redefinitions -> mOverriding
+	}
+
+	mOverriding:MMethodDefinition
+}
+
+#target {
+	tOverriding:TMethodDefinition
+
+	tMethod:TMethodDefinition {
+		++  -overriddenBy -> tOverriding
+	}
+}
+
+#correspondence {
+	mOverridingToTOverriding :MDefinitionToTMember {
+		#src->mOverriding
+		#trg->tOverriding
+	}
+
+	mMethodToTMethod :MDefinitionToTMember {
+		#src->mMethod
+		#trg->tMethod
+	}
+}
