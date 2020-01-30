@@ -40,36 +40,39 @@ import org.eclipse.modisco.java.WhileStatement;
 import org.gravity.modisco.MDefinition;
 
 /**
- * A statement handler for all kinds of java statements, which determines the data flow between statements.
- * The inter-statement flow is used to derive inter-member flow, which is stored in the corresponding fields of each handler.
+ * A statement handler for all kinds of java statements, which determines the
+ * data flow between statements. The inter-statement flow is used to derive
+ * inter-member flow, which is stored in the corresponding fields of each
+ * handler.
  * 
  * @author dmebus
  *
  */
 public class StatementHandlerDataFlow {
-	
+
 	private static final Logger LOGGER = Logger.getLogger(StatementHandlerDataFlow.class);
-	
+
 	/**
 	 * The accesses observed in the member corresponding to this handler.
 	 */
 	private final Set<FlowNode> memberRef = new HashSet<>();
-	
+
 	/**
-	 * The statements and expressions, which have already been processed, associated with their FlowNode representations.
+	 * The statements and expressions, which have already been processed, associated
+	 * with their FlowNode representations.
 	 */
 	private Map<EObject, FlowNode> alreadySeen = new HashMap<>();
-	
+
 	/**
 	 * The member definition corresponding to this handler.
 	 */
 	private EObject memberDef;
-	
+
 	/**
 	 * The expression handler associated with this statement handler.
 	 */
 	private ExpressionHandlerDataFlow expressionHandler;
-	
+
 	/**
 	 * The misc handler associated with this statement handler.
 	 */
@@ -80,13 +83,13 @@ public class StatementHandlerDataFlow {
 		expressionHandler = new ExpressionHandlerDataFlow(this);
 		miscHandler = new MiscHandlerDataFlow(this);
 	}
-	
+
 	public StatementHandlerDataFlow(VariableDeclarationFragment correspondingMember) {
 		memberDef = correspondingMember;
 		expressionHandler = new ExpressionHandlerDataFlow(this);
 		miscHandler = new MiscHandlerDataFlow(this);
 	}
-	
+
 	public FlowNode handle(Statement statement) {
 		if (statement instanceof AssertStatement) {
 			AssertStatement assertStatement = (AssertStatement) statement;
@@ -186,7 +189,7 @@ public class StatementHandlerDataFlow {
 			return null;
 		}
 	}
-	
+
 	private FlowNode handle(WhileStatement whileStatement) {
 		FlowNode member = getFlowNodeForElement(whileStatement);
 		if (member.isFromAlreadySeen()) {
@@ -269,7 +272,10 @@ public class StatementHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		member.addInRef(expressionHandler.handle(switchCase.getExpression()));
+		Expression expression = switchCase.getExpression();
+		if (expression != null) {
+			member.addInRef(expressionHandler.handle(expression));
+		}
 		return member;
 	}
 
@@ -322,7 +328,10 @@ public class StatementHandlerDataFlow {
 			return member;
 		}
 		handle(forStatement.getBody());
-		member.addInRef(expressionHandler.handle(forStatement.getExpression()));
+		Expression expression = forStatement.getExpression();
+		if (expression != null) {
+			member.addInRef(expressionHandler.handle(expression));
+		}
 		for (Expression initializer : forStatement.getInitializers()) {
 			expressionHandler.handle(initializer);
 		}
@@ -388,7 +397,8 @@ public class StatementHandlerDataFlow {
 		} else if (container instanceof Statement) {
 			handle((Statement) container).addInRef(member);
 		} else {
-			LOGGER.log(Level.INFO, "ERROR: Unknown element type " + container.getClass().getName() + " found in ConstructorInvocation handling.");
+			LOGGER.log(Level.INFO, "ERROR: Unknown element type " + container.getClass().getName()
+					+ " found in ConstructorInvocation handling.");
 		}
 		return member;
 	}
@@ -406,7 +416,7 @@ public class StatementHandlerDataFlow {
 		miscHandler.handle(catchClause.getException());
 		return member;
 	}
-	
+
 	private FlowNode handle(AssertStatement assertStatement) {
 		FlowNode member = getFlowNodeForElement(assertStatement);
 		if (member.isFromAlreadySeen()) {
@@ -431,11 +441,11 @@ public class StatementHandlerDataFlow {
 	public Set<FlowNode> getMemberRef() {
 		return memberRef;
 	}
-	
+
 	public Map<EObject, FlowNode> getAlreadySeen() {
 		return alreadySeen;
 	}
-	
+
 	public void setAlreadySeen(Map<EObject, FlowNode> nodeMap) {
 		alreadySeen = nodeMap;
 	}
@@ -451,13 +461,15 @@ public class StatementHandlerDataFlow {
 	public MiscHandlerDataFlow getMiscHandler() {
 		return miscHandler;
 	}
-	
+
 	/**
-	 * Checks, if a (non-null) FlowNode has already been created for the given element and returns it.
-	 * Otherwise a new FlowNode is created, inserted into alreadySeen and returned.
+	 * Checks, if a (non-null) FlowNode has already been created for the given
+	 * element and returns it. Otherwise a new FlowNode is created, inserted into
+	 * alreadySeen and returned.
 	 * 
 	 * @param element The element, for which the check is performed.
-	 * @return If already present, the FlowNode for the given element. A new FlowNode for the element otherwise.
+	 * @return If already present, the FlowNode for the given element. A new
+	 *         FlowNode for the element otherwise.
 	 */
 	FlowNode getFlowNodeForElement(EObject element) {
 		FlowNode seenNode = alreadySeen.get(element);
