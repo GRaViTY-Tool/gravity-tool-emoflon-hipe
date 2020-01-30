@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class ClassExtendsClass__BWD_1351_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunction(getSelf(), name2actor.get("ClassExtendsClass__BWD_production"), this::check_constraint_49));
 	}
@@ -52,10 +52,10 @@ public class ClassExtendsClass__BWD_1351_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_49(HMatch match) {
-		org.eclipse.modisco.java.ClassDeclaration eExtendedClass = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[1];
-		ModiscoTGG.ClassDeclarationToTClass eExtendedClassToTExtendedClass = (ModiscoTGG.ClassDeclarationToTClass) match.getNodes()[0];
-		org.eclipse.modisco.java.ClassDeclaration eClassDeclaration = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[5];
 		ModiscoTGG.ClassDeclarationToTClass eClassDeclarationToTClass = (ModiscoTGG.ClassDeclarationToTClass) match.getNodes()[4];
+		ModiscoTGG.ClassDeclarationToTClass eExtendedClassToTExtendedClass = (ModiscoTGG.ClassDeclarationToTClass) match.getNodes()[0];
+		org.eclipse.modisco.java.ClassDeclaration eExtendedClass = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[1];
+		org.eclipse.modisco.java.ClassDeclaration eClassDeclaration = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[5];
 		boolean predicate = !eClassDeclaration.equals(eExtendedClass) && !eClassDeclarationToTClass.equals(eExtendedClassToTExtendedClass);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

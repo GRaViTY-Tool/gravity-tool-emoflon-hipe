@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class NestedClassInType_tNestedType_classes_incoming_TRG__FILTER_NAC_1924_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("NestedClassInType__CO_2786_nacjunction"), this::check_constraint_129));
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("NestedClassInType__CO_2787_nacjunction"), this::check_constraint_130));
@@ -54,24 +54,24 @@ public class NestedClassInType_tNestedType_classes_incoming_TRG__FILTER_NAC_1924
 	}
 	
 	public boolean check_constraint_129(HMatch match) {
-		org.gravity.typegraph.basic.TPackage FILTER_NAC_NODE = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
 		org.gravity.typegraph.basic.TPackage tNestedPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[0];
+		org.gravity.typegraph.basic.TPackage FILTER_NAC_NODE = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(tNestedPackage);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_130(HMatch match) {
-		org.gravity.typegraph.basic.TPackage FILTER_NAC_NODE = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
 		org.gravity.typegraph.basic.TPackage tNestedPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[0];
+		org.gravity.typegraph.basic.TPackage FILTER_NAC_NODE = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(tNestedPackage);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_131(HMatch match) {
-		org.gravity.typegraph.basic.TPackage FILTER_NAC_NODE = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
 		org.gravity.typegraph.basic.TPackage tNestedPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[0];
+		org.gravity.typegraph.basic.TPackage FILTER_NAC_NODE = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(tNestedPackage);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class MemberInAnnotationVisibility__CC_2938_junction extends GenericJunctionActor{
 	private Map<Object, Collection<HMatch>> modifierAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> tModifierAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionLeft(getSelf(), name2actor.get("MemberInAnnotationVisibility__CC_5407_nacjunction"), this::check_constraint_168));
 	}
@@ -99,8 +99,8 @@ public class MemberInAnnotationVisibility__CC_2938_junction extends GenericJunct
 	}
 	
 	public boolean check_constraint_168(HMatch match) {
-		org.eclipse.modisco.java.Modifier mModifier = (org.eclipse.modisco.java.Modifier) match.getNodes()[7];
 		org.gravity.typegraph.basic.TModifier tModifier = (org.gravity.typegraph.basic.TModifier) match.getNodes()[1];
+		org.eclipse.modisco.java.Modifier mModifier = (org.eclipse.modisco.java.Modifier) match.getNodes()[7];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.custom.modiscotgg.UserDefined_defaultVisibility csp_68 = new org.emoflon.ibex.tgg.operational.csp.constraints.custom.modiscotgg.UserDefined_defaultVisibility();
 		csp_68.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, mModifier.getVisibility(), "org.eclipse.modisco.java.VisibilityKind"));

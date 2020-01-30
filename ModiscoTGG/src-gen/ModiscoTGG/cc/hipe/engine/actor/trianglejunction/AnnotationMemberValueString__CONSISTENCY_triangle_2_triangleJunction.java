@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericTriangleJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.TriangleJunctionNode;
 
 public class AnnotationMemberValueString__CONSISTENCY_triangle_2_triangleJunction extends GenericTriangleJunctionActor{
 	private Map<Object, Collection<HMatch>> stringLiteralAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> tTextNodeAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, TriangleJunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("AnnotationMemberValueString__CONSISTENCY_triangle_0_triangleJunction"), this::check_constraint_20));
 	}
@@ -99,8 +99,8 @@ public class AnnotationMemberValueString__CONSISTENCY_triangle_2_triangleJunctio
 	}
 	
 	public boolean check_constraint_20(HMatch match) {
-		org.eclipse.modisco.java.StringLiteral mValue = (org.eclipse.modisco.java.StringLiteral) match.getNodes()[3];
 		org.gravity.typegraph.basic.annotations.TTextNode tValue = (org.gravity.typegraph.basic.annotations.TTextNode) match.getNodes()[1];
+		org.eclipse.modisco.java.StringLiteral mValue = (org.eclipse.modisco.java.StringLiteral) match.getNodes()[3];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.Eq csp_13 = new org.emoflon.ibex.tgg.operational.csp.constraints.Eq();
 		csp_13.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, mValue.getEscapedValue(), "java.lang.String"));

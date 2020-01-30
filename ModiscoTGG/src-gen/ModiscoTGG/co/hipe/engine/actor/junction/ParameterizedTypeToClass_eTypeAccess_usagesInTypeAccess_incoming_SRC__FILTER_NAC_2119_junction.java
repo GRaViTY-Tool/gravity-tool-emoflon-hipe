@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class ParameterizedTypeToClass_eTypeAccess_usagesInTypeAccess_incoming_SRC__FILTER_NAC_2119_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("ParameterizedTypeToClass__CO_2802_nacjunction"), this::check_constraint_149));
 		ports.add(new PortJunction(getSelf(), name2actor.get("ParameterizedTypeToClass_eTypeAccess_usagesInTypeAccess_incoming_SRC__FILTER_NAC_production"), this::check_constraint_150));
@@ -53,16 +53,16 @@ public class ParameterizedTypeToClass_eTypeAccess_usagesInTypeAccess_incoming_SR
 	}
 	
 	public boolean check_constraint_149(HMatch match) {
-		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		org.eclipse.modisco.java.Type eType = (org.eclipse.modisco.java.Type) match.getNodes()[0];
+		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(eType);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_150(HMatch match) {
-		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		org.eclipse.modisco.java.Type eType = (org.eclipse.modisco.java.Type) match.getNodes()[0];
+		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(eType);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

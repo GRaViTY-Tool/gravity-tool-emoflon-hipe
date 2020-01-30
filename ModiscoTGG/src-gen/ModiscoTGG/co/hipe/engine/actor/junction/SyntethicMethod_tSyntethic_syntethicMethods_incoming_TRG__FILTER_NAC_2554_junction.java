@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class SyntethicMethod_tSyntethic_syntethicMethods_incoming_TRG__FILTER_NAC_2554_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("SyntethicMethod__CO_2833_nacjunction"), this::check_constraint_197));
 		ports.add(new PortJunction(getSelf(), name2actor.get("SyntethicMethod_tSyntethic_syntethicMethods_incoming_TRG__FILTER_NAC_production"), this::check_constraint_199));

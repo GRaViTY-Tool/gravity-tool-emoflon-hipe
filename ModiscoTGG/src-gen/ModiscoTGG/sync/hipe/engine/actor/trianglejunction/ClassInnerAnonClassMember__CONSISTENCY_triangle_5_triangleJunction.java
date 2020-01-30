@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericTriangleJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.TriangleJunctionNode;
 
 public class ClassInnerAnonClassMember__CONSISTENCY_triangle_5_triangleJunction extends GenericTriangleJunctionActor{
-	private Map<Object, Collection<HMatch>> tAbstractTypeAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> tPackageAttrMap = new HashMap<>();
+	private Map<Object, Collection<HMatch>> tAbstractTypeAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, TriangleJunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("ClassInnerAnonClassMember__CONSISTENCY_triangle_4_triangleJunction"), this::check_constraint_68));
 	}
@@ -64,18 +64,18 @@ public class ClassInnerAnonClassMember__CONSISTENCY_triangle_5_triangleJunction 
 			port.forwardMessage(message);
 		}
 		Object obj = message.node;
-		if(obj instanceof org.gravity.typegraph.basic.TAbstractType) {
-			if(tAbstractTypeAttrMap.containsKey(obj)) {
-				for(HMatch match : tAbstractTypeAttrMap.get(obj)) {
+		if(obj instanceof org.gravity.typegraph.basic.TPackage) {
+			if(tPackageAttrMap.containsKey(obj)) {
+				for(HMatch match : tPackageAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}
 				}
 			}
 		}
-		if(obj instanceof org.gravity.typegraph.basic.TPackage) {
-			if(tPackageAttrMap.containsKey(obj)) {
-				for(HMatch match : tPackageAttrMap.get(obj)) {
+		if(obj instanceof org.gravity.typegraph.basic.TAbstractType) {
+			if(tAbstractTypeAttrMap.containsKey(obj)) {
+				for(HMatch match : tAbstractTypeAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}
@@ -87,8 +87,8 @@ public class ClassInnerAnonClassMember__CONSISTENCY_triangle_5_triangleJunction 
 	}
 	
 	public boolean check_constraint_68(HMatch match) {
-		org.gravity.typegraph.basic.TClass tOuterClass = (org.gravity.typegraph.basic.TClass) match.getNodes()[9];
 		org.gravity.typegraph.basic.TPackage tInnerPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[0];
+		org.gravity.typegraph.basic.TClass tOuterClass = (org.gravity.typegraph.basic.TClass) match.getNodes()[9];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix csp_20 = new org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix();
 		csp_20.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, tOuterClass.getTName(), "java.lang.String"));

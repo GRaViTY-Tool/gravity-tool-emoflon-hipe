@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class ClassExtendsClass__GEN_189_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunction(getSelf(), name2actor.get("ClassExtendsClass__GEN_production"), this::check_constraint_3));
 	}
@@ -53,11 +53,11 @@ public class ClassExtendsClass__GEN_189_junction extends GenericJunctionActor{
 	
 	public boolean check_constraint_3(HMatch match) {
 		org.gravity.typegraph.basic.TClass tClass = (org.gravity.typegraph.basic.TClass) match.getNodes()[2];
+		org.eclipse.modisco.java.ClassDeclaration eClassDeclaration = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[1];
 		ModiscoTGG.ClassDeclarationToTClass eExtendedClassToTExtendedClass = (ModiscoTGG.ClassDeclarationToTClass) match.getNodes()[3];
 		org.eclipse.modisco.java.ClassDeclaration eExtendedClass = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[4];
-		ModiscoTGG.ClassDeclarationToTClass eClassDeclarationToTClass = (ModiscoTGG.ClassDeclarationToTClass) match.getNodes()[0];
 		org.gravity.typegraph.basic.TClass tExtendedClass = (org.gravity.typegraph.basic.TClass) match.getNodes()[5];
-		org.eclipse.modisco.java.ClassDeclaration eClassDeclaration = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[1];
+		ModiscoTGG.ClassDeclarationToTClass eClassDeclarationToTClass = (ModiscoTGG.ClassDeclarationToTClass) match.getNodes()[0];
 		boolean predicate = !eClassDeclaration.equals(eExtendedClass) && !tClass.equals(tExtendedClass) && !eClassDeclarationToTClass.equals(eExtendedClassToTExtendedClass);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

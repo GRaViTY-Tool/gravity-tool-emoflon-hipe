@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class ClassInnerAnonClassMember__BWD_1601_junction extends GenericJunctionActor{
-	private Map<Object, Collection<HMatch>> tAbstractTypeAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> tPackageAttrMap = new HashMap<>();
+	private Map<Object, Collection<HMatch>> tAbstractTypeAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionLeft(getSelf(), name2actor.get("ClassInnerAnonClassMember__BWD_1594_junction"), this::check_constraint_64));
 	}
@@ -64,18 +64,18 @@ public class ClassInnerAnonClassMember__BWD_1601_junction extends GenericJunctio
 			port.forwardMessage(message);
 		}
 		Object obj = message.node;
-		if(obj instanceof org.gravity.typegraph.basic.TAbstractType) {
-			if(tAbstractTypeAttrMap.containsKey(obj)) {
-				for(HMatch match : tAbstractTypeAttrMap.get(obj)) {
+		if(obj instanceof org.gravity.typegraph.basic.TPackage) {
+			if(tPackageAttrMap.containsKey(obj)) {
+				for(HMatch match : tPackageAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}
 				}
 			}
 		}
-		if(obj instanceof org.gravity.typegraph.basic.TPackage) {
-			if(tPackageAttrMap.containsKey(obj)) {
-				for(HMatch match : tPackageAttrMap.get(obj)) {
+		if(obj instanceof org.gravity.typegraph.basic.TAbstractType) {
+			if(tAbstractTypeAttrMap.containsKey(obj)) {
+				for(HMatch match : tAbstractTypeAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}

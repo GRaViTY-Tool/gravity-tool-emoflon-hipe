@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class Enum_tType_classes_incoming_TRG__FILTER_NAC_2262_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("Enum__BWD_6275_nacjunction"), this::check_constraint_97));
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("Enum__BWD_6276_nacjunction"), this::check_constraint_98));
@@ -56,40 +56,40 @@ public class Enum_tType_classes_incoming_TRG__FILTER_NAC_2262_junction extends G
 	}
 	
 	public boolean check_constraint_97(HMatch match) {
-		org.gravity.typegraph.basic.TPackage FILTER_NAC_NODE = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
 		org.gravity.typegraph.basic.TPackage tPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[0];
+		org.gravity.typegraph.basic.TPackage FILTER_NAC_NODE = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(tPackage);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_98(HMatch match) {
-		org.gravity.typegraph.basic.TPackage FILTER_NAC_NODE = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
 		org.gravity.typegraph.basic.TPackage tPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[0];
+		org.gravity.typegraph.basic.TPackage FILTER_NAC_NODE = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(tPackage);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_100(HMatch match) {
-		org.gravity.typegraph.basic.TPackage FILTER_NAC_NODE = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
 		org.gravity.typegraph.basic.TPackage tPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[0];
+		org.gravity.typegraph.basic.TPackage FILTER_NAC_NODE = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(tPackage);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_101(HMatch match) {
-		org.gravity.typegraph.basic.TPackage FILTER_NAC_NODE = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
 		org.gravity.typegraph.basic.TPackage tPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[0];
+		org.gravity.typegraph.basic.TPackage FILTER_NAC_NODE = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(tPackage);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_102(HMatch match) {
-		org.gravity.typegraph.basic.TPackage FILTER_NAC_NODE = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
 		org.gravity.typegraph.basic.TPackage tPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[0];
+		org.gravity.typegraph.basic.TPackage FILTER_NAC_NODE = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(tPackage);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

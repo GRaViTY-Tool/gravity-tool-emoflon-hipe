@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class ArrayTypeToClass_eTypeAccess_usagesInTypeAccess_incoming_SRC__FILTER_NAC_1175_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("ArrayTypeToClass__CC_5301_nacjunction"), this::check_constraint_52));
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("ArrayTypeToClass__CONSISTENCY_5309_nacjunction"), this::check_constraint_53));
@@ -54,24 +54,24 @@ public class ArrayTypeToClass_eTypeAccess_usagesInTypeAccess_incoming_SRC__FILTE
 	}
 	
 	public boolean check_constraint_52(HMatch match) {
-		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		org.eclipse.modisco.java.Type eType = (org.eclipse.modisco.java.Type) match.getNodes()[0];
+		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(eType);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_53(HMatch match) {
-		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		org.eclipse.modisco.java.Type eType = (org.eclipse.modisco.java.Type) match.getNodes()[0];
+		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(eType);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_54(HMatch match) {
-		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		org.eclipse.modisco.java.Type eType = (org.eclipse.modisco.java.Type) match.getNodes()[0];
+		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(eType);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

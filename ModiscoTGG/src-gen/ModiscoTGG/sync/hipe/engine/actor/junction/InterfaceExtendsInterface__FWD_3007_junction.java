@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class InterfaceExtendsInterface__FWD_3007_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionLeft(getSelf(), name2actor.get("InterfaceExtendsInterface__FWD_6293_nacjunction"), this::check_constraint_153));
 	}
@@ -54,8 +54,8 @@ public class InterfaceExtendsInterface__FWD_3007_junction extends GenericJunctio
 	public boolean check_constraint_153(HMatch match) {
 		ModiscoTGG.InterfaceDeclarationToTInterface eSuperInterfaceToTSuperInterface = (ModiscoTGG.InterfaceDeclarationToTInterface) match.getNodes()[0];
 		org.gravity.typegraph.basic.TInterface tSuperInterface = (org.gravity.typegraph.basic.TInterface) match.getNodes()[2];
-		ModiscoTGG.InterfaceDeclarationToTInterface eInterfaceDeclarationToTInterface = (ModiscoTGG.InterfaceDeclarationToTInterface) match.getNodes()[3];
 		org.gravity.typegraph.basic.TInterface tInterface = (org.gravity.typegraph.basic.TInterface) match.getNodes()[5];
+		ModiscoTGG.InterfaceDeclarationToTInterface eInterfaceDeclarationToTInterface = (ModiscoTGG.InterfaceDeclarationToTInterface) match.getNodes()[3];
 		boolean predicate = !tInterface.equals(tSuperInterface) && !eInterfaceDeclarationToTInterface.equals(eSuperInterfaceToTSuperInterface);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

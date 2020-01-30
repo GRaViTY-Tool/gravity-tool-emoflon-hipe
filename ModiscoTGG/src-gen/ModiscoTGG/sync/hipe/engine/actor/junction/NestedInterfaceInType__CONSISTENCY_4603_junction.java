@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class NestedInterfaceInType__CONSISTENCY_4603_junction extends GenericJunctionActor{
 	private Map<Object, Collection<HMatch>> tPackageAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> namedElementAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionLeft(getSelf(), name2actor.get("NestedInterfaceInType__CONSISTENCY_6336_nacjunction"), this::check_constraint_208));
 	}

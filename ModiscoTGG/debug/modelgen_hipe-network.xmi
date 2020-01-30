@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hipe.network:HiPENetwork xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:HiPEPattern="platform:/resource/hipe.pattern/model/HiPEPattern" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:hipe.network="platform:/resource/hipe.network/model/hiPENetwork" xsi:schemaLocation="platform:/resource/hipe.pattern/model/HiPEPattern java://hipe.pattern.HiPEPatternPackage http://www.eclipse.org/emf/2002/Ecore java://org.eclipse.emf.ecore.EcorePackage platform:/resource/hipe.network/model/hiPENetwork java://hipe.network.NetworkPackage">
   <networknode xmi:type="hipe.network:DispatchNode" name="DispatchNode" objectNodes="//@networknode.3 //@networknode.4 //@networknode.6 //@networknode.10 //@networknode.11 //@networknode.13 //@networknode.24 //@networknode.26 //@networknode.43 //@networknode.44 //@networknode.46 //@networknode.51 //@networknode.53 //@networknode.58 //@networknode.59 //@networknode.68 //@networknode.71 //@networknode.78 //@networknode.79 //@networknode.85 //@networknode.94 //@networknode.102 //@networknode.103 //@networknode.108 //@networknode.109 //@networknode.116 //@networknode.117 //@networknode.134 //@networknode.157 //@networknode.159 //@networknode.175 //@networknode.177 //@networknode.184 //@networknode.209 //@networknode.211 //@networknode.215 //@networknode.219 //@networknode.220 //@networknode.222 //@networknode.230 //@networknode.231 //@networknode.233 //@networknode.237 //@networknode.238 //@networknode.240 //@networknode.246 //@networknode.247 //@networknode.271 //@networknode.276 //@networknode.310 //@networknode.319 //@networknode.321 //@networknode.325 //@networknode.326 //@networknode.328 //@networknode.344 //@networknode.345 //@networknode.347 //@networknode.363 //@networknode.364 //@networknode.366 //@networknode.447 //@networknode.448 //@networknode.449 //@networknode.450 //@networknode.451 //@networknode.452 //@networknode.453 //@networknode.454 //@networknode.455 //@networknode.456 //@networknode.457 //@networknode.458 //@networknode.459 //@networknode.460 //@networknode.461" notificationNode="//@networknode.1">
-    <metamodels xmi:type="ecore:EPackage" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#/"/>
-    <metamodels xmi:type="ecore:EPackage" href="http://www.gravity-tool.org/typegraph/basic#/"/>
     <metamodels xmi:type="ecore:EPackage" href="http://www.gravity-tool.org/modisco#/"/>
     <metamodels xmi:type="ecore:EPackage" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#/"/>
+    <metamodels xmi:type="ecore:EPackage" href="http://www.gravity-tool.org/typegraph/basic#/"/>
+    <metamodels xmi:type="ecore:EPackage" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#/"/>
   </networknode>
   <networknode xmi:type="hipe.network:NotificationNode" name="NotificationNode" dispatchNode="//@networknode.0"/>
   <networknode xmi:type="hipe.network:ReferenceNode" name="AnnotationToTAnnotation_source_0_reference" inputPort="//@networknode.3/@ports/@port.0 //@networknode.4/@ports/@port.0">
@@ -711,7 +711,7 @@
     </ports>
     <type xmi:type="ecore:EReference" href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/pg"/>
   </networknode>
-  <networknode xmi:type="hipe.network:TriangleJunctionNode" name="AnnotationTypeNested__GEN_triangle_0_triangleJunction" inputPort="//@networknode.70/@ports/@port.0 //@networknode.72/@ports/@port.0 //@networknode.73/@ports/@port.0" patternName="AnnotationTypeNested__GEN_triangle_0" overlaps="//@networknode.74/@allOverlaps.0" mappings="//@networknode.74/@allMappings.0" centerLeftOverlaps="//@networknode.74/@allOverlaps.1" fullOverlaps="//@networknode.74/@allOverlaps.4" rightHalfMatchMappings="//@networknode.74/@allMappings.3" centerHalfMatchMappings="//@networknode.74/@allMappings.2" centerHalfMatchOverlaps="//@networknode.74/@allOverlaps.2" rightHalfMatchOverlaps="//@networknode.74/@allOverlaps.3" centerLeftMappings="//@networknode.74/@allMappings.1">
+  <networknode xmi:type="hipe.network:TriangleJunctionNode" name="AnnotationTypeNested__GEN_triangle_0_triangleJunction" inputPort="//@networknode.70/@ports/@port.0 //@networknode.72/@ports/@port.0 //@networknode.73/@ports/@port.0" patternName="AnnotationTypeNested__GEN_triangle_0" overlaps="//@networknode.74/@allOverlaps.0" mappings="//@networknode.74/@allMappings.0" centerLeftOverlaps="//@networknode.74/@allOverlaps.1" centerLeftMappings="//@networknode.74/@allMappings.1" rightCenterOverlaps="//@networknode.74/@allOverlaps.2" rightCenterMappings="//@networknode.74/@allMappings.2" leftHalfMatchOverlaps="//@networknode.74/@allOverlaps.3" leftHalfMatchMappings="//@networknode.74/@allMappings.3" centerHalfMatchOverlaps="//@networknode.74/@allOverlaps.4" centerHalfMatchMappings="//@networknode.74/@allMappings.4" rightHalfMatchOverlaps="//@networknode.74/@allOverlaps.5" rightHalfMatchMappings="//@networknode.74/@allMappings.5" fullOverlaps="//@networknode.74/@allOverlaps.6">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.75"/>
     </ports>
@@ -720,6 +720,13 @@
     </allOverlaps>
     <allOverlaps xmi:type="hipe.network:Overlaps" name="center2left">
       <overlap xmi:type="hipe.network:Overlap" leftIndex="1"/>
+    </allOverlaps>
+    <allOverlaps xmi:type="hipe.network:Overlaps" name="right2center">
+      <overlap xmi:type="hipe.network:Overlap"/>
+    </allOverlaps>
+    <allOverlaps xmi:type="hipe.network:Overlaps" name="left2HalfMatch">
+      <overlap xmi:type="hipe.network:Overlap"/>
+      <overlap xmi:type="hipe.network:Overlap" leftIndex="1" rightIndex="1"/>
     </allOverlaps>
     <allOverlaps xmi:type="hipe.network:Overlaps" name="center2HalfMatch">
       <overlap xmi:type="hipe.network:Overlap" leftIndex="1"/>
@@ -743,6 +750,16 @@
       <mapping xmi:type="hipe.network:Mapping" index="1"/>
       <mapping xmi:type="hipe.network:Mapping" origin="RIGHT" index="1"/>
       <mapping xmi:type="hipe.network:Mapping"/>
+    </allMappings>
+    <allMappings xmi:type="hipe.network:Mappings" name="right2center">
+      <mapping xmi:type="hipe.network:Mapping" origin="RIGHT" index="1"/>
+      <mapping xmi:type="hipe.network:Mapping" index="1"/>
+      <mapping xmi:type="hipe.network:Mapping"/>
+    </allMappings>
+    <allMappings xmi:type="hipe.network:Mappings" name="left2HalfMatch">
+      <mapping xmi:type="hipe.network:Mapping"/>
+      <mapping xmi:type="hipe.network:Mapping" index="1"/>
+      <mapping xmi:type="hipe.network:Mapping" origin="RIGHT" index="2"/>
     </allMappings>
     <allMappings xmi:type="hipe.network:Mappings" name="center2HalfMatch">
       <mapping xmi:type="hipe.network:Mapping" index="1"/>
@@ -902,12 +919,12 @@
   <networknode xmi:type="hipe.network:JunctionNode" name="AnonymousClassTypeClass__GEN_133_junction" inputPort="//@networknode.87/@ports/@port.0 //@networknode.89/@ports/@port.0" patternName="AnonymousClassTypeClass__GEN_133" overlaps="//@networknode.90/@allOverlaps.0" mappings="//@networknode.90/@allMappings.0">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.91" initializationCode="" constraintName="check_constraint_2" predicateCode="!tClass.equals(tParent)">
-        <indices>5</indices>
         <indices>2</indices>
+        <indices>5</indices>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-        <nodeNames>tParent</nodeNames>
         <nodeNames>tClass</nodeNames>
+        <nodeNames>tParent</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="modelgen_hipe-patterns.xmi#//@patterns.220"/>
       </port>
     </ports>
@@ -1041,17 +1058,17 @@
     <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="tPackage" value="3"/>
     <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="pg" value="4"/>
   </networknode>
-  <networknode xmi:type="hipe.network:ObjectNode" name="ArrayInitializer_object" dispatchnode="//@networknode.0">
+  <networknode xmi:type="hipe.network:ObjectNode" name="MethodInvocation_object" dispatchnode="//@networknode.0">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.104"/>
     </ports>
-    <type xmi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer"/>
+    <type xmi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodInvocation"/>
   </networknode>
-  <networknode xmi:type="hipe.network:ObjectNode" name="MethodInvocation_object" dispatchnode="//@networknode.0">
+  <networknode xmi:type="hipe.network:ObjectNode" name="ArrayInitializer_object" dispatchnode="//@networknode.0">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.104"/>
     </ports>
-    <type xmi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodInvocation"/>
+    <type xmi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer"/>
   </networknode>
   <networknode xmi:type="hipe.network:JunctionNode" name="ArrayInitializerIgnoreExpressionsEdge__GEN_171_junction" inputPort="//@networknode.102/@ports/@port.0 //@networknode.103/@ports/@port.0" patternName="ArrayInitializerIgnoreExpressionsEdge__GEN_171" overlaps="//@networknode.104/@allOverlaps.0" mappings="//@networknode.104/@allMappings.0">
     <ports xmi:type="hipe.network:Ports">
@@ -1064,8 +1081,8 @@
     </allMappings>
   </networknode>
   <networknode xmi:type="hipe.network:ProductionNode" name="ArrayInitializerIgnoreExpressionsEdge__GEN_production" inputPort="//@networknode.104/@ports/@port.0" patternName="ArrayInitializerIgnoreExpressionsEdge__GEN">
-    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="array" value="0"/>
-    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="invocation" value="1"/>
+    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="invocation" value="0"/>
+    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="array" value="1"/>
   </networknode>
   <networknode xmi:type="hipe.network:JunctionNode" name="ArrayTypeToClass__GEN_175_junction" inputPort="//@networknode.23/@ports/@port.2 //@networknode.25/@ports/@port.4" patternName="ArrayTypeToClass__GEN_175" overlaps="//@networknode.106/@allOverlaps.0" mappings="//@networknode.106/@allMappings.0">
     <ports xmi:type="hipe.network:Ports">
@@ -1249,23 +1266,23 @@
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.122" initializationCode="" constraintName="check_constraint_3" predicateCode="!eClassDeclaration.equals(eExtendedClass) &amp;&amp; !tClass.equals(tExtendedClass) &amp;&amp; !eClassDeclarationToTClass.equals(eExtendedClassToTExtendedClass)">
         <indices>2</indices>
+        <indices>1</indices>
         <indices>3</indices>
         <indices>4</indices>
-        <indices>0</indices>
         <indices>5</indices>
-        <indices>1</indices>
-        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-        <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//ClassDeclarationToTClass"/>
-        <types xmi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
-        <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//ClassDeclarationToTClass"/>
+        <indices>0</indices>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
         <types xmi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
+        <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//ClassDeclarationToTClass"/>
+        <types xmi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
+        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//ClassDeclarationToTClass"/>
         <nodeNames>tClass</nodeNames>
+        <nodeNames>eClassDeclaration</nodeNames>
         <nodeNames>eExtendedClassToTExtendedClass</nodeNames>
         <nodeNames>eExtendedClass</nodeNames>
-        <nodeNames>eClassDeclarationToTClass</nodeNames>
         <nodeNames>tExtendedClass</nodeNames>
-        <nodeNames>eClassDeclaration</nodeNames>
+        <nodeNames>eClassDeclarationToTClass</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="modelgen_hipe-patterns.xmi#//@patterns.276"/>
       </port>
     </ports>
@@ -1635,22 +1652,22 @@
   <networknode xmi:type="hipe.network:JunctionNode" name="ClassInstanceCreation__GEN_256_junction" inputPort="//@networknode.148/@ports/@port.0 //@networknode.150/@ports/@port.0" patternName="ClassInstanceCreation__GEN_256" overlaps="//@networknode.151/@allOverlaps.0" mappings="//@networknode.151/@allMappings.0">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.152" initializationCode="" constraintName="check_constraint_5" predicateCode="!mMember.equals(mMethod) &amp;&amp; !tMember.equals(tMethod) &amp;&amp; !mMemberToTMember.equals(mMethodToTMethod)">
-        <indices>3</indices>
-        <indices>4</indices>
-        <indices>2</indices>
         <indices>1</indices>
+        <indices>3</indices>
+        <indices>2</indices>
+        <indices>4</indices>
         <indices>5</indices>
         <indices>0</indices>
+        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MDefinition"/>
         <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
+        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
-        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MDefinition"/>
-        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
         <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
-        <nodeNames>mMethodToTMethod</nodeNames>
-        <nodeNames>mMethod</nodeNames>
-        <nodeNames>tMember</nodeNames>
         <nodeNames>mMember</nodeNames>
+        <nodeNames>mMethodToTMethod</nodeNames>
+        <nodeNames>tMember</nodeNames>
+        <nodeNames>mMethod</nodeNames>
         <nodeNames>tMethod</nodeNames>
         <nodeNames>mMemberToTMember</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="modelgen_hipe-patterns.xmi#//@patterns.343"/>
@@ -1789,23 +1806,23 @@
   <networknode xmi:type="hipe.network:JunctionNode" name="ConstructorInvocation__GEN_284_junction" inputPort="//@networknode.162/@ports/@port.0 //@networknode.163/@ports/@port.0" patternName="ConstructorInvocation__GEN_284" overlaps="//@networknode.164/@allOverlaps.0" mappings="//@networknode.164/@allMappings.0">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.165" initializationCode="" constraintName="check_constraint_6" predicateCode="!mMember.equals(mMethod) &amp;&amp; !tMember.equals(tMethod) &amp;&amp; !mMemberToTMember.equals(mMethodToTMethod)">
+        <indices>2</indices>
         <indices>0</indices>
         <indices>5</indices>
-        <indices>2</indices>
-        <indices>1</indices>
         <indices>4</indices>
+        <indices>1</indices>
         <indices>3</indices>
+        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
         <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
-        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
-        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MDefinition"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
+        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MDefinition"/>
         <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
+        <nodeNames>tMember</nodeNames>
         <nodeNames>mMemberToTMember</nodeNames>
         <nodeNames>tMethod</nodeNames>
-        <nodeNames>tMember</nodeNames>
-        <nodeNames>mMember</nodeNames>
         <nodeNames>mMethod</nodeNames>
+        <nodeNames>mMember</nodeNames>
         <nodeNames>mMethodToTMethod</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="modelgen_hipe-patterns.xmi#//@patterns.371"/>
       </port>
@@ -2073,23 +2090,23 @@
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.189" initializationCode="" constraintName="check_constraint_7" predicateCode="!mField.equals(mMember) &amp;&amp; !tField.equals(tMember) &amp;&amp; !mMemberToTMember.equals(mMethodToTMethod)">
         <indices>6</indices>
-        <indices>5</indices>
-        <indices>4</indices>
-        <indices>1</indices>
-        <indices>2</indices>
         <indices>0</indices>
+        <indices>4</indices>
+        <indices>2</indices>
+        <indices>5</indices>
+        <indices>1</indices>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MFieldDefinition"/>
         <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TFieldDefinition"/>
-        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MDefinition"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
         <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
+        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MDefinition"/>
         <nodeNames>mField</nodeNames>
-        <nodeNames>mMethodToTMethod</nodeNames>
-        <nodeNames>tField</nodeNames>
-        <nodeNames>mMember</nodeNames>
-        <nodeNames>tMember</nodeNames>
         <nodeNames>mMemberToTMember</nodeNames>
+        <nodeNames>tField</nodeNames>
+        <nodeNames>tMember</nodeNames>
+        <nodeNames>mMethodToTMethod</nodeNames>
+        <nodeNames>mMember</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="modelgen_hipe-patterns.xmi#//@patterns.404"/>
       </port>
     </ports>
@@ -2221,24 +2238,24 @@
   <networknode xmi:type="hipe.network:JunctionNode" name="FieldAccessRead__GEN_344_junction" inputPort="//@networknode.190/@ports/@port.0 //@networknode.196/@ports/@port.0" patternName="FieldAccessRead__GEN_344" overlaps="//@networknode.197/@allOverlaps.0" mappings="//@networknode.197/@allMappings.0">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.198" initializationCode="" constraintName="check_constraint_8" predicateCode="!mField.equals(mMember) &amp;&amp; !tField.equals(tMember) &amp;&amp; !mMemberToTMember.equals(mMethodToTMethod)">
-        <indices>6</indices>
         <indices>1</indices>
+        <indices>6</indices>
         <indices>2</indices>
         <indices>4</indices>
-        <indices>5</indices>
         <indices>0</indices>
-        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MFieldDefinition"/>
+        <indices>5</indices>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MDefinition"/>
+        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MFieldDefinition"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TFieldDefinition"/>
         <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
         <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
-        <nodeNames>mField</nodeNames>
         <nodeNames>mMember</nodeNames>
+        <nodeNames>mField</nodeNames>
         <nodeNames>tMember</nodeNames>
         <nodeNames>tField</nodeNames>
-        <nodeNames>mMethodToTMethod</nodeNames>
         <nodeNames>mMemberToTMember</nodeNames>
+        <nodeNames>mMethodToTMethod</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="modelgen_hipe-patterns.xmi#//@patterns.431"/>
       </port>
     </ports>
@@ -2370,24 +2387,24 @@
   <networknode xmi:type="hipe.network:JunctionNode" name="FieldAccessWrite__GEN_371_junction" inputPort="//@networknode.199/@ports/@port.0 //@networknode.205/@ports/@port.0" patternName="FieldAccessWrite__GEN_371" overlaps="//@networknode.206/@allOverlaps.0" mappings="//@networknode.206/@allMappings.0">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.207" initializationCode="" constraintName="check_constraint_9" predicateCode="!mField.equals(mMember) &amp;&amp; !tField.equals(tMember) &amp;&amp; !mMemberToTMember.equals(mMethodToTMethod)">
-        <indices>0</indices>
-        <indices>4</indices>
-        <indices>5</indices>
-        <indices>6</indices>
         <indices>1</indices>
+        <indices>5</indices>
+        <indices>4</indices>
+        <indices>6</indices>
         <indices>2</indices>
+        <indices>0</indices>
+        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MDefinition"/>
         <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TFieldDefinition"/>
-        <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MFieldDefinition"/>
-        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MDefinition"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
-        <nodeNames>mMemberToTMember</nodeNames>
-        <nodeNames>tField</nodeNames>
-        <nodeNames>mMethodToTMethod</nodeNames>
-        <nodeNames>mField</nodeNames>
+        <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
         <nodeNames>mMember</nodeNames>
+        <nodeNames>mMethodToTMethod</nodeNames>
+        <nodeNames>tField</nodeNames>
+        <nodeNames>mField</nodeNames>
         <nodeNames>tMember</nodeNames>
+        <nodeNames>mMemberToTMember</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="modelgen_hipe-patterns.xmi#//@patterns.458"/>
       </port>
     </ports>
@@ -2706,18 +2723,18 @@
   <networknode xmi:type="hipe.network:JunctionNode" name="IncomingFlow__GEN_435_junction" inputPort="//@networknode.241/@ports/@port.0 //@networknode.242/@ports/@port.0" patternName="IncomingFlow__GEN_435" overlaps="//@networknode.243/@allOverlaps.0" mappings="//@networknode.243/@allMappings.0">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.244" initializationCode="" constraintName="check_constraint_10" predicateCode="!mFlow.equals(mSource) &amp;&amp; !tFlow.equals(tSource)">
-        <indices>2</indices>
         <indices>5</indices>
-        <indices>4</indices>
         <indices>1</indices>
-        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TFlow"/>
+        <indices>4</indices>
+        <indices>2</indices>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TAbstractFlowElement"/>
-        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MAbstractFlowElement"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MFlow"/>
-        <nodeNames>tFlow</nodeNames>
+        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MAbstractFlowElement"/>
+        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TFlow"/>
         <nodeNames>tSource</nodeNames>
-        <nodeNames>mSource</nodeNames>
         <nodeNames>mFlow</nodeNames>
+        <nodeNames>mSource</nodeNames>
+        <nodeNames>tFlow</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="modelgen_hipe-patterns.xmi#//@patterns.522"/>
       </port>
     </ports>
@@ -2797,24 +2814,24 @@
   <networknode xmi:type="hipe.network:JunctionNode" name="InterfaceExtendsInterface__GEN_448_junction" inputPort="//@networknode.249/@ports/@port.0 //@networknode.250/@ports/@port.0" patternName="InterfaceExtendsInterface__GEN_448" overlaps="//@networknode.251/@allOverlaps.0" mappings="//@networknode.251/@allMappings.0">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.252" initializationCode="" constraintName="check_constraint_11" predicateCode="!eInterfaceDeclaration.equals(eSuperInterface) &amp;&amp; !tInterface.equals(tSuperInterface) &amp;&amp; !eInterfaceDeclarationToTInterface.equals(eSuperInterfaceToTSuperInterface)">
-        <indices>0</indices>
-        <indices>5</indices>
-        <indices>2</indices>
-        <indices>3</indices>
         <indices>1</indices>
+        <indices>5</indices>
+        <indices>0</indices>
+        <indices>3</indices>
         <indices>4</indices>
+        <indices>2</indices>
+        <types xmi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//InterfaceDeclaration"/>
+        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TInterface"/>
         <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//InterfaceDeclarationToTInterface"/>
-        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TInterface"/>
-        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TInterface"/>
         <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//InterfaceDeclarationToTInterface"/>
         <types xmi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//InterfaceDeclaration"/>
-        <types xmi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//InterfaceDeclaration"/>
-        <nodeNames>eInterfaceDeclarationToTInterface</nodeNames>
-        <nodeNames>tSuperInterface</nodeNames>
-        <nodeNames>tInterface</nodeNames>
-        <nodeNames>eSuperInterfaceToTSuperInterface</nodeNames>
+        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TInterface"/>
         <nodeNames>eInterfaceDeclaration</nodeNames>
+        <nodeNames>tSuperInterface</nodeNames>
+        <nodeNames>eInterfaceDeclarationToTInterface</nodeNames>
+        <nodeNames>eSuperInterfaceToTSuperInterface</nodeNames>
         <nodeNames>eSuperInterface</nodeNames>
+        <nodeNames>tInterface</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="modelgen_hipe-patterns.xmi#//@patterns.535"/>
       </port>
     </ports>
@@ -3736,24 +3753,24 @@
   <networknode xmi:type="hipe.network:JunctionNode" name="MethodInvocation__GEN_622_junction" inputPort="//@networknode.333/@ports/@port.0 //@networknode.334/@ports/@port.0" patternName="MethodInvocation__GEN_622" overlaps="//@networknode.335/@allOverlaps.0" mappings="//@networknode.335/@allMappings.0">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.336" initializationCode="" constraintName="check_constraint_12" predicateCode="!mMember.equals(mMethod) &amp;&amp; !tMember.equals(tMethod) &amp;&amp; !mMemberToTMember.equals(mMethodToTMethod)">
-        <indices>4</indices>
-        <indices>5</indices>
         <indices>2</indices>
-        <indices>3</indices>
         <indices>1</indices>
+        <indices>5</indices>
         <indices>0</indices>
-        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
+        <indices>3</indices>
+        <indices>4</indices>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
-        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
-        <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MDefinition"/>
+        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
         <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
-        <nodeNames>mMethod</nodeNames>
-        <nodeNames>tMethod</nodeNames>
+        <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
+        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
         <nodeNames>tMember</nodeNames>
-        <nodeNames>mMethodToTMethod</nodeNames>
         <nodeNames>mMember</nodeNames>
+        <nodeNames>tMethod</nodeNames>
         <nodeNames>mMemberToTMember</nodeNames>
+        <nodeNames>mMethodToTMethod</nodeNames>
+        <nodeNames>mMethod</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="modelgen_hipe-patterns.xmi#//@patterns.709"/>
       </port>
     </ports>
@@ -3823,23 +3840,23 @@
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.342" initializationCode="" constraintName="check_constraint_13" predicateCode="!mMethod.equals(mOverriding) &amp;&amp; !tMethod.equals(tOverriding) &amp;&amp; !mMethodToTMethod.equals(mOverridingToTOverriding)">
         <indices>1</indices>
+        <indices>3</indices>
+        <indices>0</indices>
+        <indices>4</indices>
         <indices>2</indices>
         <indices>5</indices>
-        <indices>3</indices>
-        <indices>4</indices>
-        <indices>0</indices>
+        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
+        <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
+        <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
-        <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
-        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
-        <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
         <nodeNames>mMethod</nodeNames>
+        <nodeNames>mOverridingToTOverriding</nodeNames>
+        <nodeNames>mMethodToTMethod</nodeNames>
+        <nodeNames>mOverriding</nodeNames>
         <nodeNames>tMethod</nodeNames>
         <nodeNames>tOverriding</nodeNames>
-        <nodeNames>mOverridingToTOverriding</nodeNames>
-        <nodeNames>mOverriding</nodeNames>
-        <nodeNames>mMethodToTMethod</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="modelgen_hipe-patterns.xmi#//@patterns.728"/>
       </port>
     </ports>
@@ -3973,24 +3990,24 @@
   <networknode xmi:type="hipe.network:JunctionNode" name="MethodParameterLink__GEN_667_junction" inputPort="//@networknode.352/@ports/@port.0 //@networknode.353/@ports/@port.0" patternName="MethodParameterLink__GEN_667" overlaps="//@networknode.354/@allOverlaps.0" mappings="//@networknode.354/@allMappings.0">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.355" initializationCode="" constraintName="check_constraint_14" predicateCode="!mEntry.equals(mPrevEntry) &amp;&amp; !tParameter.equals(tPrevParameter) &amp;&amp; !eSingleVariableDeclarationToTParameter.equals(mmethodSignatureToTMethodSignature)">
-        <indices>2</indices>
-        <indices>3</indices>
         <indices>0</indices>
         <indices>4</indices>
-        <indices>1</indices>
         <indices>5</indices>
-        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TParameter"/>
-        <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MEntryToTParameter"/>
+        <indices>3</indices>
+        <indices>1</indices>
+        <indices>2</indices>
         <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MEntryToTParameter"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MEntry"/>
+        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TParameter"/>
+        <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MEntryToTParameter"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MEntry"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TParameter"/>
-        <nodeNames>tParameter</nodeNames>
-        <nodeNames>mmethodSignatureToTMethodSignature</nodeNames>
         <nodeNames>eSingleVariableDeclarationToTParameter</nodeNames>
         <nodeNames>mPrevEntry</nodeNames>
-        <nodeNames>mEntry</nodeNames>
         <nodeNames>tPrevParameter</nodeNames>
+        <nodeNames>mmethodSignatureToTMethodSignature</nodeNames>
+        <nodeNames>mEntry</nodeNames>
+        <nodeNames>tParameter</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="modelgen_hipe-patterns.xmi#//@patterns.754"/>
       </port>
     </ports>
@@ -4140,7 +4157,7 @@
       <mapping xmi:type="hipe.network:Mapping" origin="RIGHT" index="1"/>
     </allMappings>
   </networknode>
-  <networknode xmi:type="hipe.network:TriangleJunctionNode" name="NestedClassInType__GEN_triangle_0_triangleJunction" inputPort="//@networknode.70/@ports/@port.5 //@networknode.72/@ports/@port.2 //@networknode.73/@ports/@port.3" patternName="NestedClassInType__GEN_triangle_0" overlaps="//@networknode.370/@allOverlaps.0" mappings="//@networknode.370/@allMappings.0" centerLeftOverlaps="//@networknode.370/@allOverlaps.1" fullOverlaps="//@networknode.370/@allOverlaps.4" rightHalfMatchMappings="//@networknode.370/@allMappings.3" centerHalfMatchMappings="//@networknode.370/@allMappings.2" centerHalfMatchOverlaps="//@networknode.370/@allOverlaps.2" rightHalfMatchOverlaps="//@networknode.370/@allOverlaps.3" centerLeftMappings="//@networknode.370/@allMappings.1">
+  <networknode xmi:type="hipe.network:TriangleJunctionNode" name="NestedClassInType__GEN_triangle_0_triangleJunction" inputPort="//@networknode.70/@ports/@port.5 //@networknode.72/@ports/@port.2 //@networknode.73/@ports/@port.3" patternName="NestedClassInType__GEN_triangle_0" overlaps="//@networknode.370/@allOverlaps.0" mappings="//@networknode.370/@allMappings.0" centerLeftOverlaps="//@networknode.370/@allOverlaps.1" centerLeftMappings="//@networknode.370/@allMappings.1" rightCenterOverlaps="//@networknode.370/@allOverlaps.2" rightCenterMappings="//@networknode.370/@allMappings.2" leftHalfMatchOverlaps="//@networknode.370/@allOverlaps.3" leftHalfMatchMappings="//@networknode.370/@allMappings.3" centerHalfMatchOverlaps="//@networknode.370/@allOverlaps.4" centerHalfMatchMappings="//@networknode.370/@allMappings.4" rightHalfMatchOverlaps="//@networknode.370/@allOverlaps.5" rightHalfMatchMappings="//@networknode.370/@allMappings.5" fullOverlaps="//@networknode.370/@allOverlaps.6">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.371"/>
     </ports>
@@ -4149,6 +4166,13 @@
     </allOverlaps>
     <allOverlaps xmi:type="hipe.network:Overlaps" name="center2left">
       <overlap xmi:type="hipe.network:Overlap" leftIndex="1"/>
+    </allOverlaps>
+    <allOverlaps xmi:type="hipe.network:Overlaps" name="right2center">
+      <overlap xmi:type="hipe.network:Overlap"/>
+    </allOverlaps>
+    <allOverlaps xmi:type="hipe.network:Overlaps" name="left2HalfMatch">
+      <overlap xmi:type="hipe.network:Overlap"/>
+      <overlap xmi:type="hipe.network:Overlap" leftIndex="1" rightIndex="1"/>
     </allOverlaps>
     <allOverlaps xmi:type="hipe.network:Overlaps" name="center2HalfMatch">
       <overlap xmi:type="hipe.network:Overlap" leftIndex="1"/>
@@ -4172,6 +4196,16 @@
       <mapping xmi:type="hipe.network:Mapping" index="1"/>
       <mapping xmi:type="hipe.network:Mapping" origin="RIGHT" index="1"/>
       <mapping xmi:type="hipe.network:Mapping"/>
+    </allMappings>
+    <allMappings xmi:type="hipe.network:Mappings" name="right2center">
+      <mapping xmi:type="hipe.network:Mapping" origin="RIGHT" index="1"/>
+      <mapping xmi:type="hipe.network:Mapping" index="1"/>
+      <mapping xmi:type="hipe.network:Mapping"/>
+    </allMappings>
+    <allMappings xmi:type="hipe.network:Mappings" name="left2HalfMatch">
+      <mapping xmi:type="hipe.network:Mapping"/>
+      <mapping xmi:type="hipe.network:Mapping" index="1"/>
+      <mapping xmi:type="hipe.network:Mapping" origin="RIGHT" index="2"/>
     </allMappings>
     <allMappings xmi:type="hipe.network:Mappings" name="center2HalfMatch">
       <mapping xmi:type="hipe.network:Mapping" index="1"/>
@@ -4219,7 +4253,7 @@
       <mapping xmi:type="hipe.network:Mapping" origin="RIGHT" index="1"/>
     </allMappings>
   </networknode>
-  <networknode xmi:type="hipe.network:TriangleJunctionNode" name="NestedEnum__GEN_triangle_0_triangleJunction" inputPort="//@networknode.70/@ports/@port.6 //@networknode.72/@ports/@port.3 //@networknode.73/@ports/@port.4" patternName="NestedEnum__GEN_triangle_0" overlaps="//@networknode.374/@allOverlaps.0" mappings="//@networknode.374/@allMappings.0" centerLeftOverlaps="//@networknode.374/@allOverlaps.1" fullOverlaps="//@networknode.374/@allOverlaps.4" rightHalfMatchMappings="//@networknode.374/@allMappings.3" centerHalfMatchMappings="//@networknode.374/@allMappings.2" centerHalfMatchOverlaps="//@networknode.374/@allOverlaps.2" rightHalfMatchOverlaps="//@networknode.374/@allOverlaps.3" centerLeftMappings="//@networknode.374/@allMappings.1">
+  <networknode xmi:type="hipe.network:TriangleJunctionNode" name="NestedEnum__GEN_triangle_0_triangleJunction" inputPort="//@networknode.70/@ports/@port.6 //@networknode.72/@ports/@port.3 //@networknode.73/@ports/@port.4" patternName="NestedEnum__GEN_triangle_0" overlaps="//@networknode.374/@allOverlaps.0" mappings="//@networknode.374/@allMappings.0" centerLeftOverlaps="//@networknode.374/@allOverlaps.1" centerLeftMappings="//@networknode.374/@allMappings.1" rightCenterOverlaps="//@networknode.374/@allOverlaps.2" rightCenterMappings="//@networknode.374/@allMappings.2" leftHalfMatchOverlaps="//@networknode.374/@allOverlaps.3" leftHalfMatchMappings="//@networknode.374/@allMappings.3" centerHalfMatchOverlaps="//@networknode.374/@allOverlaps.4" centerHalfMatchMappings="//@networknode.374/@allMappings.4" rightHalfMatchOverlaps="//@networknode.374/@allOverlaps.5" rightHalfMatchMappings="//@networknode.374/@allMappings.5" fullOverlaps="//@networknode.374/@allOverlaps.6">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.375"/>
     </ports>
@@ -4228,6 +4262,13 @@
     </allOverlaps>
     <allOverlaps xmi:type="hipe.network:Overlaps" name="center2left">
       <overlap xmi:type="hipe.network:Overlap" leftIndex="1"/>
+    </allOverlaps>
+    <allOverlaps xmi:type="hipe.network:Overlaps" name="right2center">
+      <overlap xmi:type="hipe.network:Overlap"/>
+    </allOverlaps>
+    <allOverlaps xmi:type="hipe.network:Overlaps" name="left2HalfMatch">
+      <overlap xmi:type="hipe.network:Overlap"/>
+      <overlap xmi:type="hipe.network:Overlap" leftIndex="1" rightIndex="1"/>
     </allOverlaps>
     <allOverlaps xmi:type="hipe.network:Overlaps" name="center2HalfMatch">
       <overlap xmi:type="hipe.network:Overlap" leftIndex="1"/>
@@ -4251,6 +4292,16 @@
       <mapping xmi:type="hipe.network:Mapping" index="1"/>
       <mapping xmi:type="hipe.network:Mapping" origin="RIGHT" index="1"/>
       <mapping xmi:type="hipe.network:Mapping"/>
+    </allMappings>
+    <allMappings xmi:type="hipe.network:Mappings" name="right2center">
+      <mapping xmi:type="hipe.network:Mapping" origin="RIGHT" index="1"/>
+      <mapping xmi:type="hipe.network:Mapping" index="1"/>
+      <mapping xmi:type="hipe.network:Mapping"/>
+    </allMappings>
+    <allMappings xmi:type="hipe.network:Mappings" name="left2HalfMatch">
+      <mapping xmi:type="hipe.network:Mapping"/>
+      <mapping xmi:type="hipe.network:Mapping" index="1"/>
+      <mapping xmi:type="hipe.network:Mapping" origin="RIGHT" index="2"/>
     </allMappings>
     <allMappings xmi:type="hipe.network:Mappings" name="center2HalfMatch">
       <mapping xmi:type="hipe.network:Mapping" index="1"/>
@@ -4298,7 +4349,7 @@
       <mapping xmi:type="hipe.network:Mapping" origin="RIGHT" index="1"/>
     </allMappings>
   </networknode>
-  <networknode xmi:type="hipe.network:TriangleJunctionNode" name="NestedInterfaceInType__GEN_triangle_0_triangleJunction" inputPort="//@networknode.70/@ports/@port.7 //@networknode.72/@ports/@port.4 //@networknode.73/@ports/@port.5" patternName="NestedInterfaceInType__GEN_triangle_0" overlaps="//@networknode.378/@allOverlaps.0" mappings="//@networknode.378/@allMappings.0" centerLeftOverlaps="//@networknode.378/@allOverlaps.1" fullOverlaps="//@networknode.378/@allOverlaps.4" rightHalfMatchMappings="//@networknode.378/@allMappings.3" centerHalfMatchMappings="//@networknode.378/@allMappings.2" centerHalfMatchOverlaps="//@networknode.378/@allOverlaps.2" rightHalfMatchOverlaps="//@networknode.378/@allOverlaps.3" centerLeftMappings="//@networknode.378/@allMappings.1">
+  <networknode xmi:type="hipe.network:TriangleJunctionNode" name="NestedInterfaceInType__GEN_triangle_0_triangleJunction" inputPort="//@networknode.70/@ports/@port.7 //@networknode.72/@ports/@port.4 //@networknode.73/@ports/@port.5" patternName="NestedInterfaceInType__GEN_triangle_0" overlaps="//@networknode.378/@allOverlaps.0" mappings="//@networknode.378/@allMappings.0" centerLeftOverlaps="//@networknode.378/@allOverlaps.1" centerLeftMappings="//@networknode.378/@allMappings.1" rightCenterOverlaps="//@networknode.378/@allOverlaps.2" rightCenterMappings="//@networknode.378/@allMappings.2" leftHalfMatchOverlaps="//@networknode.378/@allOverlaps.3" leftHalfMatchMappings="//@networknode.378/@allMappings.3" centerHalfMatchOverlaps="//@networknode.378/@allOverlaps.4" centerHalfMatchMappings="//@networknode.378/@allMappings.4" rightHalfMatchOverlaps="//@networknode.378/@allOverlaps.5" rightHalfMatchMappings="//@networknode.378/@allMappings.5" fullOverlaps="//@networknode.378/@allOverlaps.6">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.379"/>
     </ports>
@@ -4307,6 +4358,13 @@
     </allOverlaps>
     <allOverlaps xmi:type="hipe.network:Overlaps" name="center2left">
       <overlap xmi:type="hipe.network:Overlap" leftIndex="1"/>
+    </allOverlaps>
+    <allOverlaps xmi:type="hipe.network:Overlaps" name="right2center">
+      <overlap xmi:type="hipe.network:Overlap"/>
+    </allOverlaps>
+    <allOverlaps xmi:type="hipe.network:Overlaps" name="left2HalfMatch">
+      <overlap xmi:type="hipe.network:Overlap"/>
+      <overlap xmi:type="hipe.network:Overlap" leftIndex="1" rightIndex="1"/>
     </allOverlaps>
     <allOverlaps xmi:type="hipe.network:Overlaps" name="center2HalfMatch">
       <overlap xmi:type="hipe.network:Overlap" leftIndex="1"/>
@@ -4330,6 +4388,16 @@
       <mapping xmi:type="hipe.network:Mapping" index="1"/>
       <mapping xmi:type="hipe.network:Mapping" origin="RIGHT" index="1"/>
       <mapping xmi:type="hipe.network:Mapping"/>
+    </allMappings>
+    <allMappings xmi:type="hipe.network:Mappings" name="right2center">
+      <mapping xmi:type="hipe.network:Mapping" origin="RIGHT" index="1"/>
+      <mapping xmi:type="hipe.network:Mapping" index="1"/>
+      <mapping xmi:type="hipe.network:Mapping"/>
+    </allMappings>
+    <allMappings xmi:type="hipe.network:Mappings" name="left2HalfMatch">
+      <mapping xmi:type="hipe.network:Mapping"/>
+      <mapping xmi:type="hipe.network:Mapping" index="1"/>
+      <mapping xmi:type="hipe.network:Mapping" origin="RIGHT" index="2"/>
     </allMappings>
     <allMappings xmi:type="hipe.network:Mappings" name="center2HalfMatch">
       <mapping xmi:type="hipe.network:Mapping" index="1"/>
@@ -4393,17 +4461,17 @@
   <networknode xmi:type="hipe.network:JunctionNode" name="OutgoingFlow__GEN_744_junction" inputPort="//@networknode.381/@ports/@port.0 //@networknode.382/@ports/@port.0" patternName="OutgoingFlow__GEN_744" overlaps="//@networknode.383/@allOverlaps.0" mappings="//@networknode.383/@allMappings.0">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.384" initializationCode="" constraintName="check_constraint_15" predicateCode="!mFlow.equals(mTarget) &amp;&amp; !tFlow.equals(tTarget)">
+        <indices>2</indices>
         <indices>4</indices>
         <indices>5</indices>
-        <indices>2</indices>
         <indices>1</indices>
+        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TFlow"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MAbstractFlowElement"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TAbstractFlowElement"/>
-        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TFlow"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MFlow"/>
+        <nodeNames>tFlow</nodeNames>
         <nodeNames>mTarget</nodeNames>
         <nodeNames>tTarget</nodeNames>
-        <nodeNames>tFlow</nodeNames>
         <nodeNames>mFlow</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="modelgen_hipe-patterns.xmi#//@patterns.831"/>
       </port>
@@ -4828,24 +4896,24 @@
   <networknode xmi:type="hipe.network:JunctionNode" name="SuperConstructorInvocation__GEN_867_junction" inputPort="//@networknode.421/@ports/@port.0 //@networknode.422/@ports/@port.0" patternName="SuperConstructorInvocation__GEN_867" overlaps="//@networknode.423/@allOverlaps.0" mappings="//@networknode.423/@allMappings.0">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.424" initializationCode="" constraintName="check_constraint_16" predicateCode="!mMember.equals(mMethod) &amp;&amp; !tMember.equals(tMethod) &amp;&amp; !mMemberToTMember.equals(mMethodToTMethod)">
+        <indices>1</indices>
         <indices>5</indices>
+        <indices>4</indices>
+        <indices>0</indices>
         <indices>3</indices>
         <indices>2</indices>
-        <indices>0</indices>
-        <indices>1</indices>
-        <indices>4</indices>
-        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
-        <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
-        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
-        <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MDefinition"/>
+        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
+        <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
+        <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
+        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
+        <nodeNames>mMember</nodeNames>
         <nodeNames>tMethod</nodeNames>
+        <nodeNames>mMethod</nodeNames>
+        <nodeNames>mMemberToTMember</nodeNames>
         <nodeNames>mMethodToTMethod</nodeNames>
         <nodeNames>tMember</nodeNames>
-        <nodeNames>mMemberToTMember</nodeNames>
-        <nodeNames>mMember</nodeNames>
-        <nodeNames>mMethod</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="modelgen_hipe-patterns.xmi#//@patterns.954"/>
       </port>
     </ports>
@@ -4896,24 +4964,24 @@
   <networknode xmi:type="hipe.network:JunctionNode" name="SuperMethodInvocation__GEN_880_junction" inputPort="//@networknode.425/@ports/@port.0 //@networknode.426/@ports/@port.0" patternName="SuperMethodInvocation__GEN_880" overlaps="//@networknode.427/@allOverlaps.0" mappings="//@networknode.427/@allMappings.0">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.428" initializationCode="" constraintName="check_constraint_17" predicateCode="!mMember.equals(mMethod) &amp;&amp; !tMember.equals(tMethod) &amp;&amp; !mMemberToTMember.equals(mMethodToTMethod)">
+        <indices>3</indices>
+        <indices>2</indices>
+        <indices>4</indices>
+        <indices>5</indices>
         <indices>0</indices>
         <indices>1</indices>
-        <indices>5</indices>
-        <indices>3</indices>
-        <indices>4</indices>
-        <indices>2</indices>
         <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
-        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MDefinition"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
-        <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
         <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
+        <types xmi:type="ecore:EClass" href="platform:/resource/ModiscoTGG/model/ModiscoTGG.ecore#//MDefinitionToTMember"/>
+        <types xmi:type="ecore:EClass" href="http://www.gravity-tool.org/modisco#//MDefinition"/>
+        <nodeNames>mMethodToTMethod</nodeNames>
+        <nodeNames>tMember</nodeNames>
+        <nodeNames>mMethod</nodeNames>
+        <nodeNames>tMethod</nodeNames>
         <nodeNames>mMemberToTMember</nodeNames>
         <nodeNames>mMember</nodeNames>
-        <nodeNames>tMethod</nodeNames>
-        <nodeNames>mMethodToTMethod</nodeNames>
-        <nodeNames>mMethod</nodeNames>
-        <nodeNames>tMember</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="modelgen_hipe-patterns.xmi#//@patterns.967"/>
       </port>
     </ports>

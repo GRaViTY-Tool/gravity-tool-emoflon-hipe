@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class Class_tType_classes_incoming_TRG__FILTER_NAC_902_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("Class__CO_2758_nacjunction"), this::check_constraint_63));
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("Class__CO_2759_nacjunction"), this::check_constraint_64));

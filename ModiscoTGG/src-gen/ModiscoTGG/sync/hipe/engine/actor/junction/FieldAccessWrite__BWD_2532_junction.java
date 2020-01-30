@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class FieldAccessWrite__BWD_2532_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunction(getSelf(), name2actor.get("FieldAccessWrite__BWD_production"), this::check_constraint_128));
 	}
@@ -54,8 +54,8 @@ public class FieldAccessWrite__BWD_2532_junction extends GenericJunctionActor{
 	public boolean check_constraint_128(HMatch match) {
 		ModiscoTGG.MDefinitionToTMember mMemberToTMember = (ModiscoTGG.MDefinitionToTMember) match.getNodes()[7];
 		org.gravity.modisco.MDefinition mMember = (org.gravity.modisco.MDefinition) match.getNodes()[8];
-		org.gravity.modisco.MFieldDefinition mField = (org.gravity.modisco.MFieldDefinition) match.getNodes()[1];
 		ModiscoTGG.MDefinitionToTMember mMethodToTMethod = (ModiscoTGG.MDefinitionToTMember) match.getNodes()[0];
+		org.gravity.modisco.MFieldDefinition mField = (org.gravity.modisco.MFieldDefinition) match.getNodes()[1];
 		boolean predicate = !mField.equals(mMember) && !mMemberToTMember.equals(mMethodToTMethod);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

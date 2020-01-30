@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericTriangleJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.TriangleJunctionNode;
 
 public class ModelToPg__CONSISTENCY_triangle_0_triangleJunction extends GenericTriangleJunctionActor{
 	private Map<Object, Collection<HMatch>> typeGraphAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> modelAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, TriangleJunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunction(getSelf(), name2actor.get("ModelToPg__CONSISTENCY_production"), this::check_constraint_187));
 	}
@@ -87,8 +87,8 @@ public class ModelToPg__CONSISTENCY_triangle_0_triangleJunction extends GenericT
 	}
 	
 	public boolean check_constraint_187(HMatch match) {
-		org.gravity.modisco.MGravityModel mModel = (org.gravity.modisco.MGravityModel) match.getNodes()[3];
 		org.gravity.typegraph.basic.TypeGraph tPG = (org.gravity.typegraph.basic.TypeGraph) match.getNodes()[1];
+		org.gravity.modisco.MGravityModel mModel = (org.gravity.modisco.MGravityModel) match.getNodes()[3];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.Eq csp_45 = new org.emoflon.ibex.tgg.operational.csp.constraints.Eq();
 		csp_45.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, mModel.getName(), "java.lang.String"));

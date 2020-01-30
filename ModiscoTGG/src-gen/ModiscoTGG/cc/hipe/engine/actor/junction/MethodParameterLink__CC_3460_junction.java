@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class MethodParameterLink__CC_3460_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunction(getSelf(), name2actor.get("MethodParameterLink__CC_production"), this::check_constraint_188));
 	}
@@ -52,8 +52,8 @@ public class MethodParameterLink__CC_3460_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_188(HMatch match) {
-		ModiscoTGG.MEntryToTParameter mmethodSignatureToTMethodSignature = (ModiscoTGG.MEntryToTParameter) match.getNodes()[5];
 		ModiscoTGG.MEntryToTParameter eSingleVariableDeclarationToTParameter = (ModiscoTGG.MEntryToTParameter) match.getNodes()[2];
+		ModiscoTGG.MEntryToTParameter mmethodSignatureToTMethodSignature = (ModiscoTGG.MEntryToTParameter) match.getNodes()[5];
 		boolean predicate = !eSingleVariableDeclarationToTParameter.equals(mmethodSignatureToTMethodSignature);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

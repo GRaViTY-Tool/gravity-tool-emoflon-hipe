@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class ClassInstanceCreation__GEN_256_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunction(getSelf(), name2actor.get("ClassInstanceCreation__GEN_production"), this::check_constraint_5));
 	}
@@ -52,10 +52,10 @@ public class ClassInstanceCreation__GEN_256_junction extends GenericJunctionActo
 	}
 	
 	public boolean check_constraint_5(HMatch match) {
-		ModiscoTGG.MDefinitionToTMember mMethodToTMethod = (ModiscoTGG.MDefinitionToTMember) match.getNodes()[3];
-		org.gravity.modisco.MAbstractMethodDefinition mMethod = (org.gravity.modisco.MAbstractMethodDefinition) match.getNodes()[4];
-		org.gravity.typegraph.basic.TMember tMember = (org.gravity.typegraph.basic.TMember) match.getNodes()[2];
 		org.gravity.modisco.MDefinition mMember = (org.gravity.modisco.MDefinition) match.getNodes()[1];
+		ModiscoTGG.MDefinitionToTMember mMethodToTMethod = (ModiscoTGG.MDefinitionToTMember) match.getNodes()[3];
+		org.gravity.typegraph.basic.TMember tMember = (org.gravity.typegraph.basic.TMember) match.getNodes()[2];
+		org.gravity.modisco.MAbstractMethodDefinition mMethod = (org.gravity.modisco.MAbstractMethodDefinition) match.getNodes()[4];
 		org.gravity.typegraph.basic.TMember tMethod = (org.gravity.typegraph.basic.TMember) match.getNodes()[5];
 		ModiscoTGG.MDefinitionToTMember mMemberToTMember = (ModiscoTGG.MDefinitionToTMember) match.getNodes()[0];
 		boolean predicate = !mMember.equals(mMethod) && !tMember.equals(tMethod) && !mMemberToTMember.equals(mMethodToTMethod);

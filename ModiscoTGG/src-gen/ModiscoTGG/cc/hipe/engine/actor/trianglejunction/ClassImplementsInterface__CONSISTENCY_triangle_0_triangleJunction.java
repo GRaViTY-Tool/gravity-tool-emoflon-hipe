@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericTriangleJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.TriangleJunctionNode;
 
 public class ClassImplementsInterface__CONSISTENCY_triangle_0_triangleJunction extends GenericTriangleJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, TriangleJunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("ClassImplementsInterface__CONSISTENCY_1268_junction"), this::check_constraint_65));
 	}
@@ -52,8 +52,8 @@ public class ClassImplementsInterface__CONSISTENCY_triangle_0_triangleJunction e
 	}
 	
 	public boolean check_constraint_65(HMatch match) {
-		org.eclipse.modisco.java.ClassDeclaration eClassDeclaration = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[5];
 		org.eclipse.modisco.java.Type eSuperInterface = (org.eclipse.modisco.java.Type) match.getNodes()[0];
+		org.eclipse.modisco.java.ClassDeclaration eClassDeclaration = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[5];
 		boolean predicate = !eClassDeclaration.equals(eSuperInterface);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

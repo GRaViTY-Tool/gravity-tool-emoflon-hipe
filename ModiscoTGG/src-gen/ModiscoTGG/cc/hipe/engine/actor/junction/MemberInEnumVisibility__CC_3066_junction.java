@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class MemberInEnumVisibility__CC_3066_junction extends GenericJunctionActor{
 	private Map<Object, Collection<HMatch>> modifierAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> tModifierAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionLeft(getSelf(), name2actor.get("MemberInEnumVisibility__CC_5411_nacjunction"), this::check_constraint_172));
 	}

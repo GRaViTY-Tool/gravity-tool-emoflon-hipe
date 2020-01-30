@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericTriangleJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.TriangleJunctionNode;
 
 public class SubPackageToPGPackage__CONSISTENCY_triangle_3_triangleJunction extends GenericTriangleJunctionActor{
 	private Map<Object, Collection<HMatch>> tPackageAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> namedElementAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, TriangleJunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunction(getSelf(), name2actor.get("SubPackageToPGPackage__CONSISTENCY_triangle_2_triangleJunction"), this::check_constraint_283));
 	}
@@ -87,8 +87,8 @@ public class SubPackageToPGPackage__CONSISTENCY_triangle_3_triangleJunction exte
 	}
 	
 	public boolean check_constraint_283(HMatch match) {
-		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) match.getNodes()[3];
 		org.gravity.typegraph.basic.TPackage tSub = (org.gravity.typegraph.basic.TPackage) match.getNodes()[1];
+		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) match.getNodes()[3];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.Eq csp_105 = new org.emoflon.ibex.tgg.operational.csp.constraints.Eq();
 		csp_105.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, mPackage.getName(), "java.lang.String"));

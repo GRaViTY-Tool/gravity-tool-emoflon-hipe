@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class ClassInnerClassMember__CO_793_junction extends GenericJunctionActor{
-	private Map<Object, Collection<HMatch>> tAbstractTypeAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> tPackageAttrMap = new HashMap<>();
+	private Map<Object, Collection<HMatch>> tAbstractTypeAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionLeft(getSelf(), name2actor.get("ClassInnerClassMember__CO_787_junction"), this::check_constraint_52));
 	}
@@ -64,18 +64,18 @@ public class ClassInnerClassMember__CO_793_junction extends GenericJunctionActor
 			port.forwardMessage(message);
 		}
 		Object obj = message.node;
-		if(obj instanceof org.gravity.typegraph.basic.TAbstractType) {
-			if(tAbstractTypeAttrMap.containsKey(obj)) {
-				for(HMatch match : tAbstractTypeAttrMap.get(obj)) {
+		if(obj instanceof org.gravity.typegraph.basic.TPackage) {
+			if(tPackageAttrMap.containsKey(obj)) {
+				for(HMatch match : tPackageAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}
 				}
 			}
 		}
-		if(obj instanceof org.gravity.typegraph.basic.TPackage) {
-			if(tPackageAttrMap.containsKey(obj)) {
-				for(HMatch match : tPackageAttrMap.get(obj)) {
+		if(obj instanceof org.gravity.typegraph.basic.TAbstractType) {
+			if(tAbstractTypeAttrMap.containsKey(obj)) {
+				for(HMatch match : tAbstractTypeAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}
@@ -87,8 +87,8 @@ public class ClassInnerClassMember__CO_793_junction extends GenericJunctionActor
 	}
 	
 	public boolean check_constraint_52(HMatch match) {
-		org.gravity.typegraph.basic.TClass tOuterClass = (org.gravity.typegraph.basic.TClass) match.getNodes()[0];
 		org.gravity.typegraph.basic.TPackage tInnerPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
+		org.gravity.typegraph.basic.TClass tOuterClass = (org.gravity.typegraph.basic.TClass) match.getNodes()[0];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix csp_19 = new org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix();
 		csp_19.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, tOuterClass.getTName(), "java.lang.String"));

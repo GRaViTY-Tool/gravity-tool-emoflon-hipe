@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class MethodName__CC_3339_junction extends GenericJunctionActor{
 	private Map<Object, Collection<HMatch>> mNameAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> tNameAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunction(getSelf(), name2actor.get("MethodName__CC_production"), this::check_constraint_178));
 	}
@@ -75,8 +75,8 @@ public class MethodName__CC_3339_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_178(HMatch match) {
-		org.gravity.typegraph.basic.TMethod tName = (org.gravity.typegraph.basic.TMethod) match.getNodes()[0];
 		org.gravity.modisco.MMethodName mName = (org.gravity.modisco.MMethodName) match.getNodes()[3];
+		org.gravity.typegraph.basic.TMethod tName = (org.gravity.typegraph.basic.TMethod) match.getNodes()[0];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.Eq csp_80 = new org.emoflon.ibex.tgg.operational.csp.constraints.Eq();
 		csp_80.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, mName.getMName(), "java.lang.String"));

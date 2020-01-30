@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class MethodParameterLink__GEN_667_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunction(getSelf(), name2actor.get("MethodParameterLink__GEN_production"), this::check_constraint_14));
 	}
@@ -52,12 +52,12 @@ public class MethodParameterLink__GEN_667_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_14(HMatch match) {
-		org.gravity.typegraph.basic.TParameter tParameter = (org.gravity.typegraph.basic.TParameter) match.getNodes()[2];
-		ModiscoTGG.MEntryToTParameter mmethodSignatureToTMethodSignature = (ModiscoTGG.MEntryToTParameter) match.getNodes()[3];
 		ModiscoTGG.MEntryToTParameter eSingleVariableDeclarationToTParameter = (ModiscoTGG.MEntryToTParameter) match.getNodes()[0];
 		org.gravity.modisco.MEntry mPrevEntry = (org.gravity.modisco.MEntry) match.getNodes()[4];
-		org.gravity.modisco.MEntry mEntry = (org.gravity.modisco.MEntry) match.getNodes()[1];
 		org.gravity.typegraph.basic.TParameter tPrevParameter = (org.gravity.typegraph.basic.TParameter) match.getNodes()[5];
+		ModiscoTGG.MEntryToTParameter mmethodSignatureToTMethodSignature = (ModiscoTGG.MEntryToTParameter) match.getNodes()[3];
+		org.gravity.modisco.MEntry mEntry = (org.gravity.modisco.MEntry) match.getNodes()[1];
+		org.gravity.typegraph.basic.TParameter tParameter = (org.gravity.typegraph.basic.TParameter) match.getNodes()[2];
 		boolean predicate = !mEntry.equals(mPrevEntry) && !tParameter.equals(tPrevParameter) && !eSingleVariableDeclarationToTParameter.equals(mmethodSignatureToTMethodSignature);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

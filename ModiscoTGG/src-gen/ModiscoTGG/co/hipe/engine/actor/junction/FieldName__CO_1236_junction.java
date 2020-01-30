@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class FieldName__CO_1236_junction extends GenericJunctionActor{
 	private Map<Object, Collection<HMatch>> mNameAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> tNameAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("FieldName__CO_1232_junction"), this::check_constraint_96));
 	}

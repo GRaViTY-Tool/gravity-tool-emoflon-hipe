@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class SuperConstructorInvocation__FWD_5639_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunction(getSelf(), name2actor.get("SuperConstructorInvocation__FWD_production"), this::check_constraint_282));
 	}
@@ -52,10 +52,10 @@ public class SuperConstructorInvocation__FWD_5639_junction extends GenericJuncti
 	}
 	
 	public boolean check_constraint_282(HMatch match) {
-		ModiscoTGG.MDefinitionToTMember mMemberToTMember = (ModiscoTGG.MDefinitionToTMember) match.getNodes()[3];
 		ModiscoTGG.MDefinitionToTMember mMethodToTMethod = (ModiscoTGG.MDefinitionToTMember) match.getNodes()[0];
-		org.gravity.typegraph.basic.TMember tMember = (org.gravity.typegraph.basic.TMember) match.getNodes()[5];
 		org.gravity.typegraph.basic.TMember tMethod = (org.gravity.typegraph.basic.TMember) match.getNodes()[2];
+		org.gravity.typegraph.basic.TMember tMember = (org.gravity.typegraph.basic.TMember) match.getNodes()[5];
+		ModiscoTGG.MDefinitionToTMember mMemberToTMember = (ModiscoTGG.MDefinitionToTMember) match.getNodes()[3];
 		boolean predicate = !tMember.equals(tMethod) && !mMemberToTMember.equals(mMethodToTMethod);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

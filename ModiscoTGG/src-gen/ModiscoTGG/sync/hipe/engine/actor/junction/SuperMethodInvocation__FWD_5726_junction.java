@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class SuperMethodInvocation__FWD_5726_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("SuperMethodInvocation__FWD_5722_junction"), this::check_constraint_286));
 	}
@@ -52,8 +52,8 @@ public class SuperMethodInvocation__FWD_5726_junction extends GenericJunctionAct
 	}
 	
 	public boolean check_constraint_286(HMatch match) {
-		org.gravity.modisco.MDefinition mMember = (org.gravity.modisco.MDefinition) match.getNodes()[0];
 		org.gravity.modisco.MAbstractMethodDefinition mMethod = (org.gravity.modisco.MAbstractMethodDefinition) match.getNodes()[2];
+		org.gravity.modisco.MDefinition mMember = (org.gravity.modisco.MDefinition) match.getNodes()[0];
 		boolean predicate = !mMember.equals(mMethod);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

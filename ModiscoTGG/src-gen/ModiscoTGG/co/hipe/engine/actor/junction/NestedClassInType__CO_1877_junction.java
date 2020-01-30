@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class NestedClassInType__CO_1877_junction extends GenericJunctionActor{
 	private Map<Object, Collection<HMatch>> tPackageAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> namedElementAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionLeft(getSelf(), name2actor.get("NestedClassInType__CO_2785_nacjunction"), this::check_constraint_128));
 	}
@@ -87,8 +87,8 @@ public class NestedClassInType__CO_1877_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_128(HMatch match) {
-		org.eclipse.modisco.java.AbstractTypeDeclaration eOuterType = (org.eclipse.modisco.java.AbstractTypeDeclaration) match.getNodes()[5];
 		org.gravity.typegraph.basic.TPackage tNestedPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[8];
+		org.eclipse.modisco.java.AbstractTypeDeclaration eOuterType = (org.eclipse.modisco.java.AbstractTypeDeclaration) match.getNodes()[5];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix csp_42 = new org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix();
 		csp_42.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, eOuterType.getName(), "java.lang.String"));

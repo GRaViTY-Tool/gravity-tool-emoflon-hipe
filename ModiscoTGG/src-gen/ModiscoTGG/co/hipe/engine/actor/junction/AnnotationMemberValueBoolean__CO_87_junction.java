@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class AnnotationMemberValueBoolean__CO_87_junction extends GenericJunctionActor{
-	private Map<Object, Collection<HMatch>> booleanLiteralAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> tBoolNodeAttrMap = new HashMap<>();
+	private Map<Object, Collection<HMatch>> booleanLiteralAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunction(getSelf(), name2actor.get("AnnotationMemberValueBoolean__CO_production"), this::check_constraint_3));
 	}
@@ -38,14 +38,6 @@ public class AnnotationMemberValueBoolean__CO_87_junction extends GenericJunctio
 	@Override
 	protected void registerMatchForAttributeChanges(HMatch match) {
 		Object[] matchObjects = match.getNodes();
-		Collection<HMatch> booleanLiteral_5_Matches = booleanLiteralAttrMap.get(matchObjects[5]);
-		if(booleanLiteral_5_Matches == null) {
-			booleanLiteral_5_Matches = new LinkedList<>();
-			booleanLiteralAttrMap.put(matchObjects[5], booleanLiteral_5_Matches);
-		}
-		
-		booleanLiteral_5_Matches.add(match);
-		
 		Collection<HMatch> tBoolNode_1_Matches = tBoolNodeAttrMap.get(matchObjects[1]);
 		if(tBoolNode_1_Matches == null) {
 			tBoolNode_1_Matches = new LinkedList<>();
@@ -54,16 +46,24 @@ public class AnnotationMemberValueBoolean__CO_87_junction extends GenericJunctio
 		
 		tBoolNode_1_Matches.add(match);
 		
+		Collection<HMatch> booleanLiteral_5_Matches = booleanLiteralAttrMap.get(matchObjects[5]);
+		if(booleanLiteral_5_Matches == null) {
+			booleanLiteral_5_Matches = new LinkedList<>();
+			booleanLiteralAttrMap.put(matchObjects[5], booleanLiteral_5_Matches);
+		}
+		
+		booleanLiteral_5_Matches.add(match);
+		
 	}
 	
 	@Override
 	protected void deregisterMatchForAttributeChanges(Set<HMatch> matches, HMatch match) {
 		Object[] matchObjects = match.getNodes();
-		Collection<HMatch> matches_0 = booleanLiteralAttrMap.get(matchObjects[5]);
+		Collection<HMatch> matches_0 = tBoolNodeAttrMap.get(matchObjects[1]);
 		if(matches_0 != null) {
 			matches.remove(match);
 		}
-		Collection<HMatch> matches_1 = tBoolNodeAttrMap.get(matchObjects[1]);
+		Collection<HMatch> matches_1 = booleanLiteralAttrMap.get(matchObjects[5]);
 		if(matches_1 != null) {
 			matches.remove(match);
 		}
@@ -76,18 +76,18 @@ public class AnnotationMemberValueBoolean__CO_87_junction extends GenericJunctio
 			port.forwardMessage(message);
 		}
 		Object obj = message.node;
-		if(obj instanceof org.eclipse.modisco.java.BooleanLiteral) {
-			if(booleanLiteralAttrMap.containsKey(obj)) {
-				for(HMatch match : booleanLiteralAttrMap.get(obj)) {
+		if(obj instanceof org.gravity.typegraph.basic.annotations.TBoolNode) {
+			if(tBoolNodeAttrMap.containsKey(obj)) {
+				for(HMatch match : tBoolNodeAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}
 				}
 			}
 		}
-		if(obj instanceof org.gravity.typegraph.basic.annotations.TBoolNode) {
-			if(tBoolNodeAttrMap.containsKey(obj)) {
-				for(HMatch match : tBoolNodeAttrMap.get(obj)) {
+		if(obj instanceof org.eclipse.modisco.java.BooleanLiteral) {
+			if(booleanLiteralAttrMap.containsKey(obj)) {
+				for(HMatch match : booleanLiteralAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}

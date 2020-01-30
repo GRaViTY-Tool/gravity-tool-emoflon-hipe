@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class AnonymousClass__CO_541_junction extends GenericJunctionActor{
-	private Map<Object, Collection<HMatch>> tAbstractTypeAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> tPackageAttrMap = new HashMap<>();
+	private Map<Object, Collection<HMatch>> tAbstractTypeAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionLeft(getSelf(), name2actor.get("AnonymousClass__CO_533_junction"), this::check_constraint_32));
 	}
@@ -38,14 +38,6 @@ public class AnonymousClass__CO_541_junction extends GenericJunctionActor{
 	@Override
 	protected void registerMatchForAttributeChanges(HMatch match) {
 		Object[] matchObjects = match.getNodes();
-		Collection<HMatch> tAbstractType_0_Matches = tAbstractTypeAttrMap.get(matchObjects[0]);
-		if(tAbstractType_0_Matches == null) {
-			tAbstractType_0_Matches = new LinkedList<>();
-			tAbstractTypeAttrMap.put(matchObjects[0], tAbstractType_0_Matches);
-		}
-		
-		tAbstractType_0_Matches.add(match);
-		
 		Collection<HMatch> tPackage_2_Matches = tPackageAttrMap.get(matchObjects[2]);
 		if(tPackage_2_Matches == null) {
 			tPackage_2_Matches = new LinkedList<>();
@@ -54,16 +46,24 @@ public class AnonymousClass__CO_541_junction extends GenericJunctionActor{
 		
 		tPackage_2_Matches.add(match);
 		
+		Collection<HMatch> tAbstractType_0_Matches = tAbstractTypeAttrMap.get(matchObjects[0]);
+		if(tAbstractType_0_Matches == null) {
+			tAbstractType_0_Matches = new LinkedList<>();
+			tAbstractTypeAttrMap.put(matchObjects[0], tAbstractType_0_Matches);
+		}
+		
+		tAbstractType_0_Matches.add(match);
+		
 	}
 	
 	@Override
 	protected void deregisterMatchForAttributeChanges(Set<HMatch> matches, HMatch match) {
 		Object[] matchObjects = match.getNodes();
-		Collection<HMatch> matches_0 = tAbstractTypeAttrMap.get(matchObjects[0]);
+		Collection<HMatch> matches_0 = tPackageAttrMap.get(matchObjects[2]);
 		if(matches_0 != null) {
 			matches.remove(match);
 		}
-		Collection<HMatch> matches_1 = tPackageAttrMap.get(matchObjects[2]);
+		Collection<HMatch> matches_1 = tAbstractTypeAttrMap.get(matchObjects[0]);
 		if(matches_1 != null) {
 			matches.remove(match);
 		}
@@ -76,18 +76,18 @@ public class AnonymousClass__CO_541_junction extends GenericJunctionActor{
 			port.forwardMessage(message);
 		}
 		Object obj = message.node;
-		if(obj instanceof org.gravity.typegraph.basic.TAbstractType) {
-			if(tAbstractTypeAttrMap.containsKey(obj)) {
-				for(HMatch match : tAbstractTypeAttrMap.get(obj)) {
+		if(obj instanceof org.gravity.typegraph.basic.TPackage) {
+			if(tPackageAttrMap.containsKey(obj)) {
+				for(HMatch match : tPackageAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}
 				}
 			}
 		}
-		if(obj instanceof org.gravity.typegraph.basic.TPackage) {
-			if(tPackageAttrMap.containsKey(obj)) {
-				for(HMatch match : tPackageAttrMap.get(obj)) {
+		if(obj instanceof org.gravity.typegraph.basic.TAbstractType) {
+			if(tAbstractTypeAttrMap.containsKey(obj)) {
+				for(HMatch match : tAbstractTypeAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}

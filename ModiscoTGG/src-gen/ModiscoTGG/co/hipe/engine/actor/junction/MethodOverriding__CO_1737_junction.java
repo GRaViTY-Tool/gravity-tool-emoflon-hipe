@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class MethodOverriding__CO_1737_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunction(getSelf(), name2actor.get("MethodOverriding__CO_production"), this::check_constraint_122));
 	}
@@ -52,8 +52,8 @@ public class MethodOverriding__CO_1737_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_122(HMatch match) {
-		ModiscoTGG.MDefinitionToTMember mOverridingToTOverriding = (ModiscoTGG.MDefinitionToTMember) match.getNodes()[5];
 		ModiscoTGG.MDefinitionToTMember mMethodToTMethod = (ModiscoTGG.MDefinitionToTMember) match.getNodes()[2];
+		ModiscoTGG.MDefinitionToTMember mOverridingToTOverriding = (ModiscoTGG.MDefinitionToTMember) match.getNodes()[5];
 		boolean predicate = !mMethodToTMethod.equals(mOverridingToTOverriding);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

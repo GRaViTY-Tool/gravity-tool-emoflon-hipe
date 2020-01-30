@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class SyntethicMethod_tSyntethic_syntethicMethods_incoming_TRG__FILTER_NAC_4957_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("SyntethicMethod__CC_5512_nacjunction"), this::check_constraint_293));
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("SyntethicMethod__CONSISTENCY_5514_nacjunction"), this::check_constraint_295));
@@ -54,24 +54,24 @@ public class SyntethicMethod_tSyntethic_syntethicMethods_incoming_TRG__FILTER_NA
 	}
 	
 	public boolean check_constraint_293(HMatch match) {
-		org.gravity.typegraph.basic.TMethodDefinition tDef = (org.gravity.typegraph.basic.TMethodDefinition) match.getNodes()[0];
 		org.gravity.typegraph.basic.TMethodDefinition FILTER_NAC_NODE = (org.gravity.typegraph.basic.TMethodDefinition) match.getNodes()[2];
+		org.gravity.typegraph.basic.TMethodDefinition tDef = (org.gravity.typegraph.basic.TMethodDefinition) match.getNodes()[0];
 		boolean predicate = !FILTER_NAC_NODE.equals(tDef);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_295(HMatch match) {
-		org.gravity.typegraph.basic.TMethodDefinition tDef = (org.gravity.typegraph.basic.TMethodDefinition) match.getNodes()[0];
 		org.gravity.typegraph.basic.TMethodDefinition FILTER_NAC_NODE = (org.gravity.typegraph.basic.TMethodDefinition) match.getNodes()[2];
+		org.gravity.typegraph.basic.TMethodDefinition tDef = (org.gravity.typegraph.basic.TMethodDefinition) match.getNodes()[0];
 		boolean predicate = !FILTER_NAC_NODE.equals(tDef);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_297(HMatch match) {
-		org.gravity.typegraph.basic.TMethodDefinition tDef = (org.gravity.typegraph.basic.TMethodDefinition) match.getNodes()[0];
 		org.gravity.typegraph.basic.TMethodDefinition FILTER_NAC_NODE = (org.gravity.typegraph.basic.TMethodDefinition) match.getNodes()[2];
+		org.gravity.typegraph.basic.TMethodDefinition tDef = (org.gravity.typegraph.basic.TMethodDefinition) match.getNodes()[0];
 		boolean predicate = !FILTER_NAC_NODE.equals(tDef);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

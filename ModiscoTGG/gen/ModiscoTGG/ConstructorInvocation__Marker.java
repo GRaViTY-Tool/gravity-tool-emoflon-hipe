@@ -4,6 +4,7 @@ package ModiscoTGG;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.modisco.java.ConstructorInvocation;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MAbstractMethodInvocation;
 import org.gravity.modisco.MDefinition;
@@ -44,12 +45,12 @@ public interface ConstructorInvocation__Marker extends EObject, TGGRuleApplicati
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>CREATE SRC invocation</em>' reference.
-	 * @see #setCREATE__SRC__invocation(MAbstractMethodInvocation)
+	 * @see #setCREATE__SRC__invocation(ConstructorInvocation)
 	 * @see ModiscoTGG.ModiscoTGGPackage#getConstructorInvocation__Marker_CREATE__SRC__invocation()
 	 * @model required="true"
 	 * @generated
 	 */
-	MAbstractMethodInvocation getCREATE__SRC__invocation();
+	ConstructorInvocation getCREATE__SRC__invocation();
 
 	/**
 	 * Sets the value of the '{@link ModiscoTGG.ConstructorInvocation__Marker#getCREATE__SRC__invocation <em>CREATE SRC invocation</em>}' reference.
@@ -59,7 +60,7 @@ public interface ConstructorInvocation__Marker extends EObject, TGGRuleApplicati
 	 * @see #getCREATE__SRC__invocation()
 	 * @generated
 	 */
-	void setCREATE__SRC__invocation(MAbstractMethodInvocation value);
+	void setCREATE__SRC__invocation(ConstructorInvocation value);
 
 	/**
 	 * Returns the value of the '<em><b>CONTEXT SRC mMember</b></em>' reference.

@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class FieldAccessReadWrite_mAccess_mAbstractFieldAccess_incoming_SRC__FILTER_NAC_1091_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("FieldAccessReadWrite__CO_2764_nacjunction"), this::check_constraint_80));
 		ports.add(new PortJunction(getSelf(), name2actor.get("FieldAccessReadWrite_mAccess_mAbstractFieldAccess_incoming_SRC__FILTER_NAC_production"), this::check_constraint_81));
@@ -53,16 +53,16 @@ public class FieldAccessReadWrite_mAccess_mAbstractFieldAccess_incoming_SRC__FIL
 	}
 	
 	public boolean check_constraint_80(HMatch match) {
-		org.gravity.modisco.MDefinition FILTER_NAC_NODE = (org.gravity.modisco.MDefinition) match.getNodes()[2];
 		org.gravity.modisco.MDefinition mMember = (org.gravity.modisco.MDefinition) match.getNodes()[0];
+		org.gravity.modisco.MDefinition FILTER_NAC_NODE = (org.gravity.modisco.MDefinition) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(mMember);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_81(HMatch match) {
-		org.gravity.modisco.MDefinition FILTER_NAC_NODE = (org.gravity.modisco.MDefinition) match.getNodes()[2];
 		org.gravity.modisco.MDefinition mMember = (org.gravity.modisco.MDefinition) match.getNodes()[0];
+		org.gravity.modisco.MDefinition FILTER_NAC_NODE = (org.gravity.modisco.MDefinition) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(mMember);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class ClassExtendsClass__FWD_1401_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("ClassExtendsClass__FWD_1397_junction"), this::check_constraint_53));
 	}
@@ -52,8 +52,8 @@ public class ClassExtendsClass__FWD_1401_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_53(HMatch match) {
-		org.eclipse.modisco.java.ClassDeclaration eClassDeclaration = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[0];
 		org.eclipse.modisco.java.ClassDeclaration eExtendedClass = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[2];
+		org.eclipse.modisco.java.ClassDeclaration eClassDeclaration = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[0];
 		boolean predicate = !eClassDeclaration.equals(eExtendedClass);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

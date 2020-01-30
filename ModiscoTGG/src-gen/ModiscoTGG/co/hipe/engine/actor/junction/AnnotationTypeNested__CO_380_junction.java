@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class AnnotationTypeNested__CO_380_junction extends GenericJunctionActor{
 	private Map<Object, Collection<HMatch>> tAbstractTypeAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> namedElementAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("AnnotationTypeNested__CO_374_junction"), this::check_constraint_15));
 	}
@@ -75,8 +75,8 @@ public class AnnotationTypeNested__CO_380_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_15(HMatch match) {
-		org.eclipse.modisco.java.AnnotationTypeDeclaration eNestedType = (org.eclipse.modisco.java.AnnotationTypeDeclaration) match.getNodes()[1];
 		org.gravity.typegraph.basic.annotations.TAnnotationType tNestedType = (org.gravity.typegraph.basic.annotations.TAnnotationType) match.getNodes()[2];
+		org.eclipse.modisco.java.AnnotationTypeDeclaration eNestedType = (org.eclipse.modisco.java.AnnotationTypeDeclaration) match.getNodes()[1];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.Eq csp_10 = new org.emoflon.ibex.tgg.operational.csp.constraints.Eq();
 		csp_10.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, eNestedType.isProxy(), "boolean"));

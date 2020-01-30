@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class AnnotationMemberValueString__CC_524_junction extends GenericJunctionActor{
 	private Map<Object, Collection<HMatch>> stringLiteralAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> tTextNodeAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunction(getSelf(), name2actor.get("AnnotationMemberValueString__CC_production"), this::check_constraint_19));
 	}
@@ -99,8 +99,8 @@ public class AnnotationMemberValueString__CC_524_junction extends GenericJunctio
 	}
 	
 	public boolean check_constraint_19(HMatch match) {
-		org.eclipse.modisco.java.StringLiteral mValue = (org.eclipse.modisco.java.StringLiteral) match.getNodes()[3];
 		org.gravity.typegraph.basic.annotations.TTextNode tValue = (org.gravity.typegraph.basic.annotations.TTextNode) match.getNodes()[1];
+		org.eclipse.modisco.java.StringLiteral mValue = (org.eclipse.modisco.java.StringLiteral) match.getNodes()[3];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.Eq csp_12 = new org.emoflon.ibex.tgg.operational.csp.constraints.Eq();
 		csp_12.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, mValue.getEscapedValue(), "java.lang.String"));

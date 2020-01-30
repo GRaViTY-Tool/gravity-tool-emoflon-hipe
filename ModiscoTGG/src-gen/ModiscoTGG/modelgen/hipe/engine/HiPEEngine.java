@@ -22,177 +22,28 @@ import static akka.pattern.Patterns.ask;
 
 import ModiscoTGG.modelgen.hipe.engine.actor.NotificationActor;
 import ModiscoTGG.modelgen.hipe.engine.actor.DispatchActor;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.AnnotationToTAnnotation_source_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.AnnotationToTAnnotation_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.Annotation_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.AnnotationToTAnnotation_target_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TAnnotation_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.AnnotationMemberValuePairToTAnnotationValue_source_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.AnnotationMemberValuePairToTAnnotationValue_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.AnnotationMemberValuePair_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.AnnotationMemberValuePairToTAnnotationValue_target_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TAnnotationValue_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TypeToTAbstractType_source_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.Type_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TypeToTAbstractType_target_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TAbstractType_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.ASTNodeToTAnnotatable_source_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.ASTNodeToTAnnotatable_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.BodyDeclaration_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.ASTNodeToTAnnotatable_target_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TAnnotatable_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TypeToTAbstractType_source_1_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.AnnotationTypeDeclaration_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TypeToTAbstractType_target_1_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TAnnotationType_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.AnonymousClassDeclarationToTClass_source_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.AnonymousClassDeclarationToTClass_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.AnonymousClassDeclaration_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.AnonymousClassDeclarationToTClass_target_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TypeGraph_classes_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TClass_pg_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TypeToTAbstractType_source_2_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.AbstractTypeDeclaration_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TPackage_typeGraph_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TPackage_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TAbstractType_package_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TAbstractType_pg_1_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.PackageToTPackage_source_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.PackageToTPackage_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.Package_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.PackageToTPackage_target_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.AnonymousClassDeclarationToTClass_source_1_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MAnonymous_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.AnonymousClassDeclarationToTClass_target_1_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TypeToTAbstractType_target_2_reference;
 import ModiscoTGG.modelgen.hipe.engine.actor.junction.AnonymousClassTypeClass__GEN_133_junction;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TypeToTAbstractType_target_3_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TInterface_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.ArrayInitializer_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MethodInvocation_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.ModelToTypeGraph_source_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.ModelToTypeGraph_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.Model_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.ModelToTypeGraph_target_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.ClassDeclarationToTClass_source_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.ClassDeclarationToTClass_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.ClassDeclaration_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.ClassDeclarationToTClass_target_0_reference;
 import ModiscoTGG.modelgen.hipe.engine.actor.junction.ClassExtendsClass__GEN_189_junction;
 import ModiscoTGG.modelgen.hipe.engine.actor.junction.ClassImplementsInterface__GEN_202_junction;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TClass_package_1_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.AnonymousClassDeclaration_bodyDeclarations_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MAbstractMethodDefinition_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.ClassDeclaration_bodyDeclarations_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TypeToTAbstractType_source_3_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MDefinitionToTMember_source_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MDefinitionToTMember_target_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MDefinitionToTMember_source_1_reference;
 import ModiscoTGG.modelgen.hipe.engine.actor.junction.ClassInstanceCreation__GEN_256_junction;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MSignatureToTSignature_source_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MMethodSignature_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MSignatureToTSignature_target_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TMethodSignature_object;
 import ModiscoTGG.modelgen.hipe.engine.actor.junction.ConstructorInvocation__GEN_284_junction;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TAbstractType_defines_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TFieldDefinition_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MDefinitionToTMember_source_2_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MFieldDefinition_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MDefinitionToTMember_target_1_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.AbstractTypeDeclaration_bodyDeclarations_1_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.VariableDeclarationFragment_variablesContainer_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.VariableDeclarationFragment_object;
 import ModiscoTGG.modelgen.hipe.engine.actor.junction.FieldAccessReadWrite__GEN_317_junction;
 import ModiscoTGG.modelgen.hipe.engine.actor.junction.FieldAccessRead__GEN_344_junction;
 import ModiscoTGG.modelgen.hipe.engine.actor.junction.FieldAccessWrite__GEN_371_junction;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MSignatureToTSignature_source_1_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MFieldSignature_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MSignatureToTSignature_target_1_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TFieldSignature_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.ModelToTypeGraph_source_1_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MGravityModel_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MFieldNameToTField_source_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MFieldNameToTField_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MFieldName_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MFieldNameToTField_target_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TField_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MAbstractFlowElementToTAbstractFlowElement_source_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MAbstractFlowElementToTAbstractFlowElement_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MAbstractFlowElement_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MAbstractFlowElementToTAbstractFlowElement_target_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TAbstractFlowElement_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MFlowToTFlow_source_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MFlowToTFlow_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MFlow_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MFlowToTFlow_target_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TFlow_object;
 import ModiscoTGG.modelgen.hipe.engine.actor.junction.IncomingFlow__GEN_435_junction;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.InterfaceDeclarationToTInterface_source_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.InterfaceDeclarationToTInterface_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.InterfaceDeclaration_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.InterfaceDeclarationToTInterface_target_0_reference;
 import ModiscoTGG.modelgen.hipe.engine.actor.junction.InterfaceExtendsInterface__GEN_448_junction;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TInterface_defines_1_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.InterfaceDeclaration_bodyDeclarations_2_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TypeToTAbstractType_source_4_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MSignatureToTSignature_target_2_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TSignature_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TMember_signature_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MDefinition_mSignature_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MSignature_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MSignatureToTSignature_source_2_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.AnnotationTypeDeclaration_bodyDeclarations_3_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TAnnotationType_defines_2_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TClass_defines_3_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.ClassDeclaration_bodyDeclarations_4_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.EnumDeclaration_bodyDeclarations_5_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.EnumDeclaration_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TypeToTAbstractType_source_5_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MDefinitionToTMember_source_3_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MMethodDefinition_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MDefinitionToTMember_target_2_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TMethodDefinition_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.AbstractMethodInvocationToTAccess_source_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.AbstractMethodInvocationToTAccess_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MMethodInvocation_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.AbstractMethodInvocationToTAccess_target_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TCall_object;
 import ModiscoTGG.modelgen.hipe.engine.actor.junction.MethodInvocation__GEN_622_junction;
 import ModiscoTGG.modelgen.hipe.engine.actor.junction.MethodOverriding__GEN_641_junction;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MEntryToTParameter_source_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MEntryToTParameter_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MEntry_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MEntryToTParameter_target_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TParameter_object;
 import ModiscoTGG.modelgen.hipe.engine.actor.junction.MethodParameterLink__GEN_667_junction;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MMethodNameToTMethod_source_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MMethodNameToTMethod_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MMethodName_object;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.MMethodNameToTMethod_target_0_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TMethod_object;
 import ModiscoTGG.modelgen.hipe.engine.actor.junction.OutgoingFlow__GEN_744_junction;
 import ModiscoTGG.modelgen.hipe.engine.actor.junction.SuperConstructorInvocation__GEN_867_junction;
 import ModiscoTGG.modelgen.hipe.engine.actor.junction.SuperMethodInvocation__GEN_880_junction;
-import ModiscoTGG.modelgen.hipe.engine.actor.edge.TMethodDefinition_signature_1_reference;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TypeToTAbstractType_object_SP0;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TypeToTAbstractType_object_SP1;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TypeToTAbstractType_object_SP2;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TClass_object_SP0;
 import ModiscoTGG.modelgen.hipe.engine.actor.node.TClass_object_SP1;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TypeGraph_object_SP0;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TypeGraph_object_SP1;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MDefinitionToTMember_object_SP0;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MDefinitionToTMember_object_SP1;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MDefinition_object_SP0;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MDefinition_object_SP1;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TMember_object_SP0;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.TMember_object_SP1;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MSignatureToTSignature_object_SP0;
-import ModiscoTGG.modelgen.hipe.engine.actor.node.MSignatureToTSignature_object_SP1;
 
 import hipe.engine.IHiPEEngine;
 import hipe.engine.message.InitActor;
 import hipe.engine.message.InitGenActor;
+import hipe.engine.message.InitGenReferenceActor;
 import hipe.engine.message.NoMoreInput;
 import hipe.engine.message.NotificationMessage;
 import hipe.engine.message.ExtractData;
@@ -200,6 +51,8 @@ import hipe.engine.message.production.ProductionResult;
 
 import hipe.engine.util.IncUtil;
 import hipe.engine.util.ProductionUtil;
+import hipe.generic.actor.GenericObjectActor;
+import hipe.generic.actor.GenericReferenceActor;
 import hipe.generic.actor.GenericProductionActor;
 import hipe.generic.actor.junction.*;
 
@@ -210,7 +63,11 @@ public class HiPEEngine implements IHiPEEngine{
 	private final ActorSystem system = ActorSystem.create("HiPE-Engine");
 	private ActorRef dispatcher;
 	private ActorRef notificationActor;
+
+	private Map<String, NetworkNode> name2node = new HashMap<>();
+	
 	private Map<String, ActorRef> name2actor = new ConcurrentHashMap<>();
+	private Map<String, InitGenReferenceActor<?,?>> name2initRefGen = new ConcurrentHashMap<>();
 	private Map<String, Class<?>> classes = new ConcurrentHashMap<>();
 	private Map<String, String> productionNodes2pattern = new ConcurrentHashMap<>();
 	private boolean dirty = false;
@@ -234,10 +91,14 @@ public class HiPEEngine implements IHiPEEngine{
 	}
 	
 	public void initialize() throws InterruptedException {
+		network.getNetworknode().stream().forEach(n -> name2node.put(n.getName(), n));
+		
 		createProductionNodes();
 		createJunctionNodes();
 		createReferenceNodes();
 		createObjectNodes();
+
+		initializeReferenceNodes();
 
 		classes.keySet().parallelStream().forEach(name -> {
 			name2actor.put(name, system.actorOf(Props.create(classes.get(name))));			
@@ -250,6 +111,8 @@ public class HiPEEngine implements IHiPEEngine{
 		notificationActor = system.actorOf(Props.create(NotificationActor.class, () -> new NotificationActor(dispatcher)), "NotificationActor");
 		
 		name2actor.values().forEach(actor -> actor.tell(new InitActor(name2actor), notificationActor));
+		network.getNetworknode().stream().filter(n -> n instanceof ObjectNode).forEach(n -> name2actor.get(n.getName()).tell(new InitGenActor(name2actor, n), notificationActor));
+		network.getNetworknode().stream().filter(n -> n instanceof ReferenceNode).forEach(n -> name2actor.get(n.getName()).tell(name2initRefGen.get(n.getName()), notificationActor));
 		network.getNetworknode().stream().filter(n -> n instanceof AbstractJunctionNode).forEach(n -> name2actor.get(n.getName()).tell(new InitGenActor(name2actor, n), notificationActor));
 		network.getNetworknode().stream().filter(n -> n instanceof ProductionNode).forEach(n -> name2actor.get(n.getName()).tell(new InitGenActor(name2actor, n), notificationActor));
 		}
@@ -767,8 +630,8 @@ public class HiPEEngine implements IHiPEEngine{
 		classes.put("Package_object",Package_object.class);
 		classes.put("MAnonymous_object",MAnonymous_object.class);
 		classes.put("TInterface_object",TInterface_object.class);
-		classes.put("ArrayInitializer_object",ArrayInitializer_object.class);
 		classes.put("MethodInvocation_object",MethodInvocation_object.class);
+		classes.put("ArrayInitializer_object",ArrayInitializer_object.class);
 		classes.put("ModelToTypeGraph_object",ModelToTypeGraph_object.class);
 		classes.put("Model_object",Model_object.class);
 		classes.put("ClassDeclarationToTClass_object",ClassDeclarationToTClass_object.class);
@@ -824,7 +687,85 @@ public class HiPEEngine implements IHiPEEngine{
 		classes.put("MSignatureToTSignature_object_SP1",MSignatureToTSignature_object_SP1.class);
 		
 	}
-
+	
+	public void initializeReferenceNodes() {
+		name2initRefGen.put("AnnotationToTAnnotation_source_0_reference", new InitGenReferenceActor<ModiscoTGG.AnnotationToTAnnotation,org.eclipse.modisco.java.Annotation>(name2actor, name2node.get("AnnotationToTAnnotation_source_0_reference"), (o) -> o instanceof ModiscoTGG.AnnotationToTAnnotation, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("AnnotationToTAnnotation_target_0_reference", new InitGenReferenceActor<ModiscoTGG.AnnotationToTAnnotation,org.gravity.typegraph.basic.annotations.TAnnotation>(name2actor, name2node.get("AnnotationToTAnnotation_target_0_reference"), (o) -> o instanceof ModiscoTGG.AnnotationToTAnnotation, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("AnnotationMemberValuePairToTAnnotationValue_source_0_reference", new InitGenReferenceActor<ModiscoTGG.AnnotationMemberValuePairToTAnnotationValue,org.eclipse.modisco.java.AnnotationMemberValuePair>(name2actor, name2node.get("AnnotationMemberValuePairToTAnnotationValue_source_0_reference"), (o) -> o instanceof ModiscoTGG.AnnotationMemberValuePairToTAnnotationValue, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("AnnotationMemberValuePairToTAnnotationValue_target_0_reference", new InitGenReferenceActor<ModiscoTGG.AnnotationMemberValuePairToTAnnotationValue,org.gravity.typegraph.basic.annotations.TAnnotationValue>(name2actor, name2node.get("AnnotationMemberValuePairToTAnnotationValue_target_0_reference"), (o) -> o instanceof ModiscoTGG.AnnotationMemberValuePairToTAnnotationValue, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("TypeToTAbstractType_source_0_reference", new InitGenReferenceActor<ModiscoTGG.TypeToTAbstractType,org.eclipse.modisco.java.Type>(name2actor, name2node.get("TypeToTAbstractType_source_0_reference"), (o) -> o instanceof ModiscoTGG.TypeToTAbstractType, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("TypeToTAbstractType_target_0_reference", new InitGenReferenceActor<ModiscoTGG.TypeToTAbstractType,org.gravity.typegraph.basic.TAbstractType>(name2actor, name2node.get("TypeToTAbstractType_target_0_reference"), (o) -> o instanceof ModiscoTGG.TypeToTAbstractType, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("ASTNodeToTAnnotatable_source_0_reference", new InitGenReferenceActor<ModiscoTGG.ASTNodeToTAnnotatable,org.eclipse.modisco.java.ASTNode>(name2actor, name2node.get("ASTNodeToTAnnotatable_source_0_reference"), (o) -> o instanceof ModiscoTGG.ASTNodeToTAnnotatable, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("ASTNodeToTAnnotatable_target_0_reference", new InitGenReferenceActor<ModiscoTGG.ASTNodeToTAnnotatable,org.gravity.typegraph.basic.annotations.TAnnotatable>(name2actor, name2node.get("ASTNodeToTAnnotatable_target_0_reference"), (o) -> o instanceof ModiscoTGG.ASTNodeToTAnnotatable, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("TypeToTAbstractType_source_1_reference", new InitGenReferenceActor<ModiscoTGG.TypeToTAbstractType,org.eclipse.modisco.java.Type>(name2actor, name2node.get("TypeToTAbstractType_source_1_reference"), (o) -> o instanceof ModiscoTGG.TypeToTAbstractType, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("TypeToTAbstractType_target_1_reference", new InitGenReferenceActor<ModiscoTGG.TypeToTAbstractType,org.gravity.typegraph.basic.TAbstractType>(name2actor, name2node.get("TypeToTAbstractType_target_1_reference"), (o) -> o instanceof ModiscoTGG.TypeToTAbstractType, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("AnonymousClassDeclarationToTClass_source_0_reference", new InitGenReferenceActor<ModiscoTGG.AnonymousClassDeclarationToTClass,org.eclipse.modisco.java.AnonymousClassDeclaration>(name2actor, name2node.get("AnonymousClassDeclarationToTClass_source_0_reference"), (o) -> o instanceof ModiscoTGG.AnonymousClassDeclarationToTClass, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("AnonymousClassDeclarationToTClass_target_0_reference", new InitGenReferenceActor<ModiscoTGG.AnonymousClassDeclarationToTClass,org.gravity.typegraph.basic.TClass>(name2actor, name2node.get("AnonymousClassDeclarationToTClass_target_0_reference"), (o) -> o instanceof ModiscoTGG.AnonymousClassDeclarationToTClass, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("TypeGraph_classes_0_reference", new InitGenReferenceActor<org.gravity.typegraph.basic.TypeGraph,org.gravity.typegraph.basic.TClass>(name2actor, name2node.get("TypeGraph_classes_0_reference"), (o) -> o instanceof org.gravity.typegraph.basic.TypeGraph, null, (o) -> o.getClasses(), false));
+		name2initRefGen.put("TClass_pg_0_reference", new InitGenReferenceActor<org.gravity.typegraph.basic.TAbstractType,org.gravity.typegraph.basic.TypeGraph>(name2actor, name2node.get("TClass_pg_0_reference"), (o) -> o instanceof org.gravity.typegraph.basic.TAbstractType, (o) -> o.getPg(), null, false));
+		name2initRefGen.put("TypeToTAbstractType_source_2_reference", new InitGenReferenceActor<ModiscoTGG.TypeToTAbstractType,org.eclipse.modisco.java.Type>(name2actor, name2node.get("TypeToTAbstractType_source_2_reference"), (o) -> o instanceof ModiscoTGG.TypeToTAbstractType, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("TPackage_typeGraph_0_reference", new InitGenReferenceActor<org.gravity.typegraph.basic.TPackage,org.gravity.typegraph.basic.TypeGraph>(name2actor, name2node.get("TPackage_typeGraph_0_reference"), (o) -> o instanceof org.gravity.typegraph.basic.TPackage, (o) -> o.getTypeGraph(), null, false));
+		name2initRefGen.put("TAbstractType_package_0_reference", new InitGenReferenceActor<org.gravity.typegraph.basic.TAbstractType,org.gravity.typegraph.basic.TPackage>(name2actor, name2node.get("TAbstractType_package_0_reference"), (o) -> o instanceof org.gravity.typegraph.basic.TAbstractType, (o) -> o.getPackage(), null, false));
+		name2initRefGen.put("TAbstractType_pg_1_reference", new InitGenReferenceActor<org.gravity.typegraph.basic.TAbstractType,org.gravity.typegraph.basic.TypeGraph>(name2actor, name2node.get("TAbstractType_pg_1_reference"), (o) -> o instanceof org.gravity.typegraph.basic.TAbstractType, (o) -> o.getPg(), null, false));
+		name2initRefGen.put("PackageToTPackage_source_0_reference", new InitGenReferenceActor<ModiscoTGG.PackageToTPackage,org.eclipse.modisco.java.Package>(name2actor, name2node.get("PackageToTPackage_source_0_reference"), (o) -> o instanceof ModiscoTGG.PackageToTPackage, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("PackageToTPackage_target_0_reference", new InitGenReferenceActor<ModiscoTGG.PackageToTPackage,org.gravity.typegraph.basic.TPackage>(name2actor, name2node.get("PackageToTPackage_target_0_reference"), (o) -> o instanceof ModiscoTGG.PackageToTPackage, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("AnonymousClassDeclarationToTClass_source_1_reference", new InitGenReferenceActor<ModiscoTGG.AnonymousClassDeclarationToTClass,org.eclipse.modisco.java.AnonymousClassDeclaration>(name2actor, name2node.get("AnonymousClassDeclarationToTClass_source_1_reference"), (o) -> o instanceof ModiscoTGG.AnonymousClassDeclarationToTClass, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("AnonymousClassDeclarationToTClass_target_1_reference", new InitGenReferenceActor<ModiscoTGG.AnonymousClassDeclarationToTClass,org.gravity.typegraph.basic.TClass>(name2actor, name2node.get("AnonymousClassDeclarationToTClass_target_1_reference"), (o) -> o instanceof ModiscoTGG.AnonymousClassDeclarationToTClass, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("TypeToTAbstractType_target_2_reference", new InitGenReferenceActor<ModiscoTGG.TypeToTAbstractType,org.gravity.typegraph.basic.TAbstractType>(name2actor, name2node.get("TypeToTAbstractType_target_2_reference"), (o) -> o instanceof ModiscoTGG.TypeToTAbstractType, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("TypeToTAbstractType_target_3_reference", new InitGenReferenceActor<ModiscoTGG.TypeToTAbstractType,org.gravity.typegraph.basic.TAbstractType>(name2actor, name2node.get("TypeToTAbstractType_target_3_reference"), (o) -> o instanceof ModiscoTGG.TypeToTAbstractType, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("ModelToTypeGraph_source_0_reference", new InitGenReferenceActor<ModiscoTGG.ModelToTypeGraph,org.eclipse.modisco.java.Model>(name2actor, name2node.get("ModelToTypeGraph_source_0_reference"), (o) -> o instanceof ModiscoTGG.ModelToTypeGraph, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("ModelToTypeGraph_target_0_reference", new InitGenReferenceActor<ModiscoTGG.ModelToTypeGraph,org.gravity.typegraph.basic.TypeGraph>(name2actor, name2node.get("ModelToTypeGraph_target_0_reference"), (o) -> o instanceof ModiscoTGG.ModelToTypeGraph, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("ClassDeclarationToTClass_source_0_reference", new InitGenReferenceActor<ModiscoTGG.ClassDeclarationToTClass,org.eclipse.modisco.java.ClassDeclaration>(name2actor, name2node.get("ClassDeclarationToTClass_source_0_reference"), (o) -> o instanceof ModiscoTGG.ClassDeclarationToTClass, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("ClassDeclarationToTClass_target_0_reference", new InitGenReferenceActor<ModiscoTGG.ClassDeclarationToTClass,org.gravity.typegraph.basic.TClass>(name2actor, name2node.get("ClassDeclarationToTClass_target_0_reference"), (o) -> o instanceof ModiscoTGG.ClassDeclarationToTClass, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("TClass_package_1_reference", new InitGenReferenceActor<org.gravity.typegraph.basic.TAbstractType,org.gravity.typegraph.basic.TPackage>(name2actor, name2node.get("TClass_package_1_reference"), (o) -> o instanceof org.gravity.typegraph.basic.TAbstractType, (o) -> o.getPackage(), null, false));
+		name2initRefGen.put("AnonymousClassDeclaration_bodyDeclarations_0_reference", new InitGenReferenceActor<org.eclipse.modisco.java.AnonymousClassDeclaration,org.eclipse.modisco.java.BodyDeclaration>(name2actor, name2node.get("AnonymousClassDeclaration_bodyDeclarations_0_reference"), (o) -> o instanceof org.eclipse.modisco.java.AnonymousClassDeclaration, null, (o) -> o.getBodyDeclarations(), false));
+		name2initRefGen.put("ClassDeclaration_bodyDeclarations_0_reference", new InitGenReferenceActor<org.eclipse.modisco.java.AbstractTypeDeclaration,org.eclipse.modisco.java.BodyDeclaration>(name2actor, name2node.get("ClassDeclaration_bodyDeclarations_0_reference"), (o) -> o instanceof org.eclipse.modisco.java.AbstractTypeDeclaration, null, (o) -> o.getBodyDeclarations(), false));
+		name2initRefGen.put("TypeToTAbstractType_source_3_reference", new InitGenReferenceActor<ModiscoTGG.TypeToTAbstractType,org.eclipse.modisco.java.Type>(name2actor, name2node.get("TypeToTAbstractType_source_3_reference"), (o) -> o instanceof ModiscoTGG.TypeToTAbstractType, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("MDefinitionToTMember_source_0_reference", new InitGenReferenceActor<ModiscoTGG.MDefinitionToTMember,org.gravity.modisco.MDefinition>(name2actor, name2node.get("MDefinitionToTMember_source_0_reference"), (o) -> o instanceof ModiscoTGG.MDefinitionToTMember, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("MDefinitionToTMember_target_0_reference", new InitGenReferenceActor<ModiscoTGG.MDefinitionToTMember,org.gravity.typegraph.basic.TMember>(name2actor, name2node.get("MDefinitionToTMember_target_0_reference"), (o) -> o instanceof ModiscoTGG.MDefinitionToTMember, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("MDefinitionToTMember_source_1_reference", new InitGenReferenceActor<ModiscoTGG.MDefinitionToTMember,org.gravity.modisco.MDefinition>(name2actor, name2node.get("MDefinitionToTMember_source_1_reference"), (o) -> o instanceof ModiscoTGG.MDefinitionToTMember, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("MSignatureToTSignature_source_0_reference", new InitGenReferenceActor<ModiscoTGG.MSignatureToTSignature,org.gravity.modisco.MSignature>(name2actor, name2node.get("MSignatureToTSignature_source_0_reference"), (o) -> o instanceof ModiscoTGG.MSignatureToTSignature, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("MSignatureToTSignature_target_0_reference", new InitGenReferenceActor<ModiscoTGG.MSignatureToTSignature,org.gravity.typegraph.basic.TSignature>(name2actor, name2node.get("MSignatureToTSignature_target_0_reference"), (o) -> o instanceof ModiscoTGG.MSignatureToTSignature, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("TAbstractType_defines_0_reference", new InitGenReferenceActor<org.gravity.typegraph.basic.TAbstractType,org.gravity.typegraph.basic.TMember>(name2actor, name2node.get("TAbstractType_defines_0_reference"), (o) -> o instanceof org.gravity.typegraph.basic.TAbstractType, null, (o) -> o.getDefines(), false));
+		name2initRefGen.put("MDefinitionToTMember_source_2_reference", new InitGenReferenceActor<ModiscoTGG.MDefinitionToTMember,org.gravity.modisco.MDefinition>(name2actor, name2node.get("MDefinitionToTMember_source_2_reference"), (o) -> o instanceof ModiscoTGG.MDefinitionToTMember, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("MDefinitionToTMember_target_1_reference", new InitGenReferenceActor<ModiscoTGG.MDefinitionToTMember,org.gravity.typegraph.basic.TMember>(name2actor, name2node.get("MDefinitionToTMember_target_1_reference"), (o) -> o instanceof ModiscoTGG.MDefinitionToTMember, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("AbstractTypeDeclaration_bodyDeclarations_1_reference", new InitGenReferenceActor<org.eclipse.modisco.java.AbstractTypeDeclaration,org.eclipse.modisco.java.BodyDeclaration>(name2actor, name2node.get("AbstractTypeDeclaration_bodyDeclarations_1_reference"), (o) -> o instanceof org.eclipse.modisco.java.AbstractTypeDeclaration, null, (o) -> o.getBodyDeclarations(), false));
+		name2initRefGen.put("VariableDeclarationFragment_variablesContainer_0_reference", new InitGenReferenceActor<org.eclipse.modisco.java.VariableDeclarationFragment,org.eclipse.modisco.java.AbstractVariablesContainer>(name2actor, name2node.get("VariableDeclarationFragment_variablesContainer_0_reference"), (o) -> o instanceof org.eclipse.modisco.java.VariableDeclarationFragment, (o) -> o.getVariablesContainer(), null, false));
+		name2initRefGen.put("MSignatureToTSignature_source_1_reference", new InitGenReferenceActor<ModiscoTGG.MSignatureToTSignature,org.gravity.modisco.MSignature>(name2actor, name2node.get("MSignatureToTSignature_source_1_reference"), (o) -> o instanceof ModiscoTGG.MSignatureToTSignature, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("MSignatureToTSignature_target_1_reference", new InitGenReferenceActor<ModiscoTGG.MSignatureToTSignature,org.gravity.typegraph.basic.TSignature>(name2actor, name2node.get("MSignatureToTSignature_target_1_reference"), (o) -> o instanceof ModiscoTGG.MSignatureToTSignature, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("ModelToTypeGraph_source_1_reference", new InitGenReferenceActor<ModiscoTGG.ModelToTypeGraph,org.eclipse.modisco.java.Model>(name2actor, name2node.get("ModelToTypeGraph_source_1_reference"), (o) -> o instanceof ModiscoTGG.ModelToTypeGraph, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("MFieldNameToTField_source_0_reference", new InitGenReferenceActor<ModiscoTGG.MFieldNameToTField,org.gravity.modisco.MFieldName>(name2actor, name2node.get("MFieldNameToTField_source_0_reference"), (o) -> o instanceof ModiscoTGG.MFieldNameToTField, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("MFieldNameToTField_target_0_reference", new InitGenReferenceActor<ModiscoTGG.MFieldNameToTField,org.gravity.typegraph.basic.TField>(name2actor, name2node.get("MFieldNameToTField_target_0_reference"), (o) -> o instanceof ModiscoTGG.MFieldNameToTField, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("MAbstractFlowElementToTAbstractFlowElement_source_0_reference", new InitGenReferenceActor<ModiscoTGG.MAbstractFlowElementToTAbstractFlowElement,org.gravity.modisco.MAbstractFlowElement>(name2actor, name2node.get("MAbstractFlowElementToTAbstractFlowElement_source_0_reference"), (o) -> o instanceof ModiscoTGG.MAbstractFlowElementToTAbstractFlowElement, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("MAbstractFlowElementToTAbstractFlowElement_target_0_reference", new InitGenReferenceActor<ModiscoTGG.MAbstractFlowElementToTAbstractFlowElement,org.gravity.typegraph.basic.TAbstractFlowElement>(name2actor, name2node.get("MAbstractFlowElementToTAbstractFlowElement_target_0_reference"), (o) -> o instanceof ModiscoTGG.MAbstractFlowElementToTAbstractFlowElement, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("MFlowToTFlow_source_0_reference", new InitGenReferenceActor<ModiscoTGG.MFlowToTFlow,org.gravity.modisco.MFlow>(name2actor, name2node.get("MFlowToTFlow_source_0_reference"), (o) -> o instanceof ModiscoTGG.MFlowToTFlow, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("MFlowToTFlow_target_0_reference", new InitGenReferenceActor<ModiscoTGG.MFlowToTFlow,org.gravity.typegraph.basic.TFlow>(name2actor, name2node.get("MFlowToTFlow_target_0_reference"), (o) -> o instanceof ModiscoTGG.MFlowToTFlow, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("InterfaceDeclarationToTInterface_source_0_reference", new InitGenReferenceActor<ModiscoTGG.InterfaceDeclarationToTInterface,org.eclipse.modisco.java.InterfaceDeclaration>(name2actor, name2node.get("InterfaceDeclarationToTInterface_source_0_reference"), (o) -> o instanceof ModiscoTGG.InterfaceDeclarationToTInterface, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("InterfaceDeclarationToTInterface_target_0_reference", new InitGenReferenceActor<ModiscoTGG.InterfaceDeclarationToTInterface,org.gravity.typegraph.basic.TInterface>(name2actor, name2node.get("InterfaceDeclarationToTInterface_target_0_reference"), (o) -> o instanceof ModiscoTGG.InterfaceDeclarationToTInterface, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("TInterface_defines_1_reference", new InitGenReferenceActor<org.gravity.typegraph.basic.TAbstractType,org.gravity.typegraph.basic.TMember>(name2actor, name2node.get("TInterface_defines_1_reference"), (o) -> o instanceof org.gravity.typegraph.basic.TAbstractType, null, (o) -> o.getDefines(), false));
+		name2initRefGen.put("InterfaceDeclaration_bodyDeclarations_2_reference", new InitGenReferenceActor<org.eclipse.modisco.java.AbstractTypeDeclaration,org.eclipse.modisco.java.BodyDeclaration>(name2actor, name2node.get("InterfaceDeclaration_bodyDeclarations_2_reference"), (o) -> o instanceof org.eclipse.modisco.java.AbstractTypeDeclaration, null, (o) -> o.getBodyDeclarations(), false));
+		name2initRefGen.put("TypeToTAbstractType_source_4_reference", new InitGenReferenceActor<ModiscoTGG.TypeToTAbstractType,org.eclipse.modisco.java.Type>(name2actor, name2node.get("TypeToTAbstractType_source_4_reference"), (o) -> o instanceof ModiscoTGG.TypeToTAbstractType, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("MSignatureToTSignature_target_2_reference", new InitGenReferenceActor<ModiscoTGG.MSignatureToTSignature,org.gravity.typegraph.basic.TSignature>(name2actor, name2node.get("MSignatureToTSignature_target_2_reference"), (o) -> o instanceof ModiscoTGG.MSignatureToTSignature, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("TMember_signature_0_reference", new InitGenReferenceActor<org.gravity.typegraph.basic.TMember,org.gravity.typegraph.basic.TSignature>(name2actor, name2node.get("TMember_signature_0_reference"), (o) -> o instanceof org.gravity.typegraph.basic.TMember, (o) -> o.getSignature(), null, false));
+		name2initRefGen.put("MDefinition_mSignature_0_reference", new InitGenReferenceActor<org.gravity.modisco.MDefinition,org.gravity.modisco.MSignature>(name2actor, name2node.get("MDefinition_mSignature_0_reference"), (o) -> o instanceof org.gravity.modisco.MDefinition, (o) -> o.getMSignature(), null, false));
+		name2initRefGen.put("MSignatureToTSignature_source_2_reference", new InitGenReferenceActor<ModiscoTGG.MSignatureToTSignature,org.gravity.modisco.MSignature>(name2actor, name2node.get("MSignatureToTSignature_source_2_reference"), (o) -> o instanceof ModiscoTGG.MSignatureToTSignature, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("AnnotationTypeDeclaration_bodyDeclarations_3_reference", new InitGenReferenceActor<org.eclipse.modisco.java.AbstractTypeDeclaration,org.eclipse.modisco.java.BodyDeclaration>(name2actor, name2node.get("AnnotationTypeDeclaration_bodyDeclarations_3_reference"), (o) -> o instanceof org.eclipse.modisco.java.AbstractTypeDeclaration, null, (o) -> o.getBodyDeclarations(), false));
+		name2initRefGen.put("TAnnotationType_defines_2_reference", new InitGenReferenceActor<org.gravity.typegraph.basic.TAbstractType,org.gravity.typegraph.basic.TMember>(name2actor, name2node.get("TAnnotationType_defines_2_reference"), (o) -> o instanceof org.gravity.typegraph.basic.TAbstractType, null, (o) -> o.getDefines(), false));
+		name2initRefGen.put("TClass_defines_3_reference", new InitGenReferenceActor<org.gravity.typegraph.basic.TAbstractType,org.gravity.typegraph.basic.TMember>(name2actor, name2node.get("TClass_defines_3_reference"), (o) -> o instanceof org.gravity.typegraph.basic.TAbstractType, null, (o) -> o.getDefines(), false));
+		name2initRefGen.put("ClassDeclaration_bodyDeclarations_4_reference", new InitGenReferenceActor<org.eclipse.modisco.java.AbstractTypeDeclaration,org.eclipse.modisco.java.BodyDeclaration>(name2actor, name2node.get("ClassDeclaration_bodyDeclarations_4_reference"), (o) -> o instanceof org.eclipse.modisco.java.AbstractTypeDeclaration, null, (o) -> o.getBodyDeclarations(), false));
+		name2initRefGen.put("EnumDeclaration_bodyDeclarations_5_reference", new InitGenReferenceActor<org.eclipse.modisco.java.AbstractTypeDeclaration,org.eclipse.modisco.java.BodyDeclaration>(name2actor, name2node.get("EnumDeclaration_bodyDeclarations_5_reference"), (o) -> o instanceof org.eclipse.modisco.java.AbstractTypeDeclaration, null, (o) -> o.getBodyDeclarations(), false));
+		name2initRefGen.put("TypeToTAbstractType_source_5_reference", new InitGenReferenceActor<ModiscoTGG.TypeToTAbstractType,org.eclipse.modisco.java.Type>(name2actor, name2node.get("TypeToTAbstractType_source_5_reference"), (o) -> o instanceof ModiscoTGG.TypeToTAbstractType, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("MDefinitionToTMember_source_3_reference", new InitGenReferenceActor<ModiscoTGG.MDefinitionToTMember,org.gravity.modisco.MDefinition>(name2actor, name2node.get("MDefinitionToTMember_source_3_reference"), (o) -> o instanceof ModiscoTGG.MDefinitionToTMember, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("MDefinitionToTMember_target_2_reference", new InitGenReferenceActor<ModiscoTGG.MDefinitionToTMember,org.gravity.typegraph.basic.TMember>(name2actor, name2node.get("MDefinitionToTMember_target_2_reference"), (o) -> o instanceof ModiscoTGG.MDefinitionToTMember, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("AbstractMethodInvocationToTAccess_source_0_reference", new InitGenReferenceActor<ModiscoTGG.AbstractMethodInvocationToTAccess,org.eclipse.modisco.java.AbstractMethodInvocation>(name2actor, name2node.get("AbstractMethodInvocationToTAccess_source_0_reference"), (o) -> o instanceof ModiscoTGG.AbstractMethodInvocationToTAccess, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("AbstractMethodInvocationToTAccess_target_0_reference", new InitGenReferenceActor<ModiscoTGG.AbstractMethodInvocationToTAccess,org.gravity.typegraph.basic.TAccess>(name2actor, name2node.get("AbstractMethodInvocationToTAccess_target_0_reference"), (o) -> o instanceof ModiscoTGG.AbstractMethodInvocationToTAccess, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("MEntryToTParameter_source_0_reference", new InitGenReferenceActor<ModiscoTGG.MEntryToTParameter,org.gravity.modisco.MEntry>(name2actor, name2node.get("MEntryToTParameter_source_0_reference"), (o) -> o instanceof ModiscoTGG.MEntryToTParameter, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("MEntryToTParameter_target_0_reference", new InitGenReferenceActor<ModiscoTGG.MEntryToTParameter,org.gravity.typegraph.basic.TParameter>(name2actor, name2node.get("MEntryToTParameter_target_0_reference"), (o) -> o instanceof ModiscoTGG.MEntryToTParameter, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("MMethodNameToTMethod_source_0_reference", new InitGenReferenceActor<ModiscoTGG.MMethodNameToTMethod,org.gravity.modisco.MMethodName>(name2actor, name2node.get("MMethodNameToTMethod_source_0_reference"), (o) -> o instanceof ModiscoTGG.MMethodNameToTMethod, (o) -> o.getSource(), null, false));
+		name2initRefGen.put("MMethodNameToTMethod_target_0_reference", new InitGenReferenceActor<ModiscoTGG.MMethodNameToTMethod,org.gravity.typegraph.basic.TMethod>(name2actor, name2node.get("MMethodNameToTMethod_target_0_reference"), (o) -> o instanceof ModiscoTGG.MMethodNameToTMethod, (o) -> o.getTarget(), null, false));
+		name2initRefGen.put("TMethodDefinition_signature_1_reference", new InitGenReferenceActor<org.gravity.typegraph.basic.TMember,org.gravity.typegraph.basic.TSignature>(name2actor, name2node.get("TMethodDefinition_signature_1_reference"), (o) -> o instanceof org.gravity.typegraph.basic.TMember, (o) -> o.getSignature(), null, false));
+	}
+	
 	/**
 	 * delegate notifications to dispatcher actor
 	 * @param notification
@@ -862,5 +803,158 @@ public class HiPEEngine implements IHiPEEngine{
 	public void terminate() {
 		system.terminate();	
 	}
+	
 }
+
+class AnnotationToTAnnotation_object extends GenericObjectActor<ModiscoTGG.AnnotationToTAnnotation> { }
+class Annotation_object extends GenericObjectActor<org.eclipse.modisco.java.Annotation> { }
+class TAnnotation_object extends GenericObjectActor<org.gravity.typegraph.basic.annotations.TAnnotation> { }
+class AnnotationMemberValuePairToTAnnotationValue_object extends GenericObjectActor<ModiscoTGG.AnnotationMemberValuePairToTAnnotationValue> { }
+class AnnotationMemberValuePair_object extends GenericObjectActor<org.eclipse.modisco.java.AnnotationMemberValuePair> { }
+class TAnnotationValue_object extends GenericObjectActor<org.gravity.typegraph.basic.annotations.TAnnotationValue> { }
+class Type_object extends GenericObjectActor<org.eclipse.modisco.java.Type> { }
+class TAbstractType_object extends GenericObjectActor<org.gravity.typegraph.basic.TAbstractType> { }
+class ASTNodeToTAnnotatable_object extends GenericObjectActor<ModiscoTGG.ASTNodeToTAnnotatable> { }
+class BodyDeclaration_object extends GenericObjectActor<org.eclipse.modisco.java.BodyDeclaration> { }
+class TAnnotatable_object extends GenericObjectActor<org.gravity.typegraph.basic.annotations.TAnnotatable> { }
+class AnnotationTypeDeclaration_object extends GenericObjectActor<org.eclipse.modisco.java.AnnotationTypeDeclaration> { }
+class TAnnotationType_object extends GenericObjectActor<org.gravity.typegraph.basic.annotations.TAnnotationType> { }
+class AnonymousClassDeclarationToTClass_object extends GenericObjectActor<ModiscoTGG.AnonymousClassDeclarationToTClass> { }
+class AnonymousClassDeclaration_object extends GenericObjectActor<org.eclipse.modisco.java.AnonymousClassDeclaration> { }
+class AbstractTypeDeclaration_object extends GenericObjectActor<org.eclipse.modisco.java.AbstractTypeDeclaration> { }
+class TPackage_object extends GenericObjectActor<org.gravity.typegraph.basic.TPackage> { }
+class PackageToTPackage_object extends GenericObjectActor<ModiscoTGG.PackageToTPackage> { }
+class Package_object extends GenericObjectActor<org.eclipse.modisco.java.Package> { }
+class MAnonymous_object extends GenericObjectActor<org.gravity.modisco.MAnonymous> { }
+class TInterface_object extends GenericObjectActor<org.gravity.typegraph.basic.TInterface> { }
+class MethodInvocation_object extends GenericObjectActor<org.eclipse.modisco.java.MethodInvocation> { }
+class ArrayInitializer_object extends GenericObjectActor<org.eclipse.modisco.java.ArrayInitializer> { }
+class ModelToTypeGraph_object extends GenericObjectActor<ModiscoTGG.ModelToTypeGraph> { }
+class Model_object extends GenericObjectActor<org.eclipse.modisco.java.Model> { }
+class ClassDeclarationToTClass_object extends GenericObjectActor<ModiscoTGG.ClassDeclarationToTClass> { }
+class ClassDeclaration_object extends GenericObjectActor<org.eclipse.modisco.java.ClassDeclaration> { }
+class MAbstractMethodDefinition_object extends GenericObjectActor<org.gravity.modisco.MAbstractMethodDefinition> { }
+class MMethodSignature_object extends GenericObjectActor<org.gravity.modisco.MMethodSignature> { }
+class TMethodSignature_object extends GenericObjectActor<org.gravity.typegraph.basic.TMethodSignature> { }
+class TFieldDefinition_object extends GenericObjectActor<org.gravity.typegraph.basic.TFieldDefinition> { }
+class MFieldDefinition_object extends GenericObjectActor<org.gravity.modisco.MFieldDefinition> { }
+class VariableDeclarationFragment_object extends GenericObjectActor<org.eclipse.modisco.java.VariableDeclarationFragment> { }
+class MFieldSignature_object extends GenericObjectActor<org.gravity.modisco.MFieldSignature> { }
+class TFieldSignature_object extends GenericObjectActor<org.gravity.typegraph.basic.TFieldSignature> { }
+class MGravityModel_object extends GenericObjectActor<org.gravity.modisco.MGravityModel> { }
+class MFieldNameToTField_object extends GenericObjectActor<ModiscoTGG.MFieldNameToTField> { }
+class MFieldName_object extends GenericObjectActor<org.gravity.modisco.MFieldName> { }
+class TField_object extends GenericObjectActor<org.gravity.typegraph.basic.TField> { }
+class MAbstractFlowElementToTAbstractFlowElement_object extends GenericObjectActor<ModiscoTGG.MAbstractFlowElementToTAbstractFlowElement> { }
+class MAbstractFlowElement_object extends GenericObjectActor<org.gravity.modisco.MAbstractFlowElement> { }
+class TAbstractFlowElement_object extends GenericObjectActor<org.gravity.typegraph.basic.TAbstractFlowElement> { }
+class MFlowToTFlow_object extends GenericObjectActor<ModiscoTGG.MFlowToTFlow> { }
+class MFlow_object extends GenericObjectActor<org.gravity.modisco.MFlow> { }
+class TFlow_object extends GenericObjectActor<org.gravity.typegraph.basic.TFlow> { }
+class InterfaceDeclarationToTInterface_object extends GenericObjectActor<ModiscoTGG.InterfaceDeclarationToTInterface> { }
+class InterfaceDeclaration_object extends GenericObjectActor<org.eclipse.modisco.java.InterfaceDeclaration> { }
+class TSignature_object extends GenericObjectActor<org.gravity.typegraph.basic.TSignature> { }
+class MSignature_object extends GenericObjectActor<org.gravity.modisco.MSignature> { }
+class EnumDeclaration_object extends GenericObjectActor<org.eclipse.modisco.java.EnumDeclaration> { }
+class MMethodDefinition_object extends GenericObjectActor<org.gravity.modisco.MMethodDefinition> { }
+class TMethodDefinition_object extends GenericObjectActor<org.gravity.typegraph.basic.TMethodDefinition> { }
+class AbstractMethodInvocationToTAccess_object extends GenericObjectActor<ModiscoTGG.AbstractMethodInvocationToTAccess> { }
+class MMethodInvocation_object extends GenericObjectActor<org.gravity.modisco.MMethodInvocation> { }
+class TCall_object extends GenericObjectActor<org.gravity.typegraph.basic.TCall> { }
+class MEntryToTParameter_object extends GenericObjectActor<ModiscoTGG.MEntryToTParameter> { }
+class MEntry_object extends GenericObjectActor<org.gravity.modisco.MEntry> { }
+class TParameter_object extends GenericObjectActor<org.gravity.typegraph.basic.TParameter> { }
+class MMethodNameToTMethod_object extends GenericObjectActor<ModiscoTGG.MMethodNameToTMethod> { }
+class MMethodName_object extends GenericObjectActor<org.gravity.modisco.MMethodName> { }
+class TMethod_object extends GenericObjectActor<org.gravity.typegraph.basic.TMethod> { }
+class TypeToTAbstractType_object_SP0 extends GenericObjectActor<ModiscoTGG.TypeToTAbstractType> { }
+class TypeToTAbstractType_object_SP1 extends GenericObjectActor<ModiscoTGG.TypeToTAbstractType> { }
+class TypeToTAbstractType_object_SP2 extends GenericObjectActor<ModiscoTGG.TypeToTAbstractType> { }
+class TClass_object_SP0 extends GenericObjectActor<org.gravity.typegraph.basic.TClass> { }
+class TypeGraph_object_SP0 extends GenericObjectActor<org.gravity.typegraph.basic.TypeGraph> { }
+class TypeGraph_object_SP1 extends GenericObjectActor<org.gravity.typegraph.basic.TypeGraph> { }
+class MDefinitionToTMember_object_SP0 extends GenericObjectActor<ModiscoTGG.MDefinitionToTMember> { }
+class MDefinitionToTMember_object_SP1 extends GenericObjectActor<ModiscoTGG.MDefinitionToTMember> { }
+class MDefinition_object_SP0 extends GenericObjectActor<org.gravity.modisco.MDefinition> { }
+class MDefinition_object_SP1 extends GenericObjectActor<org.gravity.modisco.MDefinition> { }
+class TMember_object_SP0 extends GenericObjectActor<org.gravity.typegraph.basic.TMember> { }
+class TMember_object_SP1 extends GenericObjectActor<org.gravity.typegraph.basic.TMember> { }
+class MSignatureToTSignature_object_SP0 extends GenericObjectActor<ModiscoTGG.MSignatureToTSignature> { }
+class MSignatureToTSignature_object_SP1 extends GenericObjectActor<ModiscoTGG.MSignatureToTSignature> { }
+
+class AnnotationToTAnnotation_source_0_reference extends GenericReferenceActor<ModiscoTGG.AnnotationToTAnnotation, org.eclipse.modisco.java.Annotation> { }
+class AnnotationToTAnnotation_target_0_reference extends GenericReferenceActor<ModiscoTGG.AnnotationToTAnnotation, org.gravity.typegraph.basic.annotations.TAnnotation> { }
+class AnnotationMemberValuePairToTAnnotationValue_source_0_reference extends GenericReferenceActor<ModiscoTGG.AnnotationMemberValuePairToTAnnotationValue, org.eclipse.modisco.java.AnnotationMemberValuePair> { }
+class AnnotationMemberValuePairToTAnnotationValue_target_0_reference extends GenericReferenceActor<ModiscoTGG.AnnotationMemberValuePairToTAnnotationValue, org.gravity.typegraph.basic.annotations.TAnnotationValue> { }
+class TypeToTAbstractType_source_0_reference extends GenericReferenceActor<ModiscoTGG.TypeToTAbstractType, org.eclipse.modisco.java.Type> { }
+class TypeToTAbstractType_target_0_reference extends GenericReferenceActor<ModiscoTGG.TypeToTAbstractType, org.gravity.typegraph.basic.TAbstractType> { }
+class ASTNodeToTAnnotatable_source_0_reference extends GenericReferenceActor<ModiscoTGG.ASTNodeToTAnnotatable, org.eclipse.modisco.java.ASTNode> { }
+class ASTNodeToTAnnotatable_target_0_reference extends GenericReferenceActor<ModiscoTGG.ASTNodeToTAnnotatable, org.gravity.typegraph.basic.annotations.TAnnotatable> { }
+class TypeToTAbstractType_source_1_reference extends GenericReferenceActor<ModiscoTGG.TypeToTAbstractType, org.eclipse.modisco.java.Type> { }
+class TypeToTAbstractType_target_1_reference extends GenericReferenceActor<ModiscoTGG.TypeToTAbstractType, org.gravity.typegraph.basic.TAbstractType> { }
+class AnonymousClassDeclarationToTClass_source_0_reference extends GenericReferenceActor<ModiscoTGG.AnonymousClassDeclarationToTClass, org.eclipse.modisco.java.AnonymousClassDeclaration> { }
+class AnonymousClassDeclarationToTClass_target_0_reference extends GenericReferenceActor<ModiscoTGG.AnonymousClassDeclarationToTClass, org.gravity.typegraph.basic.TClass> { }
+class TypeGraph_classes_0_reference extends GenericReferenceActor<org.gravity.typegraph.basic.TypeGraph, org.gravity.typegraph.basic.TClass> { }
+class TClass_pg_0_reference extends GenericReferenceActor<org.gravity.typegraph.basic.TAbstractType, org.gravity.typegraph.basic.TypeGraph> { }
+class TypeToTAbstractType_source_2_reference extends GenericReferenceActor<ModiscoTGG.TypeToTAbstractType, org.eclipse.modisco.java.Type> { }
+class TPackage_typeGraph_0_reference extends GenericReferenceActor<org.gravity.typegraph.basic.TPackage, org.gravity.typegraph.basic.TypeGraph> { }
+class TAbstractType_package_0_reference extends GenericReferenceActor<org.gravity.typegraph.basic.TAbstractType, org.gravity.typegraph.basic.TPackage> { }
+class TAbstractType_pg_1_reference extends GenericReferenceActor<org.gravity.typegraph.basic.TAbstractType, org.gravity.typegraph.basic.TypeGraph> { }
+class PackageToTPackage_source_0_reference extends GenericReferenceActor<ModiscoTGG.PackageToTPackage, org.eclipse.modisco.java.Package> { }
+class PackageToTPackage_target_0_reference extends GenericReferenceActor<ModiscoTGG.PackageToTPackage, org.gravity.typegraph.basic.TPackage> { }
+class AnonymousClassDeclarationToTClass_source_1_reference extends GenericReferenceActor<ModiscoTGG.AnonymousClassDeclarationToTClass, org.eclipse.modisco.java.AnonymousClassDeclaration> { }
+class AnonymousClassDeclarationToTClass_target_1_reference extends GenericReferenceActor<ModiscoTGG.AnonymousClassDeclarationToTClass, org.gravity.typegraph.basic.TClass> { }
+class TypeToTAbstractType_target_2_reference extends GenericReferenceActor<ModiscoTGG.TypeToTAbstractType, org.gravity.typegraph.basic.TAbstractType> { }
+class TypeToTAbstractType_target_3_reference extends GenericReferenceActor<ModiscoTGG.TypeToTAbstractType, org.gravity.typegraph.basic.TAbstractType> { }
+class ModelToTypeGraph_source_0_reference extends GenericReferenceActor<ModiscoTGG.ModelToTypeGraph, org.eclipse.modisco.java.Model> { }
+class ModelToTypeGraph_target_0_reference extends GenericReferenceActor<ModiscoTGG.ModelToTypeGraph, org.gravity.typegraph.basic.TypeGraph> { }
+class ClassDeclarationToTClass_source_0_reference extends GenericReferenceActor<ModiscoTGG.ClassDeclarationToTClass, org.eclipse.modisco.java.ClassDeclaration> { }
+class ClassDeclarationToTClass_target_0_reference extends GenericReferenceActor<ModiscoTGG.ClassDeclarationToTClass, org.gravity.typegraph.basic.TClass> { }
+class TClass_package_1_reference extends GenericReferenceActor<org.gravity.typegraph.basic.TAbstractType, org.gravity.typegraph.basic.TPackage> { }
+class AnonymousClassDeclaration_bodyDeclarations_0_reference extends GenericReferenceActor<org.eclipse.modisco.java.AnonymousClassDeclaration, org.eclipse.modisco.java.BodyDeclaration> { }
+class ClassDeclaration_bodyDeclarations_0_reference extends GenericReferenceActor<org.eclipse.modisco.java.AbstractTypeDeclaration, org.eclipse.modisco.java.BodyDeclaration> { }
+class TypeToTAbstractType_source_3_reference extends GenericReferenceActor<ModiscoTGG.TypeToTAbstractType, org.eclipse.modisco.java.Type> { }
+class MDefinitionToTMember_source_0_reference extends GenericReferenceActor<ModiscoTGG.MDefinitionToTMember, org.gravity.modisco.MDefinition> { }
+class MDefinitionToTMember_target_0_reference extends GenericReferenceActor<ModiscoTGG.MDefinitionToTMember, org.gravity.typegraph.basic.TMember> { }
+class MDefinitionToTMember_source_1_reference extends GenericReferenceActor<ModiscoTGG.MDefinitionToTMember, org.gravity.modisco.MDefinition> { }
+class MSignatureToTSignature_source_0_reference extends GenericReferenceActor<ModiscoTGG.MSignatureToTSignature, org.gravity.modisco.MSignature> { }
+class MSignatureToTSignature_target_0_reference extends GenericReferenceActor<ModiscoTGG.MSignatureToTSignature, org.gravity.typegraph.basic.TSignature> { }
+class TAbstractType_defines_0_reference extends GenericReferenceActor<org.gravity.typegraph.basic.TAbstractType, org.gravity.typegraph.basic.TMember> { }
+class MDefinitionToTMember_source_2_reference extends GenericReferenceActor<ModiscoTGG.MDefinitionToTMember, org.gravity.modisco.MDefinition> { }
+class MDefinitionToTMember_target_1_reference extends GenericReferenceActor<ModiscoTGG.MDefinitionToTMember, org.gravity.typegraph.basic.TMember> { }
+class AbstractTypeDeclaration_bodyDeclarations_1_reference extends GenericReferenceActor<org.eclipse.modisco.java.AbstractTypeDeclaration, org.eclipse.modisco.java.BodyDeclaration> { }
+class VariableDeclarationFragment_variablesContainer_0_reference extends GenericReferenceActor<org.eclipse.modisco.java.VariableDeclarationFragment, org.eclipse.modisco.java.AbstractVariablesContainer> { }
+class MSignatureToTSignature_source_1_reference extends GenericReferenceActor<ModiscoTGG.MSignatureToTSignature, org.gravity.modisco.MSignature> { }
+class MSignatureToTSignature_target_1_reference extends GenericReferenceActor<ModiscoTGG.MSignatureToTSignature, org.gravity.typegraph.basic.TSignature> { }
+class ModelToTypeGraph_source_1_reference extends GenericReferenceActor<ModiscoTGG.ModelToTypeGraph, org.eclipse.modisco.java.Model> { }
+class MFieldNameToTField_source_0_reference extends GenericReferenceActor<ModiscoTGG.MFieldNameToTField, org.gravity.modisco.MFieldName> { }
+class MFieldNameToTField_target_0_reference extends GenericReferenceActor<ModiscoTGG.MFieldNameToTField, org.gravity.typegraph.basic.TField> { }
+class MAbstractFlowElementToTAbstractFlowElement_source_0_reference extends GenericReferenceActor<ModiscoTGG.MAbstractFlowElementToTAbstractFlowElement, org.gravity.modisco.MAbstractFlowElement> { }
+class MAbstractFlowElementToTAbstractFlowElement_target_0_reference extends GenericReferenceActor<ModiscoTGG.MAbstractFlowElementToTAbstractFlowElement, org.gravity.typegraph.basic.TAbstractFlowElement> { }
+class MFlowToTFlow_source_0_reference extends GenericReferenceActor<ModiscoTGG.MFlowToTFlow, org.gravity.modisco.MFlow> { }
+class MFlowToTFlow_target_0_reference extends GenericReferenceActor<ModiscoTGG.MFlowToTFlow, org.gravity.typegraph.basic.TFlow> { }
+class InterfaceDeclarationToTInterface_source_0_reference extends GenericReferenceActor<ModiscoTGG.InterfaceDeclarationToTInterface, org.eclipse.modisco.java.InterfaceDeclaration> { }
+class InterfaceDeclarationToTInterface_target_0_reference extends GenericReferenceActor<ModiscoTGG.InterfaceDeclarationToTInterface, org.gravity.typegraph.basic.TInterface> { }
+class TInterface_defines_1_reference extends GenericReferenceActor<org.gravity.typegraph.basic.TAbstractType, org.gravity.typegraph.basic.TMember> { }
+class InterfaceDeclaration_bodyDeclarations_2_reference extends GenericReferenceActor<org.eclipse.modisco.java.AbstractTypeDeclaration, org.eclipse.modisco.java.BodyDeclaration> { }
+class TypeToTAbstractType_source_4_reference extends GenericReferenceActor<ModiscoTGG.TypeToTAbstractType, org.eclipse.modisco.java.Type> { }
+class MSignatureToTSignature_target_2_reference extends GenericReferenceActor<ModiscoTGG.MSignatureToTSignature, org.gravity.typegraph.basic.TSignature> { }
+class TMember_signature_0_reference extends GenericReferenceActor<org.gravity.typegraph.basic.TMember, org.gravity.typegraph.basic.TSignature> { }
+class MDefinition_mSignature_0_reference extends GenericReferenceActor<org.gravity.modisco.MDefinition, org.gravity.modisco.MSignature> { }
+class MSignatureToTSignature_source_2_reference extends GenericReferenceActor<ModiscoTGG.MSignatureToTSignature, org.gravity.modisco.MSignature> { }
+class AnnotationTypeDeclaration_bodyDeclarations_3_reference extends GenericReferenceActor<org.eclipse.modisco.java.AbstractTypeDeclaration, org.eclipse.modisco.java.BodyDeclaration> { }
+class TAnnotationType_defines_2_reference extends GenericReferenceActor<org.gravity.typegraph.basic.TAbstractType, org.gravity.typegraph.basic.TMember> { }
+class TClass_defines_3_reference extends GenericReferenceActor<org.gravity.typegraph.basic.TAbstractType, org.gravity.typegraph.basic.TMember> { }
+class ClassDeclaration_bodyDeclarations_4_reference extends GenericReferenceActor<org.eclipse.modisco.java.AbstractTypeDeclaration, org.eclipse.modisco.java.BodyDeclaration> { }
+class EnumDeclaration_bodyDeclarations_5_reference extends GenericReferenceActor<org.eclipse.modisco.java.AbstractTypeDeclaration, org.eclipse.modisco.java.BodyDeclaration> { }
+class TypeToTAbstractType_source_5_reference extends GenericReferenceActor<ModiscoTGG.TypeToTAbstractType, org.eclipse.modisco.java.Type> { }
+class MDefinitionToTMember_source_3_reference extends GenericReferenceActor<ModiscoTGG.MDefinitionToTMember, org.gravity.modisco.MDefinition> { }
+class MDefinitionToTMember_target_2_reference extends GenericReferenceActor<ModiscoTGG.MDefinitionToTMember, org.gravity.typegraph.basic.TMember> { }
+class AbstractMethodInvocationToTAccess_source_0_reference extends GenericReferenceActor<ModiscoTGG.AbstractMethodInvocationToTAccess, org.eclipse.modisco.java.AbstractMethodInvocation> { }
+class AbstractMethodInvocationToTAccess_target_0_reference extends GenericReferenceActor<ModiscoTGG.AbstractMethodInvocationToTAccess, org.gravity.typegraph.basic.TAccess> { }
+class MEntryToTParameter_source_0_reference extends GenericReferenceActor<ModiscoTGG.MEntryToTParameter, org.gravity.modisco.MEntry> { }
+class MEntryToTParameter_target_0_reference extends GenericReferenceActor<ModiscoTGG.MEntryToTParameter, org.gravity.typegraph.basic.TParameter> { }
+class MMethodNameToTMethod_source_0_reference extends GenericReferenceActor<ModiscoTGG.MMethodNameToTMethod, org.gravity.modisco.MMethodName> { }
+class MMethodNameToTMethod_target_0_reference extends GenericReferenceActor<ModiscoTGG.MMethodNameToTMethod, org.gravity.typegraph.basic.TMethod> { }
+class TMethodDefinition_signature_1_reference extends GenericReferenceActor<org.gravity.typegraph.basic.TMember, org.gravity.typegraph.basic.TSignature> { }
 

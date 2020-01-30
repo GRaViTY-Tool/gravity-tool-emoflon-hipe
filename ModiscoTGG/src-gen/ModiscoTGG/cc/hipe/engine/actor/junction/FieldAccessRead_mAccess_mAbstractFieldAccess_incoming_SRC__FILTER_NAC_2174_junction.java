@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class FieldAccessRead_mAccess_mAbstractFieldAccess_incoming_SRC__FILTER_NAC_2174_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("FieldAccessRead__CC_5377_nacjunction"), this::check_constraint_125));
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("FieldAccessRead__CONSISTENCY_5378_nacjunction"), this::check_constraint_130));

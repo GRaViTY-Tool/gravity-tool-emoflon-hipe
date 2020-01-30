@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class ClassImplementsInterface_eTypeAccess_usagesInTypeAccess_incoming_SRC__FILTER_NAC_1505_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("ClassImplementsInterface__CONSISTENCY_6237_nacjunction"), this::check_constraint_59));
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("ClassImplementsInterface__FWD_6245_nacjunction"), this::check_constraint_61));
@@ -54,24 +54,24 @@ public class ClassImplementsInterface_eTypeAccess_usagesInTypeAccess_incoming_SR
 	}
 	
 	public boolean check_constraint_59(HMatch match) {
-		org.eclipse.modisco.java.Type eSuperInterface = (org.eclipse.modisco.java.Type) match.getNodes()[0];
 		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
+		org.eclipse.modisco.java.Type eSuperInterface = (org.eclipse.modisco.java.Type) match.getNodes()[0];
 		boolean predicate = !FILTER_NAC_NODE.equals(eSuperInterface);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_61(HMatch match) {
-		org.eclipse.modisco.java.Type eSuperInterface = (org.eclipse.modisco.java.Type) match.getNodes()[0];
 		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
+		org.eclipse.modisco.java.Type eSuperInterface = (org.eclipse.modisco.java.Type) match.getNodes()[0];
 		boolean predicate = !FILTER_NAC_NODE.equals(eSuperInterface);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_62(HMatch match) {
-		org.eclipse.modisco.java.Type eSuperInterface = (org.eclipse.modisco.java.Type) match.getNodes()[0];
 		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
+		org.eclipse.modisco.java.Type eSuperInterface = (org.eclipse.modisco.java.Type) match.getNodes()[0];
 		boolean predicate = !FILTER_NAC_NODE.equals(eSuperInterface);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

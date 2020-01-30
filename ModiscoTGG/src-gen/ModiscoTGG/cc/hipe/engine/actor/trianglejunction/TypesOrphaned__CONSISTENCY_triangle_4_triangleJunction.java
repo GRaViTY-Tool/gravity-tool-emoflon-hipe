@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericTriangleJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.TriangleJunctionNode;
 
 public class TypesOrphaned__CONSISTENCY_triangle_4_triangleJunction extends GenericTriangleJunctionActor{
 	private Map<Object, Collection<HMatch>> tAbstractTypeAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> namedElementAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, TriangleJunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("TypesOrphaned__CONSISTENCY_triangle_2_triangleJunction"), this::check_constraint_308));
 	}
@@ -75,8 +75,8 @@ public class TypesOrphaned__CONSISTENCY_triangle_4_triangleJunction extends Gene
 	}
 	
 	public boolean check_constraint_308(HMatch match) {
-		org.gravity.typegraph.basic.TClass tType = (org.gravity.typegraph.basic.TClass) match.getNodes()[1];
 		org.gravity.modisco.MClass mType = (org.gravity.modisco.MClass) match.getNodes()[3];
+		org.gravity.typegraph.basic.TClass tType = (org.gravity.typegraph.basic.TClass) match.getNodes()[1];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.Eq csp_109 = new org.emoflon.ibex.tgg.operational.csp.constraints.Eq();
 		csp_109.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, mType.isProxy(), "boolean"));

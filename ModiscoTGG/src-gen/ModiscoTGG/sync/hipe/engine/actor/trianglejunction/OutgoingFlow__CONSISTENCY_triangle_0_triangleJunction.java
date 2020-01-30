@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericTriangleJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.TriangleJunctionNode;
 
 public class OutgoingFlow__CONSISTENCY_triangle_0_triangleJunction extends GenericTriangleJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, TriangleJunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("OutgoingFlow__CONSISTENCY_4700_junction"), this::check_constraint_216));
 	}
@@ -52,8 +52,8 @@ public class OutgoingFlow__CONSISTENCY_triangle_0_triangleJunction extends Gener
 	}
 	
 	public boolean check_constraint_216(HMatch match) {
-		org.gravity.modisco.MAbstractFlowElement mTarget = (org.gravity.modisco.MAbstractFlowElement) match.getNodes()[6];
 		org.gravity.modisco.MFlow mFlow = (org.gravity.modisco.MFlow) match.getNodes()[4];
+		org.gravity.modisco.MAbstractFlowElement mTarget = (org.gravity.modisco.MAbstractFlowElement) match.getNodes()[6];
 		boolean predicate = !mFlow.equals(mTarget);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

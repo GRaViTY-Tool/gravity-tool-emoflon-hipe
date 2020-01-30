@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericTriangleJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.TriangleJunctionNode;
 
 public class InterfaceMember__CONSISTENCY_triangle_6_triangleJunction extends GenericTriangleJunctionActor{
 	private Map<Object, Collection<HMatch>> modifierAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> tModifierAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, TriangleJunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("InterfaceMember__CONSISTENCY_triangle_3_triangleJunction"), this::check_constraint_157));
 	}

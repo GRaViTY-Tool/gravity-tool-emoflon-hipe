@@ -9,7 +9,6 @@ import java.io.IOException;
 
 import java.net.URL;
 
-
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
 
@@ -954,7 +953,7 @@ public class ModiscoTGGPackageImpl extends EPackageImpl implements ModiscoTGGPac
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
-	 * @generated
+	 * @generated NOT
 	 */
 	public static ModiscoTGGPackage init() {
 		if (isInited)
@@ -985,10 +984,10 @@ public class ModiscoTGGPackageImpl extends EPackageImpl implements ModiscoTGGPac
 		ContainersPackageImpl theContainersPackage = (ContainersPackageImpl) (registeredPackage instanceof ContainersPackageImpl
 				? registeredPackage
 				: ContainersPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.gravity.typegraph.basic.annotations.AnnotationsPackage.eNS_URI);
-		org.gravity.typegraph.basic.annotations.impl.AnnotationsPackageImpl theAnnotationsPackage_1 = (org.gravity.typegraph.basic.annotations.impl.AnnotationsPackageImpl) (registeredPackage instanceof org.gravity.typegraph.basic.annotations.impl.AnnotationsPackageImpl
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AnnotationsPackage.eNS_URI);
+		AnnotationsPackageImpl theAnnotationsPackage_1 = (AnnotationsPackageImpl) (registeredPackage instanceof AnnotationsPackageImpl
 				? registeredPackage
-				: org.gravity.typegraph.basic.annotations.AnnotationsPackage.eINSTANCE);
+				: AnnotationsPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ModiscoPackage.eNS_URI);
 		ModiscoPackageImpl theModiscoPackage = (ModiscoPackageImpl) (registeredPackage instanceof ModiscoPackageImpl
 				? registeredPackage
@@ -1002,7 +1001,7 @@ public class ModiscoTGGPackageImpl extends EPackageImpl implements ModiscoTGGPac
 		theModiscoTGGPackage.loadPackage();
 
 		// Create package meta-data objects
-//		theJavaPackage.createPackageContents();
+		//		theJavaPackage.createPackageContents();
 		theAnnotationsPackage.createPackageContents();
 		theBasicPackage.createPackageContents();
 		theContainersPackage.createPackageContents();
@@ -1011,7 +1010,7 @@ public class ModiscoTGGPackageImpl extends EPackageImpl implements ModiscoTGGPac
 		theRuntimePackage.createPackageContents();
 
 		// Initialize created meta-data
-//		theJavaPackage.initializePackageContents();
+		//		theJavaPackage.initializePackageContents();
 		theAnnotationsPackage.initializePackageContents();
 		theBasicPackage.initializePackageContents();
 		theContainersPackage.initializePackageContents();

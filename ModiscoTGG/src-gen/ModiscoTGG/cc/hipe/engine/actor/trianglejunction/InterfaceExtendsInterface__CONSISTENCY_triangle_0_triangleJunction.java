@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericTriangleJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.TriangleJunctionNode;
 
 public class InterfaceExtendsInterface__CONSISTENCY_triangle_0_triangleJunction extends GenericTriangleJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, TriangleJunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("InterfaceExtendsInterface__CONSISTENCY_2554_junction"), this::check_constraint_154));
 	}
@@ -52,10 +52,10 @@ public class InterfaceExtendsInterface__CONSISTENCY_triangle_0_triangleJunction 
 	}
 	
 	public boolean check_constraint_154(HMatch match) {
-		ModiscoTGG.InterfaceDeclarationToTInterface eSuperInterfaceToTSuperInterface = (ModiscoTGG.InterfaceDeclarationToTInterface) match.getNodes()[2];
-		ModiscoTGG.InterfaceDeclarationToTInterface eInterfaceDeclarationToTInterface = (ModiscoTGG.InterfaceDeclarationToTInterface) match.getNodes()[7];
 		org.eclipse.modisco.java.InterfaceDeclaration eInterfaceDeclaration = (org.eclipse.modisco.java.InterfaceDeclaration) match.getNodes()[5];
+		ModiscoTGG.InterfaceDeclarationToTInterface eInterfaceDeclarationToTInterface = (ModiscoTGG.InterfaceDeclarationToTInterface) match.getNodes()[7];
 		org.eclipse.modisco.java.InterfaceDeclaration eSuperInterface = (org.eclipse.modisco.java.InterfaceDeclaration) match.getNodes()[4];
+		ModiscoTGG.InterfaceDeclarationToTInterface eSuperInterfaceToTSuperInterface = (ModiscoTGG.InterfaceDeclarationToTInterface) match.getNodes()[2];
 		boolean predicate = !eInterfaceDeclaration.equals(eSuperInterface) && !eInterfaceDeclarationToTInterface.equals(eSuperInterfaceToTSuperInterface);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

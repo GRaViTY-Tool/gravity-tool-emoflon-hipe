@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericTriangleJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.TriangleJunctionNode;
 
 public class TextAnnotations__CONSISTENCY_triangle_1_triangleJunction extends GenericTriangleJunctionActor{
-	private Map<Object, Collection<HMatch>> commentAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> tTextAnnotationAttrMap = new HashMap<>();
+	private Map<Object, Collection<HMatch>> commentAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, TriangleJunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunction(getSelf(), name2actor.get("TextAnnotations__CONSISTENCY_triangle_0_triangleJunction"), this::check_constraint_297));
 	}
@@ -64,18 +64,18 @@ public class TextAnnotations__CONSISTENCY_triangle_1_triangleJunction extends Ge
 			port.forwardMessage(message);
 		}
 		Object obj = message.node;
-		if(obj instanceof org.eclipse.modisco.java.Comment) {
-			if(commentAttrMap.containsKey(obj)) {
-				for(HMatch match : commentAttrMap.get(obj)) {
+		if(obj instanceof org.gravity.typegraph.basic.annotations.TTextAnnotation) {
+			if(tTextAnnotationAttrMap.containsKey(obj)) {
+				for(HMatch match : tTextAnnotationAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}
 				}
 			}
 		}
-		if(obj instanceof org.gravity.typegraph.basic.annotations.TTextAnnotation) {
-			if(tTextAnnotationAttrMap.containsKey(obj)) {
-				for(HMatch match : tTextAnnotationAttrMap.get(obj)) {
+		if(obj instanceof org.eclipse.modisco.java.Comment) {
+			if(commentAttrMap.containsKey(obj)) {
+				for(HMatch match : commentAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}
@@ -87,8 +87,8 @@ public class TextAnnotations__CONSISTENCY_triangle_1_triangleJunction extends Ge
 	}
 	
 	public boolean check_constraint_297(HMatch match) {
-		org.gravity.typegraph.basic.annotations.TTextAnnotation tText = (org.gravity.typegraph.basic.annotations.TTextAnnotation) match.getNodes()[1];
 		org.eclipse.modisco.java.LineComment mComment = (org.eclipse.modisco.java.LineComment) match.getNodes()[3];
+		org.gravity.typegraph.basic.annotations.TTextAnnotation tText = (org.gravity.typegraph.basic.annotations.TTextAnnotation) match.getNodes()[1];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.Eq csp_60 = new org.emoflon.ibex.tgg.operational.csp.constraints.Eq();
 		csp_60.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, mComment.getContent(), "java.lang.String"));

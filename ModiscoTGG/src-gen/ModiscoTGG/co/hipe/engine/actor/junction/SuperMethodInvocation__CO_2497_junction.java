@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class SuperMethodInvocation__CO_2497_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("SuperMethodInvocation__CO_2489_junction"), this::check_constraint_194));
 	}
@@ -52,8 +52,8 @@ public class SuperMethodInvocation__CO_2497_junction extends GenericJunctionActo
 	}
 	
 	public boolean check_constraint_194(HMatch match) {
-		org.gravity.typegraph.basic.TMember tMethod = (org.gravity.typegraph.basic.TMember) match.getNodes()[2];
 		org.gravity.typegraph.basic.TMember tMember = (org.gravity.typegraph.basic.TMember) match.getNodes()[1];
+		org.gravity.typegraph.basic.TMember tMethod = (org.gravity.typegraph.basic.TMember) match.getNodes()[2];
 		boolean predicate = !tMember.equals(tMethod);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class ClassExtendsClass__CO_616_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionLeft(getSelf(), name2actor.get("ClassExtendsClass__CO_2732_nacjunction"), this::check_constraint_37));
 	}
@@ -52,8 +52,8 @@ public class ClassExtendsClass__CO_616_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_37(HMatch match) {
-		ModiscoTGG.ClassDeclarationToTClass eClassDeclarationToTClass = (ModiscoTGG.ClassDeclarationToTClass) match.getNodes()[2];
 		ModiscoTGG.ClassDeclarationToTClass eExtendedClassToTExtendedClass = (ModiscoTGG.ClassDeclarationToTClass) match.getNodes()[4];
+		ModiscoTGG.ClassDeclarationToTClass eClassDeclarationToTClass = (ModiscoTGG.ClassDeclarationToTClass) match.getNodes()[2];
 		boolean predicate = !eClassDeclarationToTClass.equals(eExtendedClassToTExtendedClass);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

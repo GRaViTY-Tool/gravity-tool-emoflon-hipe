@@ -258,9 +258,9 @@
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="AnonymousClass__GEN_168" nodes="//@nodes.77" parentPattern="//@patterns.250 //@patterns.251 //@patterns.252" invokedNodes="//@nodes.77" patternType="NODE"/>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="AnonymousClass__GEN_169" nodes="//@nodes.76" parentPattern="//@patterns.251" invokedNodes="//@nodes.76" patternType="NODE"/>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="AnonymousClass__GEN_170" nodes="//@nodes.75" parentPattern="//@patterns.252" invokedNodes="//@nodes.75" patternType="NODE"/>
-  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ArrayInitializerIgnoreExpressionsEdge__GEN_171" partialPatterns="//@patterns.259 //@patterns.260" nodes="//@nodes.78 //@nodes.79" parentPattern="//@patterns.19" overlaps="//@nodes.78 //@nodes.79" invokedNodes="//@nodes.78 //@nodes.79"/>
-  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ArrayInitializerIgnoreExpressionsEdge__GEN_172" nodes="//@nodes.78" parentPattern="//@patterns.258" invokedNodes="//@nodes.78" patternType="NODE"/>
-  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ArrayInitializerIgnoreExpressionsEdge__GEN_173" nodes="//@nodes.79" parentPattern="//@patterns.258" invokedNodes="//@nodes.79" patternType="NODE"/>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ArrayInitializerIgnoreExpressionsEdge__GEN_171" partialPatterns="//@patterns.259 //@patterns.260" nodes="//@nodes.79 //@nodes.78" parentPattern="//@patterns.19" overlaps="//@nodes.79 //@nodes.78" invokedNodes="//@nodes.79 //@nodes.78"/>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ArrayInitializerIgnoreExpressionsEdge__GEN_172" nodes="//@nodes.79" parentPattern="//@patterns.258" invokedNodes="//@nodes.79" patternType="NODE"/>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ArrayInitializerIgnoreExpressionsEdge__GEN_173" nodes="//@nodes.78" parentPattern="//@patterns.258" invokedNodes="//@nodes.78" patternType="NODE"/>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ArrayTypeToClass__GEN_174" partialPatterns="//@patterns.262 //@patterns.263" nodes="//@nodes.83 //@nodes.82 //@nodes.84 //@nodes.85 //@nodes.81 //@nodes.80" edges="//@edges.58 //@edges.59 //@edges.60 //@edges.56 //@edges.57" parentPattern="//@patterns.20" overlaps="//@nodes.83 //@nodes.82 //@nodes.84 //@nodes.85 //@nodes.81 //@nodes.80" invokedNodes="//@nodes.83 //@nodes.82 //@nodes.84 //@nodes.85 //@nodes.81 //@nodes.80"/>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ArrayTypeToClass__GEN_175" partialPatterns="//@patterns.264 //@patterns.265" nodes="//@nodes.83 //@nodes.82 //@nodes.84" edges="//@edges.58 //@edges.59" parentPattern="//@patterns.261" overlaps="//@nodes.83 //@nodes.82 //@nodes.84" invokedNodes="//@nodes.83 //@nodes.82 //@nodes.84"/>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ArrayTypeToClass__GEN_176" partialPatterns="//@patterns.266 //@patterns.267" nodes="//@nodes.84 //@nodes.85 //@nodes.81 //@nodes.80" edges="//@edges.60 //@edges.56 //@edges.57" parentPattern="//@patterns.261" overlaps="//@nodes.84 //@nodes.85 //@nodes.81 //@nodes.80" invokedNodes="//@nodes.84 //@nodes.85 //@nodes.81 //@nodes.80"/>
@@ -1076,11 +1076,11 @@
   <nodeConstraints xmi:type="HiPEPattern:UnequalConstraint" leftNode="//@nodes.382" rightNode="//@nodes.384" abstractPatterns="//@patterns.967"/>
   <attributeConstraints xmi:type="HiPEPattern:RelationalConstraint" abstractPatterns="//@patterns.229" leftAttribute="//@attributes.0" rightAttribute="//@attributes.1"/>
   <attributeConstraints xmi:type="HiPEPattern:RelationalConstraint" abstractPatterns="//@patterns.242" leftAttribute="//@attributes.2" rightAttribute="//@attributes.3"/>
-  <attributes xmi:type="HiPEPattern:HiPEAttribute" name="tName" node="//@nodes.65" value="org.eclipse.emf.ecore.impl.EAttributeImpl@414cee27 (name: tName) (ordered: false, unique: true, lowerBound: 1, upperBound: 1) (changeable: true, volatile: false, transient: false, defaultValueLiteral: null, unsettable: false, derived: false) (iD: false)" abstractPatterns="//@patterns.16 //@patterns.229">
+  <attributes xmi:type="HiPEPattern:HiPEAttribute" name="tName" node="//@nodes.65" value="org.eclipse.emf.ecore.impl.EAttributeImpl@4e30152a (name: tName) (ordered: false, unique: true, lowerBound: 1, upperBound: 1) (changeable: true, volatile: false, transient: false, defaultValueLiteral: null, unsettable: false, derived: false) (iD: false)" abstractPatterns="//@patterns.16 //@patterns.229">
     <eAttribute xmi:type="ecore:EAttribute" href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
   </attributes>
   <attributes xmi:type="HiPEPattern:HiPEAttribute" value="Anonymous" abstractPatterns="//@patterns.16 //@patterns.229"/>
-  <attributes xmi:type="HiPEPattern:HiPEAttribute" name="tName" node="//@nodes.71" value="org.eclipse.emf.ecore.impl.EAttributeImpl@414cee27 (name: tName) (ordered: false, unique: true, lowerBound: 1, upperBound: 1) (changeable: true, volatile: false, transient: false, defaultValueLiteral: null, unsettable: false, derived: false) (iD: false)" abstractPatterns="//@patterns.17 //@patterns.242">
+  <attributes xmi:type="HiPEPattern:HiPEAttribute" name="tName" node="//@nodes.71" value="org.eclipse.emf.ecore.impl.EAttributeImpl@4e30152a (name: tName) (ordered: false, unique: true, lowerBound: 1, upperBound: 1) (changeable: true, volatile: false, transient: false, defaultValueLiteral: null, unsettable: false, derived: false) (iD: false)" abstractPatterns="//@patterns.17 //@patterns.242">
     <eAttribute xmi:type="ecore:EAttribute" href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
   </attributes>
   <attributes xmi:type="HiPEPattern:HiPEAttribute" value="Anonymous" abstractPatterns="//@patterns.17 //@patterns.242"/>
@@ -1318,10 +1318,10 @@
   <nodes xmi:type="HiPEPattern:HiPENode" name="tType" abstractPatterns="//@patterns.18 //@patterns.246 //@patterns.247 //@patterns.248 //@patterns.250 //@patterns.251 //@patterns.252 //@patterns.255" invokingPartialPatterns="//@patterns.246 //@patterns.247 //@patterns.248 //@patterns.250 //@patterns.251 //@patterns.252 //@patterns.255">
     <type xmi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
   </nodes>
-  <nodes xmi:type="HiPEPattern:HiPENode" name="array" abstractPatterns="//@patterns.19 //@patterns.258 //@patterns.259" invokingPartialPatterns="//@patterns.258 //@patterns.259">
+  <nodes xmi:type="HiPEPattern:HiPENode" name="array" abstractPatterns="//@patterns.19 //@patterns.258 //@patterns.260" invokingPartialPatterns="//@patterns.258 //@patterns.260">
     <type xmi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer"/>
   </nodes>
-  <nodes xmi:type="HiPEPattern:HiPENode" name="invocation" abstractPatterns="//@patterns.19 //@patterns.258 //@patterns.260" invokingPartialPatterns="//@patterns.258 //@patterns.260">
+  <nodes xmi:type="HiPEPattern:HiPENode" name="invocation" abstractPatterns="//@patterns.19 //@patterns.258 //@patterns.259" invokingPartialPatterns="//@patterns.258 //@patterns.259">
     <type xmi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodInvocation"/>
   </nodes>
   <nodes xmi:type="HiPEPattern:HiPENode" name="eModel" abstractPatterns="//@patterns.20 //@patterns.261 //@patterns.263 //@patterns.267 //@patterns.272 //@patterns.275" invokingPartialPatterns="//@patterns.261 //@patterns.263 //@patterns.267 //@patterns.272 //@patterns.275">

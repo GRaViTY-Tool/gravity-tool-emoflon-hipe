@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class AnonymousClassTypeClass__GEN_133_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunction(getSelf(), name2actor.get("AnonymousClassTypeClass__GEN_production"), this::check_constraint_2));
 	}
@@ -52,8 +52,8 @@ public class AnonymousClassTypeClass__GEN_133_junction extends GenericJunctionAc
 	}
 	
 	public boolean check_constraint_2(HMatch match) {
-		org.gravity.typegraph.basic.TClass tParent = (org.gravity.typegraph.basic.TClass) match.getNodes()[5];
 		org.gravity.typegraph.basic.TClass tClass = (org.gravity.typegraph.basic.TClass) match.getNodes()[2];
+		org.gravity.typegraph.basic.TClass tParent = (org.gravity.typegraph.basic.TClass) match.getNodes()[5];
 		boolean predicate = !tClass.equals(tParent);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

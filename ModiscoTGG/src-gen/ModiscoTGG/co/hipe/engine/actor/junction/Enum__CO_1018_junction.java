@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class Enum__CO_1018_junction extends GenericJunctionActor{
 	private Map<Object, Collection<HMatch>> tAbstractTypeAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> namedElementAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionRight(getSelf(), name2actor.get("Enum__CO_1011_junction"), this::check_constraint_71));
 	}
@@ -75,8 +75,8 @@ public class Enum__CO_1018_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_71(HMatch match) {
-		org.eclipse.modisco.java.EnumDeclaration mType = (org.eclipse.modisco.java.EnumDeclaration) match.getNodes()[1];
 		org.gravity.typegraph.basic.TClass tType = (org.gravity.typegraph.basic.TClass) match.getNodes()[2];
+		org.eclipse.modisco.java.EnumDeclaration mType = (org.eclipse.modisco.java.EnumDeclaration) match.getNodes()[1];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.Eq csp_25 = new org.emoflon.ibex.tgg.operational.csp.constraints.Eq();
 		csp_25.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, mType.isProxy(), "boolean"));

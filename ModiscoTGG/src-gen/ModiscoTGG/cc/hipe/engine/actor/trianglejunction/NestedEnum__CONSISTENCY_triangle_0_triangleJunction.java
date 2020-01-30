@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericTriangleJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.TriangleJunctionNode;
 
 public class NestedEnum__CONSISTENCY_triangle_0_triangleJunction extends GenericTriangleJunctionActor{
 	private Map<Object, Collection<HMatch>> tPackageAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> namedElementAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, TriangleJunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunctionLeft(getSelf(), name2actor.get("NestedEnum__CONSISTENCY_5426_nacjunction"), this::check_constraint_206));
 	}
@@ -87,8 +87,8 @@ public class NestedEnum__CONSISTENCY_triangle_0_triangleJunction extends Generic
 	}
 	
 	public boolean check_constraint_206(HMatch match) {
-		org.gravity.typegraph.basic.TPackage tNestedPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[3];
 		org.eclipse.modisco.java.AbstractTypeDeclaration eOuterType = (org.eclipse.modisco.java.AbstractTypeDeclaration) match.getNodes()[7];
+		org.gravity.typegraph.basic.TPackage tNestedPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[3];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix csp_93 = new org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix();
 		csp_93.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, eOuterType.getName(), "java.lang.String"));

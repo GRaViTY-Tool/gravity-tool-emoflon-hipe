@@ -23,12 +23,12 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class IncomingFlow__BWD_2908_junction extends GenericJunctionActor{
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunction(getSelf(), name2actor.get("IncomingFlow__BWD_production"), this::check_constraint_141));
 	}
@@ -52,8 +52,8 @@ public class IncomingFlow__BWD_2908_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_141(HMatch match) {
-		org.gravity.modisco.MFlow mFlow = (org.gravity.modisco.MFlow) match.getNodes()[5];
 		org.gravity.modisco.MAbstractFlowElement mSource = (org.gravity.modisco.MAbstractFlowElement) match.getNodes()[1];
+		org.gravity.modisco.MFlow mFlow = (org.gravity.modisco.MFlow) match.getNodes()[5];
 		boolean predicate = !mFlow.equals(mSource);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

@@ -23,14 +23,14 @@ import hipe.engine.message.input.AttributeChanged;
 
 import hipe.generic.actor.junction.GenericJunctionActor;
 
-import hipe.network.AbstractJunctionNode;
+import hipe.network.JunctionNode;
 
 public class AnnotationMemberValueNumberArray__CC_399_junction extends GenericJunctionActor{
-	private Map<Object, Collection<HMatch>> tNumberNodeAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> numberLiteralAttrMap = new HashMap<>();
+	private Map<Object, Collection<HMatch>> tNumberNodeAttrMap = new HashMap<>();
 	
 	@Override
-	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
+	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortJunction(getSelf(), name2actor.get("AnnotationMemberValueNumberArray__CC_production"), this::check_constraint_13));
 	}
@@ -38,14 +38,6 @@ public class AnnotationMemberValueNumberArray__CC_399_junction extends GenericJu
 	@Override
 	protected void registerMatchForAttributeChanges(HMatch match) {
 		Object[] matchObjects = match.getNodes();
-		Collection<HMatch> tNumberNode_4_Matches = tNumberNodeAttrMap.get(matchObjects[4]);
-		if(tNumberNode_4_Matches == null) {
-			tNumberNode_4_Matches = new LinkedList<>();
-			tNumberNodeAttrMap.put(matchObjects[4], tNumberNode_4_Matches);
-		}
-		
-		tNumberNode_4_Matches.add(match);
-		
 		Collection<HMatch> numberLiteral_2_Matches = numberLiteralAttrMap.get(matchObjects[2]);
 		if(numberLiteral_2_Matches == null) {
 			numberLiteral_2_Matches = new LinkedList<>();
@@ -54,16 +46,24 @@ public class AnnotationMemberValueNumberArray__CC_399_junction extends GenericJu
 		
 		numberLiteral_2_Matches.add(match);
 		
+		Collection<HMatch> tNumberNode_4_Matches = tNumberNodeAttrMap.get(matchObjects[4]);
+		if(tNumberNode_4_Matches == null) {
+			tNumberNode_4_Matches = new LinkedList<>();
+			tNumberNodeAttrMap.put(matchObjects[4], tNumberNode_4_Matches);
+		}
+		
+		tNumberNode_4_Matches.add(match);
+		
 	}
 	
 	@Override
 	protected void deregisterMatchForAttributeChanges(Set<HMatch> matches, HMatch match) {
 		Object[] matchObjects = match.getNodes();
-		Collection<HMatch> matches_0 = tNumberNodeAttrMap.get(matchObjects[4]);
+		Collection<HMatch> matches_0 = numberLiteralAttrMap.get(matchObjects[2]);
 		if(matches_0 != null) {
 			matches.remove(match);
 		}
-		Collection<HMatch> matches_1 = numberLiteralAttrMap.get(matchObjects[2]);
+		Collection<HMatch> matches_1 = tNumberNodeAttrMap.get(matchObjects[4]);
 		if(matches_1 != null) {
 			matches.remove(match);
 		}
@@ -76,18 +76,18 @@ public class AnnotationMemberValueNumberArray__CC_399_junction extends GenericJu
 			port.forwardMessage(message);
 		}
 		Object obj = message.node;
-		if(obj instanceof org.gravity.typegraph.basic.annotations.TNumberNode) {
-			if(tNumberNodeAttrMap.containsKey(obj)) {
-				for(HMatch match : tNumberNodeAttrMap.get(obj)) {
+		if(obj instanceof org.eclipse.modisco.java.NumberLiteral) {
+			if(numberLiteralAttrMap.containsKey(obj)) {
+				for(HMatch match : numberLiteralAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}
 				}
 			}
 		}
-		if(obj instanceof org.eclipse.modisco.java.NumberLiteral) {
-			if(numberLiteralAttrMap.containsKey(obj)) {
-				for(HMatch match : numberLiteralAttrMap.get(obj)) {
+		if(obj instanceof org.gravity.typegraph.basic.annotations.TNumberNode) {
+			if(tNumberNodeAttrMap.containsKey(obj)) {
+				for(HMatch match : tNumberNodeAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}

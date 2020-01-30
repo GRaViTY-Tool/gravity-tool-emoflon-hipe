@@ -5,12 +5,13 @@ import org.eclipse.core.resources.IProject;
 import org.emoflon.ibex.tgg.compiler.defaults.IRegistrationHelper;
 import org.emoflon.ibex.tgg.operational.strategies.modules.TGGResourceHandler;
 import org.emoflon.ibex.tgg.operational.strategies.sync.SYNC;
+import org.emoflon.ibex.tgg.run.modiscotgg.config.HiPERegistrationHelper;
 import org.emoflon.ibex.tgg.run.modiscotgg.config._DefaultRegistrationHelper;
 import org.gravity.eclipse.GravityActivator;
 
 public class TGGApp extends SYNC {
 
-	private static IRegistrationHelper registrationHelper = new _DefaultRegistrationHelper();
+	private static IRegistrationHelper registrationHelper = new HiPERegistrationHelper();
 
 	private static final String PLATFORM_RESOURCE = "platform:/resource/"; //$NON-NLS-1$
 
@@ -32,7 +33,7 @@ public class TGGApp extends SYNC {
 	 * @throws IOException If one of the models cannot be loaded
 	 */
 	public TGGApp(IProject project) throws IOException {
-		super(registrationHelper.createIbexOptions().setResourceHandler(new TGGResourceHandler() {
+		super(registrationHelper.createIbexOptions().applyConcurrently(true).setResourceHandler(new TGGResourceHandler() {
 			@Override
 			public void loadModels() throws IOException {
 				String gravityFolder = PLATFORM_RESOURCE + project.getName() + '/' + GravityActivator.GRAVITY_FOLDER_NAME + '/';
