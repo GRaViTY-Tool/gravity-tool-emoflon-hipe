@@ -99,8 +99,8 @@ public class InterfaceMember__CONSISTENCY_triangle_6_triangleJunction extends Ge
 	}
 	
 	public boolean check_constraint_157(HMatch match) {
-		org.gravity.typegraph.basic.TModifier tModifier = (org.gravity.typegraph.basic.TModifier) match.getNodes()[1];
 		org.eclipse.modisco.java.Modifier mModifier = (org.eclipse.modisco.java.Modifier) match.getNodes()[3];
+		org.gravity.typegraph.basic.TModifier tModifier = (org.gravity.typegraph.basic.TModifier) match.getNodes()[1];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.Eq csp_34 = new org.emoflon.ibex.tgg.operational.csp.constraints.Eq();
 		csp_34.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, mModifier.isStatic(), "boolean"));

@@ -99,8 +99,8 @@ public class AnnotationMemberValueBoolean__CC_175_junction extends GenericJuncti
 	}
 	
 	public boolean check_constraint_5(HMatch match) {
-		org.gravity.typegraph.basic.annotations.TBoolNode tValue = (org.gravity.typegraph.basic.annotations.TBoolNode) match.getNodes()[1];
 		org.eclipse.modisco.java.BooleanLiteral mValue = (org.eclipse.modisco.java.BooleanLiteral) match.getNodes()[3];
+		org.gravity.typegraph.basic.annotations.TBoolNode tValue = (org.gravity.typegraph.basic.annotations.TBoolNode) match.getNodes()[1];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.Eq csp_4 = new org.emoflon.ibex.tgg.operational.csp.constraints.Eq();
 		csp_4.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, mValue.isValue(), "boolean"));

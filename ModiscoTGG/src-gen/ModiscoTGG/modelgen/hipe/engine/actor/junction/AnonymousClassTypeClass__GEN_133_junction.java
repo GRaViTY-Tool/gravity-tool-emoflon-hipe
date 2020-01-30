@@ -52,8 +52,8 @@ public class AnonymousClassTypeClass__GEN_133_junction extends GenericJunctionAc
 	}
 	
 	public boolean check_constraint_2(HMatch match) {
-		org.gravity.typegraph.basic.TClass tClass = (org.gravity.typegraph.basic.TClass) match.getNodes()[2];
 		org.gravity.typegraph.basic.TClass tParent = (org.gravity.typegraph.basic.TClass) match.getNodes()[5];
+		org.gravity.typegraph.basic.TClass tClass = (org.gravity.typegraph.basic.TClass) match.getNodes()[2];
 		boolean predicate = !tClass.equals(tParent);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

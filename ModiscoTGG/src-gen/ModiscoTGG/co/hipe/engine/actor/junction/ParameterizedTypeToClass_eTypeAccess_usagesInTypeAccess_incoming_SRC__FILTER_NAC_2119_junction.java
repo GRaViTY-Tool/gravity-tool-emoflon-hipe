@@ -53,16 +53,16 @@ public class ParameterizedTypeToClass_eTypeAccess_usagesInTypeAccess_incoming_SR
 	}
 	
 	public boolean check_constraint_149(HMatch match) {
-		org.eclipse.modisco.java.Type eType = (org.eclipse.modisco.java.Type) match.getNodes()[0];
 		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
+		org.eclipse.modisco.java.Type eType = (org.eclipse.modisco.java.Type) match.getNodes()[0];
 		boolean predicate = !FILTER_NAC_NODE.equals(eType);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_150(HMatch match) {
-		org.eclipse.modisco.java.Type eType = (org.eclipse.modisco.java.Type) match.getNodes()[0];
 		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
+		org.eclipse.modisco.java.Type eType = (org.eclipse.modisco.java.Type) match.getNodes()[0];
 		boolean predicate = !FILTER_NAC_NODE.equals(eType);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

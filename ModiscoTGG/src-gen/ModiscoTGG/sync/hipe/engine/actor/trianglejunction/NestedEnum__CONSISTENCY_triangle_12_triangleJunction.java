@@ -26,8 +26,8 @@ import hipe.generic.actor.junction.GenericTriangleJunctionActor;
 import hipe.network.TriangleJunctionNode;
 
 public class NestedEnum__CONSISTENCY_triangle_12_triangleJunction extends GenericTriangleJunctionActor{
-	private Map<Object, Collection<HMatch>> tAbstractTypeAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> namedElementAttrMap = new HashMap<>();
+	private Map<Object, Collection<HMatch>> tAbstractTypeAttrMap = new HashMap<>();
 	
 	@Override
 	protected void initializePorts(Map<String, ActorRef> name2actor, TriangleJunctionNode node) {
@@ -52,18 +52,18 @@ public class NestedEnum__CONSISTENCY_triangle_12_triangleJunction extends Generi
 			port.forwardMessage(message);
 		}
 		Object obj = message.node;
-		if(obj instanceof org.gravity.typegraph.basic.TAbstractType) {
-			if(tAbstractTypeAttrMap.containsKey(obj)) {
-				for(HMatch match : tAbstractTypeAttrMap.get(obj)) {
+		if(obj instanceof org.eclipse.modisco.java.NamedElement) {
+			if(namedElementAttrMap.containsKey(obj)) {
+				for(HMatch match : namedElementAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}
 				}
 			}
 		}
-		if(obj instanceof org.eclipse.modisco.java.NamedElement) {
-			if(namedElementAttrMap.containsKey(obj)) {
-				for(HMatch match : namedElementAttrMap.get(obj)) {
+		if(obj instanceof org.gravity.typegraph.basic.TAbstractType) {
+			if(tAbstractTypeAttrMap.containsKey(obj)) {
+				for(HMatch match : tAbstractTypeAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}
@@ -75,8 +75,8 @@ public class NestedEnum__CONSISTENCY_triangle_12_triangleJunction extends Generi
 	}
 	
 	public boolean check_constraint_199(HMatch match) {
-		org.eclipse.modisco.java.EnumDeclaration eNestedType = (org.eclipse.modisco.java.EnumDeclaration) match.getNodes()[3];
 		org.gravity.typegraph.basic.TClass tNestedType = (org.gravity.typegraph.basic.TClass) match.getNodes()[1];
+		org.eclipse.modisco.java.EnumDeclaration eNestedType = (org.eclipse.modisco.java.EnumDeclaration) match.getNodes()[3];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.Eq csp_52 = new org.emoflon.ibex.tgg.operational.csp.constraints.Eq();
 		csp_52.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, eNestedType.isProxy(), "boolean"));

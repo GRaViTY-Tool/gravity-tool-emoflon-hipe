@@ -54,24 +54,24 @@ public class SyntethicMethod_mSyntethic_syntheticMethodDefinitions_incoming_SRC_
 	}
 	
 	public boolean check_constraint_289(HMatch match) {
-		org.gravity.modisco.MMethodDefinition FILTER_NAC_NODE = (org.gravity.modisco.MMethodDefinition) match.getNodes()[2];
 		org.gravity.modisco.MMethodDefinition mDef = (org.gravity.modisco.MMethodDefinition) match.getNodes()[0];
+		org.gravity.modisco.MMethodDefinition FILTER_NAC_NODE = (org.gravity.modisco.MMethodDefinition) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(mDef);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_291(HMatch match) {
-		org.gravity.modisco.MMethodDefinition FILTER_NAC_NODE = (org.gravity.modisco.MMethodDefinition) match.getNodes()[2];
 		org.gravity.modisco.MMethodDefinition mDef = (org.gravity.modisco.MMethodDefinition) match.getNodes()[0];
+		org.gravity.modisco.MMethodDefinition FILTER_NAC_NODE = (org.gravity.modisco.MMethodDefinition) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(mDef);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_292(HMatch match) {
-		org.gravity.modisco.MMethodDefinition FILTER_NAC_NODE = (org.gravity.modisco.MMethodDefinition) match.getNodes()[2];
 		org.gravity.modisco.MMethodDefinition mDef = (org.gravity.modisco.MMethodDefinition) match.getNodes()[0];
+		org.gravity.modisco.MMethodDefinition FILTER_NAC_NODE = (org.gravity.modisco.MMethodDefinition) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(mDef);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

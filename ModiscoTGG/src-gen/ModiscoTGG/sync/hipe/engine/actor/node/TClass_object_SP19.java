@@ -39,7 +39,7 @@ public class TClass_object_SP19 extends GenericObjectActor<org.gravity.typegraph
 	}
 	
 	public boolean check_constraint_248(org.gravity.typegraph.basic.TClass tPrimitiveClass) {
-		return tPrimitiveClass.isTLib()==true && String.valueOf(tPrimitiveClass.getTName()).equals("double");
+		return String.valueOf(tPrimitiveClass.getTName()).equals("double") && tPrimitiveClass.isTLib()==true;
 	}
 	
 }

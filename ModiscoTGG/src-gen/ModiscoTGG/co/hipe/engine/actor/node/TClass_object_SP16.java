@@ -43,7 +43,7 @@ public class TClass_object_SP16 extends GenericObjectActor<org.gravity.typegraph
 	}
 	
 	public boolean check_constraint_173(org.gravity.typegraph.basic.TClass tPrimitiveClass) {
-		return tPrimitiveClass.isTLib()==true && String.valueOf(tPrimitiveClass.getTName()).equals("int");
+		return String.valueOf(tPrimitiveClass.getTName()).equals("int") && tPrimitiveClass.isTLib()==true;
 	}
 	
 }

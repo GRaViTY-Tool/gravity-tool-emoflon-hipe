@@ -52,10 +52,10 @@ public class InterfaceExtendsInterface__FWD_3007_junction extends GenericJunctio
 	}
 	
 	public boolean check_constraint_153(HMatch match) {
-		ModiscoTGG.InterfaceDeclarationToTInterface eSuperInterfaceToTSuperInterface = (ModiscoTGG.InterfaceDeclarationToTInterface) match.getNodes()[0];
 		org.gravity.typegraph.basic.TInterface tSuperInterface = (org.gravity.typegraph.basic.TInterface) match.getNodes()[2];
 		org.gravity.typegraph.basic.TInterface tInterface = (org.gravity.typegraph.basic.TInterface) match.getNodes()[5];
 		ModiscoTGG.InterfaceDeclarationToTInterface eInterfaceDeclarationToTInterface = (ModiscoTGG.InterfaceDeclarationToTInterface) match.getNodes()[3];
+		ModiscoTGG.InterfaceDeclarationToTInterface eSuperInterfaceToTSuperInterface = (ModiscoTGG.InterfaceDeclarationToTInterface) match.getNodes()[0];
 		boolean predicate = !tInterface.equals(tSuperInterface) && !eInterfaceDeclarationToTInterface.equals(eSuperInterfaceToTSuperInterface);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

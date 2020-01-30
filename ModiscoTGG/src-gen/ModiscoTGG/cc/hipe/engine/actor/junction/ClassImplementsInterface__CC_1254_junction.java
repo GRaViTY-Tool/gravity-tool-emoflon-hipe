@@ -52,8 +52,8 @@ public class ClassImplementsInterface__CC_1254_junction extends GenericJunctionA
 	}
 	
 	public boolean check_constraint_63(HMatch match) {
-		org.eclipse.modisco.java.Type eSuperInterface = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		org.eclipse.modisco.java.ClassDeclaration eClassDeclaration = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[0];
+		org.eclipse.modisco.java.Type eSuperInterface = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		boolean predicate = !eClassDeclaration.equals(eSuperInterface);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

@@ -52,10 +52,10 @@ public class ClassExtendsClass__BWD_1351_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_49(HMatch match) {
-		ModiscoTGG.ClassDeclarationToTClass eClassDeclarationToTClass = (ModiscoTGG.ClassDeclarationToTClass) match.getNodes()[4];
 		ModiscoTGG.ClassDeclarationToTClass eExtendedClassToTExtendedClass = (ModiscoTGG.ClassDeclarationToTClass) match.getNodes()[0];
-		org.eclipse.modisco.java.ClassDeclaration eExtendedClass = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[1];
+		ModiscoTGG.ClassDeclarationToTClass eClassDeclarationToTClass = (ModiscoTGG.ClassDeclarationToTClass) match.getNodes()[4];
 		org.eclipse.modisco.java.ClassDeclaration eClassDeclaration = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[5];
+		org.eclipse.modisco.java.ClassDeclaration eExtendedClass = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[1];
 		boolean predicate = !eClassDeclaration.equals(eExtendedClass) && !eClassDeclarationToTClass.equals(eExtendedClassToTExtendedClass);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

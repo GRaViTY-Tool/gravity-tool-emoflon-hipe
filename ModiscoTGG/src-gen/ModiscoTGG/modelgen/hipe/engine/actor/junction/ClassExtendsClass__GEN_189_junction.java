@@ -52,12 +52,12 @@ public class ClassExtendsClass__GEN_189_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_3(HMatch match) {
-		org.gravity.typegraph.basic.TClass tClass = (org.gravity.typegraph.basic.TClass) match.getNodes()[2];
-		org.eclipse.modisco.java.ClassDeclaration eClassDeclaration = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[1];
-		ModiscoTGG.ClassDeclarationToTClass eExtendedClassToTExtendedClass = (ModiscoTGG.ClassDeclarationToTClass) match.getNodes()[3];
-		org.eclipse.modisco.java.ClassDeclaration eExtendedClass = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[4];
 		org.gravity.typegraph.basic.TClass tExtendedClass = (org.gravity.typegraph.basic.TClass) match.getNodes()[5];
+		ModiscoTGG.ClassDeclarationToTClass eExtendedClassToTExtendedClass = (ModiscoTGG.ClassDeclarationToTClass) match.getNodes()[3];
 		ModiscoTGG.ClassDeclarationToTClass eClassDeclarationToTClass = (ModiscoTGG.ClassDeclarationToTClass) match.getNodes()[0];
+		org.eclipse.modisco.java.ClassDeclaration eExtendedClass = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[4];
+		org.eclipse.modisco.java.ClassDeclaration eClassDeclaration = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[1];
+		org.gravity.typegraph.basic.TClass tClass = (org.gravity.typegraph.basic.TClass) match.getNodes()[2];
 		boolean predicate = !eClassDeclaration.equals(eExtendedClass) && !tClass.equals(tExtendedClass) && !eClassDeclarationToTClass.equals(eExtendedClassToTExtendedClass);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

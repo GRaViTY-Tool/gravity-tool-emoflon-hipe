@@ -52,8 +52,8 @@ public class MethodParameterLink__CO_1771_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_125(HMatch match) {
-		ModiscoTGG.MEntryToTParameter eSingleVariableDeclarationToTParameter = (ModiscoTGG.MEntryToTParameter) match.getNodes()[2];
 		ModiscoTGG.MEntryToTParameter mmethodSignatureToTMethodSignature = (ModiscoTGG.MEntryToTParameter) match.getNodes()[5];
+		ModiscoTGG.MEntryToTParameter eSingleVariableDeclarationToTParameter = (ModiscoTGG.MEntryToTParameter) match.getNodes()[2];
 		boolean predicate = !eSingleVariableDeclarationToTParameter.equals(mmethodSignatureToTMethodSignature);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

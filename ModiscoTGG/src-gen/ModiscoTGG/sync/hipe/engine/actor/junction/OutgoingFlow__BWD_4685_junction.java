@@ -52,8 +52,8 @@ public class OutgoingFlow__BWD_4685_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_213(HMatch match) {
-		org.gravity.modisco.MAbstractFlowElement mTarget = (org.gravity.modisco.MAbstractFlowElement) match.getNodes()[1];
 		org.gravity.modisco.MFlow mFlow = (org.gravity.modisco.MFlow) match.getNodes()[5];
+		org.gravity.modisco.MAbstractFlowElement mTarget = (org.gravity.modisco.MAbstractFlowElement) match.getNodes()[1];
 		boolean predicate = !mFlow.equals(mTarget);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

@@ -2034,7 +2034,7 @@ public class HiPEEngine implements IHiPEEngine{
 		classes.put("PrimitiveTypeLong_object",PrimitiveTypeLong_object.class);
 		classes.put("PrimitiveTypeShort_object",PrimitiveTypeShort_object.class);
 		classes.put("PrimitiveTypeVoid_object",PrimitiveTypeVoid_object.class);
-		classes.put("SuperConstructorInvocation_object",SuperConstructorInvocation_object.class);
+		classes.put("MAbstractMethodInvocation_object",MAbstractMethodInvocation_object.class);
 		classes.put("MSuperMethodInvocation_object",MSuperMethodInvocation_object.class);
 		classes.put("MSyntethicMethodToTSyntethicMethod_object",MSyntethicMethodToTSyntethicMethod_object.class);
 		classes.put("MSyntheticMethodDefinition_object",MSyntheticMethodDefinition_object.class);
@@ -2693,7 +2693,7 @@ class PrimitiveTypeInt_object extends GenericObjectActor<org.eclipse.modisco.jav
 class PrimitiveTypeLong_object extends GenericObjectActor<org.eclipse.modisco.java.PrimitiveTypeLong> { }
 class PrimitiveTypeShort_object extends GenericObjectActor<org.eclipse.modisco.java.PrimitiveTypeShort> { }
 class PrimitiveTypeVoid_object extends GenericObjectActor<org.eclipse.modisco.java.PrimitiveTypeVoid> { }
-class SuperConstructorInvocation_object extends GenericObjectActor<org.eclipse.modisco.java.SuperConstructorInvocation> { }
+class MAbstractMethodInvocation_object extends GenericObjectActor<org.gravity.modisco.MAbstractMethodInvocation> { }
 class MSuperMethodInvocation_object extends GenericObjectActor<org.gravity.modisco.MSuperMethodInvocation> { }
 class MSyntethicMethodToTSyntethicMethod_object extends GenericObjectActor<ModiscoTGG.MSyntethicMethodToTSyntethicMethod> { }
 class MSyntheticMethodDefinition_object extends GenericObjectActor<org.gravity.modisco.MSyntheticMethodDefinition> { }

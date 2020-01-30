@@ -87,8 +87,8 @@ public class AnnotationMemberKey__CC_1_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_1(HMatch match) {
-		org.gravity.typegraph.basic.annotations.TAnnotationValue tAnnotationValue = (org.gravity.typegraph.basic.annotations.TAnnotationValue) match.getNodes()[1];
 		org.eclipse.modisco.java.AnnotationMemberValuePair mValue = (org.eclipse.modisco.java.AnnotationMemberValuePair) match.getNodes()[3];
+		org.gravity.typegraph.basic.annotations.TAnnotationValue tAnnotationValue = (org.gravity.typegraph.basic.annotations.TAnnotationValue) match.getNodes()[1];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.Eq csp_0 = new org.emoflon.ibex.tgg.operational.csp.constraints.Eq();
 		csp_0.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, mValue.getName(), "java.lang.String"));

@@ -52,10 +52,10 @@ public class MethodOverriding__BWD_3998_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_174(HMatch match) {
-		org.gravity.modisco.MMethodDefinition mOverriding = (org.gravity.modisco.MMethodDefinition) match.getNodes()[1];
-		ModiscoTGG.MDefinitionToTMember mOverridingToTOverriding = (ModiscoTGG.MDefinitionToTMember) match.getNodes()[0];
 		ModiscoTGG.MDefinitionToTMember mMethodToTMethod = (ModiscoTGG.MDefinitionToTMember) match.getNodes()[4];
 		org.gravity.modisco.MMethodDefinition mMethod = (org.gravity.modisco.MMethodDefinition) match.getNodes()[5];
+		org.gravity.modisco.MMethodDefinition mOverriding = (org.gravity.modisco.MMethodDefinition) match.getNodes()[1];
+		ModiscoTGG.MDefinitionToTMember mOverridingToTOverriding = (ModiscoTGG.MDefinitionToTMember) match.getNodes()[0];
 		boolean predicate = !mMethod.equals(mOverriding) && !mMethodToTMethod.equals(mOverridingToTOverriding);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

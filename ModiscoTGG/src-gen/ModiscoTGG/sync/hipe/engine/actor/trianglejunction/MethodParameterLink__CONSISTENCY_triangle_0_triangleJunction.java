@@ -52,10 +52,10 @@ public class MethodParameterLink__CONSISTENCY_triangle_0_triangleJunction extend
 	}
 	
 	public boolean check_constraint_184(HMatch match) {
-		org.gravity.typegraph.basic.TParameter tParameter = (org.gravity.typegraph.basic.TParameter) match.getNodes()[3];
-		org.gravity.typegraph.basic.TParameter tPrevParameter = (org.gravity.typegraph.basic.TParameter) match.getNodes()[6];
-		ModiscoTGG.MEntryToTParameter eSingleVariableDeclarationToTParameter = (ModiscoTGG.MEntryToTParameter) match.getNodes()[2];
 		ModiscoTGG.MEntryToTParameter mmethodSignatureToTMethodSignature = (ModiscoTGG.MEntryToTParameter) match.getNodes()[5];
+		org.gravity.typegraph.basic.TParameter tParameter = (org.gravity.typegraph.basic.TParameter) match.getNodes()[3];
+		ModiscoTGG.MEntryToTParameter eSingleVariableDeclarationToTParameter = (ModiscoTGG.MEntryToTParameter) match.getNodes()[2];
+		org.gravity.typegraph.basic.TParameter tPrevParameter = (org.gravity.typegraph.basic.TParameter) match.getNodes()[6];
 		boolean predicate = !tParameter.equals(tPrevParameter) && !eSingleVariableDeclarationToTParameter.equals(mmethodSignatureToTMethodSignature);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

@@ -16,9 +16,9 @@ public class MoDiscoTGGActivator extends Plugin {
 	public static final String PLUGIN_ID = "ModiscoTGG"; //$NON-NLS-1$
 	
 	// The extension points
-	public static final String PROCESS_PG_FWD = "org.gravity.tgg.modisco.ProcessingPgFwd";
-	public static final String PROCESS_PG_BWD = "org.gravity.tgg.modisco.ProcessingPgBwd";
-	public static final String PROCESS_MODISCO_BWD = "org.gravity.tgg.modisco.ProcessingModiscoBwd";
+	public static final String PROCESS_PG_FWD = PLUGIN_ID + ".ProcessingPgFwd";
+	public static final String PROCESS_PG_BWD = PLUGIN_ID + ".ProcessingPgBwd";
+	public static final String PROCESS_MODISCO_BWD = PLUGIN_ID + ".ProcessingModiscoBwd";
 
 	// The shared instance
 	private static MoDiscoTGGActivator plugin;

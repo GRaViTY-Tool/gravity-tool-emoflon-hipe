@@ -52,9 +52,9 @@ public class MethodParameterLink__BWD_4108_junction extends GenericJunctionActor
 	}
 	
 	public boolean check_constraint_181(HMatch match) {
+		ModiscoTGG.MEntryToTParameter mmethodSignatureToTMethodSignature = (ModiscoTGG.MEntryToTParameter) match.getNodes()[0];
 		org.gravity.modisco.MEntry mEntry = (org.gravity.modisco.MEntry) match.getNodes()[5];
 		ModiscoTGG.MEntryToTParameter eSingleVariableDeclarationToTParameter = (ModiscoTGG.MEntryToTParameter) match.getNodes()[4];
-		ModiscoTGG.MEntryToTParameter mmethodSignatureToTMethodSignature = (ModiscoTGG.MEntryToTParameter) match.getNodes()[0];
 		org.gravity.modisco.MEntry mPrevEntry = (org.gravity.modisco.MEntry) match.getNodes()[1];
 		boolean predicate = !mEntry.equals(mPrevEntry) && !eSingleVariableDeclarationToTParameter.equals(mmethodSignatureToTMethodSignature);
 		match.setConstraintSatisfied(predicate);

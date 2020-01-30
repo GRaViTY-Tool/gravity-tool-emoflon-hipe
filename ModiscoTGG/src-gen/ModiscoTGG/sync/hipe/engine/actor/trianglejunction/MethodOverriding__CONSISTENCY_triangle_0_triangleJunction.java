@@ -52,10 +52,10 @@ public class MethodOverriding__CONSISTENCY_triangle_0_triangleJunction extends G
 	}
 	
 	public boolean check_constraint_177(HMatch match) {
-		ModiscoTGG.MDefinitionToTMember mOverridingToTOverriding = (ModiscoTGG.MDefinitionToTMember) match.getNodes()[5];
-		org.gravity.typegraph.basic.TMethodDefinition tMethod = (org.gravity.typegraph.basic.TMethodDefinition) match.getNodes()[3];
-		org.gravity.typegraph.basic.TMethodDefinition tOverriding = (org.gravity.typegraph.basic.TMethodDefinition) match.getNodes()[6];
 		ModiscoTGG.MDefinitionToTMember mMethodToTMethod = (ModiscoTGG.MDefinitionToTMember) match.getNodes()[2];
+		org.gravity.typegraph.basic.TMethodDefinition tOverriding = (org.gravity.typegraph.basic.TMethodDefinition) match.getNodes()[6];
+		org.gravity.typegraph.basic.TMethodDefinition tMethod = (org.gravity.typegraph.basic.TMethodDefinition) match.getNodes()[3];
+		ModiscoTGG.MDefinitionToTMember mOverridingToTOverriding = (ModiscoTGG.MDefinitionToTMember) match.getNodes()[5];
 		boolean predicate = !tMethod.equals(tOverriding) && !mMethodToTMethod.equals(mOverridingToTOverriding);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

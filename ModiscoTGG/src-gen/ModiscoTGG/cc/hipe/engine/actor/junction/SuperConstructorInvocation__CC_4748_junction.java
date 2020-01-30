@@ -52,8 +52,8 @@ public class SuperConstructorInvocation__CC_4748_junction extends GenericJunctio
 	}
 	
 	public boolean check_constraint_284(HMatch match) {
-		org.gravity.modisco.MDefinition mMember = (org.gravity.modisco.MDefinition) match.getNodes()[0];
 		org.gravity.modisco.MAbstractMethodDefinition mMethod = (org.gravity.modisco.MAbstractMethodDefinition) match.getNodes()[2];
+		org.gravity.modisco.MDefinition mMember = (org.gravity.modisco.MDefinition) match.getNodes()[0];
 		boolean predicate = !mMember.equals(mMethod);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

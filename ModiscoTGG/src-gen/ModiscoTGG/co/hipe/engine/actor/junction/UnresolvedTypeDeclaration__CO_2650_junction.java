@@ -26,8 +26,8 @@ import hipe.generic.actor.junction.GenericJunctionActor;
 import hipe.network.JunctionNode;
 
 public class UnresolvedTypeDeclaration__CO_2650_junction extends GenericJunctionActor{
-	private Map<Object, Collection<HMatch>> tAbstractTypeAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> namedElementAttrMap = new HashMap<>();
+	private Map<Object, Collection<HMatch>> tAbstractTypeAttrMap = new HashMap<>();
 	
 	@Override
 	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
@@ -52,18 +52,18 @@ public class UnresolvedTypeDeclaration__CO_2650_junction extends GenericJunction
 			port.forwardMessage(message);
 		}
 		Object obj = message.node;
-		if(obj instanceof org.gravity.typegraph.basic.TAbstractType) {
-			if(tAbstractTypeAttrMap.containsKey(obj)) {
-				for(HMatch match : tAbstractTypeAttrMap.get(obj)) {
+		if(obj instanceof org.eclipse.modisco.java.NamedElement) {
+			if(namedElementAttrMap.containsKey(obj)) {
+				for(HMatch match : namedElementAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}
 				}
 			}
 		}
-		if(obj instanceof org.eclipse.modisco.java.NamedElement) {
-			if(namedElementAttrMap.containsKey(obj)) {
-				for(HMatch match : namedElementAttrMap.get(obj)) {
+		if(obj instanceof org.gravity.typegraph.basic.TAbstractType) {
+			if(tAbstractTypeAttrMap.containsKey(obj)) {
+				for(HMatch match : tAbstractTypeAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}

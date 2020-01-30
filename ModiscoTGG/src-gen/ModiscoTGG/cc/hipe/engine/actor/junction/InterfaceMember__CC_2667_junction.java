@@ -99,8 +99,8 @@ public class InterfaceMember__CC_2667_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_159(HMatch match) {
-		org.eclipse.modisco.java.Modifier mModifier = (org.eclipse.modisco.java.Modifier) match.getNodes()[6];
 		org.gravity.typegraph.basic.TModifier tModifier = (org.gravity.typegraph.basic.TModifier) match.getNodes()[1];
+		org.eclipse.modisco.java.Modifier mModifier = (org.eclipse.modisco.java.Modifier) match.getNodes()[6];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.Eq csp_60 = new org.emoflon.ibex.tgg.operational.csp.constraints.Eq();
 		csp_60.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, mModifier.isStatic(), "boolean"));

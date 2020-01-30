@@ -38,20 +38,20 @@ public class ModelToPg__CC_3661_junction extends GenericJunctionActor{
 	@Override
 	protected void registerMatchForAttributeChanges(HMatch match) {
 		Object[] matchObjects = match.getNodes();
-		Collection<HMatch> typeGraph_0_Matches = typeGraphAttrMap.get(matchObjects[0]);
-		if(typeGraph_0_Matches == null) {
-			typeGraph_0_Matches = new LinkedList<>();
-			typeGraphAttrMap.put(matchObjects[0], typeGraph_0_Matches);
+		Collection<HMatch> typeGraph_1_Matches = typeGraphAttrMap.get(matchObjects[1]);
+		if(typeGraph_1_Matches == null) {
+			typeGraph_1_Matches = new LinkedList<>();
+			typeGraphAttrMap.put(matchObjects[1], typeGraph_1_Matches);
 		}
 		
-		typeGraph_0_Matches.add(match);
+		typeGraph_1_Matches.add(match);
 		
 	}
 	
 	@Override
 	protected void deregisterMatchForAttributeChanges(Set<HMatch> matches, HMatch match) {
 		Object[] matchObjects = match.getNodes();
-		Collection<HMatch> matches_0 = typeGraphAttrMap.get(matchObjects[0]);
+		Collection<HMatch> matches_0 = typeGraphAttrMap.get(matchObjects[1]);
 		if(matches_0 != null) {
 			matches.remove(match);
 		}
@@ -87,8 +87,8 @@ public class ModelToPg__CC_3661_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_192(HMatch match) {
-		org.gravity.typegraph.basic.TypeGraph tPG = (org.gravity.typegraph.basic.TypeGraph) match.getNodes()[0];
-		org.gravity.modisco.MGravityModel mModel = (org.gravity.modisco.MGravityModel) match.getNodes()[1];
+		org.gravity.modisco.MGravityModel mModel = (org.gravity.modisco.MGravityModel) match.getNodes()[0];
+		org.gravity.typegraph.basic.TypeGraph tPG = (org.gravity.typegraph.basic.TypeGraph) match.getNodes()[1];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.Eq csp_82 = new org.emoflon.ibex.tgg.operational.csp.constraints.Eq();
 		csp_82.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, mModel.getName(), "java.lang.String"));

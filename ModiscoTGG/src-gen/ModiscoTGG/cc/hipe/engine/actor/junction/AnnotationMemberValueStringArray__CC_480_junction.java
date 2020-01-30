@@ -99,8 +99,8 @@ public class AnnotationMemberValueStringArray__CC_480_junction extends GenericJu
 	}
 	
 	public boolean check_constraint_17(HMatch match) {
-		org.eclipse.modisco.java.StringLiteral mValue = (org.eclipse.modisco.java.StringLiteral) match.getNodes()[2];
 		org.gravity.typegraph.basic.annotations.TTextNode tValue = (org.gravity.typegraph.basic.annotations.TTextNode) match.getNodes()[4];
+		org.eclipse.modisco.java.StringLiteral mValue = (org.eclipse.modisco.java.StringLiteral) match.getNodes()[2];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.Eq csp_10 = new org.emoflon.ibex.tgg.operational.csp.constraints.Eq();
 		csp_10.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, mValue.getEscapedValue(), "java.lang.String"));

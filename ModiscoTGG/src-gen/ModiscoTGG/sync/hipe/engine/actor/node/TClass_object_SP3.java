@@ -35,11 +35,11 @@ public class TClass_object_SP3 extends GenericObjectActor<org.gravity.typegraph.
 	}
 	
 	public boolean check_constraint_258(org.gravity.typegraph.basic.TClass tPrimitiveClass) {
-		return tPrimitiveClass.isTLib()==true && String.valueOf(tPrimitiveClass.getTName()).equals("int");
+		return String.valueOf(tPrimitiveClass.getTName()).equals("int") && tPrimitiveClass.isTLib()==true;
 	}
 	
 	public boolean check_constraint_232(org.gravity.typegraph.basic.TClass tPrimitiveClass) {
-		return tPrimitiveClass.isTLib()==true && String.valueOf(tPrimitiveClass.getTName()).equals("boolean");
+		return String.valueOf(tPrimitiveClass.getTName()).equals("boolean") && tPrimitiveClass.isTLib()==true;
 	}
 	
 }

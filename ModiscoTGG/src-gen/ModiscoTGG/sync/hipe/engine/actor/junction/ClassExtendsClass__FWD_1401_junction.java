@@ -52,8 +52,8 @@ public class ClassExtendsClass__FWD_1401_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_53(HMatch match) {
-		org.eclipse.modisco.java.ClassDeclaration eExtendedClass = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[2];
 		org.eclipse.modisco.java.ClassDeclaration eClassDeclaration = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[0];
+		org.eclipse.modisco.java.ClassDeclaration eExtendedClass = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[2];
 		boolean predicate = !eClassDeclaration.equals(eExtendedClass);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

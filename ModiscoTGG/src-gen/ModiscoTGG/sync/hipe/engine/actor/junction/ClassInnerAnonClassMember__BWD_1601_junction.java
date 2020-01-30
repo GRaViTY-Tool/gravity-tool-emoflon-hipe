@@ -87,8 +87,8 @@ public class ClassInnerAnonClassMember__BWD_1601_junction extends GenericJunctio
 	}
 	
 	public boolean check_constraint_64(HMatch match) {
-		org.gravity.typegraph.basic.TClass tOuterClass = (org.gravity.typegraph.basic.TClass) match.getNodes()[0];
 		org.gravity.typegraph.basic.TPackage tInnerPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
+		org.gravity.typegraph.basic.TClass tOuterClass = (org.gravity.typegraph.basic.TClass) match.getNodes()[0];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix csp_19 = new org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix();
 		csp_19.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, tOuterClass.getTName(), "java.lang.String"));

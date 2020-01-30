@@ -99,8 +99,8 @@ public class AnonymousClass__BWD_1176_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_36(HMatch match) {
-		org.gravity.typegraph.basic.TPackage tNewPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
 		org.gravity.typegraph.basic.TAbstractType tType = (org.gravity.typegraph.basic.TAbstractType) match.getNodes()[0];
+		org.gravity.typegraph.basic.TPackage tNewPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix csp_15 = new org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix();
 		csp_15.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, tType.getTName(), "java.lang.String"));

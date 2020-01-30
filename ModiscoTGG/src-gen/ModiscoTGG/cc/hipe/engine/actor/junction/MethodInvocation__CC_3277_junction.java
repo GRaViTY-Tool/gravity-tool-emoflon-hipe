@@ -52,8 +52,8 @@ public class MethodInvocation__CC_3277_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_175(HMatch match) {
-		org.gravity.typegraph.basic.TMember tMember = (org.gravity.typegraph.basic.TMember) match.getNodes()[1];
 		org.gravity.typegraph.basic.TMember tMethod = (org.gravity.typegraph.basic.TMember) match.getNodes()[2];
+		org.gravity.typegraph.basic.TMember tMember = (org.gravity.typegraph.basic.TMember) match.getNodes()[1];
 		boolean predicate = !tMember.equals(tMethod);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

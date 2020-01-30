@@ -52,8 +52,8 @@ public class InterfaceExtendsInterface__CC_2540_junction extends GenericJunction
 	}
 	
 	public boolean check_constraint_150(HMatch match) {
-		org.eclipse.modisco.java.InterfaceDeclaration eInterfaceDeclaration = (org.eclipse.modisco.java.InterfaceDeclaration) match.getNodes()[0];
 		org.eclipse.modisco.java.InterfaceDeclaration eSuperInterface = (org.eclipse.modisco.java.InterfaceDeclaration) match.getNodes()[2];
+		org.eclipse.modisco.java.InterfaceDeclaration eInterfaceDeclaration = (org.eclipse.modisco.java.InterfaceDeclaration) match.getNodes()[0];
 		boolean predicate = !eInterfaceDeclaration.equals(eSuperInterface);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

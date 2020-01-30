@@ -52,8 +52,8 @@ public class ConstructorInvocation__BWD_2034_junction extends GenericJunctionAct
 	}
 	
 	public boolean check_constraint_91(HMatch match) {
-		org.gravity.typegraph.basic.TMember tMethod = (org.gravity.typegraph.basic.TMember) match.getNodes()[2];
 		org.gravity.typegraph.basic.TMember tMember = (org.gravity.typegraph.basic.TMember) match.getNodes()[1];
+		org.gravity.typegraph.basic.TMember tMethod = (org.gravity.typegraph.basic.TMember) match.getNodes()[2];
 		boolean predicate = !tMember.equals(tMethod);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

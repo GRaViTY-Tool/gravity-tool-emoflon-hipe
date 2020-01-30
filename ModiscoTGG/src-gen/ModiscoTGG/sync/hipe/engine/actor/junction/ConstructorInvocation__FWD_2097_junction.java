@@ -52,8 +52,8 @@ public class ConstructorInvocation__FWD_2097_junction extends GenericJunctionAct
 	}
 	
 	public boolean check_constraint_94(HMatch match) {
-		org.gravity.modisco.MDefinition mMember = (org.gravity.modisco.MDefinition) match.getNodes()[0];
 		org.gravity.modisco.MAbstractMethodDefinition mMethod = (org.gravity.modisco.MAbstractMethodDefinition) match.getNodes()[2];
+		org.gravity.modisco.MDefinition mMember = (org.gravity.modisco.MDefinition) match.getNodes()[0];
 		boolean predicate = !mMember.equals(mMethod);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

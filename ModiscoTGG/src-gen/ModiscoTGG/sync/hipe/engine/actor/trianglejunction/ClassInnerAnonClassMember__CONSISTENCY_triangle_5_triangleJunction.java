@@ -87,8 +87,8 @@ public class ClassInnerAnonClassMember__CONSISTENCY_triangle_5_triangleJunction 
 	}
 	
 	public boolean check_constraint_68(HMatch match) {
-		org.gravity.typegraph.basic.TPackage tInnerPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[0];
 		org.gravity.typegraph.basic.TClass tOuterClass = (org.gravity.typegraph.basic.TClass) match.getNodes()[9];
+		org.gravity.typegraph.basic.TPackage tInnerPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[0];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix csp_20 = new org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix();
 		csp_20.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, tOuterClass.getTName(), "java.lang.String"));

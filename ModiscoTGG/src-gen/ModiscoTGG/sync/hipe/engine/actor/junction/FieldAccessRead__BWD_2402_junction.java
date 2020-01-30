@@ -52,8 +52,8 @@ public class FieldAccessRead__BWD_2402_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_115(HMatch match) {
-		org.gravity.typegraph.basic.TMember tMember = (org.gravity.typegraph.basic.TMember) match.getNodes()[1];
 		org.gravity.typegraph.basic.TFieldDefinition tField = (org.gravity.typegraph.basic.TFieldDefinition) match.getNodes()[7];
+		org.gravity.typegraph.basic.TMember tMember = (org.gravity.typegraph.basic.TMember) match.getNodes()[1];
 		boolean predicate = !tField.equals(tMember);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

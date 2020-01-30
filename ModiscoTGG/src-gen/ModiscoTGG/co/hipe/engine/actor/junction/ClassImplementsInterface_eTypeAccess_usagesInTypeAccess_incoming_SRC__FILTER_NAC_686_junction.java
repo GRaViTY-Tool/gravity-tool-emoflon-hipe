@@ -53,16 +53,16 @@ public class ClassImplementsInterface_eTypeAccess_usagesInTypeAccess_incoming_SR
 	}
 	
 	public boolean check_constraint_41(HMatch match) {
-		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		org.eclipse.modisco.java.Type eSuperInterface = (org.eclipse.modisco.java.Type) match.getNodes()[0];
+		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(eSuperInterface);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_42(HMatch match) {
-		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		org.eclipse.modisco.java.Type eSuperInterface = (org.eclipse.modisco.java.Type) match.getNodes()[0];
+		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(eSuperInterface);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

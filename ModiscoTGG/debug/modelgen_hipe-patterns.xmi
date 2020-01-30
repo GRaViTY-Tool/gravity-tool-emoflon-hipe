@@ -1076,11 +1076,11 @@
   <nodeConstraints xmi:type="HiPEPattern:UnequalConstraint" leftNode="//@nodes.382" rightNode="//@nodes.384" abstractPatterns="//@patterns.967"/>
   <attributeConstraints xmi:type="HiPEPattern:RelationalConstraint" abstractPatterns="//@patterns.229" leftAttribute="//@attributes.0" rightAttribute="//@attributes.1"/>
   <attributeConstraints xmi:type="HiPEPattern:RelationalConstraint" abstractPatterns="//@patterns.242" leftAttribute="//@attributes.2" rightAttribute="//@attributes.3"/>
-  <attributes xmi:type="HiPEPattern:HiPEAttribute" name="tName" node="//@nodes.65" value="org.eclipse.emf.ecore.impl.EAttributeImpl@4e30152a (name: tName) (ordered: false, unique: true, lowerBound: 1, upperBound: 1) (changeable: true, volatile: false, transient: false, defaultValueLiteral: null, unsettable: false, derived: false) (iD: false)" abstractPatterns="//@patterns.16 //@patterns.229">
+  <attributes xmi:type="HiPEPattern:HiPEAttribute" name="tName" node="//@nodes.65" value="org.eclipse.emf.ecore.impl.EAttributeImpl@19880315 (name: tName) (ordered: false, unique: true, lowerBound: 1, upperBound: 1) (changeable: true, volatile: false, transient: false, defaultValueLiteral: null, unsettable: false, derived: false) (iD: false)" abstractPatterns="//@patterns.16 //@patterns.229">
     <eAttribute xmi:type="ecore:EAttribute" href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
   </attributes>
   <attributes xmi:type="HiPEPattern:HiPEAttribute" value="Anonymous" abstractPatterns="//@patterns.16 //@patterns.229"/>
-  <attributes xmi:type="HiPEPattern:HiPEAttribute" name="tName" node="//@nodes.71" value="org.eclipse.emf.ecore.impl.EAttributeImpl@4e30152a (name: tName) (ordered: false, unique: true, lowerBound: 1, upperBound: 1) (changeable: true, volatile: false, transient: false, defaultValueLiteral: null, unsettable: false, derived: false) (iD: false)" abstractPatterns="//@patterns.17 //@patterns.242">
+  <attributes xmi:type="HiPEPattern:HiPEAttribute" name="tName" node="//@nodes.71" value="org.eclipse.emf.ecore.impl.EAttributeImpl@19880315 (name: tName) (ordered: false, unique: true, lowerBound: 1, upperBound: 1) (changeable: true, volatile: false, transient: false, defaultValueLiteral: null, unsettable: false, derived: false) (iD: false)" abstractPatterns="//@patterns.17 //@patterns.242">
     <eAttribute xmi:type="ecore:EAttribute" href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
   </attributes>
   <attributes xmi:type="HiPEPattern:HiPEAttribute" value="Anonymous" abstractPatterns="//@patterns.17 //@patterns.242"/>

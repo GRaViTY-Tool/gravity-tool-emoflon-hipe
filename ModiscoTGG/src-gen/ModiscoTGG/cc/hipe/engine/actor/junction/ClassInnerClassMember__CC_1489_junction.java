@@ -87,8 +87,8 @@ public class ClassInnerClassMember__CC_1489_junction extends GenericJunctionActo
 	}
 	
 	public boolean check_constraint_79(HMatch match) {
-		org.gravity.typegraph.basic.TPackage tInnerPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
 		org.gravity.typegraph.basic.TClass tOuterClass = (org.gravity.typegraph.basic.TClass) match.getNodes()[0];
+		org.gravity.typegraph.basic.TPackage tInnerPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[2];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix csp_38 = new org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix();
 		csp_38.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, tOuterClass.getTName(), "java.lang.String"));

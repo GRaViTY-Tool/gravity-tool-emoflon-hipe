@@ -52,10 +52,10 @@ public class OutgoingFlow__GEN_744_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_15(HMatch match) {
-		org.gravity.typegraph.basic.TFlow tFlow = (org.gravity.typegraph.basic.TFlow) match.getNodes()[2];
-		org.gravity.modisco.MAbstractFlowElement mTarget = (org.gravity.modisco.MAbstractFlowElement) match.getNodes()[4];
-		org.gravity.typegraph.basic.TAbstractFlowElement tTarget = (org.gravity.typegraph.basic.TAbstractFlowElement) match.getNodes()[5];
 		org.gravity.modisco.MFlow mFlow = (org.gravity.modisco.MFlow) match.getNodes()[1];
+		org.gravity.typegraph.basic.TAbstractFlowElement tTarget = (org.gravity.typegraph.basic.TAbstractFlowElement) match.getNodes()[5];
+		org.gravity.modisco.MAbstractFlowElement mTarget = (org.gravity.modisco.MAbstractFlowElement) match.getNodes()[4];
+		org.gravity.typegraph.basic.TFlow tFlow = (org.gravity.typegraph.basic.TFlow) match.getNodes()[2];
 		boolean predicate = !mFlow.equals(mTarget) && !tFlow.equals(tTarget);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

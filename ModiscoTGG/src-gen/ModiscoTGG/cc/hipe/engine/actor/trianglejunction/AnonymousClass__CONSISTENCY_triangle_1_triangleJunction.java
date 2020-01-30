@@ -99,8 +99,8 @@ public class AnonymousClass__CONSISTENCY_triangle_1_triangleJunction extends Gen
 	}
 	
 	public boolean check_constraint_51(HMatch match) {
-		org.gravity.typegraph.basic.TAbstractType tType = (org.gravity.typegraph.basic.TAbstractType) match.getNodes()[5];
 		org.gravity.typegraph.basic.TPackage tNewPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[1];
+		org.gravity.typegraph.basic.TAbstractType tType = (org.gravity.typegraph.basic.TAbstractType) match.getNodes()[5];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix csp_29 = new org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix();
 		csp_29.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, tType.getTName(), "java.lang.String"));

@@ -26,8 +26,8 @@ import hipe.generic.actor.junction.GenericTriangleJunctionActor;
 import hipe.network.TriangleJunctionNode;
 
 public class AnnotationTypeNested__CONSISTENCY_triangle_0_triangleJunction extends GenericTriangleJunctionActor{
-	private Map<Object, Collection<HMatch>> tPackageAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> namedElementAttrMap = new HashMap<>();
+	private Map<Object, Collection<HMatch>> tPackageAttrMap = new HashMap<>();
 	
 	@Override
 	protected void initializePorts(Map<String, ActorRef> name2actor, TriangleJunctionNode node) {
@@ -64,18 +64,18 @@ public class AnnotationTypeNested__CONSISTENCY_triangle_0_triangleJunction exten
 			port.forwardMessage(message);
 		}
 		Object obj = message.node;
-		if(obj instanceof org.gravity.typegraph.basic.TPackage) {
-			if(tPackageAttrMap.containsKey(obj)) {
-				for(HMatch match : tPackageAttrMap.get(obj)) {
+		if(obj instanceof org.eclipse.modisco.java.NamedElement) {
+			if(namedElementAttrMap.containsKey(obj)) {
+				for(HMatch match : namedElementAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}
 				}
 			}
 		}
-		if(obj instanceof org.eclipse.modisco.java.NamedElement) {
-			if(namedElementAttrMap.containsKey(obj)) {
-				for(HMatch match : namedElementAttrMap.get(obj)) {
+		if(obj instanceof org.gravity.typegraph.basic.TPackage) {
+			if(tPackageAttrMap.containsKey(obj)) {
+				for(HMatch match : tPackageAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}
@@ -87,8 +87,8 @@ public class AnnotationTypeNested__CONSISTENCY_triangle_0_triangleJunction exten
 	}
 	
 	public boolean check_constraint_28(HMatch match) {
-		org.gravity.typegraph.basic.TPackage tNestedPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[1];
 		org.eclipse.modisco.java.AbstractTypeDeclaration eOuterType = (org.eclipse.modisco.java.AbstractTypeDeclaration) match.getNodes()[6];
+		org.gravity.typegraph.basic.TPackage tNestedPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[1];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix csp_21 = new org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix();
 		csp_21.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, eOuterType.getName(), "java.lang.String"));

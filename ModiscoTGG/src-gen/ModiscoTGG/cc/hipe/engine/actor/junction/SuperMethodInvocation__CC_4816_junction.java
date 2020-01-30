@@ -52,8 +52,8 @@ public class SuperMethodInvocation__CC_4816_junction extends GenericJunctionActo
 	}
 	
 	public boolean check_constraint_288(HMatch match) {
-		org.gravity.modisco.MDefinition mMember = (org.gravity.modisco.MDefinition) match.getNodes()[0];
 		org.gravity.modisco.MAbstractMethodDefinition mMethod = (org.gravity.modisco.MAbstractMethodDefinition) match.getNodes()[2];
+		org.gravity.modisco.MDefinition mMember = (org.gravity.modisco.MDefinition) match.getNodes()[0];
 		boolean predicate = !mMember.equals(mMethod);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

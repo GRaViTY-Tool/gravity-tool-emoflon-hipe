@@ -54,24 +54,24 @@ public class AnnotationTypeAccess_mAccess_usagesInTypeAccess_incoming_SRC__FILTE
 	}
 	
 	public boolean check_constraint_14(HMatch match) {
-		org.eclipse.modisco.java.AnnotationTypeDeclaration AnnotationType = (org.eclipse.modisco.java.AnnotationTypeDeclaration) match.getNodes()[0];
 		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
+		org.eclipse.modisco.java.AnnotationTypeDeclaration AnnotationType = (org.eclipse.modisco.java.AnnotationTypeDeclaration) match.getNodes()[0];
 		boolean predicate = !AnnotationType.equals(FILTER_NAC_NODE);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_15(HMatch match) {
-		org.eclipse.modisco.java.AnnotationTypeDeclaration AnnotationType = (org.eclipse.modisco.java.AnnotationTypeDeclaration) match.getNodes()[0];
 		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
+		org.eclipse.modisco.java.AnnotationTypeDeclaration AnnotationType = (org.eclipse.modisco.java.AnnotationTypeDeclaration) match.getNodes()[0];
 		boolean predicate = !AnnotationType.equals(FILTER_NAC_NODE);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_16(HMatch match) {
-		org.eclipse.modisco.java.AnnotationTypeDeclaration AnnotationType = (org.eclipse.modisco.java.AnnotationTypeDeclaration) match.getNodes()[0];
 		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
+		org.eclipse.modisco.java.AnnotationTypeDeclaration AnnotationType = (org.eclipse.modisco.java.AnnotationTypeDeclaration) match.getNodes()[0];
 		boolean predicate = !AnnotationType.equals(FILTER_NAC_NODE);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

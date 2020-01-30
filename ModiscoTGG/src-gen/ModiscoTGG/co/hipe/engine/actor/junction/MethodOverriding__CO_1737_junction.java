@@ -52,8 +52,8 @@ public class MethodOverriding__CO_1737_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_122(HMatch match) {
-		ModiscoTGG.MDefinitionToTMember mMethodToTMethod = (ModiscoTGG.MDefinitionToTMember) match.getNodes()[2];
 		ModiscoTGG.MDefinitionToTMember mOverridingToTOverriding = (ModiscoTGG.MDefinitionToTMember) match.getNodes()[5];
+		ModiscoTGG.MDefinitionToTMember mMethodToTMethod = (ModiscoTGG.MDefinitionToTMember) match.getNodes()[2];
 		boolean predicate = !mMethodToTMethod.equals(mOverridingToTOverriding);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

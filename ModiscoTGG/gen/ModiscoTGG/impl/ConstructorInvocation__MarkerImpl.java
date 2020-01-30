@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.modisco.java.ConstructorInvocation;
+
 import org.gravity.modisco.MAbstractMethodDefinition;
-import org.gravity.modisco.MAbstractMethodInvocation;
 import org.gravity.modisco.MDefinition;
 
 import org.gravity.typegraph.basic.TCall;

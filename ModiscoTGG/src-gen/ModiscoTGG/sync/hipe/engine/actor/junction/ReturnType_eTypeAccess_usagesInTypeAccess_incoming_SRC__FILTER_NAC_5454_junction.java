@@ -54,24 +54,24 @@ public class ReturnType_eTypeAccess_usagesInTypeAccess_incoming_SRC__FILTER_NAC_
 	}
 	
 	public boolean check_constraint_274(HMatch match) {
-		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		org.eclipse.modisco.java.Type eReturnType = (org.eclipse.modisco.java.Type) match.getNodes()[0];
+		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(eReturnType);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_275(HMatch match) {
-		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		org.eclipse.modisco.java.Type eReturnType = (org.eclipse.modisco.java.Type) match.getNodes()[0];
+		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(eReturnType);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_276(HMatch match) {
-		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		org.eclipse.modisco.java.Type eReturnType = (org.eclipse.modisco.java.Type) match.getNodes()[0];
+		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
 		boolean predicate = !FILTER_NAC_NODE.equals(eReturnType);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

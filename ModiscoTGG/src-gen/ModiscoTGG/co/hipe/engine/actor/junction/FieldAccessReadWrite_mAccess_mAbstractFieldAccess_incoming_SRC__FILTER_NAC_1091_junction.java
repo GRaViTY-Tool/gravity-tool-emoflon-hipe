@@ -53,16 +53,16 @@ public class FieldAccessReadWrite_mAccess_mAbstractFieldAccess_incoming_SRC__FIL
 	}
 	
 	public boolean check_constraint_80(HMatch match) {
-		org.gravity.modisco.MDefinition mMember = (org.gravity.modisco.MDefinition) match.getNodes()[0];
 		org.gravity.modisco.MDefinition FILTER_NAC_NODE = (org.gravity.modisco.MDefinition) match.getNodes()[2];
+		org.gravity.modisco.MDefinition mMember = (org.gravity.modisco.MDefinition) match.getNodes()[0];
 		boolean predicate = !FILTER_NAC_NODE.equals(mMember);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_81(HMatch match) {
-		org.gravity.modisco.MDefinition mMember = (org.gravity.modisco.MDefinition) match.getNodes()[0];
 		org.gravity.modisco.MDefinition FILTER_NAC_NODE = (org.gravity.modisco.MDefinition) match.getNodes()[2];
+		org.gravity.modisco.MDefinition mMember = (org.gravity.modisco.MDefinition) match.getNodes()[0];
 		boolean predicate = !FILTER_NAC_NODE.equals(mMember);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

@@ -2418,7 +2418,7 @@
     <xsd:complexContent>
       <xsd:extension base="org.emoflon.ibex.tgg.core.runtime:TGGRuleApplication">
         <xsd:choice maxOccurs="unbounded" minOccurs="0">
-          <xsd:element name="CREATE__SRC__invocation" type="java:SuperConstructorInvocation"/>
+          <xsd:element name="CREATE__SRC__invocation" type="org.gravity.modisco:MAbstractMethodInvocation"/>
           <xsd:element name="CONTEXT__SRC__mMember" type="org.gravity.modisco:MDefinition"/>
           <xsd:element name="CONTEXT__SRC__mMethod" type="org.gravity.modisco:MAbstractMethodDefinition"/>
           <xsd:element name="CREATE__TRG__tAccess" type="org.gravity.typegraph.basic:TCall"/>

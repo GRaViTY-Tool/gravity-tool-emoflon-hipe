@@ -53,16 +53,16 @@ public class ClassExtendsClass_eTypeAccess_usagesInTypeAccess_incoming_SRC__FILT
 	}
 	
 	public boolean check_constraint_38(HMatch match) {
-		org.eclipse.modisco.java.ClassDeclaration eExtendedClass = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[0];
 		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
+		org.eclipse.modisco.java.ClassDeclaration eExtendedClass = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[0];
 		boolean predicate = !FILTER_NAC_NODE.equals(eExtendedClass);
 		match.setConstraintSatisfied(predicate);
 		return predicate;
 	}
 	
 	public boolean check_constraint_39(HMatch match) {
-		org.eclipse.modisco.java.ClassDeclaration eExtendedClass = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[0];
 		org.eclipse.modisco.java.Type FILTER_NAC_NODE = (org.eclipse.modisco.java.Type) match.getNodes()[2];
+		org.eclipse.modisco.java.ClassDeclaration eExtendedClass = (org.eclipse.modisco.java.ClassDeclaration) match.getNodes()[0];
 		boolean predicate = !FILTER_NAC_NODE.equals(eExtendedClass);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

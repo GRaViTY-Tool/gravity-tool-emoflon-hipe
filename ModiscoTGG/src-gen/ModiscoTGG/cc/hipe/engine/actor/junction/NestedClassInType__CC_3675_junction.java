@@ -26,9 +26,9 @@ import hipe.generic.actor.junction.GenericJunctionActor;
 import hipe.network.JunctionNode;
 
 public class NestedClassInType__CC_3675_junction extends GenericJunctionActor{
+	private Map<Object, Collection<HMatch>> namedElementAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> tPackageAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> tAbstractTypeAttrMap = new HashMap<>();
-	private Map<Object, Collection<HMatch>> namedElementAttrMap = new HashMap<>();
 	
 	@Override
 	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
@@ -65,6 +65,15 @@ public class NestedClassInType__CC_3675_junction extends GenericJunctionActor{
 			port.forwardMessage(message);
 		}
 		Object obj = message.node;
+		if(obj instanceof org.eclipse.modisco.java.NamedElement) {
+			if(namedElementAttrMap.containsKey(obj)) {
+				for(HMatch match : namedElementAttrMap.get(obj)) {
+					for(Port<HMatch> port : ports) {
+						port.sendAttributeChanged(message.initialMessage, match);
+					}
+				}
+			}
+		}
 		if(obj instanceof org.gravity.typegraph.basic.TPackage) {
 			if(tPackageAttrMap.containsKey(obj)) {
 				for(HMatch match : tPackageAttrMap.get(obj)) {
@@ -83,23 +92,14 @@ public class NestedClassInType__CC_3675_junction extends GenericJunctionActor{
 				}
 			}
 		}
-		if(obj instanceof org.eclipse.modisco.java.NamedElement) {
-			if(namedElementAttrMap.containsKey(obj)) {
-				for(HMatch match : namedElementAttrMap.get(obj)) {
-					for(Port<HMatch> port : ports) {
-						port.sendAttributeChanged(message.initialMessage, match);
-					}
-				}
-			}
-		}
 		
 		message.initialMessage.decrement();
 	}
 	
 	public boolean check_constraint_194(HMatch match) {
+		org.gravity.modisco.MClass eNestedType = (org.gravity.modisco.MClass) match.getNodes()[1];
 		org.gravity.typegraph.basic.TClass tNestedType = (org.gravity.typegraph.basic.TClass) match.getNodes()[5];
 		org.eclipse.modisco.java.AbstractTypeDeclaration eOuterType = (org.eclipse.modisco.java.AbstractTypeDeclaration) match.getNodes()[0];
-		org.gravity.modisco.MClass eNestedType = (org.gravity.modisco.MClass) match.getNodes()[1];
 		org.gravity.typegraph.basic.TPackage tNestedPackage = (org.gravity.typegraph.basic.TPackage) match.getNodes()[4];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix csp_84 = new org.emoflon.ibex.tgg.operational.csp.constraints.AddSuffix();

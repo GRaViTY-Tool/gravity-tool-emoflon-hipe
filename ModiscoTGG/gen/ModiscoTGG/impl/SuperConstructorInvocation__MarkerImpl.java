@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.modisco.java.SuperConstructorInvocation;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MAbstractMethodInvocation;
 import org.gravity.modisco.MDefinition;
@@ -57,7 +56,7 @@ public class SuperConstructorInvocation__MarkerImpl extends TGGRuleApplicationIm
 	 * @generated
 	 * @ordered
 	 */
-	protected SuperConstructorInvocation creatE__SRC__invocation;
+	protected MAbstractMethodInvocation creatE__SRC__invocation;
 
 	/**
 	 * The cached value of the '{@link #getCONTEXT__SRC__mMember() <em>CONTEXT SRC mMember</em>}' reference.
@@ -174,10 +173,10 @@ public class SuperConstructorInvocation__MarkerImpl extends TGGRuleApplicationIm
 	 * @generated
 	 */
 	@Override
-	public SuperConstructorInvocation getCREATE__SRC__invocation() {
+	public MAbstractMethodInvocation getCREATE__SRC__invocation() {
 		if (creatE__SRC__invocation != null && creatE__SRC__invocation.eIsProxy()) {
 			InternalEObject oldCREATE__SRC__invocation = (InternalEObject) creatE__SRC__invocation;
-			creatE__SRC__invocation = (SuperConstructorInvocation) eResolveProxy(oldCREATE__SRC__invocation);
+			creatE__SRC__invocation = (MAbstractMethodInvocation) eResolveProxy(oldCREATE__SRC__invocation);
 			if (creatE__SRC__invocation != oldCREATE__SRC__invocation) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
@@ -193,7 +192,7 @@ public class SuperConstructorInvocation__MarkerImpl extends TGGRuleApplicationIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SuperConstructorInvocation basicGetCREATE__SRC__invocation() {
+	public MAbstractMethodInvocation basicGetCREATE__SRC__invocation() {
 		return creatE__SRC__invocation;
 	}
 
@@ -203,8 +202,8 @@ public class SuperConstructorInvocation__MarkerImpl extends TGGRuleApplicationIm
 	 * @generated
 	 */
 	@Override
-	public void setCREATE__SRC__invocation(SuperConstructorInvocation newCREATE__SRC__invocation) {
-		SuperConstructorInvocation oldCREATE__SRC__invocation = creatE__SRC__invocation;
+	public void setCREATE__SRC__invocation(MAbstractMethodInvocation newCREATE__SRC__invocation) {
+		MAbstractMethodInvocation oldCREATE__SRC__invocation = creatE__SRC__invocation;
 		creatE__SRC__invocation = newCREATE__SRC__invocation;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
@@ -673,7 +672,7 @@ public class SuperConstructorInvocation__MarkerImpl extends TGGRuleApplicationIm
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case ModiscoTGGPackage.SUPER_CONSTRUCTOR_INVOCATION_MARKER__CREATE_SRC_INVOCATION:
-			setCREATE__SRC__invocation((SuperConstructorInvocation) newValue);
+			setCREATE__SRC__invocation((MAbstractMethodInvocation) newValue);
 			return;
 		case ModiscoTGGPackage.SUPER_CONSTRUCTOR_INVOCATION_MARKER__CONTEXT_SRC_MMEMBER:
 			setCONTEXT__SRC__mMember((MDefinition) newValue);
@@ -715,7 +714,7 @@ public class SuperConstructorInvocation__MarkerImpl extends TGGRuleApplicationIm
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case ModiscoTGGPackage.SUPER_CONSTRUCTOR_INVOCATION_MARKER__CREATE_SRC_INVOCATION:
-			setCREATE__SRC__invocation((SuperConstructorInvocation) null);
+			setCREATE__SRC__invocation((MAbstractMethodInvocation) null);
 			return;
 		case ModiscoTGGPackage.SUPER_CONSTRUCTOR_INVOCATION_MARKER__CONTEXT_SRC_MMEMBER:
 			setCONTEXT__SRC__mMember((MDefinition) null);

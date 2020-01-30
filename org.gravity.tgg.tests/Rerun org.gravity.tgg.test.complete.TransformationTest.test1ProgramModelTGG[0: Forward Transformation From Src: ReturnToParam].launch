@@ -40,7 +40,6 @@
     <stringAttribute key="product" value="org.eclipse.platform.ide"/>
     <booleanAttribute key="run_in_ui_thread" value="true"/>
     <setAttribute key="selected_target_bundles">
-        <setEntry value="com.google.guava*21.0.0.v20170206-1425@default:default"/>
         <setEntry value="com.google.guava*27.1.0.v20190517-1946@default:default"/>
         <setEntry value="com.google.inject@default:default"/>
         <setEntry value="com.ibm.icu@default:default"/>
@@ -185,6 +184,8 @@
         <setEntry value="org.eclipse.equinox.frameworkadmin@default:default"/>
         <setEntry value="org.eclipse.equinox.http.jetty@default:default"/>
         <setEntry value="org.eclipse.equinox.http.servlet@default:default"/>
+        <setEntry value="org.eclipse.equinox.launcher.gtk.linux.x86_64@default:false"/>
+        <setEntry value="org.eclipse.equinox.launcher@default:default"/>
         <setEntry value="org.eclipse.equinox.p2.artifact.repository@default:default"/>
         <setEntry value="org.eclipse.equinox.p2.core@default:default"/>
         <setEntry value="org.eclipse.equinox.p2.director.app@default:default"/>
@@ -240,7 +241,6 @@
         <setEntry value="org.eclipse.gmf.runtime.emf.ui.properties@default:default"/>
         <setEntry value="org.eclipse.gmf.runtime.emf.ui@default:default"/>
         <setEntry value="org.eclipse.gmf.runtime.gef.ui@default:default"/>
-        <setEntry value="org.eclipse.gmf.runtime.notation.edit@default:default"/>
         <setEntry value="org.eclipse.gmf.runtime.notation@default:default"/>
         <setEntry value="org.eclipse.help.base@default:default"/>
         <setEntry value="org.eclipse.help.ui@default:default"/>
@@ -308,7 +308,6 @@
         <setEntry value="org.eclipse.pde.core@default:default"/>
         <setEntry value="org.eclipse.pde.launching@default:default"/>
         <setEntry value="org.eclipse.pde.ui@default:default"/>
-        <setEntry value="org.eclipse.pde@default:default"/>
         <setEntry value="org.eclipse.search@default:default"/>
         <setEntry value="org.eclipse.swt.gtk.linux.x86_64@default:false"/>
         <setEntry value="org.eclipse.swt@default:default"/>
@@ -334,11 +333,8 @@
         <setEntry value="org.eclipse.ui@default:default"/>
         <setEntry value="org.eclipse.uml2.common@default:default"/>
         <setEntry value="org.eclipse.uml2.types@default:default"/>
-        <setEntry value="org.eclipse.uml2.uml.profile.standard@default:default"/>
-        <setEntry value="org.eclipse.uml2.uml.resources@default:default"/>
         <setEntry value="org.eclipse.uml2.uml@default:default"/>
         <setEntry value="org.eclipse.update.configurator@default:default"/>
-        <setEntry value="org.eclipse.xpand@default:default"/>
         <setEntry value="org.eclipse.xtend.lib.macro@default:default"/>
         <setEntry value="org.eclipse.xtend.lib@default:default"/>
         <setEntry value="org.eclipse.xtend.typesystem.emf@default:default"/>
@@ -349,8 +345,6 @@
         <setEntry value="org.eclipse.xtext.common.types.shared@default:default"/>
         <setEntry value="org.eclipse.xtext.common.types.ui@default:default"/>
         <setEntry value="org.eclipse.xtext.common.types@default:default"/>
-        <setEntry value="org.eclipse.xtext.ecore@default:default"/>
-        <setEntry value="org.eclipse.xtext.generator@default:default"/>
         <setEntry value="org.eclipse.xtext.ide@default:default"/>
         <setEntry value="org.eclipse.xtext.logging@default:false"/>
         <setEntry value="org.eclipse.xtext.smap@default:default"/>
@@ -364,7 +358,6 @@
         <setEntry value="org.eclipse.xtext.xbase.lib@default:default"/>
         <setEntry value="org.eclipse.xtext.xbase.ui@default:default"/>
         <setEntry value="org.eclipse.xtext.xbase@default:default"/>
-        <setEntry value="org.eclipse.xtext.xtext.generator@default:default"/>
         <setEntry value="org.eclipse.xtext@default:default"/>
         <setEntry value="org.emoflon.core.dependencies@default:default"/>
         <setEntry value="org.emoflon.delta@default:default"/>
@@ -378,7 +371,6 @@
         <setEntry value="org.emoflon.ibex.gt@default:default"/>
         <setEntry value="org.emoflon.ibex.tgg.editor@default:default"/>
         <setEntry value="org.emoflon.ibex.tgg.ide.democles@default:default"/>
-        <setEntry value="org.emoflon.ibex.tgg.ide.hipe@default:default"/>
         <setEntry value="org.emoflon.ibex.tgg.ide@default:default"/>
         <setEntry value="org.emoflon.ibex.tgg.language@default:default"/>
         <setEntry value="org.emoflon.ibex.tgg.runtime.democles@default:default"/>

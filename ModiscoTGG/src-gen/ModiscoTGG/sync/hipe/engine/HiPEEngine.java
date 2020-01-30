@@ -4618,8 +4618,8 @@ public class HiPEEngine implements IHiPEEngine{
 		classes.put("SuperConstructorInvocation__Marker_object_SP0",SuperConstructorInvocation__Marker_object_SP0.class);
 		classes.put("SuperConstructorInvocation__Marker_object_SP1",SuperConstructorInvocation__Marker_object_SP1.class);
 		classes.put("SuperConstructorInvocation__Marker_object_SP2",SuperConstructorInvocation__Marker_object_SP2.class);
-		classes.put("SuperConstructorInvocation_object_SP0",SuperConstructorInvocation_object_SP0.class);
-		classes.put("SuperConstructorInvocation_object_SP1",SuperConstructorInvocation_object_SP1.class);
+		classes.put("MAbstractMethodInvocation_object_SP0",MAbstractMethodInvocation_object_SP0.class);
+		classes.put("MAbstractMethodInvocation_object_SP1",MAbstractMethodInvocation_object_SP1.class);
 		classes.put("SuperMethodInvocation__Marker_object_SP0",SuperMethodInvocation__Marker_object_SP0.class);
 		classes.put("SuperMethodInvocation__Marker_object_SP1",SuperMethodInvocation__Marker_object_SP1.class);
 		classes.put("SuperMethodInvocation__Marker_object_SP2",SuperMethodInvocation__Marker_object_SP2.class);
@@ -5640,7 +5640,7 @@ public class HiPEEngine implements IHiPEEngine{
 		name2initRefGen.put("MAbstractFlowElementToTAbstractFlowElement_source_13_reference", new InitGenReferenceActor<ModiscoTGG.MAbstractFlowElementToTAbstractFlowElement,org.gravity.modisco.MAbstractFlowElement>(name2actor, name2node.get("MAbstractFlowElementToTAbstractFlowElement_source_13_reference"), (o) -> o instanceof ModiscoTGG.MAbstractFlowElementToTAbstractFlowElement, (o) -> o.getSource(), null, false));
 		name2initRefGen.put("SuperConstructorInvocation__Marker_CREATE__TRG__tAccess_0_reference", new InitGenReferenceActor<ModiscoTGG.SuperConstructorInvocation__Marker,org.gravity.typegraph.basic.TCall>(name2actor, name2node.get("SuperConstructorInvocation__Marker_CREATE__TRG__tAccess_0_reference"), (o) -> o instanceof ModiscoTGG.SuperConstructorInvocation__Marker, (o) -> o.getCREATE__TRG__tAccess(), null, false));
 		name2initRefGen.put("AbstractMethodInvocationToTAccess_source_3_reference", new InitGenReferenceActor<ModiscoTGG.AbstractMethodInvocationToTAccess,org.eclipse.modisco.java.AbstractMethodInvocation>(name2actor, name2node.get("AbstractMethodInvocationToTAccess_source_3_reference"), (o) -> o instanceof ModiscoTGG.AbstractMethodInvocationToTAccess, (o) -> o.getSource(), null, false));
-		name2initRefGen.put("SuperConstructorInvocation__Marker_CREATE__SRC__invocation_0_reference", new InitGenReferenceActor<ModiscoTGG.SuperConstructorInvocation__Marker,org.eclipse.modisco.java.SuperConstructorInvocation>(name2actor, name2node.get("SuperConstructorInvocation__Marker_CREATE__SRC__invocation_0_reference"), (o) -> o instanceof ModiscoTGG.SuperConstructorInvocation__Marker, (o) -> o.getCREATE__SRC__invocation(), null, false));
+		name2initRefGen.put("SuperConstructorInvocation__Marker_CREATE__SRC__invocation_0_reference", new InitGenReferenceActor<ModiscoTGG.SuperConstructorInvocation__Marker,org.gravity.modisco.MAbstractMethodInvocation>(name2actor, name2node.get("SuperConstructorInvocation__Marker_CREATE__SRC__invocation_0_reference"), (o) -> o instanceof ModiscoTGG.SuperConstructorInvocation__Marker, (o) -> o.getCREATE__SRC__invocation(), null, false));
 		name2initRefGen.put("SuperConstructorInvocation__Marker_CREATE__CORR__invocationToTAccess_0_reference", new InitGenReferenceActor<ModiscoTGG.SuperConstructorInvocation__Marker,ModiscoTGG.AbstractMethodInvocationToTAccess>(name2actor, name2node.get("SuperConstructorInvocation__Marker_CREATE__CORR__invocationToTAccess_0_reference"), (o) -> o instanceof ModiscoTGG.SuperConstructorInvocation__Marker, (o) -> o.getCREATE__CORR__invocationToTAccess(), null, false));
 		name2initRefGen.put("SuperMethodInvocation__Marker_CREATE__CORR__mFlowElementToTFlowElement_0_reference", new InitGenReferenceActor<ModiscoTGG.SuperMethodInvocation__Marker,ModiscoTGG.MAbstractFlowElementToTAbstractFlowElement>(name2actor, name2node.get("SuperMethodInvocation__Marker_CREATE__CORR__mFlowElementToTFlowElement_0_reference"), (o) -> o instanceof ModiscoTGG.SuperMethodInvocation__Marker, (o) -> o.getCREATE__CORR__mFlowElementToTFlowElement(), null, false));
 		name2initRefGen.put("MAbstractMethodDefinition_usages_5_reference", new InitGenReferenceActor<org.eclipse.modisco.java.AbstractMethodDeclaration,org.eclipse.modisco.java.AbstractMethodInvocation>(name2actor, name2node.get("MAbstractMethodDefinition_usages_5_reference"), (o) -> o instanceof org.eclipse.modisco.java.AbstractMethodDeclaration, null, (o) -> o.getUsages(), false));
@@ -6330,8 +6330,8 @@ class SubPackageToPGPackage__Marker_object_SP1 extends GenericObjectActor<Modisc
 class SuperConstructorInvocation__Marker_object_SP0 extends GenericObjectActor<ModiscoTGG.SuperConstructorInvocation__Marker> { }
 class SuperConstructorInvocation__Marker_object_SP1 extends GenericObjectActor<ModiscoTGG.SuperConstructorInvocation__Marker> { }
 class SuperConstructorInvocation__Marker_object_SP2 extends GenericObjectActor<ModiscoTGG.SuperConstructorInvocation__Marker> { }
-class SuperConstructorInvocation_object_SP0 extends GenericObjectActor<org.eclipse.modisco.java.SuperConstructorInvocation> { }
-class SuperConstructorInvocation_object_SP1 extends GenericObjectActor<org.eclipse.modisco.java.SuperConstructorInvocation> { }
+class MAbstractMethodInvocation_object_SP0 extends GenericObjectActor<org.gravity.modisco.MAbstractMethodInvocation> { }
+class MAbstractMethodInvocation_object_SP1 extends GenericObjectActor<org.gravity.modisco.MAbstractMethodInvocation> { }
 class SuperMethodInvocation__Marker_object_SP0 extends GenericObjectActor<ModiscoTGG.SuperMethodInvocation__Marker> { }
 class SuperMethodInvocation__Marker_object_SP1 extends GenericObjectActor<ModiscoTGG.SuperMethodInvocation__Marker> { }
 class SuperMethodInvocation__Marker_object_SP2 extends GenericObjectActor<ModiscoTGG.SuperMethodInvocation__Marker> { }
@@ -7336,7 +7336,7 @@ class SuperConstructorInvocation__Marker_CONTEXT__CORR__mMemberToTMember_0_refer
 class MAbstractFlowElementToTAbstractFlowElement_source_13_reference extends GenericReferenceActor<ModiscoTGG.MAbstractFlowElementToTAbstractFlowElement, org.gravity.modisco.MAbstractFlowElement> { }
 class SuperConstructorInvocation__Marker_CREATE__TRG__tAccess_0_reference extends GenericReferenceActor<ModiscoTGG.SuperConstructorInvocation__Marker, org.gravity.typegraph.basic.TCall> { }
 class AbstractMethodInvocationToTAccess_source_3_reference extends GenericReferenceActor<ModiscoTGG.AbstractMethodInvocationToTAccess, org.eclipse.modisco.java.AbstractMethodInvocation> { }
-class SuperConstructorInvocation__Marker_CREATE__SRC__invocation_0_reference extends GenericReferenceActor<ModiscoTGG.SuperConstructorInvocation__Marker, org.eclipse.modisco.java.SuperConstructorInvocation> { }
+class SuperConstructorInvocation__Marker_CREATE__SRC__invocation_0_reference extends GenericReferenceActor<ModiscoTGG.SuperConstructorInvocation__Marker, org.gravity.modisco.MAbstractMethodInvocation> { }
 class SuperConstructorInvocation__Marker_CREATE__CORR__invocationToTAccess_0_reference extends GenericReferenceActor<ModiscoTGG.SuperConstructorInvocation__Marker, ModiscoTGG.AbstractMethodInvocationToTAccess> { }
 class SuperMethodInvocation__Marker_CREATE__CORR__mFlowElementToTFlowElement_0_reference extends GenericReferenceActor<ModiscoTGG.SuperMethodInvocation__Marker, ModiscoTGG.MAbstractFlowElementToTAbstractFlowElement> { }
 class MAbstractMethodDefinition_usages_5_reference extends GenericReferenceActor<org.eclipse.modisco.java.AbstractMethodDeclaration, org.eclipse.modisco.java.AbstractMethodInvocation> { }

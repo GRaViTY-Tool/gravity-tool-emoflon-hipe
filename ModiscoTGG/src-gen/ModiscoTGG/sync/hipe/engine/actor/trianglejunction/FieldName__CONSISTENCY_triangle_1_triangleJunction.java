@@ -26,8 +26,8 @@ import hipe.generic.actor.junction.GenericTriangleJunctionActor;
 import hipe.network.TriangleJunctionNode;
 
 public class FieldName__CONSISTENCY_triangle_1_triangleJunction extends GenericTriangleJunctionActor{
-	private Map<Object, Collection<HMatch>> mNameAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> tNameAttrMap = new HashMap<>();
+	private Map<Object, Collection<HMatch>> mNameAttrMap = new HashMap<>();
 	
 	@Override
 	protected void initializePorts(Map<String, ActorRef> name2actor, TriangleJunctionNode node) {
@@ -52,18 +52,18 @@ public class FieldName__CONSISTENCY_triangle_1_triangleJunction extends GenericT
 			port.forwardMessage(message);
 		}
 		Object obj = message.node;
-		if(obj instanceof org.gravity.modisco.MName) {
-			if(mNameAttrMap.containsKey(obj)) {
-				for(HMatch match : mNameAttrMap.get(obj)) {
+		if(obj instanceof org.gravity.typegraph.basic.TName) {
+			if(tNameAttrMap.containsKey(obj)) {
+				for(HMatch match : tNameAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}
 				}
 			}
 		}
-		if(obj instanceof org.gravity.typegraph.basic.TName) {
-			if(tNameAttrMap.containsKey(obj)) {
-				for(HMatch match : tNameAttrMap.get(obj)) {
+		if(obj instanceof org.gravity.modisco.MName) {
+			if(mNameAttrMap.containsKey(obj)) {
+				for(HMatch match : mNameAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}
@@ -75,8 +75,8 @@ public class FieldName__CONSISTENCY_triangle_1_triangleJunction extends GenericT
 	}
 	
 	public boolean check_constraint_139(HMatch match) {
-		org.gravity.modisco.MFieldName mFieldName = (org.gravity.modisco.MFieldName) match.getNodes()[3];
 		org.gravity.typegraph.basic.TField tField = (org.gravity.typegraph.basic.TField) match.getNodes()[1];
+		org.gravity.modisco.MFieldName mFieldName = (org.gravity.modisco.MFieldName) match.getNodes()[3];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.Eq csp_31 = new org.emoflon.ibex.tgg.operational.csp.constraints.Eq();
 		csp_31.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, mFieldName.getMName(), "java.lang.String"));

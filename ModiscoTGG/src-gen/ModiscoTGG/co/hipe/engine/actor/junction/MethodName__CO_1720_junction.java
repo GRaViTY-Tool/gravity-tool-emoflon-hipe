@@ -26,8 +26,8 @@ import hipe.generic.actor.junction.GenericJunctionActor;
 import hipe.network.JunctionNode;
 
 public class MethodName__CO_1720_junction extends GenericJunctionActor{
-	private Map<Object, Collection<HMatch>> mNameAttrMap = new HashMap<>();
 	private Map<Object, Collection<HMatch>> tNameAttrMap = new HashMap<>();
+	private Map<Object, Collection<HMatch>> mNameAttrMap = new HashMap<>();
 	
 	@Override
 	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
@@ -52,18 +52,18 @@ public class MethodName__CO_1720_junction extends GenericJunctionActor{
 			port.forwardMessage(message);
 		}
 		Object obj = message.node;
-		if(obj instanceof org.gravity.modisco.MName) {
-			if(mNameAttrMap.containsKey(obj)) {
-				for(HMatch match : mNameAttrMap.get(obj)) {
+		if(obj instanceof org.gravity.typegraph.basic.TName) {
+			if(tNameAttrMap.containsKey(obj)) {
+				for(HMatch match : tNameAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}
 				}
 			}
 		}
-		if(obj instanceof org.gravity.typegraph.basic.TName) {
-			if(tNameAttrMap.containsKey(obj)) {
-				for(HMatch match : tNameAttrMap.get(obj)) {
+		if(obj instanceof org.gravity.modisco.MName) {
+			if(mNameAttrMap.containsKey(obj)) {
+				for(HMatch match : mNameAttrMap.get(obj)) {
 					for(Port<HMatch> port : ports) {
 						port.sendAttributeChanged(message.initialMessage, match);
 					}
@@ -75,8 +75,8 @@ public class MethodName__CO_1720_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_119(HMatch match) {
-		org.gravity.modisco.MMethodName mName = (org.gravity.modisco.MMethodName) match.getNodes()[5];
 		org.gravity.typegraph.basic.TMethod tName = (org.gravity.typegraph.basic.TMethod) match.getNodes()[1];
+		org.gravity.modisco.MMethodName mName = (org.gravity.modisco.MMethodName) match.getNodes()[5];
 		
 		org.emoflon.ibex.tgg.operational.csp.constraints.Eq csp_40 = new org.emoflon.ibex.tgg.operational.csp.constraints.Eq();
 		csp_40.getVariables().add(new org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable(true, mName.getMName(), "java.lang.String"));
